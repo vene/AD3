@@ -2,7 +2,6 @@ from __future__ import print_function
 import numpy as np
 
 import ad3.factor_graph as fg
-from ad3 import solve
 
 
 def var_len_argmax(posteriors, num_states):
@@ -127,9 +126,7 @@ if upper_bound >= 0 or lower_bound >= 0:
     f.close()
 
     # Run AD3.
-    value, posteriors, additionals, status = solve(pairwise_fg, max_iter=10,
-                                                   verbose=0,
-                                                   branch_and_bound=True)
+    value, posteriors, _, _ = pairwise_fg.solve(branch_and_bound=True)
     # Print solution.
     best_states = var_len_argmax(posteriors, num_states)
     print("Solution using DENSE and BUDGET factors:", best_states)
@@ -196,9 +193,7 @@ factor.set_additional_log_potentials(additional_log_potentials)
 factors.append(factor)
 
 # Run AD3.
-value, posteriors, additionals, status = solve(factor_graph, max_iter=10,
-                                               verbose=0,
-                                               branch_and_bound=True)
+value, posteriors, additionals, status = factor_graph.solve()
 
 # Print solution.
 best_states = var_len_argmax(posteriors, num_states)

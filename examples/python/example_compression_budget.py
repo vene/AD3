@@ -2,7 +2,6 @@ from __future__ import print_function
 import numpy as np
 
 import ad3.factor_graph as fg
-from ad3 import solve
 
 length = 30
 budget = 10
@@ -83,7 +82,7 @@ factor_graph.create_factor_budget(variables, negated, budget)
 num_factors += 1
 
 # Run AD3.
-_, posteriors, _, _ = solve(factor_graph)
+_, posteriors, _, _ = factor_graph.solve()
 
 # Print solution.
 t = 0
@@ -149,7 +148,7 @@ compression_factor_graph.set_max_iterations_ad3(1000)
 
 print("Bigrams at", bigram_positions)
 
-_, posteriors, _, _ = solve(compression_factor_graph)
+_, posteriors, _, _ = compression_factor_graph.solve()
 
 # Print solution.
 t = 0

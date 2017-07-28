@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import ad3.factor_graph as fg
-from ad3 import solve
 
 grid_size = 20
 num_states = 5
@@ -36,12 +35,8 @@ for i, j in itertools.product(range(grid_size), repeat=2):
         edge_variables = [multi_variables[i - 1][j], multi_variables[i][j]]
         factor_graph.create_factor_dense(edge_variables, potts_potentials)
 
-factor_graph.set_eta_ad3(.1)
-factor_graph.adapt_eta_ad3(True)
-factor_graph.set_max_iterations_ad3(1000)
 tic = time()
-value, marginals, edge_marginals, solver_status = \
-    factor_graph.solve_lp_map_ad3()
+value, marginals, edge_marginals, solver_status = factor_graph.solve()
 toc = time()
 
 res = np.array(marginals).reshape(grid_size, grid_size, num_states)
@@ -130,7 +125,7 @@ if use_sequence_factors:
         factors.append(factor)
 
     tic = time()
-    _, marginals, _, _ = solve(sequential_factor_graph)
+    _, marginals, _, _ = sequential_factor_graph.solve()
     toc = time()
 
     res = np.array(marginals).reshape(grid_size, grid_size, num_states)

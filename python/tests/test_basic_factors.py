@@ -3,7 +3,6 @@ import numpy as np
 from numpy.testing import assert_array_equal
 
 from .. import factor_graph as fg
-from .. import solve
 
 
 def test_pair():
@@ -67,7 +66,7 @@ def test_dense_at_most_one():
     # (0, 1, 0) / (0, 0, 1) is the highest allowable.
 
     graph.create_factor_dense([a, b], dense_vals.ravel())
-    _, assignments, _, _ = solve(graph)
+    _, assignments, _, _ = graph.solve()
     expected = np.array([0, 1, 0, 0, 0, 1])
     assert_array_equal(expected, assignments)
 
@@ -90,7 +89,7 @@ def test_smoke_logic(factor_type):
         assert var.get_degree() == 1
 
     # check that we find a feasible solution
-    val, _, _, _ = solve(graph)
+    val, _, _, _ = graph.solve()
     assert val == 0
 
 
@@ -117,7 +116,7 @@ def test_logic_constraints():
 
     graph.fix_multi_variables_without_factors()
 
-    value_unconstrained, marginals, _, _ = solve(graph)
+    value_unconstrained, marginals, _, _ = graph.solve()
 
     expected = [0, 1]
     obtained = np.array(marginals).reshape(2, -1).argmax(axis=1)
@@ -130,7 +129,7 @@ def test_logic_constraints():
 
     graph.fix_multi_variables_without_factors()  # need to run this again
 
-    value_constrained, marginals, _, _ = solve(graph)
+    value_constrained, marginals, _, _ = graph.solve()
 
     expected = [0, 2]
     obtained = np.array(marginals).reshape(2, -1).argmax(axis=1)

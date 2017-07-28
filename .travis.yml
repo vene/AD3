@@ -1,7 +1,3 @@
-branches:
-  only:
-    - newrel 
-
 notifications:
   email: false
 

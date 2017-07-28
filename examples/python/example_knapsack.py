@@ -1,7 +1,6 @@
 from __future__ import print_function
 import numpy as np
 import ad3.factor_graph as fg
-from ad3 import solve
 import time
 
 
@@ -40,7 +39,7 @@ def solve_lp_knapsack_ad3(scores, costs, budget):
                                         budget)
 
     # Run AD3.
-    _, posteriors, _, _ = solve(factor_graph)
+    _, posteriors, _, _ = factor_graph.solve()
     return posteriors
 
 

@@ -47,6 +47,7 @@ cdef extern from "../ad3/FactorGraph.h" namespace "AD3":
         void SetEtaAD3(double eta)
         void AdaptEtaAD3(bool adapt)
         void SetMaxIterationsAD3(int max_iterations)
+        void SetResidualThresholdAD3(double threshold)
         void FixMultiVariablesWithoutFactors()
         int SolveLPMAPWithAD3(vector[double]* posteriors,
                               vector[double]* additional_posteriors,
@@ -326,8 +327,11 @@ cdef class PFactorSequenceCompressor(PFactor):
         if self.allocate:
             del self.thisptr
 
-    def initialize(self, int length, vector[int] left_positions, vector[int] right_positions):
-        (<FactorSequenceCompressor*>self.thisptr).Initialize(length, left_positions, right_positions)
+    def initialize(self, int length, vector[int] left_positions,
+                   vector[int] right_positions):
+        (<FactorSequenceCompressor*>self.thisptr).Initialize(length,
+                                                             left_positions,
+                                                             right_positions)
 
 
 cdef class PFactorCompressionBudget(PFactor):
@@ -346,7 +350,9 @@ cdef class PFactorCompressionBudget(PFactor):
         cdef vector[bool] counts_for_budget
         for counts in pcounts_for_budget:
             counts_for_budget.push_back(counts)
-        (<FactorCompressionBudget*>self.thisptr).Initialize(length, budget, counts_for_budget, bigram_positions)
+        (<FactorCompressionBudget*>self.thisptr).Initialize(length, budget,
+                                                            counts_for_budget,
+                                                            bigram_positions)
 
 
 cdef class PFactorBinaryTree(PFactor):
@@ -385,17 +391,16 @@ cdef class PFactorBinaryTreeCounts(PFactor):
             for has_count in phas_count_scores:
                 has_count_scores.push_back(has_count)
             if max_num_bins is not None:
-                (<FactorBinaryTreeCounts*>self.thisptr).Initialize(parents,
-                                                                   counts_for_budget,
-                                                                   has_count_scores,
-                                                                   max_num_bins)
+                (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
+                    parents, counts_for_budget, has_count_scores, max_num_bins)
+
             else:
-                (<FactorBinaryTreeCounts*>self.thisptr).Initialize(parents,
-                                                                   counts_for_budget,
-                                                                   has_count_scores)
+                (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
+                    parents, counts_for_budget, has_count_scores)
+
         else:
-            (<FactorBinaryTreeCounts*>self.thisptr).Initialize(parents,
-                                                               counts_for_budget)
+            (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
+                parents, counts_for_budget)
 
 
 cdef class PFactorGeneralTree(PFactor):
@@ -423,7 +428,8 @@ cdef class PFactorGeneralTreeCounts(PFactor):
             del self.thisptr
 
     def initialize(self, vector[int] parents, vector[int] num_states):
-        (<FactorGeneralTreeCounts*>self.thisptr).Initialize(parents, num_states)
+        (<FactorGeneralTreeCounts*>self.thisptr).Initialize(parents,
+                                                            num_states)
 
 
 cdef class PFactorTree(PFactor):
@@ -588,6 +594,9 @@ cdef class PFactorGraph:
     def set_max_iterations_ad3(self, int max_iterations):
         self.thisptr.SetMaxIterationsAD3(max_iterations)
 
+    def set_residual_threshold_ad3(self, double threshold):
+        self.thisptr.SetResidualThresholdAD3(threshold)
+
     def solve_lp_map_ad3(self):
         cdef vector[double] posteriors
         cdef vector[double] additional_posteriors
@@ -644,3 +653,65 @@ cdef class PFactorGraph:
         for i in xrange(global_primal_variables.size()):
             p_global_primal_variables.append(global_primal_variables[i])
         return p_global_primal_variables
+
+    def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,
+              verbose=False, branch_and_bound=False):
+        """Solve the MAP inference problem associated with the factor graph.
+
+        Parameters
+        ---------
+
+        eta : float, default: 0.1
+            Value of the penalty constant. If adapt_eta is true, this is the
+            initial penalty, otherwise every iteration will apply this amount
+            of penalty.
+
+        adapt_eta : boolean, default: True
+            If true, adapt the penalty constant using the strategy in [2].
+
+        max_iter : int, default: 1000
+            Maximum number of iterations to perform.
+
+        tol : double, default: 1e-6
+            Theshold for the primal and dual residuals in AD3. The algorithm
+            ends early when both residuals are below this threshold.
+
+        branch_and_bound : boolean, default: False
+            If true, apply a branch-and-bound procedure for obtaining the exact
+            MAP (note: this can be slow if the relaxation is "too fractional").
+
+        Returns
+        -------
+
+        value : double
+            The total score (negative energy) of the solution.
+
+        posteriors : list
+            The MAP assignment of each binarized variable in the graph,
+            in the order in which they were created. Multi-valued variables
+            are represented using a value for each state.  If solution is
+            approximate, the values may be fractional.
+
+        additional_posteriors : list
+            Additional posteriors for each log-potential in the factors.
+
+        status : string, (integral|fractional|infeasible|unsolved)
+            Inference status.
+        """
+
+
+        self.set_eta_ad3(eta)
+        self.adapt_eta_ad3(adapt)
+        self.set_max_iterations_ad3(max_iter)
+        self.set_residual_threshold_ad3(tol)
+        self.set_verbosity(verbose)
+
+        if branch_and_bound:
+            result = self.solve_exact_map_ad3()
+        else:
+            result = self.solve_lp_map_ad3()
+
+        value, marginals, edge_marginals, solver_status = result
+
+        solver_string = ["integral", "fractional", "infeasible", "unsolved"]
+        return value, marginals, edge_marginals, solver_string[solver_status]

@@ -94,10 +94,7 @@ for t in range(num_diverse_outputs):
     f.close()
 
     # Solve with AD3.
-    factor_graph.set_eta_ad3(.1)
-    factor_graph.adapt_eta_ad3(True)
-    factor_graph.set_max_iterations_ad3(1000)
-    value, marginals, edge_marginals, status = factor_graph.solve_lp_map_ad3()
+    value, marginals, edge_marginals, status = factor_graph.solve()
 
     res = np.array(marginals).reshape(grid_size, grid_size, num_states)
     output = np.argmax(res, axis=-1)
