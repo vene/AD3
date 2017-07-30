@@ -75,7 +75,7 @@ test_script:
   - "cd .."
   - "echo Running examples"
   - "cd examples\\python"
-  - "for %i in (*.py) do python %i"
+  - "for %%i in (*.py) do python %%i"
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
