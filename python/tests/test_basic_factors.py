@@ -173,7 +173,6 @@ def test_logic_negate():
         assert out_1 == out_2
 
 
-
 def test_logic_constraints():
     graph = fg.PFactorGraph()
     n_states = 3

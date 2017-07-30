@@ -1,5 +1,4 @@
 from libcpp.vector cimport vector
-from libcpp.pair cimport pair
 from libcpp cimport bool
 
 cimport cython

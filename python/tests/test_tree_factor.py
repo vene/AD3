@@ -1,11 +1,11 @@
 import pytest
 import numpy as np
-from numpy.testing import assert_array_equal
 
 from .. import factor_graph as fg
 
+
 def test_tree_factor():
-    n_nodes = 10 
+    n_nodes = 10
     rng = np.random.RandomState(0)
     g = fg.PFactorGraph()
     arcs = [(h, m) for m in range(1, n_nodes) for h in range(n_nodes)
@@ -43,15 +43,21 @@ def test_tree_validate():
 
     tree = fg.PFactorTree()
     g.declare_factor(tree, arc_vars)
+
     with pytest.raises(TypeError):
         tree.initialize(n_nodes, [-3 for _ in arcs])
+
     with pytest.raises(TypeError):
         tree.initialize(n_nodes, None)
+
     with pytest.raises(TypeError):
         tree.initialize(n_nodes, 42)
+
     with pytest.raises(ValueError):
         tree.initialize(n_nodes, [(100, 100) for _ in arcs])
+
     with pytest.raises(ValueError):
         tree.initialize(n_nodes, arcs + arcs)
+
     with pytest.raises(ValueError):
         tree.initialize(n_nodes, arcs[:3])
