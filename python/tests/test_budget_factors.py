@@ -9,11 +9,21 @@ def test_knapsack_wrong_cost_size():
     n_vars = 50
     variables = [graph.create_binary_variable() for _ in range(n_vars)]
     negated = [False for _ in variables]
-    costs = [17]
     budget = 1
 
-    with pytest.raises(IndexError):
-        graph.create_factor_knapsack(variables, negated, costs, budget)
+    with pytest.raises(ValueError):
+        small_cost = [17]
+        graph.create_factor_knapsack(variables, negated, small_cost, budget)
+
+    with pytest.raises(ValueError):
+        big_cost = [17] * (n_vars + 1)
+        graph.create_factor_knapsack(variables, negated, big_cost, budget)
+
+    with pytest.raises(TypeError):
+        graph.create_factor_knapsack(variables, negated, 42, budget)
+
+    with pytest.raises(TypeError):
+        graph.create_factor_knapsack(variables, negated, None, budget)
 
 
 def test_budget():
@@ -26,7 +36,6 @@ def test_budget():
         var.set_log_potential(val)
 
     _, assign, _, _ = graph.solve()
-    print(assign)
     assert sum(assign) == 5
 
     budget = 3
@@ -57,7 +66,6 @@ def test_knapsack():
         var.set_log_potential(val)
 
     _, assign, _, _ = graph.solve()
-    print(assign)
     assert sum(assign) == 5
 
     budget = 5

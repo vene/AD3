@@ -1,4 +1,5 @@
 from libcpp.vector cimport vector
+from libcpp.pair cimport pair
 from libcpp cimport bool
 
 cimport cython
@@ -262,15 +263,10 @@ cdef class PFactor:
         self.allocate = allocate
 
     def get_additional_log_potentials(self):
-        cdef vector[double] additional_log_potentials
-        additional_log_potentials = self.thisptr.GetAdditionalLogPotentials()
-        p_additional_log_potentials = []
-        cdef size_t i
-        for i in xrange(additional_log_potentials.size()):
-            p_additional_log_potentials.append(additional_log_potentials[i])
-        return p_additional_log_potentials
+        return self.thisptr.GetAdditionalLogPotentials()
 
-    def set_additional_log_potentials(self, vector[double] additional_log_potentials):
+    def set_additional_log_potentials(self,
+                                      vector[double] additional_log_potentials):
         self.thisptr.SetAdditionalLogPotentials(additional_log_potentials)
 
     def get_degree(self):
@@ -290,17 +286,13 @@ cdef class PFactor:
         cdef vector[double] posteriors
         cdef vector[double] additional_posteriors
         cdef double value
-        self.thisptr.SolveMAP(variable_log_potentials, additional_log_potentials,
-                              &posteriors, &additional_posteriors,
+        self.thisptr.SolveMAP(variable_log_potentials,
+                              additional_log_potentials,
+                              &posteriors,
+                              &additional_posteriors,
                               &value)
-        p_posteriors, p_additional_posteriors = [], []
-        cdef size_t i
-        for i in range(posteriors.size()):
-            p_posteriors.append(posteriors[i])
-        for i in range(additional_posteriors.size()):
-            p_additional_posteriors.append(additional_posteriors[i])
 
-        return value, p_posteriors, p_additional_posteriors
+        return value, posteriors, additional_posteriors
 
 
 cdef class PFactorSequence(PFactor):
@@ -446,14 +438,63 @@ cdef class PFactorTree(PFactor):
         cdef vector[Arc *] arcs_v
         cdef int head, modifier
 
+        cdef tuple arc
         for arc in arcs:
-            head, modifier = arc
+            head = arc[0]
+            modifier = arc[1]
+
+            if not 0 <= head < length:
+                raise ValueError("Invalid arc: head must be in [0, length)")
+            if not 1 <= modifier < length:
+                raise ValueError("Invalid arc: modifier must be in [1, length)")
+            if not head != modifier:
+                raise ValueError("Invalid arc: head cannot be the same as the "
+                                 " modifier")
             arcs_v.push_back(new Arc(head, modifier))
 
+        if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
+            raise ValueError("Number of arcs differs from number of bound "
+                             "variables.")
         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)
 
         for arcp in arcs_v:
             del arcp
+
+
+cdef int _binary_vars_to_vector(
+        list p_vars, vector[BinaryVariable*]& c_vars) except -1:
+
+    cdef PBinaryVariable p_var
+    for p_var in p_vars:
+        with cython.nonecheck(True):
+            c_vars.push_back(p_var.thisptr)
+    return 0
+
+
+cdef int _multi_vars_to_vector(
+        list p_vars, vector[MultiVariable*]& c_vars) except -1:
+
+    cdef Py_ssize_t expected = 1
+    cdef PMultiVariable p_var
+    for p_var in p_vars:
+        with cython.nonecheck(True):
+            c_vars.push_back(p_var.thisptr)
+        expected *= p_var._get_n_states()
+    return expected
+
+
+cdef int _validate_negated(list p_negated, vector[bool]& negated,
+                           Py_ssize_t n) except -1:
+    try:
+        with cython.nonecheck(True):
+            (&negated)[0] = p_negated
+    except TypeError:
+            (&negated)[0] = vector[bool]() 
+        
+    if negated.size() and negated.size() != n:
+        raise ValueError("Expected one negated flag per variable, " 
+                         "or none at all.")
+    return 0
 
 
 cdef class PFactorGraph:
@@ -479,14 +520,17 @@ cdef class PFactorGraph:
         pmult.thisptr = mv
         return pmult
 
-    def create_factor_logic(self, factor_type, p_variables, p_negated,
+    def create_factor_logic(self,
+                            str factor_type,
+                            list p_variables,
+                            list p_negated=None,
                             bool owned_by_graph=True):
+
         cdef vector[BinaryVariable*] variables
         cdef vector[bool] negated
-        for i, var in enumerate(p_variables):
-            variables.push_back((<PBinaryVariable>var).thisptr)
+        _binary_vars_to_vector(p_variables, variables)
+        _validate_negated(p_negated, negated, variables.size())
 
-            negated.push_back(p_negated[i])
         if factor_type == 'XOR':
             self.thisptr.CreateFactorXOR(variables, negated, owned_by_graph)
         elif factor_type == 'XOROUT':
@@ -505,60 +549,72 @@ cdef class PFactorGraph:
             raise NotImplementedError(
                 'Unknown factor type: {}'.format(factor_type))
 
-    def create_factor_pair(self, p_variables, double edge_log_potential,
+    def create_factor_pair(self,
+                           list p_variables,
+                           double edge_log_potential,
                            bool owned_by_graph=True):
         cdef vector[BinaryVariable*] variables
-        for var in p_variables:
-            variables.push_back((<PBinaryVariable>var).thisptr)
+        _binary_vars_to_vector(p_variables, variables)
+        if variables.size() != 2:
+            raise ValueError("Pair factors require exactly two binary "
+                             "variables.")
         self.thisptr.CreateFactorPAIR(variables, edge_log_potential,
                                       owned_by_graph)
 
-    def create_factor_budget(self, p_variables, p_negated, int budget,
-                             bool owned_by_graph=True):
+    def create_factor_budget(self, list p_variables, list p_negated,
+                             int budget, bool owned_by_graph=True):
         cdef vector[BinaryVariable*] variables
         cdef vector[bool] negated
-        for i, var in enumerate(p_variables):
-            variables.push_back((<PBinaryVariable>var).thisptr)
-            negated.push_back(p_negated[i])
+        _binary_vars_to_vector(p_variables, variables)
+        _validate_negated(p_negated, negated, variables.size())
+
         self.thisptr.CreateFactorBUDGET(variables, negated, budget,
                                         owned_by_graph)
 
-    def create_factor_knapsack(self, p_variables, p_negated, p_costs,
-                               double budget, bool owned_by_graph=True):
+    def create_factor_knapsack(self,
+                               list p_variables,
+                               list p_negated,
+                               vector[double] costs,
+                               double budget,
+                               bool owned_by_graph=True):
         cdef vector[BinaryVariable*] variables
         cdef vector[bool] negated
-        cdef vector[double] costs
-        for i, var in enumerate(p_variables):
-            variables.push_back((<PBinaryVariable>var).thisptr)
-            negated.push_back(p_negated[i])
-            costs.push_back(p_costs[i])
+        _binary_vars_to_vector(p_variables, variables)
+        _validate_negated(p_negated, negated, variables.size())
+        
+        with cython.nonecheck(True):
+            if costs.size() != variables.size():
+                raise ValueError("Must provide one cost per variable.")
+
         self.thisptr.CreateFactorKNAPSACK(variables, negated, costs, budget,
                                           owned_by_graph)
 
-    def create_factor_dense(self,  p_multi_variables,
-                            p_additional_log_potentials,
+    def create_factor_dense(self, list p_multi_variables,
+                            vector[double] additional_log_potentials, 
                             bool owned_by_graph=True):
         cdef vector[MultiVariable*] multi_variables
-        cdef PMultiVariable blub
-        for var in p_multi_variables:
-            blub = var
-            multi_variables.push_back(<MultiVariable*>blub.thisptr)
+        cdef Py_ssize_t n_expected = _multi_vars_to_vector(p_multi_variables,
+                                                           multi_variables)
 
-        cdef vector[double] additional_log_potentials
-        for potential in p_additional_log_potentials:
-            additional_log_potentials.push_back(potential)
+        with cython.nonecheck(True):
+            if additional_log_potentials.size() !=  n_expected:
+                raise ValueError("Must provide one log-potential per joint "
+                                 "state assignment of all the variables.")
+
         self.thisptr.CreateFactorDense(multi_variables,
                                        additional_log_potentials,
                                        owned_by_graph)
 
-    def declare_factor(self, p_factor, p_variables, bool owned_by_graph=False):
+    def declare_factor(self, PFactor p_factor not None,
+                       list p_variables, bool owned_by_graph=False):
         cdef vector[BinaryVariable*] variables
+        _binary_vars_to_vector(p_variables, variables)
+
         cdef Factor *factor
-        for var in p_variables:
-            variables.push_back((<PBinaryVariable>var).thisptr)
         if owned_by_graph:
             p_factor.set_allocate(False)
-        factor = (<PFactor>p_factor).thisptr
+        factor = p_factor.thisptr
+
         self.thisptr.DeclareFactor(factor, variables, owned_by_graph)
 
     def fix_multi_variables_without_factors(self):
@@ -576,14 +632,8 @@ cdef class PFactorGraph:
         cdef double value
         self.thisptr.SolveLPMAPWithPSDD(&posteriors, &additional_posteriors,
                                         &value)
-        p_posteriors, p_additional_posteriors = [], []
-        cdef size_t i
-        for i in range(posteriors.size()):
-            p_posteriors.append(posteriors[i])
-        for i in range(additional_posteriors.size()):
-            p_additional_posteriors.append(additional_posteriors[i])
 
-        return value, p_posteriors, p_additional_posteriors
+        return value, posteriors, additional_posteriors
 
     def set_eta_ad3(self, double eta):
         self.thisptr.SetEtaAD3(eta)
@@ -605,14 +655,7 @@ cdef class PFactorGraph:
         solver_status = self.thisptr.SolveLPMAPWithAD3(&posteriors,
                                                        &additional_posteriors,
                                                        &value)
-        p_posteriors, p_additional_posteriors = [], []
-        cdef size_t i
-        for i in range(posteriors.size()):
-            p_posteriors.append(posteriors[i])
-        for i in range(additional_posteriors.size()):
-            p_additional_posteriors.append(additional_posteriors[i])
-
-        return value, p_posteriors, p_additional_posteriors, solver_status
+        return value, posteriors, additional_posteriors, solver_status
 
     def solve_exact_map_ad3(self):
         cdef vector[double] posteriors
@@ -622,37 +665,16 @@ cdef class PFactorGraph:
         solver_status = self.thisptr.SolveExactMAPWithAD3(&posteriors,
                                                           &additional_posteriors,
                                                           &value)
-        p_posteriors, p_additional_posteriors = [], []
-        cdef size_t i
-        for i in range(posteriors.size()):
-            p_posteriors.append(posteriors[i])
-        for i in range(additional_posteriors.size()):
-            p_additional_posteriors.append(additional_posteriors[i])
-
-        return value, p_posteriors, p_additional_posteriors, solver_status
+        return value, posteriors, additional_posteriors, solver_status
 
     def get_dual_variables(self):
-        cdef vector[double] dual_variables = self.thisptr.GetDualVariables()
-        p_dual_variables = []
-        for i in xrange(dual_variables.size()):
-            p_dual_variables.append(dual_variables[i])
-        return p_dual_variables
+        return self.thisptr.GetDualVariables()
 
     def get_local_primal_variables(self):
-        cdef vector[double] local_primal_variables
-        local_primal_variables = self.thisptr.GetLocalPrimalVariables()
-        p_local_primal_variables = []
-        for i in xrange(local_primal_variables.size()):
-            p_local_primal_variables.append(local_primal_variables[i])
-        return p_local_primal_variables
+        return self.thisptr.GetLocalPrimalVariables()
 
     def get_global_primal_variables(self):
-        cdef vector[double] global_primal_variables
-        global_primal_variables = self.thisptr.GetGlobalPrimalVariables()
-        p_global_primal_variables = []
-        for i in xrange(global_primal_variables.size()):
-            p_global_primal_variables.append(global_primal_variables[i])
-        return p_global_primal_variables
+        return self.thisptr.GetGlobalPrimalVariables()
 
     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,
               verbose=False, branch_and_bound=False):
@@ -698,7 +720,6 @@ cdef class PFactorGraph:
         status : string, (integral|fractional|infeasible|unsolved)
             Inference status.
         """
-
 
         self.set_eta_ad3(eta)
         self.adapt_eta_ad3(adapt)
