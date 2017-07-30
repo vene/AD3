@@ -111,7 +111,5 @@ def solve_lp_knapsack_lpsolve(scores, costs, budget):
 
 
 if __name__ == "__main__":
-    n_tests = 100
     n = 100
-    for i in range(n_tests):
-        test_random_instance(n)
+    test_random_instance(n)
