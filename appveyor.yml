@@ -77,7 +77,7 @@ test_script:
   - "echo Running examples"
   - "set NOPLOT=1"
   - "cd examples\\python"
-  - "for %%i in (*.py) do (echo %%i \n python %%i || exit 1)"
+  - "for %%i in (*.py) do (\n echo %%i \n python %%i || exit 1 \n)"
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
