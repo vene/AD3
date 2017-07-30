@@ -73,9 +73,11 @@ test_script:
 
   # Move back to the project folder
   - "cd .."
+
+  - "set NOPLOT=0"
   - "echo Running examples"
   - "cd examples\\python"
-  - "for %%i in (*.py) do python %%i"
+  - "for %%i in (*.py) do (python %%i || exit 1)"
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
