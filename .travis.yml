@@ -3,6 +3,9 @@ notifications:
 
 language: python
 
+env:
+    - NOPLOT=1
+
 matrix:
     include:
         - os: linux
@@ -20,4 +23,7 @@ install:
   - pip install --pre --no-index --find-links dist/ ad3
 
 script:
-  - mkdir empty_folder; cd empty_folder; pytest -vs --pyargs ad3
+  - echo "Running tests"
+  - mkdir empty_folder; cd empty_folder; pytest -vs --pyargs ad3; cd ..
+  - echo "Running examples"
+  - for f in examples/python/*.py; do echo $f; python $f; done

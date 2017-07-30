@@ -89,9 +89,8 @@ for i in range(1, num_nodes):
 
 if upper_bound >= 0 or lower_bound >= 0:
     binary_vars = [var.get_state(0) for var in multi_variables]
-    negated = [False for _ in binary_vars]
     # Budget factor for upper bound.
-    pairwise_fg.create_factor_budget(binary_vars, negated, upper_bound)
+    pairwise_fg.create_factor_budget(binary_vars, budget=upper_bound)
     num_factors += 1
 
     # Print factor to string.
@@ -102,9 +101,9 @@ if upper_bound >= 0 or lower_bound >= 0:
     description += '\n'
 
     # Budget factor for lower bound.
-    negated = [True for _ in binary_vars]
-    pairwise_fg.create_factor_budget(binary_vars, negated,
-                                     num_nodes - lower_bound)
+    pairwise_fg.create_factor_budget(binary_vars,
+                                     budget=num_nodes - lower_bound,
+                                     negated=[True for _ in binary_vars])
     num_factors += 1
 
     # Print factor to string.

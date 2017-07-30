@@ -34,9 +34,8 @@ def solve_lp_knapsack_ad3(scores, costs, budget):
         binary_variable.set_log_potential(scores[i])
         binary_variables.append(binary_variable)
 
-    negated = [False] * len(binary_variables)
-    factor_graph.create_factor_knapsack(binary_variables, negated, costs,
-                                        budget)
+    factor_graph.create_factor_knapsack(binary_variables, costs=costs,
+                                        budget=budget)
 
     # Run AD3.
     _, posteriors, _, _ = factor_graph.solve()

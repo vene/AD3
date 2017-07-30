@@ -60,11 +60,10 @@ if upper_bound >= 0 or lower_bound >= 0:
     variables = [var.get_state(counting_state)
                  for var, flag in zip(multi_variables, counts_for_budget)
                  if flag]
-    negated = [False for _ in variables]
-    pairwise_fg.create_factor_budget(variables, negated, upper_bound)
-    negated = [True for _ in variables]
-    pairwise_fg.create_factor_budget(variables, negated,
-                                     len(variables) - lower_bound)
+    pairwise_fg.create_factor_budget(variables, budget=upper_bound)
+    pairwise_fg.create_factor_budget(variables,
+                                     budget=len(variables) - lower_bound,
+                                     negated=[True for _ in variables])
 
 # Run AD3.
 value, posteriors, _, _ = pairwise_fg.solve(branch_and_bound=True)
