@@ -140,13 +140,13 @@ def test_logic_validate():
     assert 'unknown' in str(e.value).lower()
 
     with pytest.raises(ValueError):
-        graph.create_factor_logic('OR', variables, p_negated=[True])
+        graph.create_factor_logic('OR', variables, negated=[True])
 
     with pytest.raises(ValueError):
-        graph.create_factor_logic('OR', variables, p_negated=[True] * 10)
+        graph.create_factor_logic('OR', variables, negated=[True] * 10)
 
     with pytest.raises(TypeError):
-        graph.create_factor_logic('OR', variables, p_negated=42)
+        graph.create_factor_logic('OR', variables, negated=42)
 
 
 def test_logic_negate():

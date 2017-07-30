@@ -1,7 +1,6 @@
 2017-07-31 AD3 2.1.0 vlad@vene.ro
-  Added some functionality and robustness to the Python wrapper.
-
-  * Factor graphs now have verbosity=0 by default (in CPP as well.) 
+  Added some functionality and robustness to the Python wrapper:
+  * Factor graphs now have verbosity=0 by default (in CPP as well.)
   * Add `PFactorGraph.solve` unified API for setting solver settings.
   * Make `PMultiVariable` objects friendlier with len, get/setitem,
     as well as `set_log_potentials` with a numpy array instead of a loop.
@@ -10,7 +9,7 @@
   * `create_factor_*` can now take `p_negated=None` for simplicity.
   * More examples and test coverage, with Python 3 support.
 
-  As of this release, AD3 is released on pypi as binary wheels, simplifying
+  As of this release, AD3 is distibuted on pypi as binary wheels, simplifying
   the installation process.
 
 2013-03-22 AD3 2.0.2 afm@cs.cmu.edu

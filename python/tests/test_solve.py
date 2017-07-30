@@ -32,4 +32,4 @@ def test_solve():
     val_lowtol_bb, _, _, status_lowtol_bb = graph.solve(tol=0.3,
                                                         branch_and_bound=True)
     assert status_lowtol_bb == 'integral'
-    assert val_lowtol_bb == val
+    assert (val_lowtol_bb - val) ** 2 < 1e-8
