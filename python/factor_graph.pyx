@@ -25,6 +25,10 @@ cdef extern from "../ad3/Factor.h" namespace "AD3":
                       vector[double] *variable_posteriors,
                       vector[double] *additional_posteriors,
                       double *value)
+        void SolveQP(vector[double] variable_log_potentials,
+                     vector[double] additional_log_potentials,
+                     vector[double] *variable_posteriors,
+                     vector[double] *additional_posteriors)
 
 
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
@@ -292,6 +296,16 @@ cdef class PFactor:
                               &value)
 
         return value, posteriors, additional_posteriors
+
+    def solve_qp(self, vector[double] variable_log_potentials,
+                 vector[double] additional_log_potentials):
+        cdef vector[double] posteriors
+        cdef vector[double] additional_posteriors
+        self.thisptr.SolveQP(variable_log_potentials,
+                             additional_log_potentials,
+                             &posteriors,
+                             &additional_posteriors)
+        return posteriors, additional_posteriors
 
 
 cdef class PFactorSequence(PFactor):
@@ -591,24 +605,30 @@ cdef class PFactorGraph:
         _binary_vars_to_vector(p_variables, variables)
         _validate_negated(negated, negated_, variables.size())
 
+        cdef Factor* f
+
         if factor_type == 'XOR':
-            self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)
         elif factor_type == 'XOROUT':
-            self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)
         elif factor_type == 'ATMOSTONE':
-            self.thisptr.CreateFactorAtMostOne(variables, negated_,
+            f = self.thisptr.CreateFactorAtMostOne(variables, negated_,
                                                owned_by_graph)
         elif factor_type == 'OR':
-            self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)
         elif factor_type == 'OROUT':
-            self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)
         elif factor_type == 'ANDOUT':
-            self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)
         elif factor_type == 'IMPLY':
-            self.thisptr.CreateFactorIMPLY(variables, negated_, owned_by_graph)
+            f = self.thisptr.CreateFactorIMPLY(variables, negated_, owned_by_graph)
         else:
             raise NotImplementedError(
                 'Unknown factor type: {}'.format(factor_type))
+
+        cdef PFactor pf = PFactor(allocate=False)
+        pf.thisptr = f
+        return pf
 
     def create_factor_pair(self,
                            list p_variables,
