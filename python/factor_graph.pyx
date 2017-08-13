@@ -31,6 +31,13 @@ cdef extern from "../ad3/Factor.h" namespace "AD3":
                      vector[double] *additional_posteriors)
 
 
+cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
+    cdef cppclass GenericFactor:
+        void GetSolverState(vector[vector[int]]* active_set,
+                            vector[double]* distribution,
+                            vector[double]* inverse_A)
+
+
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
     cdef cppclass MultiVariable:
         int GetNumStates()
@@ -299,13 +306,25 @@ cdef class PFactor:
 
     def solve_qp(self, vector[double] variable_log_potentials,
                  vector[double] additional_log_potentials):
+        cdef GenericFactor* gf
         cdef vector[double] posteriors
         cdef vector[double] additional_posteriors
+        cdef vector[vector[int]] active_set
+        cdef vector[double] distribution
+        cdef vector[double] inverse_A
+
         self.thisptr.SolveQP(variable_log_potentials,
                              additional_log_potentials,
                              &posteriors,
                              &additional_posteriors)
-        return posteriors, additional_posteriors
+
+        try:
+            gf = <GenericFactor*?> self.thisptr
+            gf.GetSolverState(&active_set, &distribution, &inverse_A)
+        except TypeError:
+            pass
+
+        return posteriors, additional_posteriors, active_set, distribution, inverse_A
 
 
 cdef class PFactorSequence(PFactor):

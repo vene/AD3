@@ -149,12 +149,16 @@ class GenericFactor : public Factor {
   }
 
   // Solve the QP (local subproblem in the AD3 algorithm).
-  // By default, used the active set method. 
+  // By default, used the active set method.
   // The user-defined factor may override this.
   virtual void SolveQP(const vector<double> &variable_log_potentials,
                        const vector<double> &additional_log_potentials,
                        vector<double> *variable_posteriors,
                        vector<double> *additional_posteriors);
+
+  void GetSolverState(vector<vector<int> > *active_set,
+                      vector<double> *distribution,
+                      vector<double> *inverse_A);
 
  protected:
   vector<Configuration> active_set_;
