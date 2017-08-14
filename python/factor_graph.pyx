@@ -306,28 +306,40 @@ cdef class PFactor:
 
     def solve_qp(self, vector[double] variable_log_potentials,
                  vector[double] additional_log_potentials):
-        cdef GenericFactor* gf
         cdef vector[double] posteriors
         cdef vector[double] additional_posteriors
-        cdef vector[vector[int]] active_set
-        cdef vector[double] distribution
-        cdef vector[double] inverse_A
 
         self.thisptr.SolveQP(variable_log_potentials,
                              additional_log_potentials,
                              &posteriors,
                              &additional_posteriors)
 
-        try:
-            gf = <GenericFactor*?> self.thisptr
-            gf.GetSolverState(&active_set, &distribution, &inverse_A)
-        except TypeError:
-            pass
-
-        return posteriors, additional_posteriors, active_set, distribution, inverse_A
+        return (posteriors, additional_posteriors, None, None, None)
 
 
-cdef class PFactorSequence(PFactor):
+cdef class PGenericFactor(PFactor):
+    """Factor which uses the active set algorithm to solve its QP."""
+
+    def solve_qp(self, vector[double] variable_log_potentials,
+                 vector[double] additional_log_potentials):
+        cdef GenericFactor* gf
+        cdef vector[vector[int]] active_set
+        cdef vector[double] distribution
+        cdef vector[double] inverse_A
+
+        (posteriors,
+         additional_posteriors,
+         _, _, _) = super(PGenericFactor, self).solve_qp(
+            variable_log_potentials, additional_log_potentials)
+
+        gf = <GenericFactor*?> self.thisptr
+        gf.GetSolverState(&active_set, &distribution, &inverse_A)
+
+        return (posteriors, additional_posteriors, active_set, distribution,
+                inverse_A)
+
+
+cdef class PFactorSequence(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -341,7 +353,7 @@ cdef class PFactorSequence(PFactor):
         (<FactorSequence*>self.thisptr).Initialize(num_states)
 
 
-cdef class PFactorSequenceCompressor(PFactor):
+cdef class PFactorSequenceCompressor(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -358,7 +370,7 @@ cdef class PFactorSequenceCompressor(PFactor):
                                                              right_positions)
 
 
-cdef class PFactorCompressionBudget(PFactor):
+cdef class PFactorCompressionBudget(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -379,7 +391,7 @@ cdef class PFactorCompressionBudget(PFactor):
                                                             bigram_positions)
 
 
-cdef class PFactorBinaryTree(PFactor):
+cdef class PFactorBinaryTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -393,7 +405,7 @@ cdef class PFactorBinaryTree(PFactor):
         (<FactorBinaryTree*>self.thisptr).Initialize(parents)
 
 
-cdef class PFactorBinaryTreeCounts(PFactor):
+cdef class PFactorBinaryTreeCounts(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -427,7 +439,7 @@ cdef class PFactorBinaryTreeCounts(PFactor):
                 parents, counts_for_budget)
 
 
-cdef class PFactorGeneralTree(PFactor):
+cdef class PFactorGeneralTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -441,7 +453,7 @@ cdef class PFactorGeneralTree(PFactor):
         (<FactorGeneralTree*>self.thisptr).Initialize(parents, num_states)
 
 
-cdef class PFactorGeneralTreeCounts(PFactor):
+cdef class PFactorGeneralTreeCounts(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -456,7 +468,7 @@ cdef class PFactorGeneralTreeCounts(PFactor):
                                                             num_states)
 
 
-cdef class PFactorTree(PFactor):
+cdef class PFactorTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
