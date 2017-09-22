@@ -37,6 +37,8 @@ cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
                             vector[double]* distribution,
                             vector[double]* inverse_A)
 
+    ctypedef void *Configuration
+
 
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
     cdef cppclass MultiVariable:
@@ -171,6 +173,15 @@ cdef extern from "../examples/cpp/parsing/FactorTree.h" namespace "AD3":
         FactorTree()
         void Initialize(int, vector[Arc *])
         int RunCLE(vector[double]&, vector[int] *v, double *d)
+
+
+cdef extern from "../examples/cpp/parsing/FactorHeadAutomaton.h" namespace "AD3":
+    cdef cppclass Sibling:
+        Sibling(int, int, int)
+
+    cdef cppclass FactorHeadAutomaton(Factor):
+        FactorHeadAutomaton()
+        void Initialize(int, vector[Sibling *])
 
 
 # wrap them into python extension types
@@ -466,6 +477,39 @@ cdef class PFactorGeneralTreeCounts(PGenericFactor):
     def initialize(self, vector[int] parents, vector[int] num_states):
         (<FactorGeneralTreeCounts*>self.thisptr).Initialize(parents,
                                                             num_states)
+
+
+cdef class PFactorHeadAutomaton(PGenericFactor):
+    def __cinit__(self, allocate=True):
+        self.allocate = allocate
+        if allocate:
+           self.thisptr = new FactorHeadAutomaton()
+
+    def __dealloc__(self):
+        if self.allocate:
+            del self.thisptr
+
+    def initialize(self, int length, list siblings):
+        # length = max(s - h) for (h, m, s) in siblings I think
+
+        cdef vector[Sibling *] siblings_v
+
+        cdef tuple sibling
+        for sibling in siblings:
+            siblings_v.push_back(new Sibling(sibling[0],
+                                             sibling[1],
+                                             sibling[2]))
+
+        if siblings_v.size() != length * (1 + length) / 2:
+            raise ValueError("wrong length?")
+
+        if length != self.thisptr.Degree() + 1:
+            raise ValueError("Number of variables doesn't match")
+
+        (<FactorHeadAutomaton*>self.thisptr).Initialize(length, siblings_v)
+
+        for sibp in siblings_v:
+            del sibp
 
 
 cdef class PFactorTree(PGenericFactor):
