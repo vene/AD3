@@ -10,7 +10,7 @@ namespace AD3 {
     typedef tuple<int, int, bool> Segment; // tie(start, end, tag)
     typedef pair<int, bool> Backptr;  // j, tag;
 
-    class FactorBinarySegmentation : public GenericFactor {
+    class FactorBinarySegmentation2 : public GenericFactor {
 
         protected:
 
@@ -29,18 +29,14 @@ namespace AD3 {
                 return 0;
 
             // cout << "SegmentScore(" << start << ", " << end << ")=";
-
-            double res = additional_log_potentials[index_segment_[start][end]];
-            for (int i = start; i <= end; ++i)
-                res += variable_log_potentials[i];
-
+            double res = variable_log_potentials[index_segment_[start][end]];
             // cout << res << endl;
             return res;
         }
 
         public:
-        FactorBinarySegmentation () {}
-        virtual ~FactorBinarySegmentation() { ClearActiveSet(); }
+        FactorBinarySegmentation2 () {}
+        virtual ~FactorBinarySegmentation2() { ClearActiveSet(); }
 
         void Evaluate(const vector<double> &variable_log_potentials,
                       const vector<double> &additional_log_potentials,
@@ -154,20 +150,16 @@ namespace AD3 {
                 if (!tag)
                     continue;
 
-                (*additional_posteriors)[index_segment_[start][end]] += weight;
-                for (int i = start; i <= end; ++i)
-                    (*variable_posteriors)[i] += weight;
+                (*variable_posteriors)[index_segment_[start][end]] += weight;
             }
         }
 
         int CountCommonValues(const Configuration &configuration1,
                               const Configuration &configuration2) {
             vector<double> posteriors;
-            vector<double> additionals;
-            posteriors.assign(length_, 0);
-            additionals.reserve(length_ * (length_ + 1) / 2);
-            UpdateMarginalsFromConfiguration(configuration1, 1, &posteriors, &additionals);
-            UpdateMarginalsFromConfiguration(configuration2, 1, &posteriors, &additionals);
+            posteriors.assign(length_ * (length_ + 1) / 2, 0);
+            UpdateMarginalsFromConfiguration(configuration1, 1, &posteriors, NULL);
+            UpdateMarginalsFromConfiguration(configuration2, 1, &posteriors, NULL);
 
             int count = 0;
             for (int val : posteriors)
@@ -215,6 +207,8 @@ namespace AD3 {
                     index += 1;
                 }
             }
+            n_segments_ = index;
+            cout << "n segments" << n_segments_ << endl;
         }
 
         vector<Configuration> GetQPActiveSet() const { return active_set_; }
@@ -224,6 +218,7 @@ namespace AD3 {
         private:
         int length_;
         vector<vector<int> > index_segment_;
+        int n_segments_;
 
     };
 } // namespace AD3

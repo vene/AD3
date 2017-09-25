@@ -7,27 +7,27 @@ int main(int argc, char **argv) {
 
     int n = 5;
 
-    // vector<double> unaries = {-.01, .02, .04, .08, -.16};
-    vector<double> unaries = {0, 0, 0, 0, 0};
+    vector<double> unaries;
     vector<double> additionals;
+
     for (int j = 0; j < n; ++j) {
         for (int i = j; i < n; ++i) {
             if (i == 0 && j == 0)
-                additionals.push_back(-.01);
+                unaries.push_back(-.01);
             else if (i == 1 && j == 1)
-                additionals.push_back(-.02);
+                unaries.push_back(-.02);
             else if (i == 2 && j == 2)
-                additionals.push_back(.4);
+                unaries.push_back(.4);
             else if (i == 3 && j == 3)
-                additionals.push_back(.4);
+                unaries.push_back(.4);
             else if (i == 4 && j == 4)
-                additionals.push_back(-.16);
+                unaries.push_back(-.16);
             else if (i == 3 && j == 2)
-                additionals.push_back(1);
+                unaries.push_back(1);
             //else if (i == 1 && j == 0)
-            //    additionals.push_back(0.8);
+            //    unaries.push_back(0.8);
             else
-                additionals.push_back(0);
+                unaries.push_back(0);
         }
     }
     cout << endl;
@@ -74,8 +74,6 @@ int main(int argc, char **argv) {
 
     cout << "Solving MAP" << endl;
     vector<double> unary_post, additional_post;
-    // unary_post.resize(n);
-    //additional_post.resize(additionals.size());
     f->SolveMAP(unaries, additionals, &unary_post, &additional_post, &value);
     for (const auto x: unary_post)
         cout << x << " ";
@@ -86,12 +84,15 @@ int main(int argc, char **argv) {
 
     cout << "Solving QP" << endl;
     FactorGraph g;
-    vector<BinaryVariable*> binary_vars(n);
-    for (int i = 0; i < n; ++i)
-        binary_vars[i] = g.CreateBinaryVariable();
+    vector<BinaryVariable*> binary_vars;
+
+    for (int j = 0; j < n; ++j)
+        for (int i = j; i < n; ++i)
+            binary_vars.push_back(g.CreateBinaryVariable());
+
     g.DeclareFactor(f, binary_vars, true);
     fbs->Initialize(n);
-    f->SetAdditionalLogPotentials(additionals);
+    // f->SetAdditionalLogPotentials(additionals);
     f->SolveQP(unaries, additionals, &unary_post, &additional_post);
     for (const auto x: unary_post)
         cout << x << " ";
@@ -103,6 +104,7 @@ int main(int argc, char **argv) {
     vector<Configuration> active_set = fbs->GetQPActiveSet();
     vector<double> distribution = fbs->GetQPDistribution();
     vector<double> inverse_a = fbs->GetQPInvA();
+
     int start, end;
     bool tag;
     for (int i = 0; i < distribution.size(); ++i) {
