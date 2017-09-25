@@ -103,12 +103,14 @@ namespace AD3 {
                     }
                 }
             }
+            /*
             for (int i = 0; i <= length_; ++i) {
                 cout << i << "  ";
                 for (auto const& curr_tag: tags)
                     cout << values[curr_tag][i] << " ";
                 cout << endl;
             }
+            */
 
             // backtrack: first find best value
             bool best_tag = false;
@@ -140,13 +142,23 @@ namespace AD3 {
                 vector<double> *variable_posteriors,
                 vector<double> *additional_posteriors) {
 
-            vector<Segment>* segments = static_cast<vector<Segment>*>(configuration);
-            for (auto const& segment: segments) {
-                if (segment.tag()) {
+            const vector<Segment> *segments = static_cast<vector<Segment>*>(configuration);
+            for (auto const& s: *segments) {
+                if (s.tag()) {
+                    /* this would be 1-1 correspondence with marginals
                     if (segment.start( )== segment.end())
                         (*variable_posteriors)[segment.start()] += weight;
                     else:
                         (*additional_posteriors)[segment.start()][segment.end()] += weight;
+                    */
+
+                    /* but really, here is what I would like */
+                    if (s.start() < s.end())
+                        (*additional_posteriors)[index_segment_[s.start()][s.end()]] += weight;
+                    for (int i = s.start(); i <= s.end(); ++i)
+                        (*variable_posteriors)[i] += weight;
+
+                    /* is this OK? */
                 }
             }
         }
