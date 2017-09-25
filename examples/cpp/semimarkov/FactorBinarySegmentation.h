@@ -6,31 +6,13 @@
 
 namespace AD3 {
 
-    class Segment {
-        public:
-        Segment() {}
-        Segment(int start, int end, bool tag) : start_(start), end_(end), tag_(tag) {}
-        ~Segment() {}
-
-        int start() const {return start_;}
-        int end() const {return end_;}
-        bool tag() const {return tag_;}
-        bool operator==(Segment other) const {
-            return (start_ == other.start() &&
-                    end_ == other.end() &&
-                    tag_ == other.tag());
-        }
-
-        private:
-        int start_;
-        int end_;
-        bool tag_;
-    };
+    typedef tuple<int, int, bool> Segment; // tie(start, end, tag)
+    typedef pair<int, bool> Backptr;  // j, tag;
 
     class FactorBinarySegmentation : public GenericFactor {
 
         protected:
-        double SegmentScore(int j, int i, bool curr_tag, bool prev_tag,
+        double SegmentScore(int start, int end, bool curr_tag, bool prev_tag,
                             const vector<double> &variable_log_potentials,
                             const vector<double> &additional_log_potentials) {
 
@@ -38,10 +20,10 @@ namespace AD3 {
                 return 0;
 
             double res;
-            if (j == i)
-                res = variable_log_potentials[i];
+            if (start == end)
+                res = variable_log_potentials[end];
             else
-                res = additional_log_potentials[index_segment_[j][i]];
+                res = additional_log_potentials[index_segment_[start][end]];
             return res;
         }
 
@@ -58,11 +40,15 @@ namespace AD3 {
             *value = 0;
 
             bool prev_tag = false;
-            for (auto const& s: *segments) {
-                (*value) += SegmentScore(s.start(), s.end(), s.tag(), prev_tag,
+            bool curr_tag;
+            int start, end;
+
+            for (auto const& segment: *segments) {
+                tie(start, end, curr_tag) = segment;
+                (*value) += SegmentScore(start, end, curr_tag, prev_tag,
                                          variable_log_potentials,
                                          additional_log_potentials);
-                prev_tag = s.tag();
+                prev_tag = curr_tag;
             }
         }
 
@@ -73,7 +59,7 @@ namespace AD3 {
 
             vector<bool> tags = { false, true };
             vector<vector<double> > values(2);
-            vector<vector<pair<int, bool> > > backptr(2);
+            vector<vector<Backptr> > backptr(2);
 
             // recursion initial conditions
             for (auto const& tag: tags) {
@@ -81,7 +67,7 @@ namespace AD3 {
                 backptr[tag].resize(length_ + 1);
 
                 values[tag][0] = 0;
-                backptr[tag][0] = make_pair<int, bool>(-1, false);
+                backptr[tag][0] = Backptr(-1, false);
             }
 
             double val;
@@ -97,20 +83,12 @@ namespace AD3 {
                                                additional_log_potentials);
                             if (val > values[curr_tag][i]) {
                                 values[curr_tag][i] = val;
-                                backptr[curr_tag][i] = pair<int, bool>(j, prev_tag);
+                                backptr[curr_tag][i] = Backptr(j, prev_tag);
                             }
                         }
                     }
                 }
             }
-            /*
-            for (int i = 0; i <= length_; ++i) {
-                cout << i << "  ";
-                for (auto const& curr_tag: tags)
-                    cout << values[curr_tag][i] << " ";
-                cout << endl;
-            }
-            */
 
             // backtrack: first find best value
             bool best_tag = false;
@@ -123,15 +101,18 @@ namespace AD3 {
             }
 
             // then, trace back the steps
+            int start;
             int end = length_;
-            pair<int, bool> ptr;
-            vector<Segment>* cfg_vec = static_cast<vector<Segment>*>(configuration);
+            bool prev_best_tag;
+
+            vector<Segment>* cfg_vec =
+                static_cast<vector<Segment>*>(configuration);
 
             while (end > 0) {
-                ptr = backptr[best_tag][end];
-                cfg_vec->push_back(Segment(ptr.first, end - 1, best_tag));
-                best_tag = ptr.second;
-                end = ptr.first;
+                tie(start, prev_best_tag) = backptr[best_tag][end];
+                cfg_vec->push_back(Segment(start, end - 1, best_tag));
+                end = start;
+                best_tag = prev_best_tag;
             }
 
         }
@@ -142,23 +123,18 @@ namespace AD3 {
                 vector<double> *variable_posteriors,
                 vector<double> *additional_posteriors) {
 
-            const vector<Segment> *segments = static_cast<vector<Segment>*>(configuration);
-            for (auto const& s: *segments) {
-                if (s.tag()) {
-                    /* this would be 1-1 correspondence with marginals
-                    if (segment.start( )== segment.end())
-                        (*variable_posteriors)[segment.start()] += weight;
-                    else:
-                        (*additional_posteriors)[segment.start()][segment.end()] += weight;
-                    */
+            const vector<Segment> *segments =
+                static_cast<vector<Segment>*>(configuration);
 
-                    /* but really, here is what I would like */
-                    if (s.start() < s.end())
-                        (*additional_posteriors)[index_segment_[s.start()][s.end()]] += weight;
-                    for (int i = s.start(); i <= s.end(); ++i)
+            int start, end;
+            bool tag;
+            for (auto const& segment: *segments) {
+                tie(start, end, tag) = segment;
+                if (tag) {
+                    if (start < end)
+                        (*additional_posteriors)[index_segment_[start][end]] += weight;
+                    for (int i = start; i <= end; ++i)
                         (*variable_posteriors)[i] += weight;
-
-                    /* is this OK? */
                 }
             }
         }
@@ -169,11 +145,13 @@ namespace AD3 {
                 static_cast<vector<Segment>* >(configuration1);
             const vector<Segment>* segments2 =
                 static_cast<vector<Segment>* >(configuration2);
+
             int count = 0;
             int j = 0;
             for (int i = 0; i < segments1->size(); ++i) {
                 for (; j < segments2->size(); ++j) {
-                    if ((*segments2)[j].start() >= (*segments1)[i].start())
+
+                    if ((*segments2)[j] >= (*segments1)[i])
                         break;
                 }
                 if (j < segments2->size() &&
