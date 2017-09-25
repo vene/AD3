@@ -10,15 +10,15 @@ namespace AD3 {
     typedef tuple<int, int, bool> Segment; // tie(start, end, tag)
     typedef pair<int, bool> Backptr;  // j, tag;
 
-    class FactorBinarySegmentation2 : public GenericFactor {
+    class FactorBinarySegmentation : public GenericFactor {
 
         protected:
 
         /*
-         * score(j, i, true, false) = span_score(j, i) + sum_k unary_score(k)
+         * score(j, i, true, false) = unary(j, i)
          *
-         * score(j, i, true, true) currently same as score(j, i, true, false).
-         *   todo: add additional span_score_consecutive(j, i)
+         * score(j, i, true, true) = unary(j, i) + consecutive_score(j, i)
+         *   where consecutive_score(j, i) = 0 if j == 0 or additionals[idx]
          *
          * */
         double SegmentScore(int start, int end, bool curr_tag, bool prev_tag,
@@ -28,15 +28,25 @@ namespace AD3 {
             if (!curr_tag)
                 return 0;
 
+            int i;
+
             // cout << "SegmentScore(" << start << ", " << end << ")=";
-            double res = variable_log_potentials[index_segment_[start][end]];
+
+            i = index_segment_[start][end];
+            double res = variable_log_potentials[i];
+
+            if (start > 0 && prev_tag) {
+                i = index_segment_prev_[start][end];
+                res += additional_log_potentials[i];
+            }
+
             // cout << res << endl;
             return res;
         }
 
         public:
-        FactorBinarySegmentation2 () {}
-        virtual ~FactorBinarySegmentation2() { ClearActiveSet(); }
+        FactorBinarySegmentation () {}
+        virtual ~FactorBinarySegmentation() { ClearActiveSet(); }
 
         void Evaluate(const vector<double> &variable_log_potentials,
                       const vector<double> &additional_log_potentials,
@@ -78,10 +88,11 @@ namespace AD3 {
             }
 
             double val;
+            const double INF = std::numeric_limits<double>::infinity();
 
             for (int i = 1; i <= length_; ++i) {
                 for (auto const& curr_tag: tags) {
-                    values[curr_tag][i] = -std::numeric_limits<double>::infinity();
+                    values[curr_tag][i] = -INF;
                     for (int j = 0; j < i; ++j) {
                         for (auto const& prev_tag: tags) {
                             val = values[prev_tag][j] +
@@ -122,15 +133,7 @@ namespace AD3 {
                 end = start;
                 best_tag = prev_best_tag;
             }
-            //reverse(segments->begin(), segments->end());
 
-            bool curr_tag;
-            cout << "RETURNED CONFIG ";
-            for (auto const& segment: *segments) {
-                tie(start, end, curr_tag) = segment;
-                cout << "(" << start << ", " << end << ", " << curr_tag << "), ";
-            }
-            cout << endl;
 
         }
 
@@ -143,26 +146,37 @@ namespace AD3 {
             const vector<Segment> *segments =
                 static_cast<vector<Segment>*>(configuration);
 
-            int start, end;
+            int start, end, i;
             bool tag;
+            bool prev_tag = false;
             for (auto const& segment: *segments) {
                 tie(start, end, tag) = segment;
                 if (!tag)
                     continue;
 
-                (*variable_posteriors)[index_segment_[start][end]] += weight;
+                i = index_segment_[start][end];
+                (*variable_posteriors)[i] += weight;
+
+                if (start > 0 && prev_tag){
+                    i = index_segment_prev_[start][end];
+                    (*additional_posteriors)[i] += weight;
+                }
+
+                prev_tag = tag;
             }
         }
 
         int CountCommonValues(const Configuration &configuration1,
                               const Configuration &configuration2) {
-            vector<double> posteriors;
-            posteriors.assign(length_ * (length_ + 1) / 2, 0);
-            UpdateMarginalsFromConfiguration(configuration1, 1, &posteriors, NULL);
-            UpdateMarginalsFromConfiguration(configuration2, 1, &posteriors, NULL);
+            vector<double> unary, extra;
+            unary.assign(length_ * (length_ + 1) / 2, 0);
+            extra.assign(length_ * (length_ - 1) / 2, 0);
+
+            UpdateMarginalsFromConfiguration(configuration1, 1, &unary, &extra);
+            UpdateMarginalsFromConfiguration(configuration2, 1, &unary, &extra);
 
             int count = 0;
-            for (int val : posteriors)
+            for (int val : unary)
                 if (val > 1)
                     count += 1;
             return count;
@@ -198,17 +212,28 @@ namespace AD3 {
         /* refactor me with maps? */
         void Initialize(int length) {
             length_ = length;
+
+            // index every span in order
             int index = 0;
             index_segment_.resize(length_);
-            for (int j = 0; j < length_; ++j) {
-                index_segment_[j].resize(length_);
-                for (int i = j; i < length; ++i) {
-                    index_segment_[j][i] = index;
+            for (int start = 0; start < length_; ++start) {
+                index_segment_[start].resize(length_);
+                for (int end = start; end < length; ++end) {
+                    index_segment_[start][end] = index;
                     index += 1;
                 }
             }
-            n_segments_ = index;
-            cout << "n segments" << n_segments_ << endl;
+
+            // index every non-initial span
+            index = 0;
+            index_segment_prev_.resize(length_);
+            for (int start = 1; start < length_; ++start) {
+                index_segment_prev_[start].resize(length_);
+                for (int end = start; end < length; ++end) {
+                    index_segment_prev_[start][end] = index;
+                    index += 1;
+                }
+            }
         }
 
         vector<Configuration> GetQPActiveSet() const { return active_set_; }
@@ -218,7 +243,7 @@ namespace AD3 {
         private:
         int length_;
         vector<vector<int> > index_segment_;
-        int n_segments_;
+        vector<vector<int> > index_segment_prev_;
 
     };
 } // namespace AD3

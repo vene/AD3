@@ -24,13 +24,17 @@ int main(int argc, char **argv) {
                 unaries.push_back(-.16);
             else if (i == 3 && j == 2)
                 unaries.push_back(1);
-            //else if (i == 1 && j == 0)
-            //    unaries.push_back(0.8);
             else
                 unaries.push_back(0);
         }
     }
-    cout << endl;
+
+    // additionals: score for consecutive positive spans
+    for (int j = 1; j < n; ++j)
+        for (int i = j; i < n; ++i)
+            // additionals.push_back(0);
+            // additionals.push_back(.3);
+            additionals.push_back(-0.0001);
 
     Factor *f = new FactorBinarySegmentation;
     FactorBinarySegmentation *fbs =
@@ -41,8 +45,9 @@ int main(int argc, char **argv) {
     Configuration cfg = fbs->CreateConfiguration();
     vector<Segment>* cfg_vec = static_cast<vector<Segment>*>(cfg);
     cfg_vec->push_back(Segment(0, 1, false));
-    cfg_vec->push_back(Segment(2, 3, true));
-    cfg_vec->push_back(Segment(4, 4, true));
+    cfg_vec->push_back(Segment(2, 2, true));
+    cfg_vec->push_back(Segment(3, 3, true));
+    cfg_vec->push_back(Segment(4, 4, false));
 
     Configuration cfg2 = fbs->CreateConfiguration();
     cfg_vec = static_cast<vector<Segment>*>(cfg2);
@@ -52,13 +57,18 @@ int main(int argc, char **argv) {
     cfg_vec->push_back(Segment(4, 4, false));
 
     double value;
+    cout << "Evaluating: ";
     fbs->Evaluate(unaries, additionals, cfg, &value);
     cout << value << endl;
+    cout << "Evaluating: ";
     fbs->Evaluate(unaries, additionals, cfg2, &value);
     cout << value << endl;
 
+    cout << "Same config with itself: ";
     cout << fbs->SameConfiguration(cfg, cfg) << endl;
+    cout << "Same config with another: ";
     cout << fbs->SameConfiguration(cfg, cfg2) << endl;
+    cout << "Common values:" << endl;
     cout << fbs->CountCommonValues(cfg, cfg) << endl;
     cout << fbs->CountCommonValues(cfg, cfg2) << endl;
     cout << fbs->CountCommonValues(cfg2, cfg) << endl;
