@@ -2,6 +2,7 @@
 #define FACTOR_BINARY_SEGMENTATION
 
 #include <limits>
+#include <algorithm>
 #include "ad3/GenericFactor.h"
 
 namespace AD3 {
@@ -12,6 +13,14 @@ namespace AD3 {
     class FactorBinarySegmentation : public GenericFactor {
 
         protected:
+
+        /*
+         * score(j, i, true, false) = span_score(j, i) + sum_k unary_score(k)
+         *
+         * score(j, i, true, true) currently same as score(j, i, true, false).
+         *   todo: add additional span_score_consecutive(j, i)
+         *
+         * */
         double SegmentScore(int start, int end, bool curr_tag, bool prev_tag,
                             const vector<double> &variable_log_potentials,
                             const vector<double> &additional_log_potentials) {
@@ -19,11 +28,13 @@ namespace AD3 {
             if (!curr_tag)
                 return 0;
 
-            double res;
-            if (start == end)
-                res = variable_log_potentials[end];
-            else
-                res = additional_log_potentials[index_segment_[start][end]];
+            // cout << "SegmentScore(" << start << ", " << end << ")=";
+
+            double res = additional_log_potentials[index_segment_[start][end]];
+            for (int i = start; i <= end; ++i)
+                res += variable_log_potentials[i];
+
+            // cout << res << endl;
             return res;
         }
 
@@ -105,15 +116,25 @@ namespace AD3 {
             int end = length_;
             bool prev_best_tag;
 
-            vector<Segment>* cfg_vec =
+            vector<Segment>* segments =
                 static_cast<vector<Segment>*>(configuration);
 
             while (end > 0) {
                 tie(start, prev_best_tag) = backptr[best_tag][end];
-                cfg_vec->push_back(Segment(start, end - 1, best_tag));
+                segments->insert(segments->begin(),
+                                 Segment(start, end - 1, best_tag));
                 end = start;
                 best_tag = prev_best_tag;
             }
+            //reverse(segments->begin(), segments->end());
+
+            bool curr_tag;
+            cout << "RETURNED CONFIG ";
+            for (auto const& segment: *segments) {
+                tie(start, end, curr_tag) = segment;
+                cout << "(" << start << ", " << end << ", " << curr_tag << "), ";
+            }
+            cout << endl;
 
         }
 
@@ -130,37 +151,29 @@ namespace AD3 {
             bool tag;
             for (auto const& segment: *segments) {
                 tie(start, end, tag) = segment;
-                if (tag) {
-                    if (start < end)
-                        (*additional_posteriors)[index_segment_[start][end]] += weight;
-                    for (int i = start; i <= end; ++i)
-                        (*variable_posteriors)[i] += weight;
-                }
+                if (!tag)
+                    continue;
+
+                (*additional_posteriors)[index_segment_[start][end]] += weight;
+                for (int i = start; i <= end; ++i)
+                    (*variable_posteriors)[i] += weight;
             }
         }
 
         int CountCommonValues(const Configuration &configuration1,
                               const Configuration &configuration2) {
-            const vector<Segment>* segments1 =
-                static_cast<vector<Segment>* >(configuration1);
-            const vector<Segment>* segments2 =
-                static_cast<vector<Segment>* >(configuration2);
+            vector<double> posteriors;
+            vector<double> additionals;
+            posteriors.assign(length_, 0);
+            additionals.reserve(length_ * (length_ + 1) / 2);
+            UpdateMarginalsFromConfiguration(configuration1, 1, &posteriors, &additionals);
+            UpdateMarginalsFromConfiguration(configuration2, 1, &posteriors, &additionals);
 
             int count = 0;
-            int j = 0;
-            for (int i = 0; i < segments1->size(); ++i) {
-                for (; j < segments2->size(); ++j) {
-
-                    if ((*segments2)[j] >= (*segments1)[i])
-                        break;
-                }
-                if (j < segments2->size() &&
-                        (*segments2)[j] == (*segments1)[i]) {
-                    ++count;
-                    ++j;
-                }
-            }
-        return count;
+            for (int val : posteriors)
+                if (val > 1)
+                    count += 1;
+            return count;
         }
 
         bool SameConfiguration(const Configuration &configuration1,
@@ -190,18 +203,23 @@ namespace AD3 {
             return static_cast<Configuration>(config);
         }
 
+        /* refactor me with maps? */
         void Initialize(int length) {
             length_ = length;
             int index = 0;
-            index_segment_.resize(length_ - 1);
-            for (int j = 0; j < length_ - 1; ++j) {
-                index_segment_[j].resize(length_ - j - 1);
-                for (int i = j + 1; i < length; ++i) {
+            index_segment_.resize(length_);
+            for (int j = 0; j < length_; ++j) {
+                index_segment_[j].resize(length_);
+                for (int i = j; i < length; ++i) {
                     index_segment_[j][i] = index;
                     index += 1;
                 }
             }
         }
+
+        vector<Configuration> GetQPActiveSet() const { return active_set_; }
+        vector<double> GetQPDistribution() const { return distribution_; }
+        vector<double> GetQPInvA() const { return inverse_A_; }
 
         private:
         int length_;

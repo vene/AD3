@@ -7,16 +7,30 @@ int main(int argc, char **argv) {
 
     int n = 5;
 
-    vector<double> unaries = {-.01, .02, .04, .08, -.16};
+    // vector<double> unaries = {-.01, .02, .04, .08, -.16};
+    vector<double> unaries = {0, 0, 0, 0, 0};
     vector<double> additionals;
-    for (int j = 0; j < n - 1; ++j) {
-        for (int i = j + 1; i < n; ++i) {
-            if (i == 3 && j == 2)
-                additionals.push_back(.32);
+    for (int j = 0; j < n; ++j) {
+        for (int i = j; i < n; ++i) {
+            if (i == 0 && j == 0)
+                additionals.push_back(-.01);
+            else if (i == 1 && j == 1)
+                additionals.push_back(-.02);
+            else if (i == 2 && j == 2)
+                additionals.push_back(.4);
+            else if (i == 3 && j == 3)
+                additionals.push_back(.4);
+            else if (i == 4 && j == 4)
+                additionals.push_back(-.16);
+            else if (i == 3 && j == 2)
+                additionals.push_back(1);
+            else if (i == 1 && j == 0)
+                additionals.push_back(0.8);
             else
                 additionals.push_back(0);
         }
     }
+    cout << endl;
 
     Factor *f = new FactorBinarySegmentation;
     FactorBinarySegmentation *fbs =
@@ -42,6 +56,7 @@ int main(int argc, char **argv) {
     cout << value << endl;
     fbs->Evaluate(unaries, additionals, cfg2, &value);
     cout << value << endl;
+
     cout << fbs->SameConfiguration(cfg, cfg) << endl;
     cout << fbs->SameConfiguration(cfg, cfg2) << endl;
     cout << fbs->CountCommonValues(cfg, cfg) << endl;
@@ -84,4 +99,13 @@ int main(int argc, char **argv) {
     for (const auto x: additional_post)
         cout << x << " ";
     cout << endl;
+
+    vector<Configuration> active_set = fbs->GetQPActiveSet();
+    vector<double> distribution = fbs->GetQPDistribution();
+    vector<double> inverse_a = fbs->GetQPInvA();
+    cout << distribution.size();
+    for (int i = 0; i < distribution.size(); ++i) {
+        cout << "distribution " << distribution[i] << endl;
+    }
+
 }
