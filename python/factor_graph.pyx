@@ -188,10 +188,14 @@ cdef extern from "../examples/cpp/parsing/FactorHeadAutomaton.h" namespace "AD3"
         void Initialize(int, vector[Sibling *])
 
 cdef extern from "../examples/cpp/semimarkov/FactorBinarySegmentation.h" namespace "AD3":
+    cdef struct Segment:
+        int start
+        int end
+        bool tag
+
     cdef cppclass FactorBinarySegmentation(Factor):
         FactorBinarySegmentation()
         void Initialize(int)
-        vector[vector[int]] ConfigToVector(Configuration)
 
 
 # wrap them into python extension types
@@ -582,9 +586,12 @@ cdef class PFactorBinarySegmentation(PGenericFactor):
         (<FactorBinarySegmentation*>self.thisptr).Initialize(length)
 
     cdef cast_configuration(self, Configuration cfg):
-        cdef vector[vector[int]] segment
-        segment = (<FactorBinarySegmentation*>self.thisptr).ConfigToVector(cfg)
-        return segment
+        # cdef Segment segment
+        cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
+        res = [(segment.start, segment.end, segment.tag)
+               for segment in segments]
+
+        return res
 
 
 cdef int _binary_vars_to_vector(

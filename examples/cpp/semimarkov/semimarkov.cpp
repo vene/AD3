@@ -115,14 +115,14 @@ int main(int argc, char **argv) {
     vector<double> distribution = fbs->GetQPDistribution();
     vector<double> inverse_a = fbs->GetQPInvA();
 
-    int start, end;
-    bool tag;
     for (int i = 0; i < distribution.size(); ++i) {
         cout << distribution[i] << ": ";
         cfg_vec = static_cast<vector<Segment>*>(active_set[i]);
         for (auto const& segment: *cfg_vec) {
-            tie(start, end, tag) = segment;
-            cout << "(" << start << ", " << end << ": " << tag << "), ";
+            cout << "("
+                 << segment.start << ", "
+                 << segment.end << ": "
+                 << segment.tag << "), ";
         }
         cout << endl;
     }

@@ -12,7 +12,19 @@ using std::tie;
 
 namespace AD3 {
 
-    typedef tuple<int, int, bool> Segment; // tie(start, end, tag)
+    struct Segment {
+        int start;
+        int end;
+        bool tag;
+
+        Segment() : start(), end(), tag() {}
+        Segment(int s, int e, bool t) : start(s), end(e), tag(t) {}
+    };
+
+    bool operator==(const Segment& x, const Segment& y) {
+        return tie(x.start, x.end, x.tag) == tie(y.start, y.end, y.tag);
+    }
+
     typedef pair<int, bool> Backptr;  // j, tag;
 
     class FactorBinarySegmentation : public GenericFactor {
@@ -62,15 +74,13 @@ namespace AD3 {
             *value = 0;
 
             bool prev_tag = false;
-            bool curr_tag;
-            int start, end;
 
             for (auto const& segment: *segments) {
-                tie(start, end, curr_tag) = segment;
-                (*value) += SegmentScore(start, end, curr_tag, prev_tag,
+                (*value) += SegmentScore(segment.start, segment.end,
+                                         segment.tag, prev_tag,
                                          variable_log_potentials,
                                          additional_log_potentials);
-                prev_tag = curr_tag;
+                prev_tag = segment.tag;
             }
         }
 
@@ -96,10 +106,10 @@ namespace AD3 {
             const double INF = std::numeric_limits<double>::infinity();
 
             for (int i = 1; i <= length_; ++i) {
-                for (auto const& curr_tag: tags) {
+                for (auto const& curr_tag : tags) {
                     values[curr_tag][i] = -INF;
                     for (int j = 0; j < i; ++j) {
-                        for (auto const& prev_tag: tags) {
+                        for (auto const& prev_tag : tags) {
                             val = values[prev_tag][j] +
                                   SegmentScore(j, i - 1, curr_tag, prev_tag,
                                                variable_log_potentials,
@@ -116,7 +126,7 @@ namespace AD3 {
             // backtrack: first find best value
             bool best_tag = false;
             *value = -std::numeric_limits<double>::infinity();
-            for (auto const& curr_tag: tags) {
+            for (auto const& curr_tag : tags) {
                 if (values[curr_tag][length_] > *value) {
                     *value = values[curr_tag][length_];
                     best_tag = curr_tag;
@@ -138,8 +148,6 @@ namespace AD3 {
                 end = start;
                 best_tag = prev_best_tag;
             }
-
-
         }
 
         void UpdateMarginalsFromConfiguration(
@@ -151,31 +159,29 @@ namespace AD3 {
             const vector<Segment> *segments =
                 static_cast<vector<Segment>*>(configuration);
 
-            int start, end, i;
-            bool tag;
+            int i;
             bool prev_tag = false;
             for (auto const& segment: *segments) {
-                tie(start, end, tag) = segment;
-                if (!tag)
+                if (!segment.tag)
                     continue;
 
-                i = index_segment_[start][end];
+                i = index_segment_[segment.start][segment.end];
                 (*variable_posteriors)[i] += weight;
 
-                if (start > 0 && prev_tag){
-                    i = index_segment_prev_[start][end];
+                if (segment.start > 0 && prev_tag){
+                    i = index_segment_prev_[segment.start][segment.end];
                     (*additional_posteriors)[i] += weight;
                 }
 
-                prev_tag = tag;
+                prev_tag = segment.tag;
             }
         }
 
         int CountCommonValues(const Configuration &configuration1,
                               const Configuration &configuration2) {
             vector<double> unary, extra;
-            unary.assign(length_ * (length_ + 1) / 2, 0);
-            extra.assign(length_ * (length_ - 1) / 2, 0);
+            unary.assign((length_ * (length_ + 1)) / 2, 0);
+            extra.assign((length_ * (length_ - 1)) / 2, 0);
 
             UpdateMarginalsFromConfiguration(configuration1, 1, &unary, &extra);
             UpdateMarginalsFromConfiguration(configuration2, 1, &unary, &extra);
@@ -239,26 +245,6 @@ namespace AD3 {
                     index += 1;
                 }
             }
-        }
-
-        vector<vector<int> > ConfigToVector(Configuration configuration) {
-            int start;
-            int end;
-            bool tag;
-            vector<vector<int> > result;
-            vector<int> tmp;
-            vector<Segment>* segments =
-                static_cast<vector<Segment>* >(configuration);
-
-            for (auto const& segment: *segments) {
-                tie(start, end, tag) = segment;
-                tmp = vector<int>();
-                tmp.push_back(start);
-                tmp.push_back(end);
-                tmp.push_back(tag);
-                result.push_back(tmp);
-            }
-            return result;
         }
 
         private:
