@@ -45,6 +45,10 @@ class GenericFactor : public Factor {
   bool IsGeneric() { return true; }
   void SetVerbosity(int verbosity) { verbosity_ = verbosity; }
 
+  vector<Configuration> GetQPActiveSet() const { return active_set_; }
+  vector<double> GetQPDistribution() const { return distribution_; }
+  vector<double> GetQPInvA() const { return inverse_A_; }
+
  protected:
   void ClearActiveSet();
 

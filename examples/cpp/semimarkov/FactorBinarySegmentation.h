@@ -3,7 +3,12 @@
 
 #include <limits>
 #include <algorithm>
+#include <tuple>
 #include "ad3/GenericFactor.h"
+
+using std::tuple;
+using std::pair;
+using std::tie;
 
 namespace AD3 {
 
@@ -236,9 +241,25 @@ namespace AD3 {
             }
         }
 
-        vector<Configuration> GetQPActiveSet() const { return active_set_; }
-        vector<double> GetQPDistribution() const { return distribution_; }
-        vector<double> GetQPInvA() const { return inverse_A_; }
+        vector<vector<int> > ConfigToVector(Configuration configuration) {
+            int start;
+            int end;
+            bool tag;
+            vector<vector<int> > result;
+            vector<int> tmp;
+            vector<Segment>* segments =
+                static_cast<vector<Segment>* >(configuration);
+
+            for (auto const& segment: *segments) {
+                tie(start, end, tag) = segment;
+                tmp = vector<int>();
+                tmp.push_back(start);
+                tmp.push_back(end);
+                tmp.push_back(tag);
+                result.push_back(tmp);
+            }
+            return result;
+        }
 
         private:
         int length_;

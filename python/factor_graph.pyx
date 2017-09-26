@@ -32,12 +32,16 @@ cdef extern from "../ad3/Factor.h" namespace "AD3":
 
 
 cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
+    ctypedef void *Configuration
+
     cdef cppclass GenericFactor:
         void GetSolverState(vector[vector[int]]* active_set,
                             vector[double]* distribution,
                             vector[double]* inverse_A)
 
-    ctypedef void *Configuration
+        vector[Configuration] GetQPActiveSet()
+        vector[double] GetQPDistribution()
+        vector[double] GetQPInvA()
 
 
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
@@ -182,6 +186,12 @@ cdef extern from "../examples/cpp/parsing/FactorHeadAutomaton.h" namespace "AD3"
     cdef cppclass FactorHeadAutomaton(Factor):
         FactorHeadAutomaton()
         void Initialize(int, vector[Sibling *])
+
+cdef extern from "../examples/cpp/semimarkov/FactorBinarySegmentation.h" namespace "AD3":
+    cdef cppclass FactorBinarySegmentation(Factor):
+        FactorBinarySegmentation()
+        void Initialize(int)
+        vector[vector[int]] ConfigToVector(Configuration)
 
 
 # wrap them into python extension types
@@ -331,10 +341,14 @@ cdef class PFactor:
 cdef class PGenericFactor(PFactor):
     """Factor which uses the active set algorithm to solve its QP."""
 
+    cdef cast_configuration(self, Configuration cfg):
+        return (<vector[int]*> cfg)[0]
+
     def solve_qp(self, vector[double] variable_log_potentials,
                  vector[double] additional_log_potentials):
         cdef GenericFactor* gf
         cdef vector[vector[int]] active_set
+        cdef vector[Configuration] active_set_c
         cdef vector[double] distribution
         cdef vector[double] inverse_A
 
@@ -344,9 +358,15 @@ cdef class PGenericFactor(PFactor):
             variable_log_potentials, additional_log_potentials)
 
         gf = <GenericFactor*?> self.thisptr
-        gf.GetSolverState(&active_set, &distribution, &inverse_A)
+        active_set_c = gf.GetQPActiveSet()
+        distribution = gf.GetQPDistribution()
+        inverse_A = gf.GetQPInvA()
 
-        return (posteriors, additional_posteriors, active_set, distribution,
+        active_set_py = [self.cast_configuration(x) for x in active_set_c]
+
+        # gf.GetSolverState(&active_set, &distribution, &inverse_A)
+
+        return (posteriors, additional_posteriors, active_set_py, distribution,
                 inverse_A)
 
 
@@ -547,6 +567,24 @@ cdef class PFactorTree(PGenericFactor):
 
         for arcp in arcs_v:
             del arcp
+
+cdef class PFactorBinarySegmentation(PGenericFactor):
+    def __cinit__(self, allocate=True):
+        self.allocate = allocate
+        if allocate:
+           self.thisptr = new FactorBinarySegmentation()
+
+    def __dealloc__(self):
+        if self.allocate:
+            del self.thisptr
+
+    def initialize(self, int length):
+        (<FactorBinarySegmentation*>self.thisptr).Initialize(length)
+
+    cdef cast_configuration(self, Configuration cfg):
+        cdef vector[vector[int]] segment
+        segment = (<FactorBinarySegmentation*>self.thisptr).ConfigToVector(cfg)
+        return segment
 
 
 cdef int _binary_vars_to_vector(

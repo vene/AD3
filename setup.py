@@ -3,6 +3,16 @@ from setuptools import setup
 from setuptools.command.bdist_egg import bdist_egg
 from setuptools.extension import Extension
 
+AD3_COMPILE_ARGS = [
+    '-std=c++11',
+    '-Wno-sign-compare',
+    '-Wall',
+    '-fPIC',
+    '-O3',
+    '-c',
+    '-fmessage-length=0'
+]
+
 libad3 = ('ad3', {
     'sources': ['ad3/FactorGraph.cpp',
                 'ad3/GenericFactor.cpp',
@@ -12,16 +22,10 @@ libad3 = ('ad3', {
     'include_dirs': ['.',
                      './ad3',
                      './Eigen',
-                     './examples/cpp/parsing'
+                     './examples/cpp/parsing',
+                     './examples/cpp/semimarkov'
                      ],
-    'extra_compile_args': [
-        '-Wno-sign-compare',
-        '-Wall',
-        '-fPIC',
-        '-O3',
-        '-c',
-        '-fmessage-length=0'
-    ],
+    'extra_compile_args': AD3_COMPILE_ARGS
 })
 
 # this is a backport of a workaround for a problem in distutils.
@@ -58,4 +62,5 @@ setup(name='ad3',
                              ["python/factor_graph.cpp"],
                              include_dirs=[".", "ad3"],
                              language="c++",
-                             )])
+                             extra_compile_args=AD3_COMPILE_ARGS)]
+)
