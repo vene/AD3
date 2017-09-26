@@ -49,6 +49,8 @@ class GenericFactor : public Factor {
   vector<double> GetQPDistribution() const { return distribution_; }
   vector<double> GetQPInvA() const { return inverse_A_; }
 
+  void SetQPMaxIter(int it) { num_max_iterations_QP_ = it; }
+
  protected:
   void ClearActiveSet();
 
@@ -159,10 +161,6 @@ class GenericFactor : public Factor {
                        const vector<double> &additional_log_potentials,
                        vector<double> *variable_posteriors,
                        vector<double> *additional_posteriors);
-
-  void GetSolverState(vector<vector<int> > *active_set,
-                      vector<double> *distribution,
-                      vector<double> *inverse_A);
 
  protected:
   vector<Configuration> active_set_;

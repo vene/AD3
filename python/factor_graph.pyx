@@ -35,13 +35,10 @@ cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
     ctypedef void *Configuration
 
     cdef cppclass GenericFactor:
-        void GetSolverState(vector[vector[int]]* active_set,
-                            vector[double]* distribution,
-                            vector[double]* inverse_A)
-
         vector[Configuration] GetQPActiveSet()
         vector[double] GetQPDistribution()
         vector[double] GetQPInvA()
+        void SetQPMaxIter(int)
 
 
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
@@ -330,7 +327,8 @@ cdef class PFactor:
         return value, posteriors, additional_posteriors
 
     def solve_qp(self, vector[double] variable_log_potentials,
-                 vector[double] additional_log_potentials):
+                 vector[double] additional_log_potentials,
+                 int max_iter=10):
         cdef vector[double] posteriors
         cdef vector[double] additional_posteriors
 
@@ -349,26 +347,28 @@ cdef class PGenericFactor(PFactor):
         return (<vector[int]*> cfg)[0]
 
     def solve_qp(self, vector[double] variable_log_potentials,
-                 vector[double] additional_log_potentials):
+                 vector[double] additional_log_potentials,
+                 int max_iter=10):
         cdef GenericFactor* gf
         cdef vector[vector[int]] active_set
         cdef vector[Configuration] active_set_c
         cdef vector[double] distribution
         cdef vector[double] inverse_A
 
+        gf = <GenericFactor*?> self.thisptr
+
+        gf.SetQPMaxIter(max_iter)
+
         (posteriors,
          additional_posteriors,
          _, _, _) = super(PGenericFactor, self).solve_qp(
             variable_log_potentials, additional_log_potentials)
 
-        gf = <GenericFactor*?> self.thisptr
         active_set_c = gf.GetQPActiveSet()
         distribution = gf.GetQPDistribution()
         inverse_A = gf.GetQPInvA()
 
         active_set_py = [self.cast_configuration(x) for x in active_set_c]
-
-        # gf.GetSolverState(&active_set, &distribution, &inverse_A)
 
         return (posteriors, additional_posteriors, active_set_py, distribution,
                 inverse_A)

@@ -616,21 +616,4 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
                                          additional_posteriors);
 }
 
-void GenericFactor::GetSolverState(vector<vector<int> > *active_set,
-                                   vector<double> *distribution,
-                                   vector<double> *inverse_A){
-
-    *distribution = distribution_;
-    *inverse_A = inverse_A_;
-
-    vector<int>* config_ptr;
-    vector<int> config;
-    active_set->reserve(active_set_.size());
-    for (int i = 0; i < active_set_.size(); ++i) {
-      config_ptr = static_cast<vector<int>*>(active_set_[i]);
-      config = *config_ptr;
-      active_set->push_back(config);
-    }
-}
-
 }  // namespace AD3
