@@ -184,6 +184,7 @@ cdef extern from "../examples/cpp/parsing/FactorHeadAutomaton.h" namespace "AD3"
         FactorHeadAutomaton()
         void Initialize(int, vector[Sibling *])
 
+
 cdef extern from "../examples/cpp/semimarkov/FactorBinarySegmentation.h" namespace "AD3":
     cdef struct Segment:
         int start
@@ -193,6 +194,12 @@ cdef extern from "../examples/cpp/semimarkov/FactorBinarySegmentation.h" namespa
     cdef cppclass FactorBinarySegmentation(Factor):
         FactorBinarySegmentation()
         void Initialize(int)
+
+
+cdef extern from "../examples/cpp/matching/FactorMatching.h" namespace "AD3":
+    cdef cppclass FactorMatching(Factor):
+        FactorMatching()
+        void Initialize(int, int)
 
 
 # wrap them into python extension types
@@ -572,6 +579,7 @@ cdef class PFactorTree(PGenericFactor):
         for arcp in arcs_v:
             del arcp
 
+
 cdef class PFactorBinarySegmentation(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
@@ -592,6 +600,20 @@ cdef class PFactorBinarySegmentation(PGenericFactor):
                for segment in segments]
 
         return res
+
+
+cdef class PFactorMatching(PGenericFactor):
+    def __cinit__(self, allocate=True):
+        self.allocate = allocate
+        if allocate:
+            self.thisptr = new FactorMatching()
+
+    def __dealloc(self):
+        if self.allocate:
+            del self.thisptr
+
+    def initialize(self, int rows, int cols):
+        (<FactorMatching*>self.thisptr).Initialize(rows, cols)
 
 
 cdef int _binary_vars_to_vector(
