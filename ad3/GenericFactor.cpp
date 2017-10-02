@@ -428,13 +428,15 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
 
             // Just in case, clean the cache.
             // This may prevent eventual numerical problems in the future.
-            for (int j = 0; j < active_set_.size(); ++j) {
-              if (j == k) continue; // This configuration was deleted already.
-              DeleteConfiguration(active_set_[j]);
+            if (clear_cache_) {
+              for (int j = 0; j < active_set_.size(); ++j) {
+                if (j == k) continue; // This configuration was deleted already.
+                DeleteConfiguration(active_set_[j]);
+              }
+              active_set_.clear();
+              inverse_A_.clear();
+              distribution_.clear();
             }
-            active_set_.clear();
-            inverse_A_.clear();
-            distribution_.clear();
 
             // Return.
             return;

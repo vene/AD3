@@ -33,6 +33,7 @@ class GenericFactor : public Factor {
   GenericFactor() {
     verbosity_ = 2;
     num_max_iterations_QP_ = 10;
+    clear_cache_ = true;
   }
 
   // Note: every class that derives from GenericFactor must
@@ -44,6 +45,7 @@ class GenericFactor : public Factor {
   virtual int type() { return FactorTypes::FACTOR_GENERIC; }
   bool IsGeneric() { return true; }
   void SetVerbosity(int verbosity) { verbosity_ = verbosity; }
+  void SetClearCache(bool val) { clear_cache_ = val; }
 
   vector<Configuration> GetQPActiveSet() const { return active_set_; }
   vector<double> GetQPDistribution() const { return distribution_; }
@@ -168,6 +170,8 @@ class GenericFactor : public Factor {
   vector<double> inverse_A_;
   int num_max_iterations_QP_; // Initialize to 10.
   int verbosity_; // Verbosity level.
+
+  bool clear_cache_;
 };
 
 } // namespace AD3
