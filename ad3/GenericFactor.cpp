@@ -626,9 +626,11 @@ void GenericFactor::GetCorrespondence(vector<double> *variable_m,
     int n_vars = Degree();
     int n_add = GetAdditionalLogPotentials().size();
 
+    /*
     cout << "n_active=" << n_active << endl;
     cout << "n_vars=" << n_vars << endl;
     cout << "n_add=" << n_add << endl;
+    */
 
     variable_m->reserve(n_vars * n_active);
     additional_m->reserve(n_add * n_active);

@@ -2,6 +2,9 @@ from libcpp.vector cimport vector
 from libcpp cimport bool
 
 cimport cython
+from cpython cimport Py_INCREF
+from cython.view cimport array as cvarray
+from cython.view cimport array_cwrapper
 
 # get the classes from the c++ headers
 
@@ -38,6 +41,7 @@ cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
         vector[Configuration] GetQPActiveSet()
         vector[double] GetQPDistribution()
         vector[double] GetQPInvA()
+        void GetCorrespondence(vector[double]*, vector[double]*)
         void SetQPMaxIter(int)
 
 
@@ -344,7 +348,23 @@ cdef class PFactor:
                              &posteriors,
                              &additional_posteriors)
 
-        return (posteriors, additional_posteriors, None, None, None)
+        return posteriors, additional_posteriors, None
+
+
+cdef class ArrayWrapper:
+
+    cdef vector[double] data
+
+    cdef get_array(ArrayWrapper self, tuple shape):
+        if self.data.size() == 0:
+            return None
+        Py_INCREF(self)
+        return array_cwrapper(
+            shape=shape,
+            itemsize=sizeof(double),
+            format="d",
+            mode="c",
+            buf=(<char*> self.data.data()))
 
 
 cdef class PGenericFactor(PFactor):
@@ -355,30 +375,67 @@ cdef class PGenericFactor(PFactor):
 
     def solve_qp(self, vector[double] variable_log_potentials,
                  vector[double] additional_log_potentials,
-                 int max_iter=10):
-        cdef GenericFactor* gf
-        cdef vector[vector[int]] active_set
-        cdef vector[Configuration] active_set_c
-        cdef vector[double] distribution
-        cdef vector[double] inverse_A
+                 int max_iter=10, bool return_array=True):
+
+        cdef:
+            GenericFactor* gf
+            vector[Configuration] active_set_c
+            vector[double] posteriors_, additional_posteriors_
+
+            # below will be converted to cython arrays
+            ArrayWrapper posteriors = ArrayWrapper()
+            ArrayWrapper additional_posteriors = ArrayWrapper()
+            ArrayWrapper distribution = ArrayWrapper()
+            ArrayWrapper inverse_A = ArrayWrapper()
+            ArrayWrapper M = ArrayWrapper()
+            ArrayWrapper Madd = ArrayWrapper()
+
+            cvarray posteriors_arr, additionals_arr
+
 
         gf = <GenericFactor*?> self.thisptr
 
         gf.SetQPMaxIter(max_iter)
 
-        (posteriors,
-         additional_posteriors,
-         _, _, _) = super(PGenericFactor, self).solve_qp(
+        (posteriors_, additional_posteriors_, _) = \
+            super(PGenericFactor, self).solve_qp(
             variable_log_potentials, additional_log_potentials)
 
+        posteriors.data = posteriors_
+        additional_posteriors.data = additional_posteriors_
+
         active_set_c = gf.GetQPActiveSet()
-        distribution = gf.GetQPDistribution()
-        inverse_A = gf.GetQPInvA()
+        distribution.data = gf.GetQPDistribution()
+        inverse_A.data = gf.GetQPInvA()
+        gf.GetCorrespondence(&M.data, &Madd.data)
+
+        cdef int n_active = active_set_c.size()
+        cdef int n_var = posteriors.data.size()
+        cdef int n_add = additional_posteriors.data.size()
 
         active_set_py = [self.cast_configuration(x) for x in active_set_c]
 
-        return (posteriors, additional_posteriors, active_set_py, distribution,
-                inverse_A)
+        if return_array:
+            posteriors_arr = posteriors.get_array((n_var,))
+            additionals_arr = additional_posteriors.get_array((n_add,))
+            solver_data = {
+                'active_set': active_set_py,
+                'distribution': distribution.get_array((n_active,)),
+                'inverse_A': inverse_A.get_array((1 + n_active, 1 + n_active)),
+                'M': M.get_array((n_active, n_var)),
+                'Madd': Madd.get_array((n_active, n_add))
+            }
+            return posteriors_arr, additionals_arr, solver_data
+        else:
+            solver_data = {
+                'active_set': active_set_py,
+                'distribution': distribution.data,
+                'inverse_A': inverse_A.data,
+                'M': M.data,
+                'Madd': Madd.data
+            }
+
+            return posteriors.data, additional_posteriors.data, solver_data
 
 
 cdef class PFactorSequence(PGenericFactor):
