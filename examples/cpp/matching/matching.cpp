@@ -55,6 +55,20 @@ void solve_qp(vector<double> unaries, int n, int m) {
     }
     cout << endl;
 
+    vector<double> M, Madd;
+    fm->GetCorrespondence(&M, &Madd);
+    cout << endl << "M.size=" << M.size();
+    cout << endl << "Madd.size=" << Madd.size() << endl;
+
+    k = 0;
+    for (int j = 0; j < distribution.size(); ++j) {
+        for (int i = 0; i < m * n; ++i)
+            cout << M[k++] << " ";
+        cout << endl;
+    }
+
+
+
 }
 
 int main(int argc, char **argv) {

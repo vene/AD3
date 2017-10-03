@@ -618,4 +618,41 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
                                          additional_posteriors);
 }
 
+/* Get the correspondence between configurations & variable/additionals */
+void GenericFactor::GetCorrespondence(vector<double> *variable_m,
+                                      vector<double> *additional_m) {
+
+    int n_active = active_set_.size();
+    int n_vars = Degree();
+    int n_add = GetAdditionalLogPotentials().size();
+
+    cout << "n_active=" << n_active << endl;
+    cout << "n_vars=" << n_vars << endl;
+    cout << "n_add=" << n_add << endl;
+
+    variable_m->reserve(n_vars * n_active);
+    additional_m->reserve(n_add * n_active);
+
+    vector<double> var_row(n_vars), add_row(n_add);
+
+    for(int i = 0; i < n_active; ++i) {
+
+        var_row.assign(n_vars, 0);
+        add_row.assign(n_add, 0);
+
+        UpdateMarginalsFromConfiguration(active_set_[i],
+                                         1.0,
+                                         &var_row,
+                                         &add_row);
+
+        variable_m->insert(variable_m->end(),
+                           var_row.begin(),
+                           var_row.end());
+
+        additional_m->insert(additional_m->end(),
+                             add_row.begin(),
+                             add_row.end());
+    }
+}
+
 }  // namespace AD3

@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
 
     g.DeclareFactor(f, binary_vars, true);
     fbs->Initialize(n);
-    // f->SetAdditionalLogPotentials(additionals);
+    f->SetAdditionalLogPotentials(additionals);
     f->SolveQP(unaries, additionals, &unary_post, &additional_post);
     for (const auto x: unary_post)
         cout << x << " ";
@@ -124,6 +124,27 @@ int main(int argc, char **argv) {
                  << segment.end << ": "
                  << segment.tag << "), ";
         }
+        cout << endl;
+    }
+
+    vector<double> M, Madd;
+    fbs->GetCorrespondence(&M, &Madd);
+    cout << endl << "M.size=" << M.size();
+    cout << endl << "Madd.size=" << Madd.size() << endl;
+
+    int k = 0;
+    for (int j = 0; j < distribution.size(); ++j) {
+        for (int a = 0; a < n; ++a)
+            for (int b = a; b < n; ++b)
+                cout << M[k++] << " ";
+        cout << endl;
+    }
+    cout << "===" << endl;
+    k = 0;
+    for (int j = 0; j < distribution.size(); ++j) {
+        for (int a = 1; a < n; ++a)
+            for (int b = a; b < n; ++b)
+                cout << Madd[k++] << " ";
         cout << endl;
     }
 

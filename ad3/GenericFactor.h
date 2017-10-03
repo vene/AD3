@@ -45,13 +45,16 @@ class GenericFactor : public Factor {
   virtual int type() { return FactorTypes::FACTOR_GENERIC; }
   bool IsGeneric() { return true; }
   void SetVerbosity(int verbosity) { verbosity_ = verbosity; }
-  void SetClearCache(bool val) { clear_cache_ = val; }
 
+  /* Functions needed for gradient computation */
+  void SetQPMaxIter(int it) { num_max_iterations_QP_ = it; }
+  void SetClearCache(bool val) { clear_cache_ = val; }
   vector<Configuration> GetQPActiveSet() const { return active_set_; }
   vector<double> GetQPDistribution() const { return distribution_; }
   vector<double> GetQPInvA() const { return inverse_A_; }
 
-  void SetQPMaxIter(int it) { num_max_iterations_QP_ = it; }
+  /* Get the correspondence between configurations & variable/additionals */
+  void GetCorrespondence(vector<double> *variable_m, vector<double> *additional_m);
 
  protected:
   void ClearActiveSet();
