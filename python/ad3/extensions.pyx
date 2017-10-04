@@ -97,7 +97,7 @@ cdef extern from "../examples/cpp/matching/FactorMatching.h" namespace "AD3":
 
 
 
-cdef class PFactorSequence(PFactor):
+cdef class PFactorSequence(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -111,7 +111,7 @@ cdef class PFactorSequence(PFactor):
         (<FactorSequence*>self.thisptr).Initialize(num_states)
 
 
-cdef class PFactorSequenceCompressor(PFactor):
+cdef class PFactorSequenceCompressor(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -128,7 +128,7 @@ cdef class PFactorSequenceCompressor(PFactor):
                                                              right_positions)
 
 
-cdef class PFactorCompressionBudget(PFactor):
+cdef class PFactorCompressionBudget(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -149,7 +149,7 @@ cdef class PFactorCompressionBudget(PFactor):
                                                             bigram_positions)
 
 
-cdef class PFactorBinaryTree(PFactor):
+cdef class PFactorBinaryTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -163,7 +163,7 @@ cdef class PFactorBinaryTree(PFactor):
         (<FactorBinaryTree*>self.thisptr).Initialize(parents)
 
 
-cdef class PFactorBinaryTreeCounts(PFactor):
+cdef class PFactorBinaryTreeCounts(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -197,7 +197,7 @@ cdef class PFactorBinaryTreeCounts(PFactor):
                 parents, counts_for_budget)
 
 
-cdef class PFactorGeneralTree(PFactor):
+cdef class PFactorGeneralTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -211,7 +211,7 @@ cdef class PFactorGeneralTree(PFactor):
         (<FactorGeneralTree*>self.thisptr).Initialize(parents, num_states)
 
 
-cdef class PFactorGeneralTreeCounts(PFactor):
+cdef class PFactorGeneralTreeCounts(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:
@@ -226,7 +226,7 @@ cdef class PFactorGeneralTreeCounts(PFactor):
                                                             num_states)
 
 
-cdef class PFactorTree(PFactor):
+cdef class PFactorTree(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
         if allocate:

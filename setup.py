@@ -3,6 +3,9 @@ from setuptools import setup
 from setuptools.command.bdist_egg import bdist_egg
 from setuptools.extension import Extension
 
+from Cython.Build import cythonize
+
+
 AD3_COMPILE_ARGS = [
     '-std=c++11',
     '-Wno-sign-compare',
@@ -62,20 +65,20 @@ setup(name='ad3',
       packages=['ad3', 'ad3.tests'],
       libraries=[libad3],
       cmdclass=cmdclass,
-      ext_modules=[
+      ext_modules=cythonize([
           Extension("ad3.factor_graph",
-                    ["python/ad3/factor_graph.cpp"],
+                    ["python/ad3/factor_graph.pyx"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.base",
-                    ["python/ad3/base.cpp"],
+                    ["python/ad3/base.pyx"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.extensions",
-                    ["python/ad3/extensions.cpp"],
+                    ["python/ad3/extensions.pyx"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
-          ])
+          ]))
