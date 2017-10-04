@@ -441,8 +441,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__python__extensions
-#define __PYX_HAVE_API__python__extensions
+#define __PYX_HAVE__ad3__extensions
+#define __PYX_HAVE_API__ad3__extensions
 #include <vector>
 #include "ios"
 #include "new"
@@ -658,27 +658,27 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "python/extensions.pyx",
-  "python/stringsource",
-  "python/base.pxd",
+  "ad3/extensions.pyx",
+  "ad3/stringsource",
+  "ad3/base.pxd",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_6python_4base_PBinaryVariable;
-struct __pyx_obj_6python_4base_PMultiVariable;
-struct __pyx_obj_6python_4base_PFactor;
-struct __pyx_obj_6python_4base_PGenericFactor;
-struct __pyx_obj_6python_10extensions_PFactorSequence;
-struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor;
-struct __pyx_obj_6python_10extensions_PFactorCompressionBudget;
-struct __pyx_obj_6python_10extensions_PFactorBinaryTree;
-struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts;
-struct __pyx_obj_6python_10extensions_PFactorGeneralTree;
-struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts;
-struct __pyx_obj_6python_10extensions_PFactorTree;
-struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation;
-struct __pyx_obj_6python_10extensions_PFactorMatching;
-struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton;
+struct __pyx_obj_3ad3_4base_PBinaryVariable;
+struct __pyx_obj_3ad3_4base_PMultiVariable;
+struct __pyx_obj_3ad3_4base_PFactor;
+struct __pyx_obj_3ad3_4base_PGenericFactor;
+struct __pyx_obj_3ad3_10extensions_PFactorSequence;
+struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor;
+struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget;
+struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree;
+struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts;
+struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree;
+struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts;
+struct __pyx_obj_3ad3_10extensions_PFactorTree;
+struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation;
+struct __pyx_obj_3ad3_10extensions_PFactorMatching;
+struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton;
 
 /* "base.pxd":122
  * # and the fundamental extension types
@@ -687,7 +687,7 @@ struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton;
  *     cdef BinaryVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PBinaryVariable {
+struct __pyx_obj_3ad3_4base_PBinaryVariable {
   PyObject_HEAD
   AD3::BinaryVariable *thisptr;
   bool allocate;
@@ -701,9 +701,9 @@ struct __pyx_obj_6python_4base_PBinaryVariable {
  *     cdef MultiVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PMultiVariable {
+struct __pyx_obj_3ad3_4base_PMultiVariable {
   PyObject_HEAD
-  struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtab;
+  struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtab;
   AD3::MultiVariable *thisptr;
   bool allocate;
 };
@@ -716,7 +716,7 @@ struct __pyx_obj_6python_4base_PMultiVariable {
  *     cdef Factor* thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PFactor {
+struct __pyx_obj_3ad3_4base_PFactor {
   PyObject_HEAD
   AD3::Factor *thisptr;
   bool allocate;
@@ -730,141 +730,141 @@ struct __pyx_obj_6python_4base_PFactor {
  *     cdef cast_configuration(self, Configuration)
  * 
  */
-struct __pyx_obj_6python_4base_PGenericFactor {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtab;
+struct __pyx_obj_3ad3_4base_PGenericFactor {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtab;
 };
 
 
-/* "python/extensions.pyx":100
+/* "ad3/extensions.pyx":100
  * 
  * 
  * cdef class PFactorSequence(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorSequence {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorSequence {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":114
+/* "ad3/extensions.pyx":114
  * 
  * 
  * cdef class PFactorSequenceCompressor(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":131
+/* "ad3/extensions.pyx":131
  * 
  * 
  * cdef class PFactorCompressionBudget(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorCompressionBudget {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":152
+/* "ad3/extensions.pyx":152
  * 
  * 
  * cdef class PFactorBinaryTree(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorBinaryTree {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":166
+/* "ad3/extensions.pyx":166
  * 
  * 
  * cdef class PFactorBinaryTreeCounts(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":200
+/* "ad3/extensions.pyx":200
  * 
  * 
  * cdef class PFactorGeneralTree(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorGeneralTree {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":214
+/* "ad3/extensions.pyx":214
  * 
  * 
  * cdef class PFactorGeneralTreeCounts(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":229
+/* "ad3/extensions.pyx":229
  * 
  * 
  * cdef class PFactorTree(PFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorTree {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorTree {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":266
+/* "ad3/extensions.pyx":266
  * 
  * 
  * cdef class PFactorBinarySegmentation(PGenericFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation {
-  struct __pyx_obj_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation {
+  struct __pyx_obj_3ad3_4base_PGenericFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":288
+/* "ad3/extensions.pyx":288
  * 
  * 
  * cdef class PFactorMatching(PGenericFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorMatching {
-  struct __pyx_obj_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorMatching {
+  struct __pyx_obj_3ad3_4base_PGenericFactor __pyx_base;
 };
 
 
-/* "python/extensions.pyx":302
+/* "ad3/extensions.pyx":302
  * 
  * 
  * cdef class PFactorHeadAutomaton(PGenericFactor):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  */
-struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton {
-  struct __pyx_obj_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton {
+  struct __pyx_obj_3ad3_4base_PGenericFactor __pyx_base;
 };
 
 
@@ -877,10 +877,10 @@ struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton {
  *     cdef bool allocate
  */
 
-struct __pyx_vtabstruct_6python_4base_PMultiVariable {
-  int (*_get_n_states)(struct __pyx_obj_6python_4base_PMultiVariable *);
+struct __pyx_vtabstruct_3ad3_4base_PMultiVariable {
+  int (*_get_n_states)(struct __pyx_obj_3ad3_4base_PMultiVariable *);
 };
-static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6python_4base_PMultiVariable;
+static struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtabptr_3ad3_4base_PMultiVariable;
 
 
 /* "base.pxd":139
@@ -891,13 +891,13 @@ static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6pyth
  * 
  */
 
-struct __pyx_vtabstruct_6python_4base_PGenericFactor {
-  PyObject *(*cast_configuration)(struct __pyx_obj_6python_4base_PGenericFactor *, AD3::Configuration);
+struct __pyx_vtabstruct_3ad3_4base_PGenericFactor {
+  PyObject *(*cast_configuration)(struct __pyx_obj_3ad3_4base_PGenericFactor *, AD3::Configuration);
 };
-static struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtabptr_6python_4base_PGenericFactor;
+static struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtabptr_3ad3_4base_PGenericFactor;
 
 
-/* "python/extensions.pyx":266
+/* "ad3/extensions.pyx":266
  * 
  * 
  * cdef class PFactorBinarySegmentation(PGenericFactor):             # <<<<<<<<<<<<<<
@@ -905,13 +905,13 @@ static struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtabptr_6pyth
  *         self.allocate = allocate
  */
 
-struct __pyx_vtabstruct_6python_10extensions_PFactorBinarySegmentation {
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_vtabstruct_3ad3_10extensions_PFactorBinarySegmentation {
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor __pyx_base;
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorBinarySegmentation *__pyx_vtabptr_6python_10extensions_PFactorBinarySegmentation;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorBinarySegmentation *__pyx_vtabptr_3ad3_10extensions_PFactorBinarySegmentation;
 
 
-/* "python/extensions.pyx":288
+/* "ad3/extensions.pyx":288
  * 
  * 
  * cdef class PFactorMatching(PGenericFactor):             # <<<<<<<<<<<<<<
@@ -919,13 +919,13 @@ static struct __pyx_vtabstruct_6python_10extensions_PFactorBinarySegmentation *_
  *         self.allocate = allocate
  */
 
-struct __pyx_vtabstruct_6python_10extensions_PFactorMatching {
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_vtabstruct_3ad3_10extensions_PFactorMatching {
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor __pyx_base;
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorMatching *__pyx_vtabptr_6python_10extensions_PFactorMatching;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorMatching *__pyx_vtabptr_3ad3_10extensions_PFactorMatching;
 
 
-/* "python/extensions.pyx":302
+/* "ad3/extensions.pyx":302
  * 
  * 
  * cdef class PFactorHeadAutomaton(PGenericFactor):             # <<<<<<<<<<<<<<
@@ -933,10 +933,10 @@ static struct __pyx_vtabstruct_6python_10extensions_PFactorMatching *__pyx_vtabp
  *         self.allocate = allocate
  */
 
-struct __pyx_vtabstruct_6python_10extensions_PFactorHeadAutomaton {
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor __pyx_base;
+struct __pyx_vtabstruct_3ad3_10extensions_PFactorHeadAutomaton {
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor __pyx_base;
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorHeadAutomaton *__pyx_vtabptr_6python_10extensions_PFactorHeadAutomaton;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorHeadAutomaton *__pyx_vtabptr_3ad3_10extensions_PFactorHeadAutomaton;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -1216,7 +1216,7 @@ static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_configuration(CYTHON_UNUSED struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, AD3::Configuration __pyx_v_cfg); /* proto*/
+static PyObject *__pyx_f_3ad3_10extensions_25PFactorBinarySegmentation_cast_configuration(CYTHON_UNUSED struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, AD3::Configuration __pyx_v_cfg); /* proto*/
 
 /* Module declarations from 'libcpp.vector' */
 
@@ -1224,29 +1224,29 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
 
 /* Module declarations from 'cython' */
 
-/* Module declarations from 'python.base' */
-static PyTypeObject *__pyx_ptype_6python_4base_PBinaryVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PMultiVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PFactor = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PGenericFactor = 0;
+/* Module declarations from 'ad3.base' */
+static PyTypeObject *__pyx_ptype_3ad3_4base_PBinaryVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PMultiVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PFactor = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PGenericFactor = 0;
 
-/* Module declarations from 'python.extensions' */
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorSequence = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorSequenceCompressor = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorCompressionBudget = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorBinaryTree = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorBinaryTreeCounts = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorGeneralTree = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorGeneralTreeCounts = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorTree = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorBinarySegmentation = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorMatching = 0;
-static PyTypeObject *__pyx_ptype_6python_10extensions_PFactorHeadAutomaton = 0;
+/* Module declarations from 'ad3.extensions' */
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorSequence = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorSequenceCompressor = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorCompressionBudget = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorBinaryTree = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorBinaryTreeCounts = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorGeneralTree = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorGeneralTreeCounts = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorTree = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorBinarySegmentation = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorMatching = 0;
+static PyTypeObject *__pyx_ptype_3ad3_10extensions_PFactorHeadAutomaton = 0;
 static std::vector<int>  __pyx_convert_vector_from_py_int(PyObject *); /*proto*/
-#define __Pyx_MODULE_NAME "python.extensions"
-int __pyx_module_is_main_python__extensions = 0;
+#define __Pyx_MODULE_NAME "ad3.extensions"
+int __pyx_module_is_main_ad3__extensions = 0;
 
-/* Implementation of 'python.extensions' */
+/* Implementation of 'ad3.extensions' */
 static PyObject *__pyx_builtin_ValueError;
 static const char __pyx_k_arcs[] = "arcs";
 static const char __pyx_k_cols[] = "cols";
@@ -1298,50 +1298,50 @@ static PyObject *__pyx_n_s_rows;
 static PyObject *__pyx_n_s_siblings;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_kp_s_wrong_length;
-static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_15PFactorSequence_4initialize(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self, std::vector<int>  __pyx_v_num_states); /* proto */
-static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4initialize(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self, int __pyx_v_length, std::vector<int>  __pyx_v_left_positions, std::vector<int>  __pyx_v_right_positions); /* proto */
-static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initialize(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self, int __pyx_v_length, int __pyx_v_budget, PyObject *__pyx_v_pcounts_for_budget, std::vector<int>  __pyx_v_bigram_positions); /* proto */
-static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self, std::vector<int>  __pyx_v_parents); /* proto */
-static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, PyObject *__pyx_v_pcounts_for_budget, PyObject *__pyx_v_phas_count_scores, PyObject *__pyx_v_max_num_bins); /* proto */
-static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states); /* proto */
-static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initialize(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states); /* proto */
-static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_arcs); /* proto */
-static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, int __pyx_v_length); /* proto */
-static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_4initialize(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self, int __pyx_v_rows, int __pyx_v_cols); /* proto */
-static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initialize(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_siblings); /* proto */
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorSequence(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorSequenceCompressor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorCompressionBudget(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinaryTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinaryTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorGeneralTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorGeneralTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinarySegmentation(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorMatching(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorHeadAutomaton(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_3ad3_10extensions_15PFactorSequence___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_15PFactorSequence_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorSequence_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self, std::vector<int>  __pyx_v_num_states); /* proto */
+static int __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self, int __pyx_v_length, std::vector<int>  __pyx_v_left_positions, std::vector<int>  __pyx_v_right_positions); /* proto */
+static int __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self, int __pyx_v_length, int __pyx_v_budget, PyObject *__pyx_v_pcounts_for_budget, std::vector<int>  __pyx_v_bigram_positions); /* proto */
+static int __pyx_pf_3ad3_10extensions_17PFactorBinaryTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_17PFactorBinaryTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_17PFactorBinaryTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self, std::vector<int>  __pyx_v_parents); /* proto */
+static int __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, PyObject *__pyx_v_pcounts_for_budget, PyObject *__pyx_v_phas_count_scores, PyObject *__pyx_v_max_num_bins); /* proto */
+static int __pyx_pf_3ad3_10extensions_18PFactorGeneralTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_18PFactorGeneralTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_18PFactorGeneralTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states); /* proto */
+static int __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states); /* proto */
+static int __pyx_pf_3ad3_10extensions_11PFactorTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_11PFactorTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_11PFactorTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_arcs); /* proto */
+static int __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, int __pyx_v_length); /* proto */
+static int __pyx_pf_3ad3_10extensions_15PFactorMatching___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorMatching_2__dealloc(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorMatching_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self, int __pyx_v_rows, int __pyx_v_cols); /* proto */
+static int __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_siblings); /* proto */
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorSequence(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorSequenceCompressor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorCompressionBudget(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinaryTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinaryTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorGeneralTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorGeneralTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorTree(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinarySegmentation(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorMatching(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorHeadAutomaton(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
@@ -1349,7 +1349,7 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
 
-/* "python/extensions.pyx":101
+/* "ad3/extensions.pyx":101
  * 
  * cdef class PFactorSequence(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -1358,8 +1358,8 @@ static PyObject *__pyx_tuple__6;
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_15PFactorSequence_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_15PFactorSequence_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_15PFactorSequence_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_15PFactorSequence_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -1400,25 +1400,25 @@ static int __pyx_pw_6python_10extensions_15PFactorSequence_1__cinit__(PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 101, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequence.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequence.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(((struct __pyx_obj_6python_10extensions_PFactorSequence *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_15PFactorSequence___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorSequence *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_15PFactorSequence___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":102
+  /* "ad3/extensions.pyx":102
  * cdef class PFactorSequence(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -1428,7 +1428,7 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 102, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":103
+  /* "ad3/extensions.pyx":103
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -1438,7 +1438,7 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 103, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":104
+    /* "ad3/extensions.pyx":104
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorSequence()             # <<<<<<<<<<<<<<
@@ -1447,7 +1447,7 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorSequence();
 
-    /* "python/extensions.pyx":103
+    /* "ad3/extensions.pyx":103
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -1456,7 +1456,7 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
  */
   }
 
-  /* "python/extensions.pyx":101
+  /* "ad3/extensions.pyx":101
  * 
  * cdef class PFactorSequence(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -1468,14 +1468,14 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequence.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequence.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":106
+/* "ad3/extensions.pyx":106
  *            self.thisptr = new FactorSequence()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1484,22 +1484,22 @@ static int __pyx_pf_6python_10extensions_15PFactorSequence___cinit__(struct __py
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_15PFactorSequence_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_15PFactorSequence_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_15PFactorSequence_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_15PFactorSequence_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorSequence *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_15PFactorSequence_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorSequence *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_15PFactorSequence_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":107
+  /* "ad3/extensions.pyx":107
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -1509,7 +1509,7 @@ static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct 
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":108
+    /* "ad3/extensions.pyx":108
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -1518,7 +1518,7 @@ static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct 
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":107
+    /* "ad3/extensions.pyx":107
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -1527,7 +1527,7 @@ static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct 
  */
   }
 
-  /* "python/extensions.pyx":106
+  /* "ad3/extensions.pyx":106
  *            self.thisptr = new FactorSequence()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1539,7 +1539,7 @@ static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct 
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":110
+/* "ad3/extensions.pyx":110
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -1548,8 +1548,8 @@ static void __pyx_pf_6python_10extensions_15PFactorSequence_2__dealloc__(struct 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_15PFactorSequence_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_15PFactorSequence_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states) {
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorSequence_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorSequence_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states) {
   std::vector<int>  __pyx_v_num_states;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -1559,23 +1559,23 @@ static PyObject *__pyx_pw_6python_10extensions_15PFactorSequence_5initialize(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequence.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequence.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_15PFactorSequence_4initialize(((struct __pyx_obj_6python_10extensions_PFactorSequence *)__pyx_v_self), ((std::vector<int> )__pyx_v_num_states));
+  __pyx_r = __pyx_pf_3ad3_10extensions_15PFactorSequence_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorSequence *)__pyx_v_self), ((std::vector<int> )__pyx_v_num_states));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_15PFactorSequence_4initialize(struct __pyx_obj_6python_10extensions_PFactorSequence *__pyx_v_self, std::vector<int>  __pyx_v_num_states) {
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorSequence_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorSequence *__pyx_v_self, std::vector<int>  __pyx_v_num_states) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":111
+  /* "ad3/extensions.pyx":111
  * 
  *     def initialize(self, vector[int] num_states):
  *         (<FactorSequence*>self.thisptr).Initialize(num_states)             # <<<<<<<<<<<<<<
@@ -1584,7 +1584,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorSequence_4initialize(str
  */
   ((AD3::FactorSequence *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_num_states);
 
-  /* "python/extensions.pyx":110
+  /* "ad3/extensions.pyx":110
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -1599,7 +1599,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorSequence_4initialize(str
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":115
+/* "ad3/extensions.pyx":115
  * 
  * cdef class PFactorSequenceCompressor(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -1608,8 +1608,8 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorSequence_4initialize(str
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -1650,25 +1650,25 @@ static int __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_1__cinit__(
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 115, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequenceCompressor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequenceCompressor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(((struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":116
+  /* "ad3/extensions.pyx":116
  * cdef class PFactorSequenceCompressor(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -1678,7 +1678,7 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":117
+  /* "ad3/extensions.pyx":117
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -1688,7 +1688,7 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":118
+    /* "ad3/extensions.pyx":118
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorSequenceCompressor()             # <<<<<<<<<<<<<<
@@ -1697,7 +1697,7 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorSequenceCompressor();
 
-    /* "python/extensions.pyx":117
+    /* "ad3/extensions.pyx":117
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -1706,7 +1706,7 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
  */
   }
 
-  /* "python/extensions.pyx":115
+  /* "ad3/extensions.pyx":115
  * 
  * cdef class PFactorSequenceCompressor(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -1718,14 +1718,14 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequenceCompressor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequenceCompressor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":120
+/* "ad3/extensions.pyx":120
  *            self.thisptr = new FactorSequenceCompressor()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1734,22 +1734,22 @@ static int __pyx_pf_6python_10extensions_25PFactorSequenceCompressor___cinit__(s
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":121
+  /* "ad3/extensions.pyx":121
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -1759,7 +1759,7 @@ static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":122
+    /* "ad3/extensions.pyx":122
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -1768,7 +1768,7 @@ static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":121
+    /* "ad3/extensions.pyx":121
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -1777,7 +1777,7 @@ static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc
  */
   }
 
-  /* "python/extensions.pyx":120
+  /* "ad3/extensions.pyx":120
  *            self.thisptr = new FactorSequenceCompressor()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1789,7 +1789,7 @@ static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":124
+/* "ad3/extensions.pyx":124
  *             del self.thisptr
  * 
  *     def initialize(self, int length, vector[int] left_positions,             # <<<<<<<<<<<<<<
@@ -1798,8 +1798,8 @@ static void __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_2__dealloc
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_25PFactorSequenceCompressor_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_25PFactorSequenceCompressor_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_length;
   std::vector<int>  __pyx_v_left_positions;
   std::vector<int>  __pyx_v_right_positions;
@@ -1853,23 +1853,23 @@ static PyObject *__pyx_pw_6python_10extensions_25PFactorSequenceCompressor_5init
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 124, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorSequenceCompressor.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorSequenceCompressor.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4initialize(((struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *)__pyx_v_self), __pyx_v_length, __pyx_v_left_positions, __pyx_v_right_positions);
+  __pyx_r = __pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *)__pyx_v_self), __pyx_v_length, __pyx_v_left_positions, __pyx_v_right_positions);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4initialize(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor *__pyx_v_self, int __pyx_v_length, std::vector<int>  __pyx_v_left_positions, std::vector<int>  __pyx_v_right_positions) {
+static PyObject *__pyx_pf_3ad3_10extensions_25PFactorSequenceCompressor_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor *__pyx_v_self, int __pyx_v_length, std::vector<int>  __pyx_v_left_positions, std::vector<int>  __pyx_v_right_positions) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":126
+  /* "ad3/extensions.pyx":126
  *     def initialize(self, int length, vector[int] left_positions,
  *                    vector[int] right_positions):
  *         (<FactorSequenceCompressor*>self.thisptr).Initialize(length,             # <<<<<<<<<<<<<<
@@ -1878,7 +1878,7 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4init
  */
   ((AD3::FactorSequenceCompressor *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_length, __pyx_v_left_positions, __pyx_v_right_positions);
 
-  /* "python/extensions.pyx":124
+  /* "ad3/extensions.pyx":124
  *             del self.thisptr
  * 
  *     def initialize(self, int length, vector[int] left_positions,             # <<<<<<<<<<<<<<
@@ -1893,7 +1893,7 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4init
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":132
+/* "ad3/extensions.pyx":132
  * 
  * cdef class PFactorCompressionBudget(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -1902,8 +1902,8 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorSequenceCompressor_4init
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_24PFactorCompressionBudget_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_24PFactorCompressionBudget_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -1944,25 +1944,25 @@ static int __pyx_pw_6python_10extensions_24PFactorCompressionBudget_1__cinit__(P
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 132, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorCompressionBudget.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorCompressionBudget.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(((struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":133
+  /* "ad3/extensions.pyx":133
  * cdef class PFactorCompressionBudget(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -1972,7 +1972,7 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":134
+  /* "ad3/extensions.pyx":134
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -1982,7 +1982,7 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 134, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":135
+    /* "ad3/extensions.pyx":135
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorCompressionBudget()             # <<<<<<<<<<<<<<
@@ -1991,7 +1991,7 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorCompressionBudget();
 
-    /* "python/extensions.pyx":134
+    /* "ad3/extensions.pyx":134
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2000,7 +2000,7 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
  */
   }
 
-  /* "python/extensions.pyx":132
+  /* "ad3/extensions.pyx":132
  * 
  * cdef class PFactorCompressionBudget(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2012,14 +2012,14 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorCompressionBudget.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorCompressionBudget.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":137
+/* "ad3/extensions.pyx":137
  *            self.thisptr = new FactorCompressionBudget()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2028,22 +2028,22 @@ static int __pyx_pf_6python_10extensions_24PFactorCompressionBudget___cinit__(st
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_24PFactorCompressionBudget_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_24PFactorCompressionBudget_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":138
+  /* "ad3/extensions.pyx":138
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2053,7 +2053,7 @@ static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc_
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":139
+    /* "ad3/extensions.pyx":139
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -2062,7 +2062,7 @@ static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc_
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":138
+    /* "ad3/extensions.pyx":138
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2071,7 +2071,7 @@ static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc_
  */
   }
 
-  /* "python/extensions.pyx":137
+  /* "ad3/extensions.pyx":137
  *            self.thisptr = new FactorCompressionBudget()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2083,7 +2083,7 @@ static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc_
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":141
+/* "ad3/extensions.pyx":141
  *             del self.thisptr
  * 
  *     def initialize(self, int length, int budget,             # <<<<<<<<<<<<<<
@@ -2092,8 +2092,8 @@ static void __pyx_pf_6python_10extensions_24PFactorCompressionBudget_2__dealloc_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_24PFactorCompressionBudget_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_24PFactorCompressionBudget_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_length;
   int __pyx_v_budget;
   PyObject *__pyx_v_pcounts_for_budget = 0;
@@ -2156,18 +2156,18 @@ static PyObject *__pyx_pw_6python_10extensions_24PFactorCompressionBudget_5initi
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 141, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorCompressionBudget.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorCompressionBudget.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initialize(((struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *)__pyx_v_self), __pyx_v_length, __pyx_v_budget, __pyx_v_pcounts_for_budget, __pyx_v_bigram_positions);
+  __pyx_r = __pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *)__pyx_v_self), __pyx_v_length, __pyx_v_budget, __pyx_v_pcounts_for_budget, __pyx_v_bigram_positions);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initialize(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget *__pyx_v_self, int __pyx_v_length, int __pyx_v_budget, PyObject *__pyx_v_pcounts_for_budget, std::vector<int>  __pyx_v_bigram_positions) {
+static PyObject *__pyx_pf_3ad3_10extensions_24PFactorCompressionBudget_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget *__pyx_v_self, int __pyx_v_length, int __pyx_v_budget, PyObject *__pyx_v_pcounts_for_budget, std::vector<int>  __pyx_v_bigram_positions) {
   std::vector<bool>  __pyx_v_counts_for_budget;
   PyObject *__pyx_v_counts = NULL;
   PyObject *__pyx_r = NULL;
@@ -2179,7 +2179,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
   bool __pyx_t_5;
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":145
+  /* "ad3/extensions.pyx":145
  *                    vector[int] bigram_positions):
  *         cdef vector[bool] counts_for_budget
  *         for counts in pcounts_for_budget:             # <<<<<<<<<<<<<<
@@ -2228,7 +2228,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
     __Pyx_XDECREF_SET(__pyx_v_counts, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "python/extensions.pyx":146
+    /* "ad3/extensions.pyx":146
  *         cdef vector[bool] counts_for_budget
  *         for counts in pcounts_for_budget:
  *             counts_for_budget.push_back(counts)             # <<<<<<<<<<<<<<
@@ -2243,7 +2243,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
       __PYX_ERR(0, 146, __pyx_L1_error)
     }
 
-    /* "python/extensions.pyx":145
+    /* "ad3/extensions.pyx":145
  *                    vector[int] bigram_positions):
  *         cdef vector[bool] counts_for_budget
  *         for counts in pcounts_for_budget:             # <<<<<<<<<<<<<<
@@ -2253,7 +2253,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/extensions.pyx":147
+  /* "ad3/extensions.pyx":147
  *         for counts in pcounts_for_budget:
  *             counts_for_budget.push_back(counts)
  *         (<FactorCompressionBudget*>self.thisptr).Initialize(length, budget,             # <<<<<<<<<<<<<<
@@ -2262,7 +2262,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
  */
   ((AD3::FactorCompressionBudget *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_length, __pyx_v_budget, __pyx_v_counts_for_budget, __pyx_v_bigram_positions);
 
-  /* "python/extensions.pyx":141
+  /* "ad3/extensions.pyx":141
  *             del self.thisptr
  * 
  *     def initialize(self, int length, int budget,             # <<<<<<<<<<<<<<
@@ -2276,7 +2276,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("python.extensions.PFactorCompressionBudget.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorCompressionBudget.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_counts);
@@ -2285,7 +2285,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":153
+/* "ad3/extensions.pyx":153
  * 
  * cdef class PFactorBinaryTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2294,8 +2294,8 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorCompressionBudget_4initi
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_17PFactorBinaryTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_17PFactorBinaryTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_17PFactorBinaryTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_17PFactorBinaryTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -2336,25 +2336,25 @@ static int __pyx_pw_6python_10extensions_17PFactorBinaryTree_1__cinit__(PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 153, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(((struct __pyx_obj_6python_10extensions_PFactorBinaryTree *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_17PFactorBinaryTree___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_17PFactorBinaryTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":154
+  /* "ad3/extensions.pyx":154
  * cdef class PFactorBinaryTree(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -2364,7 +2364,7 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":155
+  /* "ad3/extensions.pyx":155
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2374,7 +2374,7 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 155, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":156
+    /* "ad3/extensions.pyx":156
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorBinaryTree()             # <<<<<<<<<<<<<<
@@ -2383,7 +2383,7 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorBinaryTree();
 
-    /* "python/extensions.pyx":155
+    /* "ad3/extensions.pyx":155
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2392,7 +2392,7 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
  */
   }
 
-  /* "python/extensions.pyx":153
+  /* "ad3/extensions.pyx":153
  * 
  * cdef class PFactorBinaryTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2404,14 +2404,14 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":158
+/* "ad3/extensions.pyx":158
  *            self.thisptr = new FactorBinaryTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2420,22 +2420,22 @@ static int __pyx_pf_6python_10extensions_17PFactorBinaryTree___cinit__(struct __
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_17PFactorBinaryTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_17PFactorBinaryTree_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_17PFactorBinaryTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_17PFactorBinaryTree_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorBinaryTree *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_17PFactorBinaryTree_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_17PFactorBinaryTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":159
+  /* "ad3/extensions.pyx":159
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2445,7 +2445,7 @@ static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struc
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":160
+    /* "ad3/extensions.pyx":160
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -2454,7 +2454,7 @@ static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struc
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":159
+    /* "ad3/extensions.pyx":159
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2463,7 +2463,7 @@ static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struc
  */
   }
 
-  /* "python/extensions.pyx":158
+  /* "ad3/extensions.pyx":158
  *            self.thisptr = new FactorBinaryTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2475,7 +2475,7 @@ static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struc
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":162
+/* "ad3/extensions.pyx":162
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents):             # <<<<<<<<<<<<<<
@@ -2484,8 +2484,8 @@ static void __pyx_pf_6python_10extensions_17PFactorBinaryTree_2__dealloc__(struc
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_17PFactorBinaryTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_parents); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_17PFactorBinaryTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_parents) {
+static PyObject *__pyx_pw_3ad3_10extensions_17PFactorBinaryTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_parents); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_17PFactorBinaryTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_parents) {
   std::vector<int>  __pyx_v_parents;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -2495,23 +2495,23 @@ static PyObject *__pyx_pw_6python_10extensions_17PFactorBinaryTree_5initialize(P
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(((struct __pyx_obj_6python_10extensions_PFactorBinaryTree *)__pyx_v_self), ((std::vector<int> )__pyx_v_parents));
+  __pyx_r = __pyx_pf_3ad3_10extensions_17PFactorBinaryTree_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *)__pyx_v_self), ((std::vector<int> )__pyx_v_parents));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinaryTree *__pyx_v_self, std::vector<int>  __pyx_v_parents) {
+static PyObject *__pyx_pf_3ad3_10extensions_17PFactorBinaryTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree *__pyx_v_self, std::vector<int>  __pyx_v_parents) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":163
+  /* "ad3/extensions.pyx":163
  * 
  *     def initialize(self, vector[int] parents):
  *         (<FactorBinaryTree*>self.thisptr).Initialize(parents)             # <<<<<<<<<<<<<<
@@ -2520,7 +2520,7 @@ static PyObject *__pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(s
  */
   ((AD3::FactorBinaryTree *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_parents);
 
-  /* "python/extensions.pyx":162
+  /* "ad3/extensions.pyx":162
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents):             # <<<<<<<<<<<<<<
@@ -2535,7 +2535,7 @@ static PyObject *__pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(s
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":167
+/* "ad3/extensions.pyx":167
  * 
  * cdef class PFactorBinaryTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2544,8 +2544,8 @@ static PyObject *__pyx_pf_6python_10extensions_17PFactorBinaryTree_4initialize(s
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -2586,25 +2586,25 @@ static int __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_1__cinit__(Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 167, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(((struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":168
+  /* "ad3/extensions.pyx":168
  * cdef class PFactorBinaryTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -2614,7 +2614,7 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":169
+  /* "ad3/extensions.pyx":169
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2624,7 +2624,7 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 169, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":170
+    /* "ad3/extensions.pyx":170
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorBinaryTreeCounts()             # <<<<<<<<<<<<<<
@@ -2633,7 +2633,7 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorBinaryTreeCounts();
 
-    /* "python/extensions.pyx":169
+    /* "ad3/extensions.pyx":169
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2642,7 +2642,7 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
  */
   }
 
-  /* "python/extensions.pyx":167
+  /* "ad3/extensions.pyx":167
  * 
  * cdef class PFactorBinaryTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2654,14 +2654,14 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":172
+/* "ad3/extensions.pyx":172
  *            self.thisptr = new FactorBinaryTreeCounts()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2670,22 +2670,22 @@ static int __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts___cinit__(str
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":173
+  /* "ad3/extensions.pyx":173
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2695,7 +2695,7 @@ static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":174
+    /* "ad3/extensions.pyx":174
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -2704,7 +2704,7 @@ static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":173
+    /* "ad3/extensions.pyx":173
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2713,7 +2713,7 @@ static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__
  */
   }
 
-  /* "python/extensions.pyx":172
+  /* "ad3/extensions.pyx":172
  *            self.thisptr = new FactorBinaryTreeCounts()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2725,7 +2725,7 @@ static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":176
+/* "ad3/extensions.pyx":176
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents,             # <<<<<<<<<<<<<<
@@ -2734,8 +2734,8 @@ static void __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_2__dealloc__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<int>  __pyx_v_parents;
   PyObject *__pyx_v_pcounts_for_budget = 0;
   PyObject *__pyx_v_phas_count_scores = 0;
@@ -2747,7 +2747,7 @@ static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initia
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_parents,&__pyx_n_s_pcounts_for_budget,&__pyx_n_s_phas_count_scores,&__pyx_n_s_max_num_bins,0};
     PyObject* values[4] = {0,0,0,0};
 
-    /* "python/extensions.pyx":178
+    /* "ad3/extensions.pyx":178
  *     def initialize(self, vector[int] parents,
  *                    pcounts_for_budget,
  *                    phas_count_scores=None,             # <<<<<<<<<<<<<<
@@ -2756,7 +2756,7 @@ static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initia
  */
     values[2] = ((PyObject *)Py_None);
 
-    /* "python/extensions.pyx":179
+    /* "ad3/extensions.pyx":179
  *                    pcounts_for_budget,
  *                    phas_count_scores=None,
  *                    max_num_bins=None):             # <<<<<<<<<<<<<<
@@ -2818,13 +2818,13 @@ static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initia
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 176, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initialize(((struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self), __pyx_v_parents, __pyx_v_pcounts_for_budget, __pyx_v_phas_count_scores, __pyx_v_max_num_bins);
+  __pyx_r = __pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *)__pyx_v_self), __pyx_v_parents, __pyx_v_pcounts_for_budget, __pyx_v_phas_count_scores, __pyx_v_max_num_bins);
 
-  /* "python/extensions.pyx":176
+  /* "ad3/extensions.pyx":176
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents,             # <<<<<<<<<<<<<<
@@ -2837,7 +2837,7 @@ static PyObject *__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initia
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, PyObject *__pyx_v_pcounts_for_budget, PyObject *__pyx_v_phas_count_scores, PyObject *__pyx_v_max_num_bins) {
+static PyObject *__pyx_pf_3ad3_10extensions_23PFactorBinaryTreeCounts_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, PyObject *__pyx_v_pcounts_for_budget, PyObject *__pyx_v_phas_count_scores, PyObject *__pyx_v_max_num_bins) {
   std::vector<bool>  __pyx_v_counts_for_budget;
   std::vector<bool>  __pyx_v_has_count_scores;
   PyObject *__pyx_v_counts = NULL;
@@ -2854,7 +2854,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":182
+  /* "ad3/extensions.pyx":182
  *         cdef vector[bool] counts_for_budget
  *         cdef vector[bool] has_count_scores
  *         for counts in pcounts_for_budget:             # <<<<<<<<<<<<<<
@@ -2903,7 +2903,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
     __Pyx_XDECREF_SET(__pyx_v_counts, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "python/extensions.pyx":183
+    /* "ad3/extensions.pyx":183
  *         cdef vector[bool] has_count_scores
  *         for counts in pcounts_for_budget:
  *             counts_for_budget.push_back(counts)             # <<<<<<<<<<<<<<
@@ -2918,7 +2918,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
       __PYX_ERR(0, 183, __pyx_L1_error)
     }
 
-    /* "python/extensions.pyx":182
+    /* "ad3/extensions.pyx":182
  *         cdef vector[bool] counts_for_budget
  *         cdef vector[bool] has_count_scores
  *         for counts in pcounts_for_budget:             # <<<<<<<<<<<<<<
@@ -2928,7 +2928,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/extensions.pyx":184
+  /* "ad3/extensions.pyx":184
  *         for counts in pcounts_for_budget:
  *             counts_for_budget.push_back(counts)
  *         if phas_count_scores is not None:             # <<<<<<<<<<<<<<
@@ -2939,7 +2939,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   __pyx_t_7 = (__pyx_t_6 != 0);
   if (__pyx_t_7) {
 
-    /* "python/extensions.pyx":185
+    /* "ad3/extensions.pyx":185
  *             counts_for_budget.push_back(counts)
  *         if phas_count_scores is not None:
  *             for has_count in phas_count_scores:             # <<<<<<<<<<<<<<
@@ -2988,7 +2988,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
       __Pyx_XDECREF_SET(__pyx_v_has_count, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "python/extensions.pyx":186
+      /* "ad3/extensions.pyx":186
  *         if phas_count_scores is not None:
  *             for has_count in phas_count_scores:
  *                 has_count_scores.push_back(has_count)             # <<<<<<<<<<<<<<
@@ -3003,7 +3003,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
         __PYX_ERR(0, 186, __pyx_L1_error)
       }
 
-      /* "python/extensions.pyx":185
+      /* "ad3/extensions.pyx":185
  *             counts_for_budget.push_back(counts)
  *         if phas_count_scores is not None:
  *             for has_count in phas_count_scores:             # <<<<<<<<<<<<<<
@@ -3013,7 +3013,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "python/extensions.pyx":187
+    /* "ad3/extensions.pyx":187
  *             for has_count in phas_count_scores:
  *                 has_count_scores.push_back(has_count)
  *             if max_num_bins is not None:             # <<<<<<<<<<<<<<
@@ -3024,7 +3024,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
     __pyx_t_6 = (__pyx_t_7 != 0);
     if (__pyx_t_6) {
 
-      /* "python/extensions.pyx":189
+      /* "ad3/extensions.pyx":189
  *             if max_num_bins is not None:
  *                 (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
  *                     parents, counts_for_budget, has_count_scores, max_num_bins)             # <<<<<<<<<<<<<<
@@ -3033,7 +3033,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
  */
       __pyx_t_8 = __Pyx_PyInt_As_int(__pyx_v_max_num_bins); if (unlikely((__pyx_t_8 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 189, __pyx_L1_error)
 
-      /* "python/extensions.pyx":188
+      /* "ad3/extensions.pyx":188
  *                 has_count_scores.push_back(has_count)
  *             if max_num_bins is not None:
  *                 (<FactorBinaryTreeCounts*>self.thisptr).Initialize(             # <<<<<<<<<<<<<<
@@ -3042,7 +3042,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
  */
       ((AD3::FactorBinaryTreeCounts *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_parents, __pyx_v_counts_for_budget, __pyx_v_has_count_scores, __pyx_t_8);
 
-      /* "python/extensions.pyx":187
+      /* "ad3/extensions.pyx":187
  *             for has_count in phas_count_scores:
  *                 has_count_scores.push_back(has_count)
  *             if max_num_bins is not None:             # <<<<<<<<<<<<<<
@@ -3052,7 +3052,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
       goto __pyx_L8;
     }
 
-    /* "python/extensions.pyx":192
+    /* "ad3/extensions.pyx":192
  * 
  *             else:
  *                 (<FactorBinaryTreeCounts*>self.thisptr).Initialize(             # <<<<<<<<<<<<<<
@@ -3061,7 +3061,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
  */
     /*else*/ {
 
-      /* "python/extensions.pyx":193
+      /* "ad3/extensions.pyx":193
  *             else:
  *                 (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
  *                     parents, counts_for_budget, has_count_scores)             # <<<<<<<<<<<<<<
@@ -3072,7 +3072,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
     }
     __pyx_L8:;
 
-    /* "python/extensions.pyx":184
+    /* "ad3/extensions.pyx":184
  *         for counts in pcounts_for_budget:
  *             counts_for_budget.push_back(counts)
  *         if phas_count_scores is not None:             # <<<<<<<<<<<<<<
@@ -3082,7 +3082,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
     goto __pyx_L5;
   }
 
-  /* "python/extensions.pyx":196
+  /* "ad3/extensions.pyx":196
  * 
  *         else:
  *             (<FactorBinaryTreeCounts*>self.thisptr).Initialize(             # <<<<<<<<<<<<<<
@@ -3091,7 +3091,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
  */
   /*else*/ {
 
-    /* "python/extensions.pyx":197
+    /* "ad3/extensions.pyx":197
  *         else:
  *             (<FactorBinaryTreeCounts*>self.thisptr).Initialize(
  *                 parents, counts_for_budget)             # <<<<<<<<<<<<<<
@@ -3102,7 +3102,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   }
   __pyx_L5:;
 
-  /* "python/extensions.pyx":176
+  /* "ad3/extensions.pyx":176
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents,             # <<<<<<<<<<<<<<
@@ -3116,7 +3116,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("python.extensions.PFactorBinaryTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinaryTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_counts);
@@ -3126,7 +3126,7 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":201
+/* "ad3/extensions.pyx":201
  * 
  * cdef class PFactorGeneralTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3135,8 +3135,8 @@ static PyObject *__pyx_pf_6python_10extensions_23PFactorBinaryTreeCounts_4initia
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_18PFactorGeneralTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_18PFactorGeneralTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_18PFactorGeneralTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_18PFactorGeneralTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -3177,25 +3177,25 @@ static int __pyx_pw_6python_10extensions_18PFactorGeneralTree_1__cinit__(PyObjec
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 201, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(((struct __pyx_obj_6python_10extensions_PFactorGeneralTree *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_18PFactorGeneralTree___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_18PFactorGeneralTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":202
+  /* "ad3/extensions.pyx":202
  * cdef class PFactorGeneralTree(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -3205,7 +3205,7 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 202, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":203
+  /* "ad3/extensions.pyx":203
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3215,7 +3215,7 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 203, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":204
+    /* "ad3/extensions.pyx":204
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorGeneralTree()             # <<<<<<<<<<<<<<
@@ -3224,7 +3224,7 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorGeneralTree();
 
-    /* "python/extensions.pyx":203
+    /* "ad3/extensions.pyx":203
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3233,7 +3233,7 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
  */
   }
 
-  /* "python/extensions.pyx":201
+  /* "ad3/extensions.pyx":201
  * 
  * cdef class PFactorGeneralTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3245,14 +3245,14 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":206
+/* "ad3/extensions.pyx":206
  *            self.thisptr = new FactorGeneralTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3261,22 +3261,22 @@ static int __pyx_pf_6python_10extensions_18PFactorGeneralTree___cinit__(struct _
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_18PFactorGeneralTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_18PFactorGeneralTree_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_18PFactorGeneralTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_18PFactorGeneralTree_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorGeneralTree *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_18PFactorGeneralTree_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_18PFactorGeneralTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":207
+  /* "ad3/extensions.pyx":207
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3286,7 +3286,7 @@ static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(stru
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":208
+    /* "ad3/extensions.pyx":208
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -3295,7 +3295,7 @@ static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(stru
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":207
+    /* "ad3/extensions.pyx":207
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3304,7 +3304,7 @@ static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(stru
  */
   }
 
-  /* "python/extensions.pyx":206
+  /* "ad3/extensions.pyx":206
  *            self.thisptr = new FactorGeneralTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3316,7 +3316,7 @@ static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(stru
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":210
+/* "ad3/extensions.pyx":210
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -3325,8 +3325,8 @@ static void __pyx_pf_6python_10extensions_18PFactorGeneralTree_2__dealloc__(stru
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_18PFactorGeneralTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_18PFactorGeneralTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_18PFactorGeneralTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_18PFactorGeneralTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<int>  __pyx_v_parents;
   std::vector<int>  __pyx_v_num_states;
   PyObject *__pyx_r = 0;
@@ -3371,23 +3371,23 @@ static PyObject *__pyx_pw_6python_10extensions_18PFactorGeneralTree_5initialize(
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 210, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(((struct __pyx_obj_6python_10extensions_PFactorGeneralTree *)__pyx_v_self), __pyx_v_parents, __pyx_v_num_states);
+  __pyx_r = __pyx_pf_3ad3_10extensions_18PFactorGeneralTree_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *)__pyx_v_self), __pyx_v_parents, __pyx_v_num_states);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorGeneralTree *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states) {
+static PyObject *__pyx_pf_3ad3_10extensions_18PFactorGeneralTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":211
+  /* "ad3/extensions.pyx":211
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):
  *         (<FactorGeneralTree*>self.thisptr).Initialize(parents, num_states)             # <<<<<<<<<<<<<<
@@ -3396,7 +3396,7 @@ static PyObject *__pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(
  */
   ((AD3::FactorGeneralTree *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_parents, __pyx_v_num_states);
 
-  /* "python/extensions.pyx":210
+  /* "ad3/extensions.pyx":210
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -3411,7 +3411,7 @@ static PyObject *__pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":215
+/* "ad3/extensions.pyx":215
  * 
  * cdef class PFactorGeneralTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3420,8 +3420,8 @@ static PyObject *__pyx_pf_6python_10extensions_18PFactorGeneralTree_4initialize(
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -3462,25 +3462,25 @@ static int __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_1__cinit__(P
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 215, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(((struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":216
+  /* "ad3/extensions.pyx":216
  * cdef class PFactorGeneralTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -3490,7 +3490,7 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":217
+  /* "ad3/extensions.pyx":217
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3500,7 +3500,7 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 217, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":218
+    /* "ad3/extensions.pyx":218
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorGeneralTreeCounts()             # <<<<<<<<<<<<<<
@@ -3509,7 +3509,7 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorGeneralTreeCounts();
 
-    /* "python/extensions.pyx":217
+    /* "ad3/extensions.pyx":217
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3518,7 +3518,7 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
  */
   }
 
-  /* "python/extensions.pyx":215
+  /* "ad3/extensions.pyx":215
  * 
  * cdef class PFactorGeneralTreeCounts(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3530,14 +3530,14 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTreeCounts.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":220
+/* "ad3/extensions.pyx":220
  *            self.thisptr = new FactorGeneralTreeCounts()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3546,22 +3546,22 @@ static int __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts___cinit__(st
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":221
+  /* "ad3/extensions.pyx":221
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3571,7 +3571,7 @@ static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc_
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":222
+    /* "ad3/extensions.pyx":222
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -3580,7 +3580,7 @@ static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc_
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":221
+    /* "ad3/extensions.pyx":221
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3589,7 +3589,7 @@ static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc_
  */
   }
 
-  /* "python/extensions.pyx":220
+  /* "ad3/extensions.pyx":220
  *            self.thisptr = new FactorGeneralTreeCounts()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3601,7 +3601,7 @@ static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc_
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":224
+/* "ad3/extensions.pyx":224
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -3610,8 +3610,8 @@ static void __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_2__dealloc_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<int>  __pyx_v_parents;
   std::vector<int>  __pyx_v_num_states;
   PyObject *__pyx_r = 0;
@@ -3656,23 +3656,23 @@ static PyObject *__pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_5initi
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 224, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorGeneralTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorGeneralTreeCounts.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initialize(((struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self), __pyx_v_parents, __pyx_v_num_states);
+  __pyx_r = __pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *)__pyx_v_self), __pyx_v_parents, __pyx_v_num_states);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initialize(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states) {
+static PyObject *__pyx_pf_3ad3_10extensions_24PFactorGeneralTreeCounts_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts *__pyx_v_self, std::vector<int>  __pyx_v_parents, std::vector<int>  __pyx_v_num_states) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":225
+  /* "ad3/extensions.pyx":225
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):
  *         (<FactorGeneralTreeCounts*>self.thisptr).Initialize(parents,             # <<<<<<<<<<<<<<
@@ -3681,7 +3681,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initi
  */
   ((AD3::FactorGeneralTreeCounts *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_parents, __pyx_v_num_states);
 
-  /* "python/extensions.pyx":224
+  /* "ad3/extensions.pyx":224
  *             del self.thisptr
  * 
  *     def initialize(self, vector[int] parents, vector[int] num_states):             # <<<<<<<<<<<<<<
@@ -3696,7 +3696,7 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initi
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":230
+/* "ad3/extensions.pyx":230
  * 
  * cdef class PFactorTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3705,8 +3705,8 @@ static PyObject *__pyx_pf_6python_10extensions_24PFactorGeneralTreeCounts_4initi
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_11PFactorTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_11PFactorTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_11PFactorTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_11PFactorTree_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -3747,25 +3747,25 @@ static int __pyx_pw_6python_10extensions_11PFactorTree_1__cinit__(PyObject *__py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 230, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_11PFactorTree___cinit__(((struct __pyx_obj_6python_10extensions_PFactorTree *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_11PFactorTree___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorTree *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_11PFactorTree___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":231
+  /* "ad3/extensions.pyx":231
  * cdef class PFactorTree(PFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -3775,7 +3775,7 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
   __pyx_v_self->__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":232
+  /* "ad3/extensions.pyx":232
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3785,7 +3785,7 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 232, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":233
+    /* "ad3/extensions.pyx":233
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorTree()             # <<<<<<<<<<<<<<
@@ -3794,7 +3794,7 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
  */
     __pyx_v_self->__pyx_base.thisptr = new AD3::FactorTree();
 
-    /* "python/extensions.pyx":232
+    /* "ad3/extensions.pyx":232
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -3803,7 +3803,7 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
  */
   }
 
-  /* "python/extensions.pyx":230
+  /* "ad3/extensions.pyx":230
  * 
  * cdef class PFactorTree(PFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -3815,14 +3815,14 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":235
+/* "ad3/extensions.pyx":235
  *            self.thisptr = new FactorTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3831,22 +3831,22 @@ static int __pyx_pf_6python_10extensions_11PFactorTree___cinit__(struct __pyx_ob
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_11PFactorTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_11PFactorTree_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_11PFactorTree_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_11PFactorTree_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorTree *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_11PFactorTree_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorTree *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_11PFactorTree_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":236
+  /* "ad3/extensions.pyx":236
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3856,7 +3856,7 @@ static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __py
   __pyx_t_1 = (__pyx_v_self->__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":237
+    /* "ad3/extensions.pyx":237
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -3865,7 +3865,7 @@ static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __py
  */
     delete __pyx_v_self->__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":236
+    /* "ad3/extensions.pyx":236
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -3874,7 +3874,7 @@ static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __py
  */
   }
 
-  /* "python/extensions.pyx":235
+  /* "ad3/extensions.pyx":235
  *            self.thisptr = new FactorTree()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3886,7 +3886,7 @@ static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __py
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":239
+/* "ad3/extensions.pyx":239
  *             del self.thisptr
  * 
  *     def initialize(self, int length, list arcs):             # <<<<<<<<<<<<<<
@@ -3895,8 +3895,8 @@ static void __pyx_pf_6python_10extensions_11PFactorTree_2__dealloc__(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_11PFactorTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_11PFactorTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_11PFactorTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_11PFactorTree_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_length;
   PyObject *__pyx_v_arcs = 0;
   PyObject *__pyx_r = 0;
@@ -3941,12 +3941,12 @@ static PyObject *__pyx_pw_6python_10extensions_11PFactorTree_5initialize(PyObjec
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 239, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_arcs), (&PyList_Type), 1, "arcs", 1))) __PYX_ERR(0, 239, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_10extensions_11PFactorTree_4initialize(((struct __pyx_obj_6python_10extensions_PFactorTree *)__pyx_v_self), __pyx_v_length, __pyx_v_arcs);
+  __pyx_r = __pyx_pf_3ad3_10extensions_11PFactorTree_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorTree *)__pyx_v_self), __pyx_v_length, __pyx_v_arcs);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3957,7 +3957,7 @@ static PyObject *__pyx_pw_6python_10extensions_11PFactorTree_5initialize(PyObjec
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct __pyx_obj_6python_10extensions_PFactorTree *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_arcs) {
+static PyObject *__pyx_pf_3ad3_10extensions_11PFactorTree_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorTree *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_arcs) {
   std::vector<AD3::Arc *>  __pyx_v_arcs_v;
   int __pyx_v_head;
   int __pyx_v_modifier;
@@ -3975,7 +3975,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
   AD3::Arc *__pyx_t_8;
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":244
+  /* "ad3/extensions.pyx":244
  * 
  *         cdef tuple arc
  *         for arc in arcs:             # <<<<<<<<<<<<<<
@@ -3999,7 +3999,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __Pyx_XDECREF_SET(__pyx_v_arc, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "python/extensions.pyx":245
+    /* "ad3/extensions.pyx":245
  *         cdef tuple arc
  *         for arc in arcs:
  *             head = arc[0]             # <<<<<<<<<<<<<<
@@ -4016,7 +4016,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_head = __pyx_t_4;
 
-    /* "python/extensions.pyx":246
+    /* "ad3/extensions.pyx":246
  *         for arc in arcs:
  *             head = arc[0]
  *             modifier = arc[1]             # <<<<<<<<<<<<<<
@@ -4033,7 +4033,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_modifier = __pyx_t_4;
 
-    /* "python/extensions.pyx":248
+    /* "ad3/extensions.pyx":248
  *             modifier = arc[1]
  * 
  *             if not 0 <= head < length:             # <<<<<<<<<<<<<<
@@ -4047,7 +4047,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __pyx_t_6 = ((!(__pyx_t_5 != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "python/extensions.pyx":249
+      /* "ad3/extensions.pyx":249
  * 
  *             if not 0 <= head < length:
  *                 raise ValueError("Invalid arc: head must be in [0, length)")             # <<<<<<<<<<<<<<
@@ -4060,7 +4060,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(0, 249, __pyx_L1_error)
 
-      /* "python/extensions.pyx":248
+      /* "ad3/extensions.pyx":248
  *             modifier = arc[1]
  * 
  *             if not 0 <= head < length:             # <<<<<<<<<<<<<<
@@ -4069,7 +4069,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
     }
 
-    /* "python/extensions.pyx":250
+    /* "ad3/extensions.pyx":250
  *             if not 0 <= head < length:
  *                 raise ValueError("Invalid arc: head must be in [0, length)")
  *             if not 1 <= modifier < length:             # <<<<<<<<<<<<<<
@@ -4083,7 +4083,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __pyx_t_5 = ((!(__pyx_t_6 != 0)) != 0);
     if (__pyx_t_5) {
 
-      /* "python/extensions.pyx":251
+      /* "ad3/extensions.pyx":251
  *                 raise ValueError("Invalid arc: head must be in [0, length)")
  *             if not 1 <= modifier < length:
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")             # <<<<<<<<<<<<<<
@@ -4096,7 +4096,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(0, 251, __pyx_L1_error)
 
-      /* "python/extensions.pyx":250
+      /* "ad3/extensions.pyx":250
  *             if not 0 <= head < length:
  *                 raise ValueError("Invalid arc: head must be in [0, length)")
  *             if not 1 <= modifier < length:             # <<<<<<<<<<<<<<
@@ -4105,7 +4105,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
     }
 
-    /* "python/extensions.pyx":252
+    /* "ad3/extensions.pyx":252
  *             if not 1 <= modifier < length:
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")
  *             if not head != modifier:             # <<<<<<<<<<<<<<
@@ -4115,7 +4115,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __pyx_t_5 = ((!((__pyx_v_head != __pyx_v_modifier) != 0)) != 0);
     if (__pyx_t_5) {
 
-      /* "python/extensions.pyx":253
+      /* "ad3/extensions.pyx":253
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")
  *             if not head != modifier:
  *                 raise ValueError("Invalid arc: head cannot be the same as the "             # <<<<<<<<<<<<<<
@@ -4128,7 +4128,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(0, 253, __pyx_L1_error)
 
-      /* "python/extensions.pyx":252
+      /* "ad3/extensions.pyx":252
  *             if not 1 <= modifier < length:
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")
  *             if not head != modifier:             # <<<<<<<<<<<<<<
@@ -4137,7 +4137,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
     }
 
-    /* "python/extensions.pyx":255
+    /* "ad3/extensions.pyx":255
  *                 raise ValueError("Invalid arc: head cannot be the same as the "
  *                                  " modifier")
  *             arcs_v.push_back(new Arc(head, modifier))             # <<<<<<<<<<<<<<
@@ -4151,7 +4151,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
       __PYX_ERR(0, 255, __pyx_L1_error)
     }
 
-    /* "python/extensions.pyx":244
+    /* "ad3/extensions.pyx":244
  * 
  *         cdef tuple arc
  *         for arc in arcs:             # <<<<<<<<<<<<<<
@@ -4161,7 +4161,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/extensions.pyx":257
+  /* "ad3/extensions.pyx":257
  *             arcs_v.push_back(new Arc(head, modifier))
  * 
  *         if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():             # <<<<<<<<<<<<<<
@@ -4171,7 +4171,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
   __pyx_t_5 = ((__pyx_v_arcs_v.size() != ((Py_ssize_t)__pyx_v_self->__pyx_base.thisptr->Degree())) != 0);
   if (__pyx_t_5) {
 
-    /* "python/extensions.pyx":258
+    /* "ad3/extensions.pyx":258
  * 
  *         if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
  *             raise ValueError("Number of arcs differs from number of bound "             # <<<<<<<<<<<<<<
@@ -4184,7 +4184,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 258, __pyx_L1_error)
 
-    /* "python/extensions.pyx":257
+    /* "ad3/extensions.pyx":257
  *             arcs_v.push_back(new Arc(head, modifier))
  * 
  *         if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():             # <<<<<<<<<<<<<<
@@ -4193,7 +4193,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
   }
 
-  /* "python/extensions.pyx":260
+  /* "ad3/extensions.pyx":260
  *             raise ValueError("Number of arcs differs from number of bound "
  *                              "variables.")
  *         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)             # <<<<<<<<<<<<<<
@@ -4202,7 +4202,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
   ((AD3::FactorTree *)__pyx_v_self->__pyx_base.thisptr)->Initialize(__pyx_v_length, __pyx_v_arcs_v);
 
-  /* "python/extensions.pyx":262
+  /* "ad3/extensions.pyx":262
  *         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)
  * 
  *         for arcp in arcs_v:             # <<<<<<<<<<<<<<
@@ -4216,7 +4216,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
     ++__pyx_t_7;
     __pyx_v_arcp = __pyx_t_8;
 
-    /* "python/extensions.pyx":263
+    /* "ad3/extensions.pyx":263
  * 
  *         for arcp in arcs_v:
  *             del arcp             # <<<<<<<<<<<<<<
@@ -4225,7 +4225,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
     delete __pyx_v_arcp;
 
-    /* "python/extensions.pyx":262
+    /* "ad3/extensions.pyx":262
  *         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)
  * 
  *         for arcp in arcs_v:             # <<<<<<<<<<<<<<
@@ -4234,7 +4234,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
   }
 
-  /* "python/extensions.pyx":239
+  /* "ad3/extensions.pyx":239
  *             del self.thisptr
  * 
  *     def initialize(self, int length, list arcs):             # <<<<<<<<<<<<<<
@@ -4248,7 +4248,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.extensions.PFactorTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorTree.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_arc);
@@ -4257,7 +4257,7 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":267
+/* "ad3/extensions.pyx":267
  * 
  * cdef class PFactorBinarySegmentation(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -4266,8 +4266,8 @@ static PyObject *__pyx_pf_6python_10extensions_11PFactorTree_4initialize(struct 
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -4308,25 +4308,25 @@ static int __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_1__cinit__(
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 267, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinarySegmentation.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinarySegmentation.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(((struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":268
+  /* "ad3/extensions.pyx":268
  * cdef class PFactorBinarySegmentation(PGenericFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -4336,7 +4336,7 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 268, __pyx_L1_error)
   __pyx_v_self->__pyx_base.__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":269
+  /* "ad3/extensions.pyx":269
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -4346,7 +4346,7 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 269, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":270
+    /* "ad3/extensions.pyx":270
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorBinarySegmentation()             # <<<<<<<<<<<<<<
@@ -4355,7 +4355,7 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
  */
     __pyx_v_self->__pyx_base.__pyx_base.thisptr = new AD3::FactorBinarySegmentation();
 
-    /* "python/extensions.pyx":269
+    /* "ad3/extensions.pyx":269
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -4364,7 +4364,7 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
  */
   }
 
-  /* "python/extensions.pyx":267
+  /* "ad3/extensions.pyx":267
  * 
  * cdef class PFactorBinarySegmentation(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -4376,14 +4376,14 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinarySegmentation.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinarySegmentation.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":272
+/* "ad3/extensions.pyx":272
  *            self.thisptr = new FactorBinarySegmentation()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4392,22 +4392,22 @@ static int __pyx_pf_6python_10extensions_25PFactorBinarySegmentation___cinit__(s
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":273
+  /* "ad3/extensions.pyx":273
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -4417,7 +4417,7 @@ static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc
   __pyx_t_1 = (__pyx_v_self->__pyx_base.__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":274
+    /* "ad3/extensions.pyx":274
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -4426,7 +4426,7 @@ static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc
  */
     delete __pyx_v_self->__pyx_base.__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":273
+    /* "ad3/extensions.pyx":273
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -4435,7 +4435,7 @@ static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc
  */
   }
 
-  /* "python/extensions.pyx":272
+  /* "ad3/extensions.pyx":272
  *            self.thisptr = new FactorBinarySegmentation()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4447,7 +4447,7 @@ static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":276
+/* "ad3/extensions.pyx":276
  *             del self.thisptr
  * 
  *     def initialize(self, int length):             # <<<<<<<<<<<<<<
@@ -4456,8 +4456,8 @@ static void __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_2__dealloc
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_25PFactorBinarySegmentation_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_length); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_25PFactorBinarySegmentation_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_length) {
+static PyObject *__pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_length); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_arg_length) {
   int __pyx_v_length;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -4467,23 +4467,23 @@ static PyObject *__pyx_pw_6python_10extensions_25PFactorBinarySegmentation_5init
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorBinarySegmentation.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinarySegmentation.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4initialize(((struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *)__pyx_v_self), ((int)__pyx_v_length));
+  __pyx_r = __pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *)__pyx_v_self), ((int)__pyx_v_length));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4initialize(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, int __pyx_v_length) {
+static PyObject *__pyx_pf_3ad3_10extensions_25PFactorBinarySegmentation_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, int __pyx_v_length) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":277
+  /* "ad3/extensions.pyx":277
  * 
  *     def initialize(self, int length):
  *         (<FactorBinarySegmentation*>self.thisptr).Initialize(length)             # <<<<<<<<<<<<<<
@@ -4492,7 +4492,7 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4init
  */
   ((AD3::FactorBinarySegmentation *)__pyx_v_self->__pyx_base.__pyx_base.thisptr)->Initialize(__pyx_v_length);
 
-  /* "python/extensions.pyx":276
+  /* "ad3/extensions.pyx":276
  *             del self.thisptr
  * 
  *     def initialize(self, int length):             # <<<<<<<<<<<<<<
@@ -4507,7 +4507,7 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4init
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":279
+/* "ad3/extensions.pyx":279
  *         (<FactorBinarySegmentation*>self.thisptr).Initialize(length)
  * 
  *     cdef cast_configuration(self, Configuration cfg):             # <<<<<<<<<<<<<<
@@ -4515,7 +4515,7 @@ static PyObject *__pyx_pf_6python_10extensions_25PFactorBinarySegmentation_4init
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
  */
 
-static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_configuration(CYTHON_UNUSED struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *__pyx_v_self, AD3::Configuration __pyx_v_cfg) {
+static PyObject *__pyx_f_3ad3_10extensions_25PFactorBinarySegmentation_cast_configuration(CYTHON_UNUSED struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *__pyx_v_self, AD3::Configuration __pyx_v_cfg) {
   std::vector<struct AD3::Segment>  __pyx_v_segments;
   PyObject *__pyx_v_res = NULL;
   struct AD3::Segment __pyx_v_segment;
@@ -4530,7 +4530,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("cast_configuration", 0);
 
-  /* "python/extensions.pyx":281
+  /* "ad3/extensions.pyx":281
  *     cdef cast_configuration(self, Configuration cfg):
  *         # cdef Segment segment
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]             # <<<<<<<<<<<<<<
@@ -4539,7 +4539,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
  */
   __pyx_v_segments = (((std::vector<struct AD3::Segment>  *)__pyx_v_cfg)[0]);
 
-  /* "python/extensions.pyx":282
+  /* "ad3/extensions.pyx":282
  *         # cdef Segment segment
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
  *         res = [(segment.start, segment.end, segment.tag)             # <<<<<<<<<<<<<<
@@ -4549,7 +4549,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "python/extensions.pyx":283
+  /* "ad3/extensions.pyx":283
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
  *         res = [(segment.start, segment.end, segment.tag)
  *                for segment in segments]             # <<<<<<<<<<<<<<
@@ -4563,7 +4563,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
     ++__pyx_t_2;
     __pyx_v_segment = __pyx_t_3;
 
-    /* "python/extensions.pyx":282
+    /* "ad3/extensions.pyx":282
  *         # cdef Segment segment
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
  *         res = [(segment.start, segment.end, segment.tag)             # <<<<<<<<<<<<<<
@@ -4590,7 +4590,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 282, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "python/extensions.pyx":283
+    /* "ad3/extensions.pyx":283
  *         cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
  *         res = [(segment.start, segment.end, segment.tag)
  *                for segment in segments]             # <<<<<<<<<<<<<<
@@ -4601,7 +4601,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   __pyx_v_res = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/extensions.pyx":285
+  /* "ad3/extensions.pyx":285
  *                for segment in segments]
  * 
  *         return res             # <<<<<<<<<<<<<<
@@ -4613,7 +4613,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "python/extensions.pyx":279
+  /* "ad3/extensions.pyx":279
  *         (<FactorBinarySegmentation*>self.thisptr).Initialize(length)
  * 
  *     cdef cast_configuration(self, Configuration cfg):             # <<<<<<<<<<<<<<
@@ -4628,7 +4628,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("python.extensions.PFactorBinarySegmentation.cast_configuration", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorBinarySegmentation.cast_configuration", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_res);
@@ -4637,7 +4637,7 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":289
+/* "ad3/extensions.pyx":289
  * 
  * cdef class PFactorMatching(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -4646,8 +4646,8 @@ static PyObject *__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_c
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_15PFactorMatching_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_15PFactorMatching_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_15PFactorMatching_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_15PFactorMatching_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -4688,25 +4688,25 @@ static int __pyx_pw_6python_10extensions_15PFactorMatching_1__cinit__(PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 289, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorMatching.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorMatching.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(((struct __pyx_obj_6python_10extensions_PFactorMatching *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_15PFactorMatching___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorMatching *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_15PFactorMatching___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":290
+  /* "ad3/extensions.pyx":290
  * cdef class PFactorMatching(PGenericFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -4716,7 +4716,7 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 290, __pyx_L1_error)
   __pyx_v_self->__pyx_base.__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":291
+  /* "ad3/extensions.pyx":291
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -4726,7 +4726,7 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 291, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":292
+    /* "ad3/extensions.pyx":292
  *         self.allocate = allocate
  *         if allocate:
  *             self.thisptr = new FactorMatching()             # <<<<<<<<<<<<<<
@@ -4735,7 +4735,7 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
  */
     __pyx_v_self->__pyx_base.__pyx_base.thisptr = new AD3::FactorMatching();
 
-    /* "python/extensions.pyx":291
+    /* "ad3/extensions.pyx":291
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -4744,7 +4744,7 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
  */
   }
 
-  /* "python/extensions.pyx":289
+  /* "ad3/extensions.pyx":289
  * 
  * cdef class PFactorMatching(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -4756,14 +4756,14 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorMatching.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorMatching.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":294
+/* "ad3/extensions.pyx":294
  *             self.thisptr = new FactorMatching()
  * 
  *     def __dealloc(self):             # <<<<<<<<<<<<<<
@@ -4772,25 +4772,25 @@ static int __pyx_pf_6python_10extensions_15PFactorMatching___cinit__(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_15PFactorMatching_3__dealloc(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_15PFactorMatching_3__dealloc(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorMatching_3__dealloc(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorMatching_3__dealloc(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(((struct __pyx_obj_6python_10extensions_PFactorMatching *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_10extensions_15PFactorMatching_2__dealloc(((struct __pyx_obj_3ad3_10extensions_PFactorMatching *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorMatching_2__dealloc(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc", 0);
 
-  /* "python/extensions.pyx":295
+  /* "ad3/extensions.pyx":295
  * 
  *     def __dealloc(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -4800,7 +4800,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(stru
   __pyx_t_1 = (__pyx_v_self->__pyx_base.__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":296
+    /* "ad3/extensions.pyx":296
  *     def __dealloc(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -4809,7 +4809,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(stru
  */
     delete __pyx_v_self->__pyx_base.__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":295
+    /* "ad3/extensions.pyx":295
  * 
  *     def __dealloc(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -4818,7 +4818,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(stru
  */
   }
 
-  /* "python/extensions.pyx":294
+  /* "ad3/extensions.pyx":294
  *             self.thisptr = new FactorMatching()
  * 
  *     def __dealloc(self):             # <<<<<<<<<<<<<<
@@ -4833,7 +4833,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(stru
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":298
+/* "ad3/extensions.pyx":298
  *             del self.thisptr
  * 
  *     def initialize(self, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -4842,8 +4842,8 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_2__dealloc(stru
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_15PFactorMatching_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_15PFactorMatching_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorMatching_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_15PFactorMatching_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_rows;
   int __pyx_v_cols;
   PyObject *__pyx_r = 0;
@@ -4888,23 +4888,23 @@ static PyObject *__pyx_pw_6python_10extensions_15PFactorMatching_5initialize(PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 298, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorMatching.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorMatching.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_15PFactorMatching_4initialize(((struct __pyx_obj_6python_10extensions_PFactorMatching *)__pyx_v_self), __pyx_v_rows, __pyx_v_cols);
+  __pyx_r = __pyx_pf_3ad3_10extensions_15PFactorMatching_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorMatching *)__pyx_v_self), __pyx_v_rows, __pyx_v_cols);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_4initialize(struct __pyx_obj_6python_10extensions_PFactorMatching *__pyx_v_self, int __pyx_v_rows, int __pyx_v_cols) {
+static PyObject *__pyx_pf_3ad3_10extensions_15PFactorMatching_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorMatching *__pyx_v_self, int __pyx_v_rows, int __pyx_v_cols) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":299
+  /* "ad3/extensions.pyx":299
  * 
  *     def initialize(self, int rows, int cols):
  *         (<FactorMatching*>self.thisptr).Initialize(rows, cols)             # <<<<<<<<<<<<<<
@@ -4913,7 +4913,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_4initialize(str
  */
   ((AD3::FactorMatching *)__pyx_v_self->__pyx_base.__pyx_base.thisptr)->Initialize(__pyx_v_rows, __pyx_v_cols);
 
-  /* "python/extensions.pyx":298
+  /* "ad3/extensions.pyx":298
  *             del self.thisptr
  * 
  *     def initialize(self, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -4928,7 +4928,7 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_4initialize(str
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":303
+/* "ad3/extensions.pyx":303
  * 
  * cdef class PFactorHeadAutomaton(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -4937,8 +4937,8 @@ static PyObject *__pyx_pf_6python_10extensions_15PFactorMatching_4initialize(str
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -4979,25 +4979,25 @@ static int __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_1__cinit__(PyObj
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 303, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorHeadAutomaton.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorHeadAutomaton.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(((struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton___cinit__(((struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton___cinit__(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/extensions.pyx":304
+  /* "ad3/extensions.pyx":304
  * cdef class PFactorHeadAutomaton(PGenericFactor):
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -5007,7 +5007,7 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 304, __pyx_L1_error)
   __pyx_v_self->__pyx_base.__pyx_base.allocate = __pyx_t_1;
 
-  /* "python/extensions.pyx":305
+  /* "ad3/extensions.pyx":305
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -5017,7 +5017,7 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 305, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/extensions.pyx":306
+    /* "ad3/extensions.pyx":306
  *         self.allocate = allocate
  *         if allocate:
  *            self.thisptr = new FactorHeadAutomaton()             # <<<<<<<<<<<<<<
@@ -5026,7 +5026,7 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
  */
     __pyx_v_self->__pyx_base.__pyx_base.thisptr = new AD3::FactorHeadAutomaton();
 
-    /* "python/extensions.pyx":305
+    /* "ad3/extensions.pyx":305
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -5035,7 +5035,7 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
  */
   }
 
-  /* "python/extensions.pyx":303
+  /* "ad3/extensions.pyx":303
  * 
  * cdef class PFactorHeadAutomaton(PGenericFactor):
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -5047,14 +5047,14 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorHeadAutomaton.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorHeadAutomaton.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/extensions.pyx":308
+/* "ad3/extensions.pyx":308
  *            self.thisptr = new FactorHeadAutomaton()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -5063,22 +5063,22 @@ static int __pyx_pf_6python_10extensions_20PFactorHeadAutomaton___cinit__(struct
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(((struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *)__pyx_v_self));
+  __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_2__dealloc__(((struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self) {
+static void __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_2__dealloc__(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/extensions.pyx":309
+  /* "ad3/extensions.pyx":309
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -5088,7 +5088,7 @@ static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(st
   __pyx_t_1 = (__pyx_v_self->__pyx_base.__pyx_base.allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/extensions.pyx":310
+    /* "ad3/extensions.pyx":310
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -5097,7 +5097,7 @@ static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(st
  */
     delete __pyx_v_self->__pyx_base.__pyx_base.thisptr;
 
-    /* "python/extensions.pyx":309
+    /* "ad3/extensions.pyx":309
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -5106,7 +5106,7 @@ static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(st
  */
   }
 
-  /* "python/extensions.pyx":308
+  /* "ad3/extensions.pyx":308
  *            self.thisptr = new FactorHeadAutomaton()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -5118,7 +5118,7 @@ static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(st
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/extensions.pyx":312
+/* "ad3/extensions.pyx":312
  *             del self.thisptr
  * 
  *     def initialize(self, int length, list siblings):             # <<<<<<<<<<<<<<
@@ -5127,8 +5127,8 @@ static void __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_2__dealloc__(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_5initialize(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_length;
   PyObject *__pyx_v_siblings = 0;
   PyObject *__pyx_r = 0;
@@ -5173,12 +5173,12 @@ static PyObject *__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_5initializ
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("initialize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 312, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.extensions.PFactorHeadAutomaton.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorHeadAutomaton.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_siblings), (&PyList_Type), 1, "siblings", 1))) __PYX_ERR(0, 312, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initialize(((struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *)__pyx_v_self), __pyx_v_length, __pyx_v_siblings);
+  __pyx_r = __pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_4initialize(((struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *)__pyx_v_self), __pyx_v_length, __pyx_v_siblings);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5189,7 +5189,7 @@ static PyObject *__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_5initializ
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initialize(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_siblings) {
+static PyObject *__pyx_pf_3ad3_10extensions_20PFactorHeadAutomaton_4initialize(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *__pyx_v_self, int __pyx_v_length, PyObject *__pyx_v_siblings) {
   std::vector<AD3::Sibling *>  __pyx_v_siblings_v;
   PyObject *__pyx_v_sibling = 0;
   AD3::Sibling *__pyx_v_sibp;
@@ -5206,7 +5206,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
   AD3::Sibling *__pyx_t_9;
   __Pyx_RefNannySetupContext("initialize", 0);
 
-  /* "python/extensions.pyx":318
+  /* "ad3/extensions.pyx":318
  * 
  *         cdef tuple sibling
  *         for sibling in siblings:             # <<<<<<<<<<<<<<
@@ -5230,7 +5230,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __Pyx_XDECREF_SET(__pyx_v_sibling, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "python/extensions.pyx":319
+    /* "ad3/extensions.pyx":319
  *         cdef tuple sibling
  *         for sibling in siblings:
  *             siblings_v.push_back(new Sibling(sibling[0],             # <<<<<<<<<<<<<<
@@ -5246,7 +5246,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 319, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "python/extensions.pyx":320
+    /* "ad3/extensions.pyx":320
  *         for sibling in siblings:
  *             siblings_v.push_back(new Sibling(sibling[0],
  *                                              sibling[1],             # <<<<<<<<<<<<<<
@@ -5262,7 +5262,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 320, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "python/extensions.pyx":321
+    /* "ad3/extensions.pyx":321
  *             siblings_v.push_back(new Sibling(sibling[0],
  *                                              sibling[1],
  *                                              sibling[2]))             # <<<<<<<<<<<<<<
@@ -5278,7 +5278,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "python/extensions.pyx":319
+    /* "ad3/extensions.pyx":319
  *         cdef tuple sibling
  *         for sibling in siblings:
  *             siblings_v.push_back(new Sibling(sibling[0],             # <<<<<<<<<<<<<<
@@ -5292,7 +5292,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
       __PYX_ERR(0, 319, __pyx_L1_error)
     }
 
-    /* "python/extensions.pyx":318
+    /* "ad3/extensions.pyx":318
  * 
  *         cdef tuple sibling
  *         for sibling in siblings:             # <<<<<<<<<<<<<<
@@ -5302,7 +5302,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/extensions.pyx":323
+  /* "ad3/extensions.pyx":323
  *                                              sibling[2]))
  * 
  *         if siblings_v.size() != length * (1 + length) / 2:             # <<<<<<<<<<<<<<
@@ -5312,7 +5312,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
   __pyx_t_7 = ((__pyx_v_siblings_v.size() != __Pyx_div_long((__pyx_v_length * (1 + __pyx_v_length)), 2)) != 0);
   if (__pyx_t_7) {
 
-    /* "python/extensions.pyx":324
+    /* "ad3/extensions.pyx":324
  * 
  *         if siblings_v.size() != length * (1 + length) / 2:
  *             raise ValueError("wrong length?")             # <<<<<<<<<<<<<<
@@ -5325,7 +5325,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 324, __pyx_L1_error)
 
-    /* "python/extensions.pyx":323
+    /* "ad3/extensions.pyx":323
  *                                              sibling[2]))
  * 
  *         if siblings_v.size() != length * (1 + length) / 2:             # <<<<<<<<<<<<<<
@@ -5334,7 +5334,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
  */
   }
 
-  /* "python/extensions.pyx":326
+  /* "ad3/extensions.pyx":326
  *             raise ValueError("wrong length?")
  * 
  *         if length != self.thisptr.Degree() + 1:             # <<<<<<<<<<<<<<
@@ -5344,7 +5344,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
   __pyx_t_7 = ((__pyx_v_length != (__pyx_v_self->__pyx_base.__pyx_base.thisptr->Degree() + 1)) != 0);
   if (__pyx_t_7) {
 
-    /* "python/extensions.pyx":327
+    /* "ad3/extensions.pyx":327
  * 
  *         if length != self.thisptr.Degree() + 1:
  *             raise ValueError("Number of variables doesn't match")             # <<<<<<<<<<<<<<
@@ -5357,7 +5357,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 327, __pyx_L1_error)
 
-    /* "python/extensions.pyx":326
+    /* "ad3/extensions.pyx":326
  *             raise ValueError("wrong length?")
  * 
  *         if length != self.thisptr.Degree() + 1:             # <<<<<<<<<<<<<<
@@ -5366,7 +5366,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
  */
   }
 
-  /* "python/extensions.pyx":329
+  /* "ad3/extensions.pyx":329
  *             raise ValueError("Number of variables doesn't match")
  * 
  *         (<FactorHeadAutomaton*>self.thisptr).Initialize(length, siblings_v)             # <<<<<<<<<<<<<<
@@ -5375,7 +5375,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
  */
   ((AD3::FactorHeadAutomaton *)__pyx_v_self->__pyx_base.__pyx_base.thisptr)->Initialize(__pyx_v_length, __pyx_v_siblings_v);
 
-  /* "python/extensions.pyx":331
+  /* "ad3/extensions.pyx":331
  *         (<FactorHeadAutomaton*>self.thisptr).Initialize(length, siblings_v)
  * 
  *         for sibp in siblings_v:             # <<<<<<<<<<<<<<
@@ -5389,7 +5389,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
     ++__pyx_t_8;
     __pyx_v_sibp = __pyx_t_9;
 
-    /* "python/extensions.pyx":332
+    /* "ad3/extensions.pyx":332
  * 
  *         for sibp in siblings_v:
  *             del sibp             # <<<<<<<<<<<<<<
@@ -5397,7 +5397,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
  */
     delete __pyx_v_sibp;
 
-    /* "python/extensions.pyx":331
+    /* "ad3/extensions.pyx":331
  *         (<FactorHeadAutomaton*>self.thisptr).Initialize(length, siblings_v)
  * 
  *         for sibp in siblings_v:             # <<<<<<<<<<<<<<
@@ -5406,7 +5406,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
  */
   }
 
-  /* "python/extensions.pyx":312
+  /* "ad3/extensions.pyx":312
  *             del self.thisptr
  * 
  *     def initialize(self, int length, list siblings):             # <<<<<<<<<<<<<<
@@ -5420,7 +5420,7 @@ static PyObject *__pyx_pf_6python_10extensions_20PFactorHeadAutomaton_4initializ
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.extensions.PFactorHeadAutomaton.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.extensions.PFactorHeadAutomaton.initialize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_sibling);
@@ -5547,17 +5547,17 @@ static std::vector<int>  __pyx_convert_vector_from_py_int(PyObject *__pyx_v_o) {
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorSequence(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorSequence(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_15PFactorSequence_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_15PFactorSequence_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorSequence(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorSequence(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5567,24 +5567,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorSequence(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_15PFactorSequence_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_15PFactorSequence_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorSequence);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorSequence);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorSequence[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_15PFactorSequence_5initialize, METH_O, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorSequence[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_15PFactorSequence_5initialize, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorSequence = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorSequence = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorSequence", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorSequence), /*tp_basicsize*/
+  "ad3.extensions.PFactorSequence", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorSequence), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorSequence, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorSequence, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5612,7 +5612,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequence = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorSequence, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorSequence, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5622,7 +5622,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequence = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorSequence, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorSequence, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5637,17 +5637,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequence = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorSequenceCompressor(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorSequenceCompressor(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_25PFactorSequenceCompressor_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorSequenceCompressor(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorSequenceCompressor(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5657,24 +5657,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorSequenceCompressor(PyOb
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_25PFactorSequenceCompressor_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorSequenceCompressor);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorSequenceCompressor);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorSequenceCompressor[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_25PFactorSequenceCompressor_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorSequenceCompressor[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_25PFactorSequenceCompressor_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorSequenceCompressor = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorSequenceCompressor = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorSequenceCompressor", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorSequenceCompressor), /*tp_basicsize*/
+  "ad3.extensions.PFactorSequenceCompressor", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorSequenceCompressor), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorSequenceCompressor, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorSequenceCompressor, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5702,7 +5702,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequenceCompressor = 
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorSequenceCompressor, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorSequenceCompressor, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5712,7 +5712,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequenceCompressor = 
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorSequenceCompressor, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorSequenceCompressor, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5727,17 +5727,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorSequenceCompressor = 
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorCompressionBudget(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorCompressionBudget(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_24PFactorCompressionBudget_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorCompressionBudget(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorCompressionBudget(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5747,24 +5747,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorCompressionBudget(PyObj
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_24PFactorCompressionBudget_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorCompressionBudget);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorCompressionBudget);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorCompressionBudget[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_24PFactorCompressionBudget_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorCompressionBudget[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_24PFactorCompressionBudget_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorCompressionBudget = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorCompressionBudget = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorCompressionBudget", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorCompressionBudget), /*tp_basicsize*/
+  "ad3.extensions.PFactorCompressionBudget", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorCompressionBudget), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorCompressionBudget, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorCompressionBudget, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5792,7 +5792,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorCompressionBudget = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorCompressionBudget, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorCompressionBudget, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5802,7 +5802,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorCompressionBudget = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorCompressionBudget, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorCompressionBudget, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5817,17 +5817,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorCompressionBudget = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinaryTree(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinaryTree(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_17PFactorBinaryTree_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_17PFactorBinaryTree_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTree(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTree(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5837,24 +5837,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTree(PyObject *o)
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_17PFactorBinaryTree_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_17PFactorBinaryTree_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTree);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTree);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorBinaryTree[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_17PFactorBinaryTree_5initialize, METH_O, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorBinaryTree[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_17PFactorBinaryTree_5initialize, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTree = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorBinaryTree = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorBinaryTree", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorBinaryTree), /*tp_basicsize*/
+  "ad3.extensions.PFactorBinaryTree", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTree), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTree, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTree, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5882,7 +5882,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTree = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorBinaryTree, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorBinaryTree, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5892,7 +5892,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTree = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorBinaryTree, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorBinaryTree, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5907,17 +5907,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTree = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinaryTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinaryTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTreeCounts(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTreeCounts(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5927,24 +5927,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTreeCounts(PyObje
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTreeCounts);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTreeCounts);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorBinaryTreeCounts[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_23PFactorBinaryTreeCounts_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorBinaryTreeCounts[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_23PFactorBinaryTreeCounts_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTreeCounts = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorBinaryTreeCounts", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorBinaryTreeCounts), /*tp_basicsize*/
+  "ad3.extensions.PFactorBinaryTreeCounts", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorBinaryTreeCounts), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorBinaryTreeCounts, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorBinaryTreeCounts, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5972,7 +5972,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTreeCounts = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorBinaryTreeCounts, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorBinaryTreeCounts, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5982,7 +5982,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTreeCounts = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorBinaryTreeCounts, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorBinaryTreeCounts, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5997,17 +5997,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinaryTreeCounts = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorGeneralTree(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorGeneralTree(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_18PFactorGeneralTree_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_18PFactorGeneralTree_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTree(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTree(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -6017,24 +6017,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTree(PyObject *o
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_18PFactorGeneralTree_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_18PFactorGeneralTree_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTree);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTree);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorGeneralTree[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_18PFactorGeneralTree_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorGeneralTree[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_18PFactorGeneralTree_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTree = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorGeneralTree = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorGeneralTree", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorGeneralTree), /*tp_basicsize*/
+  "ad3.extensions.PFactorGeneralTree", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTree), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTree, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTree, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6062,7 +6062,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTree = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorGeneralTree, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorGeneralTree, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6072,7 +6072,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTree = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorGeneralTree, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorGeneralTree, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6087,17 +6087,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTree = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorGeneralTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorGeneralTreeCounts(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTreeCounts(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTreeCounts(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -6107,24 +6107,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTreeCounts(PyObj
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTreeCounts);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTreeCounts);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorGeneralTreeCounts[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_24PFactorGeneralTreeCounts_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorGeneralTreeCounts[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_24PFactorGeneralTreeCounts_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTreeCounts = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorGeneralTreeCounts", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorGeneralTreeCounts), /*tp_basicsize*/
+  "ad3.extensions.PFactorGeneralTreeCounts", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorGeneralTreeCounts), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorGeneralTreeCounts, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorGeneralTreeCounts, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6152,7 +6152,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTreeCounts = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorGeneralTreeCounts, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorGeneralTreeCounts, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6162,7 +6162,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTreeCounts = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorGeneralTreeCounts, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorGeneralTreeCounts, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6177,17 +6177,17 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorGeneralTreeCounts = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorTree(PyTypeObject *t, PyObject *a, PyObject *k) {
-  PyObject *o = __pyx_ptype_6python_4base_PFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorTree(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_ptype_3ad3_4base_PFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_10extensions_11PFactorTree_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_10extensions_11PFactorTree_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorTree(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorTree(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -6197,24 +6197,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorTree(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_11PFactorTree_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_11PFactorTree_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PFactor)) __pyx_ptype_6python_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorTree);
+  if (likely(__pyx_ptype_3ad3_4base_PFactor)) __pyx_ptype_3ad3_4base_PFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorTree);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorTree[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_11PFactorTree_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorTree[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_11PFactorTree_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorTree = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorTree = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorTree", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorTree), /*tp_basicsize*/
+  "ad3.extensions.PFactorTree", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorTree), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorTree, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorTree, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6242,7 +6242,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorTree = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorTree, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorTree, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6252,7 +6252,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorTree = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorTree, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorTree, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6266,22 +6266,22 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorTree = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorBinarySegmentation __pyx_vtable_6python_10extensions_PFactorBinarySegmentation;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorBinarySegmentation __pyx_vtable_3ad3_10extensions_PFactorBinarySegmentation;
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorBinarySegmentation(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *p;
-  PyObject *o = __pyx_ptype_6python_4base_PGenericFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorBinarySegmentation(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *p;
+  PyObject *o = __pyx_ptype_3ad3_4base_PGenericFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation *)o);
-  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_6python_4base_PGenericFactor*)__pyx_vtabptr_6python_10extensions_PFactorBinarySegmentation;
-  if (unlikely(__pyx_pw_6python_10extensions_25PFactorBinarySegmentation_1__cinit__(o, a, k) < 0)) goto bad;
+  p = ((struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation *)o);
+  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_3ad3_4base_PGenericFactor*)__pyx_vtabptr_3ad3_10extensions_PFactorBinarySegmentation;
+  if (unlikely(__pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorBinarySegmentation(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorBinarySegmentation(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -6291,24 +6291,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorBinarySegmentation(PyOb
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_25PFactorBinarySegmentation_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PGenericFactor)) __pyx_ptype_6python_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorBinarySegmentation);
+  if (likely(__pyx_ptype_3ad3_4base_PGenericFactor)) __pyx_ptype_3ad3_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorBinarySegmentation);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorBinarySegmentation[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_25PFactorBinarySegmentation_5initialize, METH_O, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorBinarySegmentation[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_25PFactorBinarySegmentation_5initialize, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorBinarySegmentation = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorBinarySegmentation = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorBinarySegmentation", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorBinarySegmentation), /*tp_basicsize*/
+  "ad3.extensions.PFactorBinarySegmentation", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorBinarySegmentation), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorBinarySegmentation, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorBinarySegmentation, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6336,7 +6336,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinarySegmentation = 
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorBinarySegmentation, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorBinarySegmentation, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6346,7 +6346,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinarySegmentation = 
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorBinarySegmentation, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorBinarySegmentation, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6360,42 +6360,42 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorBinarySegmentation = 
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorMatching __pyx_vtable_6python_10extensions_PFactorMatching;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorMatching __pyx_vtable_3ad3_10extensions_PFactorMatching;
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorMatching(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_6python_10extensions_PFactorMatching *p;
-  PyObject *o = __pyx_ptype_6python_4base_PGenericFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorMatching(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_3ad3_10extensions_PFactorMatching *p;
+  PyObject *o = __pyx_ptype_3ad3_4base_PGenericFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_10extensions_PFactorMatching *)o);
-  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_6python_4base_PGenericFactor*)__pyx_vtabptr_6python_10extensions_PFactorMatching;
-  if (unlikely(__pyx_pw_6python_10extensions_15PFactorMatching_1__cinit__(o, a, k) < 0)) goto bad;
+  p = ((struct __pyx_obj_3ad3_10extensions_PFactorMatching *)o);
+  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_3ad3_4base_PGenericFactor*)__pyx_vtabptr_3ad3_10extensions_PFactorMatching;
+  if (unlikely(__pyx_pw_3ad3_10extensions_15PFactorMatching_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorMatching(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorMatching(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
   }
   #endif
-  if (likely(__pyx_ptype_6python_4base_PGenericFactor)) __pyx_ptype_6python_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorMatching);
+  if (likely(__pyx_ptype_3ad3_4base_PGenericFactor)) __pyx_ptype_3ad3_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorMatching);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorMatching[] = {
-  {"__dealloc", (PyCFunction)__pyx_pw_6python_10extensions_15PFactorMatching_3__dealloc, METH_NOARGS, 0},
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_15PFactorMatching_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorMatching[] = {
+  {"__dealloc", (PyCFunction)__pyx_pw_3ad3_10extensions_15PFactorMatching_3__dealloc, METH_NOARGS, 0},
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_15PFactorMatching_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorMatching = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorMatching = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorMatching", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorMatching), /*tp_basicsize*/
+  "ad3.extensions.PFactorMatching", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorMatching), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorMatching, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorMatching, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6423,7 +6423,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorMatching = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorMatching, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorMatching, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6433,7 +6433,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorMatching = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorMatching, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorMatching, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6447,22 +6447,22 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorMatching = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_10extensions_PFactorHeadAutomaton __pyx_vtable_6python_10extensions_PFactorHeadAutomaton;
+static struct __pyx_vtabstruct_3ad3_10extensions_PFactorHeadAutomaton __pyx_vtable_3ad3_10extensions_PFactorHeadAutomaton;
 
-static PyObject *__pyx_tp_new_6python_10extensions_PFactorHeadAutomaton(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *p;
-  PyObject *o = __pyx_ptype_6python_4base_PGenericFactor->tp_new(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_10extensions_PFactorHeadAutomaton(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *p;
+  PyObject *o = __pyx_ptype_3ad3_4base_PGenericFactor->tp_new(t, a, k);
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton *)o);
-  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_6python_4base_PGenericFactor*)__pyx_vtabptr_6python_10extensions_PFactorHeadAutomaton;
-  if (unlikely(__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_1__cinit__(o, a, k) < 0)) goto bad;
+  p = ((struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton *)o);
+  p->__pyx_base.__pyx_vtab = (struct __pyx_vtabstruct_3ad3_4base_PGenericFactor*)__pyx_vtabptr_3ad3_10extensions_PFactorHeadAutomaton;
+  if (unlikely(__pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_10extensions_PFactorHeadAutomaton(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_10extensions_PFactorHeadAutomaton(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -6472,24 +6472,24 @@ static void __pyx_tp_dealloc_6python_10extensions_PFactorHeadAutomaton(PyObject 
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_10extensions_20PFactorHeadAutomaton_3__dealloc__(o);
+    __pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
-  if (likely(__pyx_ptype_6python_4base_PGenericFactor)) __pyx_ptype_6python_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_6python_10extensions_PFactorHeadAutomaton);
+  if (likely(__pyx_ptype_3ad3_4base_PGenericFactor)) __pyx_ptype_3ad3_4base_PGenericFactor->tp_dealloc(o); else __Pyx_call_next_tp_dealloc(o, __pyx_tp_dealloc_3ad3_10extensions_PFactorHeadAutomaton);
 }
 
-static PyMethodDef __pyx_methods_6python_10extensions_PFactorHeadAutomaton[] = {
-  {"initialize", (PyCFunction)__pyx_pw_6python_10extensions_20PFactorHeadAutomaton_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_10extensions_PFactorHeadAutomaton[] = {
+  {"initialize", (PyCFunction)__pyx_pw_3ad3_10extensions_20PFactorHeadAutomaton_5initialize, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_10extensions_PFactorHeadAutomaton = {
+static PyTypeObject __pyx_type_3ad3_10extensions_PFactorHeadAutomaton = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.extensions.PFactorHeadAutomaton", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_10extensions_PFactorHeadAutomaton), /*tp_basicsize*/
+  "ad3.extensions.PFactorHeadAutomaton", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_10extensions_PFactorHeadAutomaton), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_10extensions_PFactorHeadAutomaton, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_10extensions_PFactorHeadAutomaton, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6517,7 +6517,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorHeadAutomaton = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_10extensions_PFactorHeadAutomaton, /*tp_methods*/
+  __pyx_methods_3ad3_10extensions_PFactorHeadAutomaton, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -6527,7 +6527,7 @@ static PyTypeObject __pyx_type_6python_10extensions_PFactorHeadAutomaton = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_10extensions_PFactorHeadAutomaton, /*tp_new*/
+  __pyx_tp_new_3ad3_10extensions_PFactorHeadAutomaton, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6603,7 +6603,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "python/extensions.pyx":249
+  /* "ad3/extensions.pyx":249
  * 
  *             if not 0 <= head < length:
  *                 raise ValueError("Invalid arc: head must be in [0, length)")             # <<<<<<<<<<<<<<
@@ -6614,7 +6614,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "python/extensions.pyx":251
+  /* "ad3/extensions.pyx":251
  *                 raise ValueError("Invalid arc: head must be in [0, length)")
  *             if not 1 <= modifier < length:
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")             # <<<<<<<<<<<<<<
@@ -6625,7 +6625,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "python/extensions.pyx":253
+  /* "ad3/extensions.pyx":253
  *                 raise ValueError("Invalid arc: modifier must be in [1, length)")
  *             if not head != modifier:
  *                 raise ValueError("Invalid arc: head cannot be the same as the "             # <<<<<<<<<<<<<<
@@ -6636,7 +6636,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "python/extensions.pyx":258
+  /* "ad3/extensions.pyx":258
  * 
  *         if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
  *             raise ValueError("Number of arcs differs from number of bound "             # <<<<<<<<<<<<<<
@@ -6647,7 +6647,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "python/extensions.pyx":324
+  /* "ad3/extensions.pyx":324
  * 
  *         if siblings_v.size() != length * (1 + length) / 2:
  *             raise ValueError("wrong length?")             # <<<<<<<<<<<<<<
@@ -6658,7 +6658,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "python/extensions.pyx":327
+  /* "ad3/extensions.pyx":327
  * 
  *         if length != self.thisptr.Degree() + 1:
  *             raise ValueError("Number of variables doesn't match")             # <<<<<<<<<<<<<<
@@ -6747,14 +6747,14 @@ PyMODINIT_FUNC PyInit_extensions(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_python__extensions) {
+  if (__pyx_module_is_main_ad3__extensions) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "python.extensions")) {
-      if (unlikely(PyDict_SetItemString(modules, "python.extensions", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "ad3.extensions")) {
+      if (unlikely(PyDict_SetItemString(modules, "ad3.extensions", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -6766,78 +6766,78 @@ PyMODINIT_FUNC PyInit_extensions(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  __pyx_ptype_6python_4base_PFactor = __Pyx_ImportType("python.base", "PFactor", sizeof(struct __pyx_obj_6python_4base_PFactor), 1); if (unlikely(!__pyx_ptype_6python_4base_PFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorSequence.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorSequence) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorSequence.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorSequence", (PyObject *)&__pyx_type_6python_10extensions_PFactorSequence) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorSequence = &__pyx_type_6python_10extensions_PFactorSequence;
-  __pyx_type_6python_10extensions_PFactorSequenceCompressor.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorSequenceCompressor) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorSequenceCompressor.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorSequenceCompressor", (PyObject *)&__pyx_type_6python_10extensions_PFactorSequenceCompressor) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorSequenceCompressor = &__pyx_type_6python_10extensions_PFactorSequenceCompressor;
-  __pyx_type_6python_10extensions_PFactorCompressionBudget.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorCompressionBudget) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorCompressionBudget.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorCompressionBudget", (PyObject *)&__pyx_type_6python_10extensions_PFactorCompressionBudget) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorCompressionBudget = &__pyx_type_6python_10extensions_PFactorCompressionBudget;
-  __pyx_type_6python_10extensions_PFactorBinaryTree.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorBinaryTree) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorBinaryTree.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorBinaryTree", (PyObject *)&__pyx_type_6python_10extensions_PFactorBinaryTree) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorBinaryTree = &__pyx_type_6python_10extensions_PFactorBinaryTree;
-  __pyx_type_6python_10extensions_PFactorBinaryTreeCounts.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorBinaryTreeCounts) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorBinaryTreeCounts.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorBinaryTreeCounts", (PyObject *)&__pyx_type_6python_10extensions_PFactorBinaryTreeCounts) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorBinaryTreeCounts = &__pyx_type_6python_10extensions_PFactorBinaryTreeCounts;
-  __pyx_type_6python_10extensions_PFactorGeneralTree.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorGeneralTree) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorGeneralTree.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorGeneralTree", (PyObject *)&__pyx_type_6python_10extensions_PFactorGeneralTree) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorGeneralTree = &__pyx_type_6python_10extensions_PFactorGeneralTree;
-  __pyx_type_6python_10extensions_PFactorGeneralTreeCounts.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorGeneralTreeCounts) < 0) __PYX_ERR(0, 214, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorGeneralTreeCounts.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorGeneralTreeCounts", (PyObject *)&__pyx_type_6python_10extensions_PFactorGeneralTreeCounts) < 0) __PYX_ERR(0, 214, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorGeneralTreeCounts = &__pyx_type_6python_10extensions_PFactorGeneralTreeCounts;
-  __pyx_type_6python_10extensions_PFactorTree.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorTree) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorTree.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorTree", (PyObject *)&__pyx_type_6python_10extensions_PFactorTree) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorTree = &__pyx_type_6python_10extensions_PFactorTree;
-  __pyx_ptype_6python_4base_PGenericFactor = __Pyx_ImportType("python.base", "PGenericFactor", sizeof(struct __pyx_obj_6python_4base_PGenericFactor), 1); if (unlikely(!__pyx_ptype_6python_4base_PGenericFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_vtabptr_6python_4base_PGenericFactor = (struct __pyx_vtabstruct_6python_4base_PGenericFactor*)__Pyx_GetVtable(__pyx_ptype_6python_4base_PGenericFactor->tp_dict); if (unlikely(!__pyx_vtabptr_6python_4base_PGenericFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_vtabptr_6python_10extensions_PFactorBinarySegmentation = &__pyx_vtable_6python_10extensions_PFactorBinarySegmentation;
-  __pyx_vtable_6python_10extensions_PFactorBinarySegmentation.__pyx_base = *__pyx_vtabptr_6python_4base_PGenericFactor;
-  __pyx_vtable_6python_10extensions_PFactorBinarySegmentation.__pyx_base.cast_configuration = (PyObject *(*)(struct __pyx_obj_6python_4base_PGenericFactor *, AD3::Configuration))__pyx_f_6python_10extensions_25PFactorBinarySegmentation_cast_configuration;
-  __pyx_type_6python_10extensions_PFactorBinarySegmentation.tp_base = __pyx_ptype_6python_4base_PGenericFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorBinarySegmentation.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_10extensions_PFactorBinarySegmentation.tp_dict, __pyx_vtabptr_6python_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "PFactorBinarySegmentation", (PyObject *)&__pyx_type_6python_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorBinarySegmentation = &__pyx_type_6python_10extensions_PFactorBinarySegmentation;
-  __pyx_vtabptr_6python_10extensions_PFactorMatching = &__pyx_vtable_6python_10extensions_PFactorMatching;
-  __pyx_vtable_6python_10extensions_PFactorMatching.__pyx_base = *__pyx_vtabptr_6python_4base_PGenericFactor;
-  __pyx_type_6python_10extensions_PFactorMatching.tp_base = __pyx_ptype_6python_4base_PGenericFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorMatching.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_10extensions_PFactorMatching.tp_dict, __pyx_vtabptr_6python_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "PFactorMatching", (PyObject *)&__pyx_type_6python_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorMatching = &__pyx_type_6python_10extensions_PFactorMatching;
-  __pyx_vtabptr_6python_10extensions_PFactorHeadAutomaton = &__pyx_vtable_6python_10extensions_PFactorHeadAutomaton;
-  __pyx_vtable_6python_10extensions_PFactorHeadAutomaton.__pyx_base = *__pyx_vtabptr_6python_4base_PGenericFactor;
-  __pyx_type_6python_10extensions_PFactorHeadAutomaton.tp_base = __pyx_ptype_6python_4base_PGenericFactor;
-  if (PyType_Ready(&__pyx_type_6python_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
-  __pyx_type_6python_10extensions_PFactorHeadAutomaton.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_10extensions_PFactorHeadAutomaton.tp_dict, __pyx_vtabptr_6python_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "PFactorHeadAutomaton", (PyObject *)&__pyx_type_6python_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
-  __pyx_ptype_6python_10extensions_PFactorHeadAutomaton = &__pyx_type_6python_10extensions_PFactorHeadAutomaton;
+  __pyx_ptype_3ad3_4base_PFactor = __Pyx_ImportType("ad3.base", "PFactor", sizeof(struct __pyx_obj_3ad3_4base_PFactor), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorSequence.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorSequence) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorSequence.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorSequence", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorSequence) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorSequence = &__pyx_type_3ad3_10extensions_PFactorSequence;
+  __pyx_type_3ad3_10extensions_PFactorSequenceCompressor.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorSequenceCompressor) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorSequenceCompressor.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorSequenceCompressor", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorSequenceCompressor) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorSequenceCompressor = &__pyx_type_3ad3_10extensions_PFactorSequenceCompressor;
+  __pyx_type_3ad3_10extensions_PFactorCompressionBudget.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorCompressionBudget) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorCompressionBudget.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorCompressionBudget", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorCompressionBudget) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorCompressionBudget = &__pyx_type_3ad3_10extensions_PFactorCompressionBudget;
+  __pyx_type_3ad3_10extensions_PFactorBinaryTree.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorBinaryTree) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorBinaryTree.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorBinaryTree", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorBinaryTree) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorBinaryTree = &__pyx_type_3ad3_10extensions_PFactorBinaryTree;
+  __pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorBinaryTreeCounts", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorBinaryTreeCounts = &__pyx_type_3ad3_10extensions_PFactorBinaryTreeCounts;
+  __pyx_type_3ad3_10extensions_PFactorGeneralTree.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorGeneralTree) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorGeneralTree.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorGeneralTree", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorGeneralTree) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorGeneralTree = &__pyx_type_3ad3_10extensions_PFactorGeneralTree;
+  __pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts) < 0) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorGeneralTreeCounts", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts) < 0) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorGeneralTreeCounts = &__pyx_type_3ad3_10extensions_PFactorGeneralTreeCounts;
+  __pyx_type_3ad3_10extensions_PFactorTree.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorTree) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorTree.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorTree", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorTree) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorTree = &__pyx_type_3ad3_10extensions_PFactorTree;
+  __pyx_ptype_3ad3_4base_PGenericFactor = __Pyx_ImportType("ad3.base", "PGenericFactor", sizeof(struct __pyx_obj_3ad3_4base_PGenericFactor), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PGenericFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_vtabptr_3ad3_4base_PGenericFactor = (struct __pyx_vtabstruct_3ad3_4base_PGenericFactor*)__Pyx_GetVtable(__pyx_ptype_3ad3_4base_PGenericFactor->tp_dict); if (unlikely(!__pyx_vtabptr_3ad3_4base_PGenericFactor)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_vtabptr_3ad3_10extensions_PFactorBinarySegmentation = &__pyx_vtable_3ad3_10extensions_PFactorBinarySegmentation;
+  __pyx_vtable_3ad3_10extensions_PFactorBinarySegmentation.__pyx_base = *__pyx_vtabptr_3ad3_4base_PGenericFactor;
+  __pyx_vtable_3ad3_10extensions_PFactorBinarySegmentation.__pyx_base.cast_configuration = (PyObject *(*)(struct __pyx_obj_3ad3_4base_PGenericFactor *, AD3::Configuration))__pyx_f_3ad3_10extensions_25PFactorBinarySegmentation_cast_configuration;
+  __pyx_type_3ad3_10extensions_PFactorBinarySegmentation.tp_base = __pyx_ptype_3ad3_4base_PGenericFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorBinarySegmentation.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_10extensions_PFactorBinarySegmentation.tp_dict, __pyx_vtabptr_3ad3_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PFactorBinarySegmentation", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorBinarySegmentation) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorBinarySegmentation = &__pyx_type_3ad3_10extensions_PFactorBinarySegmentation;
+  __pyx_vtabptr_3ad3_10extensions_PFactorMatching = &__pyx_vtable_3ad3_10extensions_PFactorMatching;
+  __pyx_vtable_3ad3_10extensions_PFactorMatching.__pyx_base = *__pyx_vtabptr_3ad3_4base_PGenericFactor;
+  __pyx_type_3ad3_10extensions_PFactorMatching.tp_base = __pyx_ptype_3ad3_4base_PGenericFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorMatching.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_10extensions_PFactorMatching.tp_dict, __pyx_vtabptr_3ad3_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PFactorMatching", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorMatching) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorMatching = &__pyx_type_3ad3_10extensions_PFactorMatching;
+  __pyx_vtabptr_3ad3_10extensions_PFactorHeadAutomaton = &__pyx_vtable_3ad3_10extensions_PFactorHeadAutomaton;
+  __pyx_vtable_3ad3_10extensions_PFactorHeadAutomaton.__pyx_base = *__pyx_vtabptr_3ad3_4base_PGenericFactor;
+  __pyx_type_3ad3_10extensions_PFactorHeadAutomaton.tp_base = __pyx_ptype_3ad3_4base_PGenericFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_type_3ad3_10extensions_PFactorHeadAutomaton.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_10extensions_PFactorHeadAutomaton.tp_dict, __pyx_vtabptr_3ad3_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PFactorHeadAutomaton", (PyObject *)&__pyx_type_3ad3_10extensions_PFactorHeadAutomaton) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_ptype_3ad3_10extensions_PFactorHeadAutomaton = &__pyx_type_3ad3_10extensions_PFactorHeadAutomaton;
   /*--- Type import code ---*/
-  __pyx_ptype_6python_4base_PBinaryVariable = __Pyx_ImportType("python.base", "PBinaryVariable", sizeof(struct __pyx_obj_6python_4base_PBinaryVariable), 1); if (unlikely(!__pyx_ptype_6python_4base_PBinaryVariable)) __PYX_ERR(2, 122, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PMultiVariable = __Pyx_ImportType("python.base", "PMultiVariable", sizeof(struct __pyx_obj_6python_4base_PMultiVariable), 1); if (unlikely(!__pyx_ptype_6python_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
-  __pyx_vtabptr_6python_4base_PMultiVariable = (struct __pyx_vtabstruct_6python_4base_PMultiVariable*)__Pyx_GetVtable(__pyx_ptype_6python_4base_PMultiVariable->tp_dict); if (unlikely(!__pyx_vtabptr_6python_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PBinaryVariable = __Pyx_ImportType("ad3.base", "PBinaryVariable", sizeof(struct __pyx_obj_3ad3_4base_PBinaryVariable), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PBinaryVariable)) __PYX_ERR(2, 122, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PMultiVariable = __Pyx_ImportType("ad3.base", "PMultiVariable", sizeof(struct __pyx_obj_3ad3_4base_PMultiVariable), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
+  __pyx_vtabptr_3ad3_4base_PMultiVariable = (struct __pyx_vtabstruct_3ad3_4base_PMultiVariable*)__Pyx_GetVtable(__pyx_ptype_3ad3_4base_PMultiVariable->tp_dict); if (unlikely(!__pyx_vtabptr_3ad3_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
   /*--- Execution code ---*/
@@ -6845,7 +6845,7 @@ PyMODINIT_FUNC PyInit_extensions(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "python/extensions.pyx":1
+  /* "ad3/extensions.pyx":1
  * from libcpp.vector cimport vector             # <<<<<<<<<<<<<<
  * from libcpp cimport bool
  * 
@@ -6870,11 +6870,11 @@ PyMODINIT_FUNC PyInit_extensions(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init python.extensions", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init ad3.extensions", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init python.extensions");
+    PyErr_SetString(PyExc_ImportError, "init ad3.extensions");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

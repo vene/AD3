@@ -441,8 +441,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__python__base
-#define __PYX_HAVE_API__python__base
+#define __PYX_HAVE__ad3__base
+#define __PYX_HAVE_API__ad3__base
 #include <vector>
 #include "ios"
 #include "new"
@@ -652,8 +652,8 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "python/base.pyx",
-  "python/stringsource",
+  "ad3/base.pyx",
+  "ad3/stringsource",
   "type.pxd",
   "bool.pxd",
   "complex.pxd",
@@ -755,82 +755,82 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
 
 
 /*--- Type declarations ---*/
-struct __pyx_obj_6python_4base_PBinaryVariable;
-struct __pyx_obj_6python_4base_PMultiVariable;
-struct __pyx_obj_6python_4base_PFactor;
-struct __pyx_obj_6python_4base_PGenericFactor;
-struct __pyx_obj_6python_4base_ArrayWrapper;
+struct __pyx_obj_3ad3_4base_PBinaryVariable;
+struct __pyx_obj_3ad3_4base_PMultiVariable;
+struct __pyx_obj_3ad3_4base_PFactor;
+struct __pyx_obj_3ad3_4base_PGenericFactor;
+struct __pyx_obj_3ad3_4base_ArrayWrapper;
 struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "python/base.pxd":122
+/* "ad3/base.pxd":122
  * # and the fundamental extension types
  * 
  * cdef class PBinaryVariable:             # <<<<<<<<<<<<<<
  *     cdef BinaryVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PBinaryVariable {
+struct __pyx_obj_3ad3_4base_PBinaryVariable {
   PyObject_HEAD
   AD3::BinaryVariable *thisptr;
   bool allocate;
 };
 
 
-/* "python/base.pxd":127
+/* "ad3/base.pxd":127
  * 
  * 
  * cdef class PMultiVariable:             # <<<<<<<<<<<<<<
  *     cdef MultiVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PMultiVariable {
+struct __pyx_obj_3ad3_4base_PMultiVariable {
   PyObject_HEAD
-  struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtab;
+  struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtab;
   AD3::MultiVariable *thisptr;
   bool allocate;
 };
 
 
-/* "python/base.pxd":134
+/* "ad3/base.pxd":134
  * 
  * 
  * cdef class PFactor:             # <<<<<<<<<<<<<<
  *     cdef Factor* thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PFactor {
+struct __pyx_obj_3ad3_4base_PFactor {
   PyObject_HEAD
   AD3::Factor *thisptr;
   bool allocate;
 };
 
 
-/* "python/base.pxd":139
+/* "ad3/base.pxd":139
  * 
  * 
  * cdef class PGenericFactor(PFactor):             # <<<<<<<<<<<<<<
  *     cdef cast_configuration(self, Configuration)
  * 
  */
-struct __pyx_obj_6python_4base_PGenericFactor {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtab;
+struct __pyx_obj_3ad3_4base_PGenericFactor {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtab;
 };
 
 
-/* "python/base.pyx":15
+/* "ad3/base.pyx":15
  * 
  * 
  * cdef class ArrayWrapper:             # <<<<<<<<<<<<<<
  * 
  *     cdef vector[double] data
  */
-struct __pyx_obj_6python_4base_ArrayWrapper {
+struct __pyx_obj_3ad3_4base_ArrayWrapper {
   PyObject_HEAD
-  struct __pyx_vtabstruct_6python_4base_ArrayWrapper *__pyx_vtab;
+  struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *__pyx_vtab;
   std::vector<double>  data;
 };
 
@@ -927,7 +927,7 @@ struct __pyx_vtabstruct_array {
 static struct __pyx_vtabstruct_array *__pyx_vtabptr_array;
 
 
-/* "python/base.pyx":55
+/* "ad3/base.pyx":55
  * 
  * 
  * cdef class PMultiVariable:             # <<<<<<<<<<<<<<
@@ -935,13 +935,13 @@ static struct __pyx_vtabstruct_array *__pyx_vtabptr_array;
  *     def __cinit__(self, allocate=True):
  */
 
-struct __pyx_vtabstruct_6python_4base_PMultiVariable {
-  int (*_get_n_states)(struct __pyx_obj_6python_4base_PMultiVariable *);
+struct __pyx_vtabstruct_3ad3_4base_PMultiVariable {
+  int (*_get_n_states)(struct __pyx_obj_3ad3_4base_PMultiVariable *);
 };
-static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6python_4base_PMultiVariable;
+static struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtabptr_3ad3_4base_PMultiVariable;
 
 
-/* "python/base.pyx":157
+/* "ad3/base.pyx":157
  * 
  * 
  * cdef class PGenericFactor(PFactor):             # <<<<<<<<<<<<<<
@@ -949,13 +949,13 @@ static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6pyth
  * 
  */
 
-struct __pyx_vtabstruct_6python_4base_PGenericFactor {
-  PyObject *(*cast_configuration)(struct __pyx_obj_6python_4base_PGenericFactor *, AD3::Configuration);
+struct __pyx_vtabstruct_3ad3_4base_PGenericFactor {
+  PyObject *(*cast_configuration)(struct __pyx_obj_3ad3_4base_PGenericFactor *, AD3::Configuration);
 };
-static struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtabptr_6python_4base_PGenericFactor;
+static struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtabptr_3ad3_4base_PGenericFactor;
 
 
-/* "python/base.pyx":15
+/* "ad3/base.pyx":15
  * 
  * 
  * cdef class ArrayWrapper:             # <<<<<<<<<<<<<<
@@ -963,10 +963,10 @@ static struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtabptr_6pyth
  *     cdef vector[double] data
  */
 
-struct __pyx_vtabstruct_6python_4base_ArrayWrapper {
-  PyObject *(*get_array)(struct __pyx_obj_6python_4base_ArrayWrapper *, PyObject *);
+struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper {
+  PyObject *(*get_array)(struct __pyx_obj_3ad3_4base_ArrayWrapper *, PyObject *);
 };
-static struct __pyx_vtabstruct_6python_4base_ArrayWrapper *__pyx_vtabptr_6python_4base_ArrayWrapper;
+static struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *__pyx_vtabptr_3ad3_4base_ArrayWrapper;
 
 
 /* "View.MemoryView":326
@@ -1556,9 +1556,9 @@ static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_self, PyObject *__pyx_v_shape); /* proto*/
-static int __pyx_f_6python_4base_14PMultiVariable__get_n_states(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHON_UNUSED struct __pyx_obj_6python_4base_PGenericFactor *__pyx_v_self, AD3::Configuration __pyx_v_cfg); /* proto*/
+static PyObject *__pyx_f_3ad3_4base_12ArrayWrapper_get_array(struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_self, PyObject *__pyx_v_shape); /* proto*/
+static int __pyx_f_3ad3_4base_14PMultiVariable__get_n_states(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self); /* proto*/
+static PyObject *__pyx_f_3ad3_4base_14PGenericFactor_cast_configuration(CYTHON_UNUSED struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_self, AD3::Configuration __pyx_v_cfg); /* proto*/
 static PyObject *__pyx_array_get_memview(struct __pyx_array_obj *__pyx_v_self); /* proto*/
 static char *__pyx_memoryview_get_item_pointer(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_index); /* proto*/
 static PyObject *__pyx_memoryview_is_slice(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_obj); /* proto*/
@@ -1662,12 +1662,12 @@ static PyTypeObject *__pyx_ptype_7cpython_7complex_complex = 0;
 
 /* Module declarations from 'cpython' */
 
-/* Module declarations from 'python.base' */
-static PyTypeObject *__pyx_ptype_6python_4base_PBinaryVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PMultiVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PFactor = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PGenericFactor = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_ArrayWrapper = 0;
+/* Module declarations from 'ad3.base' */
+static PyTypeObject *__pyx_ptype_3ad3_4base_PBinaryVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PMultiVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PFactor = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PGenericFactor = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_ArrayWrapper = 0;
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -1715,10 +1715,10 @@ static void __pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize_t *, Py_
 static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size_t, void *, int); /*proto*/
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_double = { "double", NULL, sizeof(double), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "python.base"
-int __pyx_module_is_main_python__base = 0;
+#define __Pyx_MODULE_NAME "ad3.base"
+int __pyx_module_is_main_ad3__base = 0;
 
-/* Implementation of 'python.base' */
+/* Implementation of 'ad3.base' */
 static PyObject *__pyx_builtin_IndexError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_super;
@@ -1890,31 +1890,31 @@ static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_validate;
 static PyObject *__pyx_n_s_variable_log_potentials;
-static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self, double __pyx_v_log_potential); /* proto */
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self); /* proto */
-static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self); /* proto */
-static Py_ssize_t __pyx_pf_6python_4base_14PMultiVariable_4__len__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, bool __pyx_v_validate); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i); /* proto */
-static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, __Pyx_memviewslice __pyx_v_log_potentials, bool __pyx_v_validate); /* proto */
-static int __pyx_pf_6python_4base_7PFactor___cinit__(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self); /* proto */
-static void __pyx_pf_6python_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __pyx_obj_6python_4base_PFactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_additional_log_potentials); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, int __pyx_v_i); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, int __pyx_v_i); /* proto */
-static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials); /* proto */
-static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_obj_6python_4base_PGenericFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials, int __pyx_v_max_iter, bool __pyx_v_return_array); /* proto */
+static int __pyx_pf_3ad3_4base_15PBinaryVariable___cinit__(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_4base_15PBinaryVariable_2__dealloc__(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_4get_log_potential(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_6set_log_potential(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self, double __pyx_v_log_potential); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_8get_id(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_10get_degree(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self); /* proto */
+static int __pyx_pf_3ad3_4base_14PMultiVariable___cinit__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static void __pyx_pf_3ad3_4base_14PMultiVariable_2__dealloc__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self); /* proto */
+static Py_ssize_t __pyx_pf_3ad3_4base_14PMultiVariable_4__len__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_6get_state(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, bool __pyx_v_validate); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_8__getitem__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i); /* proto */
+static int __pyx_pf_3ad3_4base_14PMultiVariable_10__setitem__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_12get_log_potential(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_14set_log_potential(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_16set_log_potentials(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, __Pyx_memviewslice __pyx_v_log_potentials, bool __pyx_v_validate); /* proto */
+static int __pyx_pf_3ad3_4base_7PFactor___cinit__(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self); /* proto */
+static void __pyx_pf_3ad3_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_4set_allocate(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, PyObject *__pyx_v_allocate); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_6get_additional_log_potentials(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_8set_additional_log_potentials(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_additional_log_potentials); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_10get_degree(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_12get_link_id(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, int __pyx_v_i); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_14get_variable(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, int __pyx_v_i); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_16solve_map(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials); /* proto */
+static PyObject *__pyx_pf_3ad3_4base_14PGenericFactor_solve_qp(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials, int __pyx_v_max_iter, bool __pyx_v_return_array); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -1947,11 +1947,11 @@ static PyObject *__pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_20
 static PyObject *__pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_22copy_fortran(struct __pyx_memoryview_obj *__pyx_v_self); /* proto */
 static void __pyx_memoryviewslice___pyx_pf_15View_dot_MemoryView_16_memoryviewslice___dealloc__(struct __pyx_memoryviewslice_obj *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_15View_dot_MemoryView_16_memoryviewslice_4base___get__(struct __pyx_memoryviewslice_obj *__pyx_v_self); /* proto */
-static PyObject *__pyx_tp_new_6python_4base_PBinaryVariable(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_4base_PMultiVariable(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_4base_PFactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_4base_PGenericFactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_6python_4base_ArrayWrapper(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_4base_PBinaryVariable(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_4base_PMultiVariable(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_4base_PFactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_4base_PGenericFactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3ad3_4base_ArrayWrapper(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_array(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_Enum(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_memoryview(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1978,7 +1978,7 @@ static PyObject *__pyx_tuple__16;
 static PyObject *__pyx_tuple__17;
 static PyObject *__pyx_tuple__18;
 
-/* "python/base.pyx":19
+/* "ad3/base.pyx":19
  *     cdef vector[double] data
  * 
  *     cdef get_array(ArrayWrapper self, tuple shape):             # <<<<<<<<<<<<<<
@@ -1986,14 +1986,14 @@ static PyObject *__pyx_tuple__18;
  *             return None
  */
 
-static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_self, PyObject *__pyx_v_shape) {
+static PyObject *__pyx_f_3ad3_4base_12ArrayWrapper_get_array(struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_self, PyObject *__pyx_v_shape) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("get_array", 0);
 
-  /* "python/base.pyx":20
+  /* "ad3/base.pyx":20
  * 
  *     cdef get_array(ArrayWrapper self, tuple shape):
  *         if self.data.size() == 0:             # <<<<<<<<<<<<<<
@@ -2003,7 +2003,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
   __pyx_t_1 = ((__pyx_v_self->data.size() == 0) != 0);
   if (__pyx_t_1) {
 
-    /* "python/base.pyx":21
+    /* "ad3/base.pyx":21
  *     cdef get_array(ArrayWrapper self, tuple shape):
  *         if self.data.size() == 0:
  *             return None             # <<<<<<<<<<<<<<
@@ -2015,7 +2015,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
     __pyx_r = Py_None;
     goto __pyx_L0;
 
-    /* "python/base.pyx":20
+    /* "ad3/base.pyx":20
  * 
  *     cdef get_array(ArrayWrapper self, tuple shape):
  *         if self.data.size() == 0:             # <<<<<<<<<<<<<<
@@ -2024,7 +2024,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
  */
   }
 
-  /* "python/base.pyx":22
+  /* "ad3/base.pyx":22
  *         if self.data.size() == 0:
  *             return None
  *         Py_INCREF(self)             # <<<<<<<<<<<<<<
@@ -2033,7 +2033,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
  */
   Py_INCREF(((PyObject *)__pyx_v_self));
 
-  /* "python/base.pyx":23
+  /* "ad3/base.pyx":23
  *             return None
  *         Py_INCREF(self)
  *         return array_cwrapper(             # <<<<<<<<<<<<<<
@@ -2042,7 +2042,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "python/base.pyx":28
+  /* "ad3/base.pyx":28
  *             format="d",
  *             mode="c",
  *             buf=(<char*> self.data.data()))             # <<<<<<<<<<<<<<
@@ -2055,7 +2055,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":19
+  /* "ad3/base.pyx":19
  *     cdef vector[double] data
  * 
  *     cdef get_array(ArrayWrapper self, tuple shape):             # <<<<<<<<<<<<<<
@@ -2066,7 +2066,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("python.base.ArrayWrapper.get_array", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.ArrayWrapper.get_array", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2074,7 +2074,7 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "python/base.pyx":33
+/* "ad3/base.pyx":33
  * cdef class PBinaryVariable:
  * 
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2083,8 +2083,8 @@ static PyObject *__pyx_f_6python_4base_12ArrayWrapper_get_array(struct __pyx_obj
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_4base_15PBinaryVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_4base_15PBinaryVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_4base_15PBinaryVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_4base_15PBinaryVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -2125,25 +2125,25 @@ static int __pyx_pw_6python_4base_15PBinaryVariable_1__cinit__(PyObject *__pyx_v
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 33, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PBinaryVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_15PBinaryVariable___cinit__(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_4base_15PBinaryVariable___cinit__(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_4base_15PBinaryVariable___cinit__(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/base.pyx":34
+  /* "ad3/base.pyx":34
  * 
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -2153,7 +2153,7 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 34, __pyx_L1_error)
   __pyx_v_self->allocate = __pyx_t_1;
 
-  /* "python/base.pyx":35
+  /* "ad3/base.pyx":35
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2163,7 +2163,7 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 35, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/base.pyx":36
+    /* "ad3/base.pyx":36
  *         self.allocate = allocate
  *         if allocate:
  *             self.thisptr = new BinaryVariable()             # <<<<<<<<<<<<<<
@@ -2172,7 +2172,7 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
  */
     __pyx_v_self->thisptr = new AD3::BinaryVariable();
 
-    /* "python/base.pyx":35
+    /* "ad3/base.pyx":35
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2181,7 +2181,7 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
  */
   }
 
-  /* "python/base.pyx":33
+  /* "ad3/base.pyx":33
  * cdef class PBinaryVariable:
  * 
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2193,14 +2193,14 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.base.PBinaryVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/base.pyx":38
+/* "ad3/base.pyx":38
  *             self.thisptr = new BinaryVariable()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2209,22 +2209,22 @@ static int __pyx_pf_6python_4base_15PBinaryVariable___cinit__(struct __pyx_obj_6
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_4base_15PBinaryVariable_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_4base_15PBinaryVariable_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_4base_15PBinaryVariable_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_4base_15PBinaryVariable_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self));
+  __pyx_pf_3ad3_4base_15PBinaryVariable_2__dealloc__(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self) {
+static void __pyx_pf_3ad3_4base_15PBinaryVariable_2__dealloc__(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/base.pyx":39
+  /* "ad3/base.pyx":39
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2234,7 +2234,7 @@ static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_o
   __pyx_t_1 = (__pyx_v_self->allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/base.pyx":40
+    /* "ad3/base.pyx":40
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -2243,7 +2243,7 @@ static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_o
  */
     delete __pyx_v_self->thisptr;
 
-    /* "python/base.pyx":39
+    /* "ad3/base.pyx":39
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2252,7 +2252,7 @@ static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_o
  */
   }
 
-  /* "python/base.pyx":38
+  /* "ad3/base.pyx":38
  *             self.thisptr = new BinaryVariable()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2264,7 +2264,7 @@ static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_o
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/base.pyx":42
+/* "ad3/base.pyx":42
  *             del self.thisptr
  * 
  *     def get_log_potential(self):             # <<<<<<<<<<<<<<
@@ -2273,25 +2273,25 @@ static void __pyx_pf_6python_4base_15PBinaryVariable_2__dealloc__(struct __pyx_o
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_5get_log_potential(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_5get_log_potential(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_5get_log_potential(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_5get_log_potential(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_log_potential (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_15PBinaryVariable_4get_log_potential(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_4get_log_potential(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_log_potential", 0);
 
-  /* "python/base.pyx":43
+  /* "ad3/base.pyx":43
  * 
  *     def get_log_potential(self):
  *         return self.thisptr.GetLogPotential()             # <<<<<<<<<<<<<<
@@ -2305,7 +2305,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(str
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":42
+  /* "ad3/base.pyx":42
  *             del self.thisptr
  * 
  *     def get_log_potential(self):             # <<<<<<<<<<<<<<
@@ -2316,7 +2316,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(str
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PBinaryVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2324,7 +2324,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(str
   return __pyx_r;
 }
 
-/* "python/base.pyx":45
+/* "ad3/base.pyx":45
  *         return self.thisptr.GetLogPotential()
  * 
  *     def set_log_potential(self, double log_potential):             # <<<<<<<<<<<<<<
@@ -2333,8 +2333,8 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_4get_log_potential(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_7set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_log_potential); /*proto*/
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_7set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_log_potential) {
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_7set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_log_potential); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_7set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_log_potential) {
   double __pyx_v_log_potential;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -2344,23 +2344,23 @@ static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_7set_log_potential(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PBinaryVariable.set_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.set_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self), ((double)__pyx_v_log_potential));
+  __pyx_r = __pyx_pf_3ad3_4base_15PBinaryVariable_6set_log_potential(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self), ((double)__pyx_v_log_potential));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self, double __pyx_v_log_potential) {
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_6set_log_potential(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self, double __pyx_v_log_potential) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_log_potential", 0);
 
-  /* "python/base.pyx":46
+  /* "ad3/base.pyx":46
  * 
  *     def set_log_potential(self, double log_potential):
  *         self.thisptr.SetLogPotential(log_potential)             # <<<<<<<<<<<<<<
@@ -2369,7 +2369,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(str
  */
   __pyx_v_self->thisptr->SetLogPotential(__pyx_v_log_potential);
 
-  /* "python/base.pyx":45
+  /* "ad3/base.pyx":45
  *         return self.thisptr.GetLogPotential()
  * 
  *     def set_log_potential(self, double log_potential):             # <<<<<<<<<<<<<<
@@ -2384,7 +2384,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(str
   return __pyx_r;
 }
 
-/* "python/base.pyx":48
+/* "ad3/base.pyx":48
  *         self.thisptr.SetLogPotential(log_potential)
  * 
  *     def get_id(self):             # <<<<<<<<<<<<<<
@@ -2393,25 +2393,25 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_6set_log_potential(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_9get_id(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_9get_id(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_9get_id(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_9get_id(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_id (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_15PBinaryVariable_8get_id(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_15PBinaryVariable_8get_id(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_8get_id(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_id", 0);
 
-  /* "python/base.pyx":49
+  /* "ad3/base.pyx":49
  * 
  *     def get_id(self):
  *         return self.thisptr.GetId()             # <<<<<<<<<<<<<<
@@ -2425,7 +2425,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_o
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":48
+  /* "ad3/base.pyx":48
  *         self.thisptr.SetLogPotential(log_potential)
  * 
  *     def get_id(self):             # <<<<<<<<<<<<<<
@@ -2436,7 +2436,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_o
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PBinaryVariable.get_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.get_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2444,7 +2444,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_o
   return __pyx_r;
 }
 
-/* "python/base.pyx":51
+/* "ad3/base.pyx":51
  *         return self.thisptr.GetId()
  * 
  *     def get_degree(self):             # <<<<<<<<<<<<<<
@@ -2453,25 +2453,25 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_8get_id(struct __pyx_o
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_4base_15PBinaryVariable_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_15PBinaryVariable_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_degree (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_15PBinaryVariable_10get_degree(((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_15PBinaryVariable_10get_degree(((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_4base_15PBinaryVariable_10get_degree(struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_degree", 0);
 
-  /* "python/base.pyx":52
+  /* "ad3/base.pyx":52
  * 
  *     def get_degree(self):
  *         return self.thisptr.Degree()             # <<<<<<<<<<<<<<
@@ -2485,7 +2485,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":51
+  /* "ad3/base.pyx":51
  *         return self.thisptr.GetId()
  * 
  *     def get_degree(self):             # <<<<<<<<<<<<<<
@@ -2496,7 +2496,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PBinaryVariable.get_degree", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PBinaryVariable.get_degree", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2504,7 +2504,7 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __
   return __pyx_r;
 }
 
-/* "python/base.pyx":57
+/* "ad3/base.pyx":57
  * cdef class PMultiVariable:
  * 
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2513,8 +2513,8 @@ static PyObject *__pyx_pf_6python_4base_15PBinaryVariable_10get_degree(struct __
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_4base_14PMultiVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_4base_14PMultiVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_4base_14PMultiVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_4base_14PMultiVariable_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_allocate = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -2555,18 +2555,18 @@ static int __pyx_pw_6python_4base_14PMultiVariable_1__cinit__(PyObject *__pyx_v_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 57, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable___cinit__(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), __pyx_v_allocate);
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable___cinit__(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), __pyx_v_allocate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static int __pyx_pf_3ad3_4base_14PMultiVariable___cinit__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, PyObject *__pyx_v_allocate) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
@@ -2574,7 +2574,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
   AD3::MultiVariable *__pyx_t_3;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/base.pyx":58
+  /* "ad3/base.pyx":58
  * 
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -2584,7 +2584,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L1_error)
   __pyx_v_self->allocate = __pyx_t_1;
 
-  /* "python/base.pyx":59
+  /* "ad3/base.pyx":59
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2594,7 +2594,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 59, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "python/base.pyx":60
+    /* "ad3/base.pyx":60
  *         self.allocate = allocate
  *         if allocate:
  *             self.thisptr = new MultiVariable()             # <<<<<<<<<<<<<<
@@ -2609,7 +2609,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
     }
     __pyx_v_self->thisptr = __pyx_t_3;
 
-    /* "python/base.pyx":59
+    /* "ad3/base.pyx":59
  *     def __cinit__(self, allocate=True):
  *         self.allocate = allocate
  *         if allocate:             # <<<<<<<<<<<<<<
@@ -2618,7 +2618,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
  */
   }
 
-  /* "python/base.pyx":57
+  /* "ad3/base.pyx":57
  * cdef class PMultiVariable:
  * 
  *     def __cinit__(self, allocate=True):             # <<<<<<<<<<<<<<
@@ -2630,14 +2630,14 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/base.pyx":62
+/* "ad3/base.pyx":62
  *             self.thisptr = new MultiVariable()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2646,22 +2646,22 @@ static int __pyx_pf_6python_4base_14PMultiVariable___cinit__(struct __pyx_obj_6p
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_4base_14PMultiVariable_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_4base_14PMultiVariable_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_4base_14PMultiVariable_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_4base_14PMultiVariable_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self));
+  __pyx_pf_3ad3_4base_14PMultiVariable_2__dealloc__(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self) {
+static void __pyx_pf_3ad3_4base_14PMultiVariable_2__dealloc__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/base.pyx":63
+  /* "ad3/base.pyx":63
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2671,7 +2671,7 @@ static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_ob
   __pyx_t_1 = (__pyx_v_self->allocate != 0);
   if (__pyx_t_1) {
 
-    /* "python/base.pyx":64
+    /* "ad3/base.pyx":64
  *     def __dealloc__(self):
  *         if self.allocate:
  *             del self.thisptr             # <<<<<<<<<<<<<<
@@ -2680,7 +2680,7 @@ static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_ob
  */
     delete __pyx_v_self->thisptr;
 
-    /* "python/base.pyx":63
+    /* "ad3/base.pyx":63
  * 
  *     def __dealloc__(self):
  *         if self.allocate:             # <<<<<<<<<<<<<<
@@ -2689,7 +2689,7 @@ static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_ob
  */
   }
 
-  /* "python/base.pyx":62
+  /* "ad3/base.pyx":62
  *             self.thisptr = new MultiVariable()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -2701,7 +2701,7 @@ static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_ob
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/base.pyx":66
+/* "ad3/base.pyx":66
  *             del self.thisptr
  * 
  *     cdef int _get_n_states(self):             # <<<<<<<<<<<<<<
@@ -2709,12 +2709,12 @@ static void __pyx_pf_6python_4base_14PMultiVariable_2__dealloc__(struct __pyx_ob
  * 
  */
 
-static int __pyx_f_6python_4base_14PMultiVariable__get_n_states(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self) {
+static int __pyx_f_3ad3_4base_14PMultiVariable__get_n_states(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("_get_n_states", 0);
 
-  /* "python/base.pyx":67
+  /* "ad3/base.pyx":67
  * 
  *     cdef int _get_n_states(self):
  *         return self.thisptr.GetNumStates()             # <<<<<<<<<<<<<<
@@ -2724,7 +2724,7 @@ static int __pyx_f_6python_4base_14PMultiVariable__get_n_states(struct __pyx_obj
   __pyx_r = __pyx_v_self->thisptr->GetNumStates();
   goto __pyx_L0;
 
-  /* "python/base.pyx":66
+  /* "ad3/base.pyx":66
  *             del self.thisptr
  * 
  *     cdef int _get_n_states(self):             # <<<<<<<<<<<<<<
@@ -2738,7 +2738,7 @@ static int __pyx_f_6python_4base_14PMultiVariable__get_n_states(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "python/base.pyx":69
+/* "ad3/base.pyx":69
  *         return self.thisptr.GetNumStates()
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -2747,34 +2747,34 @@ static int __pyx_f_6python_4base_14PMultiVariable__get_n_states(struct __pyx_obj
  */
 
 /* Python wrapper */
-static Py_ssize_t __pyx_pw_6python_4base_14PMultiVariable_5__len__(PyObject *__pyx_v_self); /*proto*/
-static Py_ssize_t __pyx_pw_6python_4base_14PMultiVariable_5__len__(PyObject *__pyx_v_self) {
+static Py_ssize_t __pyx_pw_3ad3_4base_14PMultiVariable_5__len__(PyObject *__pyx_v_self); /*proto*/
+static Py_ssize_t __pyx_pw_3ad3_4base_14PMultiVariable_5__len__(PyObject *__pyx_v_self) {
   Py_ssize_t __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__len__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_4__len__(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_4__len__(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static Py_ssize_t __pyx_pf_6python_4base_14PMultiVariable_4__len__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self) {
+static Py_ssize_t __pyx_pf_3ad3_4base_14PMultiVariable_4__len__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self) {
   Py_ssize_t __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__len__", 0);
 
-  /* "python/base.pyx":70
+  /* "ad3/base.pyx":70
  * 
  *     def __len__(self):
  *         return self._get_n_states()             # <<<<<<<<<<<<<<
  * 
  *     def get_state(self, int i, bool validate=True):
  */
-  __pyx_r = ((struct __pyx_vtabstruct_6python_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self);
+  __pyx_r = ((struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self);
   goto __pyx_L0;
 
-  /* "python/base.pyx":69
+  /* "ad3/base.pyx":69
  *         return self.thisptr.GetNumStates()
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
@@ -2788,7 +2788,7 @@ static Py_ssize_t __pyx_pf_6python_4base_14PMultiVariable_4__len__(struct __pyx_
   return __pyx_r;
 }
 
-/* "python/base.pyx":72
+/* "ad3/base.pyx":72
  *         return self._get_n_states()
  * 
  *     def get_state(self, int i, bool validate=True):             # <<<<<<<<<<<<<<
@@ -2797,8 +2797,8 @@ static Py_ssize_t __pyx_pf_6python_4base_14PMultiVariable_4__len__(struct __pyx_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_7get_state(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_7get_state(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_7get_state(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_7get_state(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_i;
   bool __pyx_v_validate;
   PyObject *__pyx_r = 0;
@@ -2849,20 +2849,20 @@ static PyObject *__pyx_pw_6python_4base_14PMultiVariable_7get_state(PyObject *__
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("get_state", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 72, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.get_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.get_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_6get_state(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), __pyx_v_i, __pyx_v_validate);
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_6get_state(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), __pyx_v_i, __pyx_v_validate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, bool __pyx_v_validate) {
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_6get_state(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, bool __pyx_v_validate) {
   AD3::BinaryVariable *__pyx_v_variable;
-  struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
+  struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -2875,7 +2875,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("get_state", 0);
 
-  /* "python/base.pyx":74
+  /* "ad3/base.pyx":74
  *     def get_state(self, int i, bool validate=True):
  * 
  *         if validate and not 0 <= i < self._get_n_states():             # <<<<<<<<<<<<<<
@@ -2890,14 +2890,14 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   }
   __pyx_t_2 = (0 <= __pyx_v_i);
   if (__pyx_t_2) {
-    __pyx_t_2 = (__pyx_v_i < ((struct __pyx_vtabstruct_6python_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self));
+    __pyx_t_2 = (__pyx_v_i < ((struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self));
   }
   __pyx_t_3 = ((!(__pyx_t_2 != 0)) != 0);
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "python/base.pyx":75
+    /* "ad3/base.pyx":75
  * 
  *         if validate and not 0 <= i < self._get_n_states():
  *             raise IndexError("State {:d} is out of bounds.".format(i))             # <<<<<<<<<<<<<<
@@ -2966,7 +2966,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __PYX_ERR(0, 75, __pyx_L1_error)
 
-    /* "python/base.pyx":74
+    /* "ad3/base.pyx":74
  *     def get_state(self, int i, bool validate=True):
  * 
  *         if validate and not 0 <= i < self._get_n_states():             # <<<<<<<<<<<<<<
@@ -2975,7 +2975,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
  */
   }
 
-  /* "python/base.pyx":77
+  /* "ad3/base.pyx":77
  *             raise IndexError("State {:d} is out of bounds.".format(i))
  * 
  *         cdef BinaryVariable *variable = self.thisptr.GetState(i)             # <<<<<<<<<<<<<<
@@ -2984,7 +2984,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
  */
   __pyx_v_variable = __pyx_v_self->thisptr->GetState(__pyx_v_i);
 
-  /* "python/base.pyx":78
+  /* "ad3/base.pyx":78
  * 
  *         cdef BinaryVariable *variable = self.thisptr.GetState(i)
  *         pvariable = PBinaryVariable(allocate=False)             # <<<<<<<<<<<<<<
@@ -2994,13 +2994,13 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   __pyx_t_4 = PyDict_New(); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_allocate, Py_False) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_v_pvariable = ((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_t_5);
+  __pyx_v_pvariable = ((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "python/base.pyx":79
+  /* "ad3/base.pyx":79
  *         cdef BinaryVariable *variable = self.thisptr.GetState(i)
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable             # <<<<<<<<<<<<<<
@@ -3009,7 +3009,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
  */
   __pyx_v_pvariable->thisptr = __pyx_v_variable;
 
-  /* "python/base.pyx":80
+  /* "ad3/base.pyx":80
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable
  *         return pvariable             # <<<<<<<<<<<<<<
@@ -3021,7 +3021,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   __pyx_r = ((PyObject *)__pyx_v_pvariable);
   goto __pyx_L0;
 
-  /* "python/base.pyx":72
+  /* "ad3/base.pyx":72
  *         return self._get_n_states()
  * 
  *     def get_state(self, int i, bool validate=True):             # <<<<<<<<<<<<<<
@@ -3036,7 +3036,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("python.base.PMultiVariable.get_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.get_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_pvariable);
@@ -3045,7 +3045,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
   return __pyx_r;
 }
 
-/* "python/base.pyx":82
+/* "ad3/base.pyx":82
  *         return pvariable
  * 
  *     def __getitem__(self, int i):             # <<<<<<<<<<<<<<
@@ -3054,8 +3054,8 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_6get_state(struct __pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_9__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_9__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_9__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_9__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3065,18 +3065,18 @@ static PyObject *__pyx_pw_6python_4base_14PMultiVariable_9__getitem__(PyObject *
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.__getitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__getitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_8__getitem__(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_8__getitem__(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_8__getitem__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -3088,7 +3088,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("__getitem__", 0);
 
-  /* "python/base.pyx":84
+  /* "ad3/base.pyx":84
  *     def __getitem__(self, int i):
  * 
  *         if not 0 <= i < self._get_n_states():             # <<<<<<<<<<<<<<
@@ -3097,12 +3097,12 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
  */
   __pyx_t_1 = (0 <= __pyx_v_i);
   if (__pyx_t_1) {
-    __pyx_t_1 = (__pyx_v_i < ((struct __pyx_vtabstruct_6python_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self));
+    __pyx_t_1 = (__pyx_v_i < ((struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *)__pyx_v_self->__pyx_vtab)->_get_n_states(__pyx_v_self));
   }
   __pyx_t_2 = ((!(__pyx_t_1 != 0)) != 0);
   if (__pyx_t_2) {
 
-    /* "python/base.pyx":85
+    /* "ad3/base.pyx":85
  * 
  *         if not 0 <= i < self._get_n_states():
  *             raise IndexError("State {:d} is out of bounds.".format(i))             # <<<<<<<<<<<<<<
@@ -3171,7 +3171,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(0, 85, __pyx_L1_error)
 
-    /* "python/base.pyx":84
+    /* "ad3/base.pyx":84
  *     def __getitem__(self, int i):
  * 
  *         if not 0 <= i < self._get_n_states():             # <<<<<<<<<<<<<<
@@ -3180,7 +3180,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
  */
   }
 
-  /* "python/base.pyx":87
+  /* "ad3/base.pyx":87
  *             raise IndexError("State {:d} is out of bounds.".format(i))
  * 
  *         return self.get_log_potential(i)             # <<<<<<<<<<<<<<
@@ -3242,7 +3242,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":82
+  /* "ad3/base.pyx":82
  *         return pvariable
  * 
  *     def __getitem__(self, int i):             # <<<<<<<<<<<<<<
@@ -3257,7 +3257,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("python.base.PMultiVariable.__getitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__getitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3265,7 +3265,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
   return __pyx_r;
 }
 
-/* "python/base.pyx":89
+/* "ad3/base.pyx":89
  *         return self.get_log_potential(i)
  * 
  *     def __setitem__(self, int i, double log_potential):             # <<<<<<<<<<<<<<
@@ -3274,8 +3274,8 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_8__getitem__(struct __p
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_4base_14PMultiVariable_11__setitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i, PyObject *__pyx_arg_log_potential); /*proto*/
-static int __pyx_pw_6python_4base_14PMultiVariable_11__setitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i, PyObject *__pyx_arg_log_potential) {
+static int __pyx_pw_3ad3_4base_14PMultiVariable_11__setitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i, PyObject *__pyx_arg_log_potential); /*proto*/
+static int __pyx_pw_3ad3_4base_14PMultiVariable_11__setitem__(PyObject *__pyx_v_self, PyObject *__pyx_arg_i, PyObject *__pyx_arg_log_potential) {
   int __pyx_v_i;
   double __pyx_v_log_potential;
   int __pyx_r;
@@ -3289,18 +3289,18 @@ static int __pyx_pw_6python_4base_14PMultiVariable_11__setitem__(PyObject *__pyx
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.__setitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__setitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i), ((double)__pyx_v_log_potential));
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_10__setitem__(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i), ((double)__pyx_v_log_potential));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential) {
+static int __pyx_pf_3ad3_4base_14PMultiVariable_10__setitem__(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -3315,7 +3315,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
   PyObject *__pyx_t_10 = NULL;
   __Pyx_RefNannySetupContext("__setitem__", 0);
 
-  /* "python/base.pyx":90
+  /* "ad3/base.pyx":90
  * 
  *     def __setitem__(self, int i, double log_potential):
  *         if not 0 <= i < len(self):             # <<<<<<<<<<<<<<
@@ -3330,7 +3330,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
   __pyx_t_3 = ((!(__pyx_t_1 != 0)) != 0);
   if (__pyx_t_3) {
 
-    /* "python/base.pyx":91
+    /* "ad3/base.pyx":91
  *     def __setitem__(self, int i, double log_potential):
  *         if not 0 <= i < len(self):
  *             raise IndexError("State {:d} is out of bounds.".format(i))             # <<<<<<<<<<<<<<
@@ -3399,7 +3399,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __PYX_ERR(0, 91, __pyx_L1_error)
 
-    /* "python/base.pyx":90
+    /* "ad3/base.pyx":90
  * 
  *     def __setitem__(self, int i, double log_potential):
  *         if not 0 <= i < len(self):             # <<<<<<<<<<<<<<
@@ -3408,7 +3408,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
  */
   }
 
-  /* "python/base.pyx":92
+  /* "ad3/base.pyx":92
  *         if not 0 <= i < len(self):
  *             raise IndexError("State {:d} is out of bounds.".format(i))
  *         self.set_log_potential(i, log_potential)             # <<<<<<<<<<<<<<
@@ -3472,7 +3472,7 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "python/base.pyx":89
+  /* "ad3/base.pyx":89
  *         return self.get_log_potential(i)
  * 
  *     def __setitem__(self, int i, double log_potential):             # <<<<<<<<<<<<<<
@@ -3490,14 +3490,14 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("python.base.PMultiVariable.__setitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.__setitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/base.pyx":94
+/* "ad3/base.pyx":94
  *         self.set_log_potential(i, log_potential)
  * 
  *     def get_log_potential(self, int i):             # <<<<<<<<<<<<<<
@@ -3506,8 +3506,8 @@ static int __pyx_pf_6python_4base_14PMultiVariable_10__setitem__(struct __pyx_ob
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_13get_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_13get_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_13get_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_13get_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3517,24 +3517,24 @@ static PyObject *__pyx_pw_6python_4base_14PMultiVariable_13get_log_potential(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_12get_log_potential(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_12get_log_potential(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_log_potential", 0);
 
-  /* "python/base.pyx":95
+  /* "ad3/base.pyx":95
  * 
  *     def get_log_potential(self, int i):
  *         return self.thisptr.GetLogPotential(i)             # <<<<<<<<<<<<<<
@@ -3548,7 +3548,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(str
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":94
+  /* "ad3/base.pyx":94
  *         self.set_log_potential(i, log_potential)
  * 
  *     def get_log_potential(self, int i):             # <<<<<<<<<<<<<<
@@ -3559,7 +3559,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(str
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PMultiVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.get_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3567,7 +3567,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(str
   return __pyx_r;
 }
 
-/* "python/base.pyx":97
+/* "ad3/base.pyx":97
  *         return self.thisptr.GetLogPotential(i)
  * 
  *     def set_log_potential(self, int i, double log_potential):             # <<<<<<<<<<<<<<
@@ -3576,8 +3576,8 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_12get_log_potential(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_15set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_15set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_15set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_15set_log_potential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_i;
   double __pyx_v_log_potential;
   PyObject *__pyx_r = 0;
@@ -3622,23 +3622,23 @@ static PyObject *__pyx_pw_6python_4base_14PMultiVariable_15set_log_potential(PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("set_log_potential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 97, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.set_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.set_log_potential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), __pyx_v_i, __pyx_v_log_potential);
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_14set_log_potential(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), __pyx_v_i, __pyx_v_log_potential);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential) {
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_14set_log_potential(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, int __pyx_v_i, double __pyx_v_log_potential) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_log_potential", 0);
 
-  /* "python/base.pyx":98
+  /* "ad3/base.pyx":98
  * 
  *     def set_log_potential(self, int i, double log_potential):
  *         self.thisptr.SetLogPotential(i, log_potential)             # <<<<<<<<<<<<<<
@@ -3647,7 +3647,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(str
  */
   __pyx_v_self->thisptr->SetLogPotential(__pyx_v_i, __pyx_v_log_potential);
 
-  /* "python/base.pyx":97
+  /* "ad3/base.pyx":97
  *         return self.thisptr.GetLogPotential(i)
  * 
  *     def set_log_potential(self, int i, double log_potential):             # <<<<<<<<<<<<<<
@@ -3662,7 +3662,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(str
   return __pyx_r;
 }
 
-/* "python/base.pyx":101
+/* "ad3/base.pyx":101
  * 
  *     @cython.boundscheck(False)
  *     def set_log_potentials(self, double[:] log_potentials, bool validate=True):             # <<<<<<<<<<<<<<
@@ -3671,8 +3671,8 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_14set_log_potential(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_17set_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PMultiVariable_17set_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_17set_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PMultiVariable_17set_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   __Pyx_memviewslice __pyx_v_log_potentials = { 0, 0, { 0 }, { 0 }, { 0 } };
   bool __pyx_v_validate;
   PyObject *__pyx_r = 0;
@@ -3723,18 +3723,18 @@ static PyObject *__pyx_pw_6python_4base_14PMultiVariable_17set_log_potentials(Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("set_log_potentials", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 101, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PMultiVariable.set_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.set_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_v_self), __pyx_v_log_potentials, __pyx_v_validate);
+  __pyx_r = __pyx_pf_3ad3_4base_14PMultiVariable_16set_log_potentials(((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_v_self), __pyx_v_log_potentials, __pyx_v_validate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_self, __Pyx_memviewslice __pyx_v_log_potentials, bool __pyx_v_validate) {
+static PyObject *__pyx_pf_3ad3_4base_14PMultiVariable_16set_log_potentials(struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_self, __Pyx_memviewslice __pyx_v_log_potentials, bool __pyx_v_validate) {
   Py_ssize_t __pyx_v_n_states;
   Py_ssize_t __pyx_v_i;
   PyObject *__pyx_r = NULL;
@@ -3751,7 +3751,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
   Py_ssize_t __pyx_t_10;
   __Pyx_RefNannySetupContext("set_log_potentials", 0);
 
-  /* "python/base.pyx":102
+  /* "ad3/base.pyx":102
  *     @cython.boundscheck(False)
  *     def set_log_potentials(self, double[:] log_potentials, bool validate=True):
  *         cdef Py_ssize_t n_states = self.thisptr.GetNumStates()             # <<<<<<<<<<<<<<
@@ -3760,7 +3760,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
  */
   __pyx_v_n_states = __pyx_v_self->thisptr->GetNumStates();
 
-  /* "python/base.pyx":105
+  /* "ad3/base.pyx":105
  *         cdef Py_ssize_t i
  * 
  *         if validate and len(log_potentials) != n_states:             # <<<<<<<<<<<<<<
@@ -3782,7 +3782,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "python/base.pyx":106
+    /* "ad3/base.pyx":106
  * 
  *         if validate and len(log_potentials) != n_states:
  *             raise IndexError("Expected buffer of length {}".format(n_states))             # <<<<<<<<<<<<<<
@@ -3851,7 +3851,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(0, 106, __pyx_L1_error)
 
-    /* "python/base.pyx":105
+    /* "ad3/base.pyx":105
  *         cdef Py_ssize_t i
  * 
  *         if validate and len(log_potentials) != n_states:             # <<<<<<<<<<<<<<
@@ -3860,7 +3860,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
  */
   }
 
-  /* "python/base.pyx":108
+  /* "ad3/base.pyx":108
  *             raise IndexError("Expected buffer of length {}".format(n_states))
  * 
  *         for i in range(n_states):             # <<<<<<<<<<<<<<
@@ -3871,7 +3871,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
   for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_4; __pyx_t_9+=1) {
     __pyx_v_i = __pyx_t_9;
 
-    /* "python/base.pyx":109
+    /* "ad3/base.pyx":109
  * 
  *         for i in range(n_states):
  *             self.thisptr.SetLogPotential(i, log_potentials[i])             # <<<<<<<<<<<<<<
@@ -3883,7 +3883,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
     __pyx_v_self->thisptr->SetLogPotential(__pyx_v_i, (*((double *) ( /* dim=0 */ (__pyx_v_log_potentials.data + __pyx_t_10 * __pyx_v_log_potentials.strides[0]) ))));
   }
 
-  /* "python/base.pyx":101
+  /* "ad3/base.pyx":101
  * 
  *     @cython.boundscheck(False)
  *     def set_log_potentials(self, double[:] log_potentials, bool validate=True):             # <<<<<<<<<<<<<<
@@ -3900,7 +3900,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("python.base.PMultiVariable.set_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PMultiVariable.set_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_log_potentials, 1);
@@ -3909,7 +3909,7 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
   return __pyx_r;
 }
 
-/* "python/base.pyx":114
+/* "ad3/base.pyx":114
  * cdef class PFactor:
  *     # This is a virtual class, so don't allocate/deallocate.
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -3918,27 +3918,27 @@ static PyObject *__pyx_pf_6python_4base_14PMultiVariable_16set_log_potentials(st
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_4base_7PFactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_4base_7PFactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_4base_7PFactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_4base_7PFactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_6python_4base_7PFactor___cinit__(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor___cinit__(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_4base_7PFactor___cinit__(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self) {
+static int __pyx_pf_3ad3_4base_7PFactor___cinit__(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/base.pyx":115
+  /* "ad3/base.pyx":115
  *     # This is a virtual class, so don't allocate/deallocate.
  *     def __cinit__(self):
  *         self.allocate = False             # <<<<<<<<<<<<<<
@@ -3947,7 +3947,7 @@ static int __pyx_pf_6python_4base_7PFactor___cinit__(struct __pyx_obj_6python_4b
  */
   __pyx_v_self->allocate = 0;
 
-  /* "python/base.pyx":114
+  /* "ad3/base.pyx":114
  * cdef class PFactor:
  *     # This is a virtual class, so don't allocate/deallocate.
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -3961,7 +3961,7 @@ static int __pyx_pf_6python_4base_7PFactor___cinit__(struct __pyx_obj_6python_4b
   return __pyx_r;
 }
 
-/* "python/base.pyx":118
+/* "ad3/base.pyx":118
  *         pass
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3970,17 +3970,17 @@ static int __pyx_pf_6python_4base_7PFactor___cinit__(struct __pyx_obj_6python_4b
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_4base_7PFactor_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_4base_7PFactor_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_4base_7PFactor_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_4base_7PFactor_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_4base_7PFactor_2__dealloc__(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self));
+  __pyx_pf_3ad3_4base_7PFactor_2__dealloc__(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __pyx_obj_6python_4base_PFactor *__pyx_v_self) {
+static void __pyx_pf_3ad3_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
@@ -3988,7 +3988,7 @@ static void __pyx_pf_6python_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/base.pyx":121
+/* "ad3/base.pyx":121
  *         pass
  * 
  *     def set_allocate(self, allocate):             # <<<<<<<<<<<<<<
@@ -3997,25 +3997,25 @@ static void __pyx_pf_6python_4base_7PFactor_2__dealloc__(CYTHON_UNUSED struct __
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_5set_allocate(PyObject *__pyx_v_self, PyObject *__pyx_v_allocate); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_5set_allocate(PyObject *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_5set_allocate(PyObject *__pyx_v_self, PyObject *__pyx_v_allocate); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_5set_allocate(PyObject *__pyx_v_self, PyObject *__pyx_v_allocate) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_allocate (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_4set_allocate(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self), ((PyObject *)__pyx_v_allocate));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_4set_allocate(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self), ((PyObject *)__pyx_v_allocate));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, PyObject *__pyx_v_allocate) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_4set_allocate(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, PyObject *__pyx_v_allocate) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   bool __pyx_t_1;
   __Pyx_RefNannySetupContext("set_allocate", 0);
 
-  /* "python/base.pyx":122
+  /* "ad3/base.pyx":122
  * 
  *     def set_allocate(self, allocate):
  *         self.allocate = allocate             # <<<<<<<<<<<<<<
@@ -4025,7 +4025,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_allocate); if (unlikely((__pyx_t_1 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L1_error)
   __pyx_v_self->allocate = __pyx_t_1;
 
-  /* "python/base.pyx":121
+  /* "ad3/base.pyx":121
  *         pass
  * 
  *     def set_allocate(self, allocate):             # <<<<<<<<<<<<<<
@@ -4037,7 +4037,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.base.PFactor.set_allocate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.set_allocate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4045,7 +4045,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "python/base.pyx":124
+/* "ad3/base.pyx":124
  *         self.allocate = allocate
  * 
  *     def get_additional_log_potentials(self):             # <<<<<<<<<<<<<<
@@ -4054,25 +4054,25 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_4set_allocate(struct __pyx_obj_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_7get_additional_log_potentials(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_7get_additional_log_potentials(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_7get_additional_log_potentials(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_7get_additional_log_potentials(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_additional_log_potentials (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_6get_additional_log_potentials(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_6get_additional_log_potentials(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_additional_log_potentials", 0);
 
-  /* "python/base.pyx":125
+  /* "ad3/base.pyx":125
  * 
  *     def get_additional_log_potentials(self):
  *         return self.thisptr.GetAdditionalLogPotentials()             # <<<<<<<<<<<<<<
@@ -4086,7 +4086,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":124
+  /* "ad3/base.pyx":124
  *         self.allocate = allocate
  * 
  *     def get_additional_log_potentials(self):             # <<<<<<<<<<<<<<
@@ -4097,7 +4097,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PFactor.get_additional_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_additional_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4105,7 +4105,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(
   return __pyx_r;
 }
 
-/* "python/base.pyx":127
+/* "ad3/base.pyx":127
  *         return self.thisptr.GetAdditionalLogPotentials()
  * 
  *     def set_additional_log_potentials(self,             # <<<<<<<<<<<<<<
@@ -4114,8 +4114,8 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_6get_additional_log_potentials(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_9set_additional_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_arg_additional_log_potentials); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_9set_additional_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_arg_additional_log_potentials) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_9set_additional_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_arg_additional_log_potentials); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_9set_additional_log_potentials(PyObject *__pyx_v_self, PyObject *__pyx_arg_additional_log_potentials) {
   std::vector<double>  __pyx_v_additional_log_potentials;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -4125,23 +4125,23 @@ static PyObject *__pyx_pw_6python_4base_7PFactor_9set_additional_log_potentials(
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PFactor.set_additional_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.set_additional_log_potentials", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self), ((std::vector<double> )__pyx_v_additional_log_potentials));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_8set_additional_log_potentials(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self), ((std::vector<double> )__pyx_v_additional_log_potentials));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_additional_log_potentials) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_8set_additional_log_potentials(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_additional_log_potentials) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_additional_log_potentials", 0);
 
-  /* "python/base.pyx":129
+  /* "ad3/base.pyx":129
  *     def set_additional_log_potentials(self,
  *                                       vector[double] additional_log_potentials):
  *         self.thisptr.SetAdditionalLogPotentials(additional_log_potentials)             # <<<<<<<<<<<<<<
@@ -4150,7 +4150,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(
  */
   __pyx_v_self->thisptr->SetAdditionalLogPotentials(__pyx_v_additional_log_potentials);
 
-  /* "python/base.pyx":127
+  /* "ad3/base.pyx":127
  *         return self.thisptr.GetAdditionalLogPotentials()
  * 
  *     def set_additional_log_potentials(self,             # <<<<<<<<<<<<<<
@@ -4165,7 +4165,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(
   return __pyx_r;
 }
 
-/* "python/base.pyx":131
+/* "ad3/base.pyx":131
  *         self.thisptr.SetAdditionalLogPotentials(additional_log_potentials)
  * 
  *     def get_degree(self):             # <<<<<<<<<<<<<<
@@ -4174,25 +4174,25 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_8set_additional_log_potentials(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_11get_degree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_degree (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_10get_degree(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_10get_degree(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_10get_degree(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_degree", 0);
 
-  /* "python/base.pyx":132
+  /* "ad3/base.pyx":132
  * 
  *     def get_degree(self):
  *         return self.thisptr.Degree()             # <<<<<<<<<<<<<<
@@ -4206,7 +4206,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":131
+  /* "ad3/base.pyx":131
  *         self.thisptr.SetAdditionalLogPotentials(additional_log_potentials)
  * 
  *     def get_degree(self):             # <<<<<<<<<<<<<<
@@ -4217,7 +4217,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PFactor.get_degree", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_degree", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4225,7 +4225,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6
   return __pyx_r;
 }
 
-/* "python/base.pyx":134
+/* "ad3/base.pyx":134
  *         return self.thisptr.Degree()
  * 
  *     def get_link_id(self, int i):             # <<<<<<<<<<<<<<
@@ -4234,8 +4234,8 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_10get_degree(struct __pyx_obj_6
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_13get_link_id(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_13get_link_id(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_13get_link_id(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_13get_link_id(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -4245,24 +4245,24 @@ static PyObject *__pyx_pw_6python_4base_7PFactor_13get_link_id(PyObject *__pyx_v
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PFactor.get_link_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_link_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_12get_link_id(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_12get_link_id(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_12get_link_id(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, int __pyx_v_i) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_link_id", 0);
 
-  /* "python/base.pyx":135
+  /* "ad3/base.pyx":135
  * 
  *     def get_link_id(self, int i):
  *         return self.thisptr.GetLinkId(i)             # <<<<<<<<<<<<<<
@@ -4276,7 +4276,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":134
+  /* "ad3/base.pyx":134
  *         return self.thisptr.Degree()
  * 
  *     def get_link_id(self, int i):             # <<<<<<<<<<<<<<
@@ -4287,7 +4287,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PFactor.get_link_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_link_id", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4295,7 +4295,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "python/base.pyx":137
+/* "ad3/base.pyx":137
  *         return self.thisptr.GetLinkId(i)
  * 
  *     def get_variable(self, int i):             # <<<<<<<<<<<<<<
@@ -4304,8 +4304,8 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_12get_link_id(struct __pyx_obj_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_15get_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_15get_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_15get_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_i); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_15get_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_i) {
   int __pyx_v_i;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -4315,27 +4315,27 @@ static PyObject *__pyx_pw_6python_4base_7PFactor_15get_variable(PyObject *__pyx_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PFactor.get_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_14get_variable(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self), ((int)__pyx_v_i));
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_14get_variable(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self), ((int)__pyx_v_i));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, int __pyx_v_i) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_14get_variable(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, int __pyx_v_i) {
   AD3::BinaryVariable *__pyx_v_variable;
-  struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
+  struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("get_variable", 0);
 
-  /* "python/base.pyx":138
+  /* "ad3/base.pyx":138
  * 
  *     def get_variable(self, int i):
  *         cdef BinaryVariable *variable = self.thisptr.GetVariable(i)             # <<<<<<<<<<<<<<
@@ -4344,7 +4344,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
  */
   __pyx_v_variable = __pyx_v_self->thisptr->GetVariable(__pyx_v_i);
 
-  /* "python/base.pyx":139
+  /* "ad3/base.pyx":139
  *     def get_variable(self, int i):
  *         cdef BinaryVariable *variable = self.thisptr.GetVariable(i)
  *         pvariable = PBinaryVariable(allocate=False)             # <<<<<<<<<<<<<<
@@ -4354,13 +4354,13 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_allocate, Py_False) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_pvariable = ((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_t_2);
+  __pyx_v_pvariable = ((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "python/base.pyx":140
+  /* "ad3/base.pyx":140
  *         cdef BinaryVariable *variable = self.thisptr.GetVariable(i)
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable             # <<<<<<<<<<<<<<
@@ -4369,7 +4369,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
  */
   __pyx_v_pvariable->thisptr = __pyx_v_variable;
 
-  /* "python/base.pyx":141
+  /* "ad3/base.pyx":141
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable
  *         return pvariable             # <<<<<<<<<<<<<<
@@ -4381,7 +4381,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
   __pyx_r = ((PyObject *)__pyx_v_pvariable);
   goto __pyx_L0;
 
-  /* "python/base.pyx":137
+  /* "ad3/base.pyx":137
  *         return self.thisptr.GetLinkId(i)
  * 
  *     def get_variable(self, int i):             # <<<<<<<<<<<<<<
@@ -4393,7 +4393,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("python.base.PFactor.get_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.get_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_pvariable);
@@ -4402,7 +4402,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "python/base.pyx":143
+/* "ad3/base.pyx":143
  *         return pvariable
  * 
  *     def solve_map(self, vector[double] variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -4411,8 +4411,8 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_14get_variable(struct __pyx_obj
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_7PFactor_17solve_map(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_4base_7PFactor_17solve_map(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_17solve_map(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_7PFactor_17solve_map(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<double>  __pyx_v_variable_log_potentials;
   std::vector<double>  __pyx_v_additional_log_potentials;
   PyObject *__pyx_r = 0;
@@ -4457,18 +4457,18 @@ static PyObject *__pyx_pw_6python_4base_7PFactor_17solve_map(PyObject *__pyx_v_s
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("solve_map", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 143, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PFactor.solve_map", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.solve_map", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_7PFactor_16solve_map(((struct __pyx_obj_6python_4base_PFactor *)__pyx_v_self), __pyx_v_variable_log_potentials, __pyx_v_additional_log_potentials);
+  __pyx_r = __pyx_pf_3ad3_4base_7PFactor_16solve_map(((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_v_self), __pyx_v_variable_log_potentials, __pyx_v_additional_log_potentials);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6python_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials) {
+static PyObject *__pyx_pf_3ad3_4base_7PFactor_16solve_map(struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials) {
   std::vector<double>  __pyx_v_posteriors;
   std::vector<double>  __pyx_v_additional_posteriors;
   double __pyx_v_value;
@@ -4480,7 +4480,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("solve_map", 0);
 
-  /* "python/base.pyx":148
+  /* "ad3/base.pyx":148
  *         cdef vector[double] additional_posteriors
  *         cdef double value
  *         self.thisptr.SolveMAP(variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -4489,7 +4489,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
  */
   __pyx_v_self->thisptr->SolveMAP(__pyx_v_variable_log_potentials, __pyx_v_additional_log_potentials, (&__pyx_v_posteriors), (&__pyx_v_additional_posteriors), (&__pyx_v_value));
 
-  /* "python/base.pyx":154
+  /* "ad3/base.pyx":154
  *                               &value)
  * 
  *         return value, posteriors, additional_posteriors             # <<<<<<<<<<<<<<
@@ -4518,7 +4518,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":143
+  /* "ad3/base.pyx":143
  *         return pvariable
  * 
  *     def solve_map(self, vector[double] variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -4532,7 +4532,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("python.base.PFactor.solve_map", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PFactor.solve_map", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4540,7 +4540,7 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
   return __pyx_r;
 }
 
-/* "python/base.pyx":160
+/* "ad3/base.pyx":160
  *     """Factor which uses the active set algorithm to solve its QP."""
  * 
  *     cdef cast_configuration(self, Configuration cfg):             # <<<<<<<<<<<<<<
@@ -4548,13 +4548,13 @@ static PyObject *__pyx_pf_6python_4base_7PFactor_16solve_map(struct __pyx_obj_6p
  * 
  */
 
-static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHON_UNUSED struct __pyx_obj_6python_4base_PGenericFactor *__pyx_v_self, AD3::Configuration __pyx_v_cfg) {
+static PyObject *__pyx_f_3ad3_4base_14PGenericFactor_cast_configuration(CYTHON_UNUSED struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_self, AD3::Configuration __pyx_v_cfg) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("cast_configuration", 0);
 
-  /* "python/base.pyx":161
+  /* "ad3/base.pyx":161
  * 
  *     cdef cast_configuration(self, Configuration cfg):
  *         return (<vector[int]*> cfg)[0]             # <<<<<<<<<<<<<<
@@ -4568,7 +4568,7 @@ static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHO
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/base.pyx":160
+  /* "ad3/base.pyx":160
  *     """Factor which uses the active set algorithm to solve its QP."""
  * 
  *     cdef cast_configuration(self, Configuration cfg):             # <<<<<<<<<<<<<<
@@ -4579,7 +4579,7 @@ static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHO
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.base.PGenericFactor.cast_configuration", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PGenericFactor.cast_configuration", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4587,7 +4587,7 @@ static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHO
   return __pyx_r;
 }
 
-/* "python/base.pyx":163
+/* "ad3/base.pyx":163
  *         return (<vector[int]*> cfg)[0]
  * 
  *     def solve_qp(self, vector[double] variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -4596,8 +4596,8 @@ static PyObject *__pyx_f_6python_4base_14PGenericFactor_cast_configuration(CYTHO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_4base_14PGenericFactor_1solve_qp(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6python_4base_14PGenericFactor_1solve_qp(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_4base_14PGenericFactor_1solve_qp(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_3ad3_4base_14PGenericFactor_1solve_qp(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   std::vector<double>  __pyx_v_variable_log_potentials;
   std::vector<double>  __pyx_v_additional_log_potentials;
   int __pyx_v_max_iter;
@@ -4664,7 +4664,7 @@ static PyObject *__pyx_pw_6python_4base_14PGenericFactor_1solve_qp(PyObject *__p
       __pyx_v_return_array = __Pyx_PyObject_IsTrue(values[3]); if (unlikely((__pyx_v_return_array == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 165, __pyx_L3_error)
     } else {
 
-      /* "python/base.pyx":165
+      /* "ad3/base.pyx":165
  *     def solve_qp(self, vector[double] variable_log_potentials,
  *                  vector[double] additional_log_potentials,
  *                  int max_iter=10, bool return_array=True):             # <<<<<<<<<<<<<<
@@ -4678,13 +4678,13 @@ static PyObject *__pyx_pw_6python_4base_14PGenericFactor_1solve_qp(PyObject *__p
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("solve_qp", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 163, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.base.PGenericFactor.solve_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PGenericFactor.solve_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_4base_14PGenericFactor_solve_qp(((struct __pyx_obj_6python_4base_PGenericFactor *)__pyx_v_self), __pyx_v_variable_log_potentials, __pyx_v_additional_log_potentials, __pyx_v_max_iter, __pyx_v_return_array);
+  __pyx_r = __pyx_pf_3ad3_4base_14PGenericFactor_solve_qp(((struct __pyx_obj_3ad3_4base_PGenericFactor *)__pyx_v_self), __pyx_v_variable_log_potentials, __pyx_v_additional_log_potentials, __pyx_v_max_iter, __pyx_v_return_array);
 
-  /* "python/base.pyx":163
+  /* "ad3/base.pyx":163
  *         return (<vector[int]*> cfg)[0]
  * 
  *     def solve_qp(self, vector[double] variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -4697,17 +4697,17 @@ static PyObject *__pyx_pw_6python_4base_14PGenericFactor_1solve_qp(PyObject *__p
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_obj_6python_4base_PGenericFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials, int __pyx_v_max_iter, bool __pyx_v_return_array) {
+static PyObject *__pyx_pf_3ad3_4base_14PGenericFactor_solve_qp(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_self, std::vector<double>  __pyx_v_variable_log_potentials, std::vector<double>  __pyx_v_additional_log_potentials, int __pyx_v_max_iter, bool __pyx_v_return_array) {
   AD3::GenericFactor *__pyx_v_gf;
   std::vector<AD3::Configuration>  __pyx_v_active_set_c;
   std::vector<double>  __pyx_v_posteriors_;
   std::vector<double>  __pyx_v_additional_posteriors_;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_posteriors = 0;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_additional_posteriors = 0;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_distribution = 0;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_inverse_A = 0;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_M = 0;
-  struct __pyx_obj_6python_4base_ArrayWrapper *__pyx_v_Madd = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_posteriors = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_additional_posteriors = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_distribution = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_inverse_A = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_M = 0;
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *__pyx_v_Madd = 0;
   struct __pyx_array_obj *__pyx_v_posteriors_arr = 0;
   struct __pyx_array_obj *__pyx_v_additionals_arr = 0;
   CYTHON_UNUSED PyObject *__pyx_v__ = NULL;
@@ -4734,79 +4734,79 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   int __pyx_t_13;
   __Pyx_RefNannySetupContext("solve_qp", 0);
 
-  /* "python/base.pyx":173
+  /* "ad3/base.pyx":173
  * 
  *             # below will be converted to cython arrays
  *             ArrayWrapper posteriors = ArrayWrapper()             # <<<<<<<<<<<<<<
  *             ArrayWrapper additional_posteriors = ArrayWrapper()
  *             ArrayWrapper distribution = ArrayWrapper()
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_posteriors = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_posteriors = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":174
+  /* "ad3/base.pyx":174
  *             # below will be converted to cython arrays
  *             ArrayWrapper posteriors = ArrayWrapper()
  *             ArrayWrapper additional_posteriors = ArrayWrapper()             # <<<<<<<<<<<<<<
  *             ArrayWrapper distribution = ArrayWrapper()
  *             ArrayWrapper inverse_A = ArrayWrapper()
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_additional_posteriors = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_additional_posteriors = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":175
+  /* "ad3/base.pyx":175
  *             ArrayWrapper posteriors = ArrayWrapper()
  *             ArrayWrapper additional_posteriors = ArrayWrapper()
  *             ArrayWrapper distribution = ArrayWrapper()             # <<<<<<<<<<<<<<
  *             ArrayWrapper inverse_A = ArrayWrapper()
  *             ArrayWrapper M = ArrayWrapper()
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_distribution = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_distribution = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":176
+  /* "ad3/base.pyx":176
  *             ArrayWrapper additional_posteriors = ArrayWrapper()
  *             ArrayWrapper distribution = ArrayWrapper()
  *             ArrayWrapper inverse_A = ArrayWrapper()             # <<<<<<<<<<<<<<
  *             ArrayWrapper M = ArrayWrapper()
  *             ArrayWrapper Madd = ArrayWrapper()
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_inverse_A = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_inverse_A = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":177
+  /* "ad3/base.pyx":177
  *             ArrayWrapper distribution = ArrayWrapper()
  *             ArrayWrapper inverse_A = ArrayWrapper()
  *             ArrayWrapper M = ArrayWrapper()             # <<<<<<<<<<<<<<
  *             ArrayWrapper Madd = ArrayWrapper()
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_M = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_M = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":178
+  /* "ad3/base.pyx":178
  *             ArrayWrapper inverse_A = ArrayWrapper()
  *             ArrayWrapper M = ArrayWrapper()
  *             ArrayWrapper Madd = ArrayWrapper()             # <<<<<<<<<<<<<<
  * 
  *             cvarray posteriors_arr, additionals_arr
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_ArrayWrapper), __pyx_empty_tuple, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Madd = ((struct __pyx_obj_6python_4base_ArrayWrapper *)__pyx_t_1);
+  __pyx_v_Madd = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":183
+  /* "ad3/base.pyx":183
  * 
  * 
  *         gf = <GenericFactor*?> self.thisptr             # <<<<<<<<<<<<<<
@@ -4815,7 +4815,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_gf = ((AD3::GenericFactor *)__pyx_v_self->__pyx_base.thisptr);
 
-  /* "python/base.pyx":185
+  /* "ad3/base.pyx":185
  *         gf = <GenericFactor*?> self.thisptr
  * 
  *         gf.SetQPMaxIter(max_iter)             # <<<<<<<<<<<<<<
@@ -4824,7 +4824,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_gf->SetQPMaxIter(__pyx_v_max_iter);
 
-  /* "python/base.pyx":188
+  /* "ad3/base.pyx":188
  * 
  *         (posteriors_, additional_posteriors_, _) = \
  *             super(PGenericFactor, self).solve_qp(             # <<<<<<<<<<<<<<
@@ -4833,9 +4833,9 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(((PyObject *)__pyx_ptype_6python_4base_PGenericFactor));
-  __Pyx_GIVEREF(((PyObject *)__pyx_ptype_6python_4base_PGenericFactor));
-  PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_6python_4base_PGenericFactor));
+  __Pyx_INCREF(((PyObject *)__pyx_ptype_3ad3_4base_PGenericFactor));
+  __Pyx_GIVEREF(((PyObject *)__pyx_ptype_3ad3_4base_PGenericFactor));
+  PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_ptype_3ad3_4base_PGenericFactor));
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
@@ -4846,7 +4846,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "python/base.pyx":189
+  /* "ad3/base.pyx":189
  *         (posteriors_, additional_posteriors_, _) = \
  *             super(PGenericFactor, self).solve_qp(
  *             variable_log_potentials, additional_log_potentials)             # <<<<<<<<<<<<<<
@@ -4964,7 +4964,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __pyx_L4_unpacking_done:;
   }
 
-  /* "python/base.pyx":187
+  /* "ad3/base.pyx":187
  *         gf.SetQPMaxIter(max_iter)
  * 
  *         (posteriors_, additional_posteriors_, _) = \             # <<<<<<<<<<<<<<
@@ -4980,7 +4980,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   __pyx_v__ = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "python/base.pyx":191
+  /* "ad3/base.pyx":191
  *             variable_log_potentials, additional_log_potentials)
  * 
  *         posteriors.data = posteriors_             # <<<<<<<<<<<<<<
@@ -4989,7 +4989,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_posteriors->data = __pyx_v_posteriors_;
 
-  /* "python/base.pyx":192
+  /* "ad3/base.pyx":192
  * 
  *         posteriors.data = posteriors_
  *         additional_posteriors.data = additional_posteriors_             # <<<<<<<<<<<<<<
@@ -4998,7 +4998,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_additional_posteriors->data = __pyx_v_additional_posteriors_;
 
-  /* "python/base.pyx":194
+  /* "ad3/base.pyx":194
  *         additional_posteriors.data = additional_posteriors_
  * 
  *         active_set_c = gf.GetQPActiveSet()             # <<<<<<<<<<<<<<
@@ -5007,7 +5007,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_active_set_c = __pyx_v_gf->GetQPActiveSet();
 
-  /* "python/base.pyx":195
+  /* "ad3/base.pyx":195
  * 
  *         active_set_c = gf.GetQPActiveSet()
  *         distribution.data = gf.GetQPDistribution()             # <<<<<<<<<<<<<<
@@ -5016,7 +5016,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_distribution->data = __pyx_v_gf->GetQPDistribution();
 
-  /* "python/base.pyx":196
+  /* "ad3/base.pyx":196
  *         active_set_c = gf.GetQPActiveSet()
  *         distribution.data = gf.GetQPDistribution()
  *         inverse_A.data = gf.GetQPInvA()             # <<<<<<<<<<<<<<
@@ -5025,7 +5025,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_inverse_A->data = __pyx_v_gf->GetQPInvA();
 
-  /* "python/base.pyx":197
+  /* "ad3/base.pyx":197
  *         distribution.data = gf.GetQPDistribution()
  *         inverse_A.data = gf.GetQPInvA()
  *         gf.GetCorrespondence(&M.data, &Madd.data)             # <<<<<<<<<<<<<<
@@ -5034,7 +5034,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_gf->GetCorrespondence((&__pyx_v_M->data), (&__pyx_v_Madd->data));
 
-  /* "python/base.pyx":199
+  /* "ad3/base.pyx":199
  *         gf.GetCorrespondence(&M.data, &Madd.data)
  * 
  *         cdef int n_active = active_set_c.size()             # <<<<<<<<<<<<<<
@@ -5043,7 +5043,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_n_active = __pyx_v_active_set_c.size();
 
-  /* "python/base.pyx":200
+  /* "ad3/base.pyx":200
  * 
  *         cdef int n_active = active_set_c.size()
  *         cdef int n_var = posteriors.data.size()             # <<<<<<<<<<<<<<
@@ -5052,7 +5052,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_n_var = __pyx_v_posteriors->data.size();
 
-  /* "python/base.pyx":201
+  /* "ad3/base.pyx":201
  *         cdef int n_active = active_set_c.size()
  *         cdef int n_var = posteriors.data.size()
  *         cdef int n_add = additional_posteriors.data.size()             # <<<<<<<<<<<<<<
@@ -5061,7 +5061,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   __pyx_v_n_add = __pyx_v_additional_posteriors->data.size();
 
-  /* "python/base.pyx":203
+  /* "ad3/base.pyx":203
  *         cdef int n_add = additional_posteriors.data.size()
  * 
  *         active_set_py = [self.cast_configuration(x) for x in active_set_c]             # <<<<<<<<<<<<<<
@@ -5076,7 +5076,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __pyx_t_12 = *__pyx_t_11;
     ++__pyx_t_11;
     __pyx_v_x = __pyx_t_12;
-    __pyx_t_4 = ((struct __pyx_vtabstruct_6python_4base_PGenericFactor *)__pyx_v_self->__pyx_vtab)->cast_configuration(__pyx_v_self, __pyx_v_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 203, __pyx_L1_error)
+    __pyx_t_4 = ((struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *)__pyx_v_self->__pyx_vtab)->cast_configuration(__pyx_v_self, __pyx_v_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 203, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 203, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -5084,7 +5084,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   __pyx_v_active_set_py = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "python/base.pyx":205
+  /* "ad3/base.pyx":205
  *         active_set_py = [self.cast_configuration(x) for x in active_set_c]
  * 
  *         if return_array:             # <<<<<<<<<<<<<<
@@ -5094,7 +5094,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   __pyx_t_13 = (__pyx_v_return_array != 0);
   if (__pyx_t_13) {
 
-    /* "python/base.pyx":206
+    /* "ad3/base.pyx":206
  * 
  *         if return_array:
  *             posteriors_arr = posteriors.get_array((n_var,))             # <<<<<<<<<<<<<<
@@ -5108,14 +5108,14 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_1 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_posteriors->__pyx_vtab)->get_array(__pyx_v_posteriors, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
+    __pyx_t_1 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_posteriors->__pyx_vtab)->get_array(__pyx_v_posteriors, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_array_type))))) __PYX_ERR(0, 206, __pyx_L1_error)
     __pyx_v_posteriors_arr = ((struct __pyx_array_obj *)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "python/base.pyx":207
+    /* "ad3/base.pyx":207
  *         if return_array:
  *             posteriors_arr = posteriors.get_array((n_var,))
  *             additionals_arr = additional_posteriors.get_array((n_add,))             # <<<<<<<<<<<<<<
@@ -5129,14 +5129,14 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_1 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_additional_posteriors->__pyx_vtab)->get_array(__pyx_v_additional_posteriors, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+    __pyx_t_1 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_additional_posteriors->__pyx_vtab)->get_array(__pyx_v_additional_posteriors, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_array_type))))) __PYX_ERR(0, 207, __pyx_L1_error)
     __pyx_v_additionals_arr = ((struct __pyx_array_obj *)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "python/base.pyx":209
+    /* "ad3/base.pyx":209
  *             additionals_arr = additional_posteriors.get_array((n_add,))
  *             solver_data = {
  *                 'active_set': active_set_py,             # <<<<<<<<<<<<<<
@@ -5147,7 +5147,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __Pyx_GOTREF(__pyx_t_1);
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_active_set, __pyx_v_active_set_py) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
 
-    /* "python/base.pyx":210
+    /* "ad3/base.pyx":210
  *             solver_data = {
  *                 'active_set': active_set_py,
  *                 'distribution': distribution.get_array((n_active,)),             # <<<<<<<<<<<<<<
@@ -5161,13 +5161,13 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __Pyx_GIVEREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_4);
     __pyx_t_4 = 0;
-    __pyx_t_4 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_distribution->__pyx_vtab)->get_array(__pyx_v_distribution, ((PyObject*)__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 210, __pyx_L1_error)
+    __pyx_t_4 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_distribution->__pyx_vtab)->get_array(__pyx_v_distribution, ((PyObject*)__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_distribution, __pyx_t_4) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "python/base.pyx":211
+    /* "ad3/base.pyx":211
  *                 'active_set': active_set_py,
  *                 'distribution': distribution.get_array((n_active,)),
  *                 'inverse_A': inverse_A.get_array((1 + n_active, 1 + n_active)),             # <<<<<<<<<<<<<<
@@ -5186,13 +5186,13 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_7);
     __pyx_t_4 = 0;
     __pyx_t_7 = 0;
-    __pyx_t_7 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_inverse_A->__pyx_vtab)->get_array(__pyx_v_inverse_A, ((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 211, __pyx_L1_error)
+    __pyx_t_7 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_inverse_A->__pyx_vtab)->get_array(__pyx_v_inverse_A, ((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 211, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_inverse_A, __pyx_t_7) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "python/base.pyx":212
+    /* "ad3/base.pyx":212
  *                 'distribution': distribution.get_array((n_active,)),
  *                 'inverse_A': inverse_A.get_array((1 + n_active, 1 + n_active)),
  *                 'M': M.get_array((n_active, n_var)),             # <<<<<<<<<<<<<<
@@ -5211,13 +5211,13 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2);
     __pyx_t_7 = 0;
     __pyx_t_2 = 0;
-    __pyx_t_2 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_M->__pyx_vtab)->get_array(__pyx_v_M, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_2 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_M->__pyx_vtab)->get_array(__pyx_v_M, ((PyObject*)__pyx_t_4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_M, __pyx_t_2) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "python/base.pyx":213
+    /* "ad3/base.pyx":213
  *                 'inverse_A': inverse_A.get_array((1 + n_active, 1 + n_active)),
  *                 'M': M.get_array((n_active, n_var)),
  *                 'Madd': Madd.get_array((n_active, n_add))             # <<<<<<<<<<<<<<
@@ -5236,7 +5236,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_4 = ((struct __pyx_vtabstruct_6python_4base_ArrayWrapper *)__pyx_v_Madd->__pyx_vtab)->get_array(__pyx_v_Madd, ((PyObject*)__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __pyx_t_4 = ((struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper *)__pyx_v_Madd->__pyx_vtab)->get_array(__pyx_v_Madd, ((PyObject*)__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_Madd, __pyx_t_4) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
@@ -5244,7 +5244,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __pyx_v_solver_data = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "python/base.pyx":215
+    /* "ad3/base.pyx":215
  *                 'Madd': Madd.get_array((n_active, n_add))
  *             }
  *             return posteriors_arr, additionals_arr, solver_data             # <<<<<<<<<<<<<<
@@ -5267,7 +5267,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "python/base.pyx":205
+    /* "ad3/base.pyx":205
  *         active_set_py = [self.cast_configuration(x) for x in active_set_c]
  * 
  *         if return_array:             # <<<<<<<<<<<<<<
@@ -5276,7 +5276,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   }
 
-  /* "python/base.pyx":217
+  /* "ad3/base.pyx":217
  *             return posteriors_arr, additionals_arr, solver_data
  *         else:
  *             solver_data = {             # <<<<<<<<<<<<<<
@@ -5285,7 +5285,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
  */
   /*else*/ {
 
-    /* "python/base.pyx":218
+    /* "ad3/base.pyx":218
  *         else:
  *             solver_data = {
  *                 'active_set': active_set_py,             # <<<<<<<<<<<<<<
@@ -5296,7 +5296,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __Pyx_GOTREF(__pyx_t_1);
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_active_set, __pyx_v_active_set_py) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
 
-    /* "python/base.pyx":219
+    /* "ad3/base.pyx":219
  *             solver_data = {
  *                 'active_set': active_set_py,
  *                 'distribution': distribution.data,             # <<<<<<<<<<<<<<
@@ -5308,7 +5308,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_distribution, __pyx_t_4) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "python/base.pyx":220
+    /* "ad3/base.pyx":220
  *                 'active_set': active_set_py,
  *                 'distribution': distribution.data,
  *                 'inverse_A': inverse_A.data,             # <<<<<<<<<<<<<<
@@ -5320,7 +5320,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_inverse_A, __pyx_t_4) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "python/base.pyx":221
+    /* "ad3/base.pyx":221
  *                 'distribution': distribution.data,
  *                 'inverse_A': inverse_A.data,
  *                 'M': M.data,             # <<<<<<<<<<<<<<
@@ -5332,7 +5332,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_M, __pyx_t_4) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "python/base.pyx":222
+    /* "ad3/base.pyx":222
  *                 'inverse_A': inverse_A.data,
  *                 'M': M.data,
  *                 'Madd': Madd.data             # <<<<<<<<<<<<<<
@@ -5346,7 +5346,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     __pyx_v_solver_data = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "python/base.pyx":225
+    /* "ad3/base.pyx":225
  *             }
  * 
  *             return posteriors.data, additional_posteriors.data, solver_data             # <<<<<<<<<<<<<<
@@ -5373,7 +5373,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
     goto __pyx_L0;
   }
 
-  /* "python/base.pyx":163
+  /* "ad3/base.pyx":163
  *         return (<vector[int]*> cfg)[0]
  * 
  *     def solve_qp(self, vector[double] variable_log_potentials,             # <<<<<<<<<<<<<<
@@ -5389,7 +5389,7 @@ static PyObject *__pyx_pf_6python_4base_14PGenericFactor_solve_qp(struct __pyx_o
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("python.base.PGenericFactor.solve_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.base.PGenericFactor.solve_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_posteriors);
@@ -17294,7 +17294,7 @@ static void __pyx_memoryview__slice_assign_scalar(char *__pyx_v_data, Py_ssize_t
   /* function exit code */
 }
 
-static PyObject *__pyx_tp_new_6python_4base_PBinaryVariable(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_3ad3_4base_PBinaryVariable(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -17302,14 +17302,14 @@ static PyObject *__pyx_tp_new_6python_4base_PBinaryVariable(PyTypeObject *t, PyO
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_4base_15PBinaryVariable_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_4base_15PBinaryVariable_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_4base_PBinaryVariable(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_4base_PBinaryVariable(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -17319,27 +17319,27 @@ static void __pyx_tp_dealloc_6python_4base_PBinaryVariable(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_4base_15PBinaryVariable_3__dealloc__(o);
+    __pyx_pw_3ad3_4base_15PBinaryVariable_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_6python_4base_PBinaryVariable[] = {
-  {"get_log_potential", (PyCFunction)__pyx_pw_6python_4base_15PBinaryVariable_5get_log_potential, METH_NOARGS, 0},
-  {"set_log_potential", (PyCFunction)__pyx_pw_6python_4base_15PBinaryVariable_7set_log_potential, METH_O, 0},
-  {"get_id", (PyCFunction)__pyx_pw_6python_4base_15PBinaryVariable_9get_id, METH_NOARGS, 0},
-  {"get_degree", (PyCFunction)__pyx_pw_6python_4base_15PBinaryVariable_11get_degree, METH_NOARGS, 0},
+static PyMethodDef __pyx_methods_3ad3_4base_PBinaryVariable[] = {
+  {"get_log_potential", (PyCFunction)__pyx_pw_3ad3_4base_15PBinaryVariable_5get_log_potential, METH_NOARGS, 0},
+  {"set_log_potential", (PyCFunction)__pyx_pw_3ad3_4base_15PBinaryVariable_7set_log_potential, METH_O, 0},
+  {"get_id", (PyCFunction)__pyx_pw_3ad3_4base_15PBinaryVariable_9get_id, METH_NOARGS, 0},
+  {"get_degree", (PyCFunction)__pyx_pw_3ad3_4base_15PBinaryVariable_11get_degree, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_4base_PBinaryVariable = {
+static PyTypeObject __pyx_type_3ad3_4base_PBinaryVariable = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.PBinaryVariable", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_4base_PBinaryVariable), /*tp_basicsize*/
+  "ad3.base.PBinaryVariable", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_4base_PBinaryVariable), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_4base_PBinaryVariable, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_4base_PBinaryVariable, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -17367,7 +17367,7 @@ static PyTypeObject __pyx_type_6python_4base_PBinaryVariable = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_4base_PBinaryVariable, /*tp_methods*/
+  __pyx_methods_3ad3_4base_PBinaryVariable, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -17377,7 +17377,7 @@ static PyTypeObject __pyx_type_6python_4base_PBinaryVariable = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_4base_PBinaryVariable, /*tp_new*/
+  __pyx_tp_new_3ad3_4base_PBinaryVariable, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -17391,10 +17391,10 @@ static PyTypeObject __pyx_type_6python_4base_PBinaryVariable = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_4base_PMultiVariable __pyx_vtable_6python_4base_PMultiVariable;
+static struct __pyx_vtabstruct_3ad3_4base_PMultiVariable __pyx_vtable_3ad3_4base_PMultiVariable;
 
-static PyObject *__pyx_tp_new_6python_4base_PMultiVariable(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_6python_4base_PMultiVariable *p;
+static PyObject *__pyx_tp_new_3ad3_4base_PMultiVariable(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_3ad3_4base_PMultiVariable *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -17402,16 +17402,16 @@ static PyObject *__pyx_tp_new_6python_4base_PMultiVariable(PyTypeObject *t, PyOb
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_4base_PMultiVariable *)o);
-  p->__pyx_vtab = __pyx_vtabptr_6python_4base_PMultiVariable;
-  if (unlikely(__pyx_pw_6python_4base_14PMultiVariable_1__cinit__(o, a, k) < 0)) goto bad;
+  p = ((struct __pyx_obj_3ad3_4base_PMultiVariable *)o);
+  p->__pyx_vtab = __pyx_vtabptr_3ad3_4base_PMultiVariable;
+  if (unlikely(__pyx_pw_3ad3_4base_14PMultiVariable_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_4base_PMultiVariable(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_4base_PMultiVariable(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -17421,13 +17421,13 @@ static void __pyx_tp_dealloc_6python_4base_PMultiVariable(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_4base_14PMultiVariable_3__dealloc__(o);
+    __pyx_pw_3ad3_4base_14PMultiVariable_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
-static PyObject *__pyx_sq_item_6python_4base_PMultiVariable(PyObject *o, Py_ssize_t i) {
+static PyObject *__pyx_sq_item_3ad3_4base_PMultiVariable(PyObject *o, Py_ssize_t i) {
   PyObject *r;
   PyObject *x = PyInt_FromSsize_t(i); if(!x) return 0;
   r = Py_TYPE(o)->tp_as_mapping->mp_subscript(o, x);
@@ -17435,9 +17435,9 @@ static PyObject *__pyx_sq_item_6python_4base_PMultiVariable(PyObject *o, Py_ssiz
   return r;
 }
 
-static int __pyx_mp_ass_subscript_6python_4base_PMultiVariable(PyObject *o, PyObject *i, PyObject *v) {
+static int __pyx_mp_ass_subscript_3ad3_4base_PMultiVariable(PyObject *o, PyObject *i, PyObject *v) {
   if (v) {
-    return __pyx_pw_6python_4base_14PMultiVariable_11__setitem__(o, i, v);
+    return __pyx_pw_3ad3_4base_14PMultiVariable_11__setitem__(o, i, v);
   }
   else {
     PyErr_Format(PyExc_NotImplementedError,
@@ -17446,19 +17446,19 @@ static int __pyx_mp_ass_subscript_6python_4base_PMultiVariable(PyObject *o, PyOb
   }
 }
 
-static PyMethodDef __pyx_methods_6python_4base_PMultiVariable[] = {
-  {"get_state", (PyCFunction)__pyx_pw_6python_4base_14PMultiVariable_7get_state, METH_VARARGS|METH_KEYWORDS, 0},
-  {"get_log_potential", (PyCFunction)__pyx_pw_6python_4base_14PMultiVariable_13get_log_potential, METH_O, 0},
-  {"set_log_potential", (PyCFunction)__pyx_pw_6python_4base_14PMultiVariable_15set_log_potential, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_log_potentials", (PyCFunction)__pyx_pw_6python_4base_14PMultiVariable_17set_log_potentials, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_4base_PMultiVariable[] = {
+  {"get_state", (PyCFunction)__pyx_pw_3ad3_4base_14PMultiVariable_7get_state, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_log_potential", (PyCFunction)__pyx_pw_3ad3_4base_14PMultiVariable_13get_log_potential, METH_O, 0},
+  {"set_log_potential", (PyCFunction)__pyx_pw_3ad3_4base_14PMultiVariable_15set_log_potential, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_log_potentials", (PyCFunction)__pyx_pw_3ad3_4base_14PMultiVariable_17set_log_potentials, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
 static PySequenceMethods __pyx_tp_as_sequence_PMultiVariable = {
-  __pyx_pw_6python_4base_14PMultiVariable_5__len__, /*sq_length*/
+  __pyx_pw_3ad3_4base_14PMultiVariable_5__len__, /*sq_length*/
   0, /*sq_concat*/
   0, /*sq_repeat*/
-  __pyx_sq_item_6python_4base_PMultiVariable, /*sq_item*/
+  __pyx_sq_item_3ad3_4base_PMultiVariable, /*sq_item*/
   0, /*sq_slice*/
   0, /*sq_ass_item*/
   0, /*sq_ass_slice*/
@@ -17468,17 +17468,17 @@ static PySequenceMethods __pyx_tp_as_sequence_PMultiVariable = {
 };
 
 static PyMappingMethods __pyx_tp_as_mapping_PMultiVariable = {
-  __pyx_pw_6python_4base_14PMultiVariable_5__len__, /*mp_length*/
-  __pyx_pw_6python_4base_14PMultiVariable_9__getitem__, /*mp_subscript*/
-  __pyx_mp_ass_subscript_6python_4base_PMultiVariable, /*mp_ass_subscript*/
+  __pyx_pw_3ad3_4base_14PMultiVariable_5__len__, /*mp_length*/
+  __pyx_pw_3ad3_4base_14PMultiVariable_9__getitem__, /*mp_subscript*/
+  __pyx_mp_ass_subscript_3ad3_4base_PMultiVariable, /*mp_ass_subscript*/
 };
 
-static PyTypeObject __pyx_type_6python_4base_PMultiVariable = {
+static PyTypeObject __pyx_type_3ad3_4base_PMultiVariable = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.PMultiVariable", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_4base_PMultiVariable), /*tp_basicsize*/
+  "ad3.base.PMultiVariable", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_4base_PMultiVariable), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_4base_PMultiVariable, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_4base_PMultiVariable, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -17506,7 +17506,7 @@ static PyTypeObject __pyx_type_6python_4base_PMultiVariable = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_4base_PMultiVariable, /*tp_methods*/
+  __pyx_methods_3ad3_4base_PMultiVariable, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -17516,7 +17516,7 @@ static PyTypeObject __pyx_type_6python_4base_PMultiVariable = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_4base_PMultiVariable, /*tp_new*/
+  __pyx_tp_new_3ad3_4base_PMultiVariable, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -17531,7 +17531,7 @@ static PyTypeObject __pyx_type_6python_4base_PMultiVariable = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_6python_4base_PFactor(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3ad3_4base_PFactor(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -17539,14 +17539,14 @@ static PyObject *__pyx_tp_new_6python_4base_PFactor(PyTypeObject *t, CYTHON_UNUS
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_4base_7PFactor_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_4base_7PFactor_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_4base_PFactor(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_4base_PFactor(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -17556,30 +17556,30 @@ static void __pyx_tp_dealloc_6python_4base_PFactor(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_4base_7PFactor_3__dealloc__(o);
+    __pyx_pw_3ad3_4base_7PFactor_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_6python_4base_PFactor[] = {
-  {"set_allocate", (PyCFunction)__pyx_pw_6python_4base_7PFactor_5set_allocate, METH_O, 0},
-  {"get_additional_log_potentials", (PyCFunction)__pyx_pw_6python_4base_7PFactor_7get_additional_log_potentials, METH_NOARGS, 0},
-  {"set_additional_log_potentials", (PyCFunction)__pyx_pw_6python_4base_7PFactor_9set_additional_log_potentials, METH_O, 0},
-  {"get_degree", (PyCFunction)__pyx_pw_6python_4base_7PFactor_11get_degree, METH_NOARGS, 0},
-  {"get_link_id", (PyCFunction)__pyx_pw_6python_4base_7PFactor_13get_link_id, METH_O, 0},
-  {"get_variable", (PyCFunction)__pyx_pw_6python_4base_7PFactor_15get_variable, METH_O, 0},
-  {"solve_map", (PyCFunction)__pyx_pw_6python_4base_7PFactor_17solve_map, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_4base_PFactor[] = {
+  {"set_allocate", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_5set_allocate, METH_O, 0},
+  {"get_additional_log_potentials", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_7get_additional_log_potentials, METH_NOARGS, 0},
+  {"set_additional_log_potentials", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_9set_additional_log_potentials, METH_O, 0},
+  {"get_degree", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_11get_degree, METH_NOARGS, 0},
+  {"get_link_id", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_13get_link_id, METH_O, 0},
+  {"get_variable", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_15get_variable, METH_O, 0},
+  {"solve_map", (PyCFunction)__pyx_pw_3ad3_4base_7PFactor_17solve_map, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_4base_PFactor = {
+static PyTypeObject __pyx_type_3ad3_4base_PFactor = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.PFactor", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_4base_PFactor), /*tp_basicsize*/
+  "ad3.base.PFactor", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_4base_PFactor), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_4base_PFactor, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_4base_PFactor, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -17607,7 +17607,7 @@ static PyTypeObject __pyx_type_6python_4base_PFactor = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_4base_PFactor, /*tp_methods*/
+  __pyx_methods_3ad3_4base_PFactor, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -17617,7 +17617,7 @@ static PyTypeObject __pyx_type_6python_4base_PFactor = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_4base_PFactor, /*tp_new*/
+  __pyx_tp_new_3ad3_4base_PFactor, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -17631,28 +17631,28 @@ static PyTypeObject __pyx_type_6python_4base_PFactor = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_4base_PGenericFactor __pyx_vtable_6python_4base_PGenericFactor;
+static struct __pyx_vtabstruct_3ad3_4base_PGenericFactor __pyx_vtable_3ad3_4base_PGenericFactor;
 
-static PyObject *__pyx_tp_new_6python_4base_PGenericFactor(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_6python_4base_PGenericFactor *p;
-  PyObject *o = __pyx_tp_new_6python_4base_PFactor(t, a, k);
+static PyObject *__pyx_tp_new_3ad3_4base_PGenericFactor(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_3ad3_4base_PGenericFactor *p;
+  PyObject *o = __pyx_tp_new_3ad3_4base_PFactor(t, a, k);
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_4base_PGenericFactor *)o);
-  p->__pyx_vtab = __pyx_vtabptr_6python_4base_PGenericFactor;
+  p = ((struct __pyx_obj_3ad3_4base_PGenericFactor *)o);
+  p->__pyx_vtab = __pyx_vtabptr_3ad3_4base_PGenericFactor;
   return o;
 }
 
-static PyMethodDef __pyx_methods_6python_4base_PGenericFactor[] = {
-  {"solve_qp", (PyCFunction)__pyx_pw_6python_4base_14PGenericFactor_1solve_qp, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_3ad3_4base_PGenericFactor[] = {
+  {"solve_qp", (PyCFunction)__pyx_pw_3ad3_4base_14PGenericFactor_1solve_qp, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_4base_PGenericFactor = {
+static PyTypeObject __pyx_type_3ad3_4base_PGenericFactor = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.PGenericFactor", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_4base_PGenericFactor), /*tp_basicsize*/
+  "ad3.base.PGenericFactor", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_4base_PGenericFactor), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_4base_PFactor, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_4base_PFactor, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -17680,7 +17680,7 @@ static PyTypeObject __pyx_type_6python_4base_PGenericFactor = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_4base_PGenericFactor, /*tp_methods*/
+  __pyx_methods_3ad3_4base_PGenericFactor, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -17690,7 +17690,7 @@ static PyTypeObject __pyx_type_6python_4base_PGenericFactor = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_4base_PGenericFactor, /*tp_new*/
+  __pyx_tp_new_3ad3_4base_PGenericFactor, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -17704,10 +17704,10 @@ static PyTypeObject __pyx_type_6python_4base_PGenericFactor = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_6python_4base_ArrayWrapper __pyx_vtable_6python_4base_ArrayWrapper;
+static struct __pyx_vtabstruct_3ad3_4base_ArrayWrapper __pyx_vtable_3ad3_4base_ArrayWrapper;
 
-static PyObject *__pyx_tp_new_6python_4base_ArrayWrapper(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
-  struct __pyx_obj_6python_4base_ArrayWrapper *p;
+static PyObject *__pyx_tp_new_3ad3_4base_ArrayWrapper(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -17715,14 +17715,14 @@ static PyObject *__pyx_tp_new_6python_4base_ArrayWrapper(PyTypeObject *t, CYTHON
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6python_4base_ArrayWrapper *)o);
-  p->__pyx_vtab = __pyx_vtabptr_6python_4base_ArrayWrapper;
+  p = ((struct __pyx_obj_3ad3_4base_ArrayWrapper *)o);
+  p->__pyx_vtab = __pyx_vtabptr_3ad3_4base_ArrayWrapper;
   new((void*)&(p->data)) std::vector<double> ();
   return o;
 }
 
-static void __pyx_tp_dealloc_6python_4base_ArrayWrapper(PyObject *o) {
-  struct __pyx_obj_6python_4base_ArrayWrapper *p = (struct __pyx_obj_6python_4base_ArrayWrapper *)o;
+static void __pyx_tp_dealloc_3ad3_4base_ArrayWrapper(PyObject *o) {
+  struct __pyx_obj_3ad3_4base_ArrayWrapper *p = (struct __pyx_obj_3ad3_4base_ArrayWrapper *)o;
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -17732,12 +17732,12 @@ static void __pyx_tp_dealloc_6python_4base_ArrayWrapper(PyObject *o) {
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyTypeObject __pyx_type_6python_4base_ArrayWrapper = {
+static PyTypeObject __pyx_type_3ad3_4base_ArrayWrapper = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.ArrayWrapper", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_4base_ArrayWrapper), /*tp_basicsize*/
+  "ad3.base.ArrayWrapper", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_4base_ArrayWrapper), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_4base_ArrayWrapper, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_4base_ArrayWrapper, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -17775,7 +17775,7 @@ static PyTypeObject __pyx_type_6python_4base_ArrayWrapper = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_4base_ArrayWrapper, /*tp_new*/
+  __pyx_tp_new_3ad3_4base_ArrayWrapper, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -17910,7 +17910,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.array", /*tp_name*/
+  "ad3.base.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -18016,7 +18016,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.Enum", /*tp_name*/
+  "ad3.base.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -18264,7 +18264,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base.memoryview", /*tp_name*/
+  "ad3.base.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -18389,7 +18389,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.base._memoryviewslice", /*tp_name*/
+  "ad3.base._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -18862,14 +18862,14 @@ PyMODINIT_FUNC PyInit_base(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_python__base) {
+  if (__pyx_module_is_main_ad3__base) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "python.base")) {
-      if (unlikely(PyDict_SetItemString(modules, "python.base", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "ad3.base")) {
+      if (unlikely(PyDict_SetItemString(modules, "ad3.base", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -18886,36 +18886,36 @@ PyMODINIT_FUNC PyInit_base(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_6python_4base_PBinaryVariable) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
-  __pyx_type_6python_4base_PBinaryVariable.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PBinaryVariable", (PyObject *)&__pyx_type_6python_4base_PBinaryVariable) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PBinaryVariable = &__pyx_type_6python_4base_PBinaryVariable;
-  __pyx_vtabptr_6python_4base_PMultiVariable = &__pyx_vtable_6python_4base_PMultiVariable;
-  __pyx_vtable_6python_4base_PMultiVariable._get_n_states = (int (*)(struct __pyx_obj_6python_4base_PMultiVariable *))__pyx_f_6python_4base_14PMultiVariable__get_n_states;
-  if (PyType_Ready(&__pyx_type_6python_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
-  __pyx_type_6python_4base_PMultiVariable.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_4base_PMultiVariable.tp_dict, __pyx_vtabptr_6python_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "PMultiVariable", (PyObject *)&__pyx_type_6python_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PMultiVariable = &__pyx_type_6python_4base_PMultiVariable;
-  if (PyType_Ready(&__pyx_type_6python_4base_PFactor) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
-  __pyx_type_6python_4base_PFactor.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactor", (PyObject *)&__pyx_type_6python_4base_PFactor) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PFactor = &__pyx_type_6python_4base_PFactor;
-  __pyx_vtabptr_6python_4base_PGenericFactor = &__pyx_vtable_6python_4base_PGenericFactor;
-  __pyx_vtable_6python_4base_PGenericFactor.cast_configuration = (PyObject *(*)(struct __pyx_obj_6python_4base_PGenericFactor *, AD3::Configuration))__pyx_f_6python_4base_14PGenericFactor_cast_configuration;
-  __pyx_type_6python_4base_PGenericFactor.tp_base = __pyx_ptype_6python_4base_PFactor;
-  if (PyType_Ready(&__pyx_type_6python_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  __pyx_type_6python_4base_PGenericFactor.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_4base_PGenericFactor.tp_dict, __pyx_vtabptr_6python_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "PGenericFactor", (PyObject *)&__pyx_type_6python_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PGenericFactor = &__pyx_type_6python_4base_PGenericFactor;
-  __pyx_vtabptr_6python_4base_ArrayWrapper = &__pyx_vtable_6python_4base_ArrayWrapper;
-  __pyx_vtable_6python_4base_ArrayWrapper.get_array = (PyObject *(*)(struct __pyx_obj_6python_4base_ArrayWrapper *, PyObject *))__pyx_f_6python_4base_12ArrayWrapper_get_array;
-  if (PyType_Ready(&__pyx_type_6python_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __pyx_type_6python_4base_ArrayWrapper.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6python_4base_ArrayWrapper.tp_dict, __pyx_vtabptr_6python_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "ArrayWrapper", (PyObject *)&__pyx_type_6python_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __pyx_ptype_6python_4base_ArrayWrapper = &__pyx_type_6python_4base_ArrayWrapper;
+  if (PyType_Ready(&__pyx_type_3ad3_4base_PBinaryVariable) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_type_3ad3_4base_PBinaryVariable.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PBinaryVariable", (PyObject *)&__pyx_type_3ad3_4base_PBinaryVariable) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PBinaryVariable = &__pyx_type_3ad3_4base_PBinaryVariable;
+  __pyx_vtabptr_3ad3_4base_PMultiVariable = &__pyx_vtable_3ad3_4base_PMultiVariable;
+  __pyx_vtable_3ad3_4base_PMultiVariable._get_n_states = (int (*)(struct __pyx_obj_3ad3_4base_PMultiVariable *))__pyx_f_3ad3_4base_14PMultiVariable__get_n_states;
+  if (PyType_Ready(&__pyx_type_3ad3_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_type_3ad3_4base_PMultiVariable.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_4base_PMultiVariable.tp_dict, __pyx_vtabptr_3ad3_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PMultiVariable", (PyObject *)&__pyx_type_3ad3_4base_PMultiVariable) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PMultiVariable = &__pyx_type_3ad3_4base_PMultiVariable;
+  if (PyType_Ready(&__pyx_type_3ad3_4base_PFactor) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_type_3ad3_4base_PFactor.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactor", (PyObject *)&__pyx_type_3ad3_4base_PFactor) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PFactor = &__pyx_type_3ad3_4base_PFactor;
+  __pyx_vtabptr_3ad3_4base_PGenericFactor = &__pyx_vtable_3ad3_4base_PGenericFactor;
+  __pyx_vtable_3ad3_4base_PGenericFactor.cast_configuration = (PyObject *(*)(struct __pyx_obj_3ad3_4base_PGenericFactor *, AD3::Configuration))__pyx_f_3ad3_4base_14PGenericFactor_cast_configuration;
+  __pyx_type_3ad3_4base_PGenericFactor.tp_base = __pyx_ptype_3ad3_4base_PFactor;
+  if (PyType_Ready(&__pyx_type_3ad3_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_type_3ad3_4base_PGenericFactor.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_4base_PGenericFactor.tp_dict, __pyx_vtabptr_3ad3_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PGenericFactor", (PyObject *)&__pyx_type_3ad3_4base_PGenericFactor) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PGenericFactor = &__pyx_type_3ad3_4base_PGenericFactor;
+  __pyx_vtabptr_3ad3_4base_ArrayWrapper = &__pyx_vtable_3ad3_4base_ArrayWrapper;
+  __pyx_vtable_3ad3_4base_ArrayWrapper.get_array = (PyObject *(*)(struct __pyx_obj_3ad3_4base_ArrayWrapper *, PyObject *))__pyx_f_3ad3_4base_12ArrayWrapper_get_array;
+  if (PyType_Ready(&__pyx_type_3ad3_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_type_3ad3_4base_ArrayWrapper.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_3ad3_4base_ArrayWrapper.tp_dict, __pyx_vtabptr_3ad3_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "ArrayWrapper", (PyObject *)&__pyx_type_3ad3_4base_ArrayWrapper) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_ArrayWrapper = &__pyx_type_3ad3_4base_ArrayWrapper;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
   if (PyType_Ready(&__pyx_type___pyx_array) < 0) __PYX_ERR(1, 103, __pyx_L1_error)
@@ -18963,7 +18963,7 @@ PyMODINIT_FUNC PyInit_base(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "python/base.pyx":1
+  /* "ad3/base.pyx":1
  * from libcpp.vector cimport vector             # <<<<<<<<<<<<<<
  * from libcpp cimport bool
  * 
@@ -19123,11 +19123,11 @@ PyMODINIT_FUNC PyInit_base(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init python.base", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init ad3.base", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init python.base");
+    PyErr_SetString(PyExc_ImportError, "init ad3.base");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

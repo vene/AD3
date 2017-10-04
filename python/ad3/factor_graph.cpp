@@ -441,8 +441,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__python__factor_graph
-#define __PYX_HAVE_API__python__factor_graph
+#define __PYX_HAVE__ad3__factor_graph
+#define __PYX_HAVE_API__ad3__factor_graph
 #include <vector>
 #include "ios"
 #include "new"
@@ -647,17 +647,17 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "python/factor_graph.pyx",
-  "python/stringsource",
-  "python/base.pxd",
+  "ad3/factor_graph.pyx",
+  "ad3/stringsource",
+  "ad3/base.pxd",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_6python_4base_PBinaryVariable;
-struct __pyx_obj_6python_4base_PMultiVariable;
-struct __pyx_obj_6python_4base_PFactor;
-struct __pyx_obj_6python_4base_PGenericFactor;
-struct __pyx_obj_6python_12factor_graph_PFactorGraph;
+struct __pyx_obj_3ad3_4base_PBinaryVariable;
+struct __pyx_obj_3ad3_4base_PMultiVariable;
+struct __pyx_obj_3ad3_4base_PFactor;
+struct __pyx_obj_3ad3_4base_PGenericFactor;
+struct __pyx_obj_3ad3_12factor_graph_PFactorGraph;
 
 /* "base.pxd":122
  * # and the fundamental extension types
@@ -666,7 +666,7 @@ struct __pyx_obj_6python_12factor_graph_PFactorGraph;
  *     cdef BinaryVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PBinaryVariable {
+struct __pyx_obj_3ad3_4base_PBinaryVariable {
   PyObject_HEAD
   AD3::BinaryVariable *thisptr;
   bool allocate;
@@ -680,9 +680,9 @@ struct __pyx_obj_6python_4base_PBinaryVariable {
  *     cdef MultiVariable *thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PMultiVariable {
+struct __pyx_obj_3ad3_4base_PMultiVariable {
   PyObject_HEAD
-  struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtab;
+  struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtab;
   AD3::MultiVariable *thisptr;
   bool allocate;
 };
@@ -695,7 +695,7 @@ struct __pyx_obj_6python_4base_PMultiVariable {
  *     cdef Factor* thisptr
  *     cdef bool allocate
  */
-struct __pyx_obj_6python_4base_PFactor {
+struct __pyx_obj_3ad3_4base_PFactor {
   PyObject_HEAD
   AD3::Factor *thisptr;
   bool allocate;
@@ -709,20 +709,20 @@ struct __pyx_obj_6python_4base_PFactor {
  *     cdef cast_configuration(self, Configuration)
  * 
  */
-struct __pyx_obj_6python_4base_PGenericFactor {
-  struct __pyx_obj_6python_4base_PFactor __pyx_base;
-  struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtab;
+struct __pyx_obj_3ad3_4base_PGenericFactor {
+  struct __pyx_obj_3ad3_4base_PFactor __pyx_base;
+  struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtab;
 };
 
 
-/* "python/factor_graph.pyx":49
+/* "ad3/factor_graph.pyx":49
  * 
  * 
  * cdef class PFactorGraph:             # <<<<<<<<<<<<<<
  *     """Factor graph instance.
  * 
  */
-struct __pyx_obj_6python_12factor_graph_PFactorGraph {
+struct __pyx_obj_3ad3_12factor_graph_PFactorGraph {
   PyObject_HEAD
   AD3::FactorGraph *thisptr;
 };
@@ -737,10 +737,10 @@ struct __pyx_obj_6python_12factor_graph_PFactorGraph {
  *     cdef bool allocate
  */
 
-struct __pyx_vtabstruct_6python_4base_PMultiVariable {
-  int (*_get_n_states)(struct __pyx_obj_6python_4base_PMultiVariable *);
+struct __pyx_vtabstruct_3ad3_4base_PMultiVariable {
+  int (*_get_n_states)(struct __pyx_obj_3ad3_4base_PMultiVariable *);
 };
-static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6python_4base_PMultiVariable;
+static struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *__pyx_vtabptr_3ad3_4base_PMultiVariable;
 
 
 /* "base.pxd":139
@@ -751,10 +751,10 @@ static struct __pyx_vtabstruct_6python_4base_PMultiVariable *__pyx_vtabptr_6pyth
  * 
  */
 
-struct __pyx_vtabstruct_6python_4base_PGenericFactor {
-  PyObject *(*cast_configuration)(struct __pyx_obj_6python_4base_PGenericFactor *, AD3::Configuration);
+struct __pyx_vtabstruct_3ad3_4base_PGenericFactor {
+  PyObject *(*cast_configuration)(struct __pyx_obj_3ad3_4base_PGenericFactor *, AD3::Configuration);
 };
-static struct __pyx_vtabstruct_6python_4base_PGenericFactor *__pyx_vtabptr_6python_4base_PGenericFactor;
+static struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *__pyx_vtabptr_3ad3_4base_PGenericFactor;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -1107,24 +1107,24 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'cython' */
 
-/* Module declarations from 'python.base' */
-static PyTypeObject *__pyx_ptype_6python_4base_PBinaryVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PMultiVariable = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PFactor = 0;
-static PyTypeObject *__pyx_ptype_6python_4base_PGenericFactor = 0;
+/* Module declarations from 'ad3.base' */
+static PyTypeObject *__pyx_ptype_3ad3_4base_PBinaryVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PMultiVariable = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PFactor = 0;
+static PyTypeObject *__pyx_ptype_3ad3_4base_PGenericFactor = 0;
 
-/* Module declarations from 'python.factor_graph' */
-static PyTypeObject *__pyx_ptype_6python_12factor_graph_PFactorGraph = 0;
-static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *, std::vector<AD3::BinaryVariable *>  &); /*proto*/
-static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *, std::vector<AD3::MultiVariable *>  &); /*proto*/
-static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *, std::vector<bool>  &, Py_ssize_t); /*proto*/
+/* Module declarations from 'ad3.factor_graph' */
+static PyTypeObject *__pyx_ptype_3ad3_12factor_graph_PFactorGraph = 0;
+static int __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(PyObject *, std::vector<AD3::BinaryVariable *>  &); /*proto*/
+static int __pyx_f_3ad3_12factor_graph__multi_vars_to_vector(PyObject *, std::vector<AD3::MultiVariable *>  &); /*proto*/
+static int __pyx_f_3ad3_12factor_graph__validate_negated(PyObject *, std::vector<bool>  &, Py_ssize_t); /*proto*/
 static std::vector<double>  __pyx_convert_vector_from_py_double(PyObject *); /*proto*/
 static std::vector<bool>  __pyx_convert_vector_from_py_bool(PyObject *); /*proto*/
 static PyObject *__pyx_convert_vector_to_py_double(const std::vector<double>  &); /*proto*/
-#define __Pyx_MODULE_NAME "python.factor_graph"
-int __pyx_module_is_main_python__factor_graph = 0;
+#define __Pyx_MODULE_NAME "ad3.factor_graph"
+int __pyx_module_is_main_ad3__factor_graph = 0;
 
-/* Implementation of 'python.factor_graph' */
+/* Implementation of 'ad3.factor_graph' */
 static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_NotImplementedError;
@@ -1231,32 +1231,32 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_tol;
 static PyObject *__pyx_n_s_unsolved;
 static PyObject *__pyx_n_s_verbose;
-static int __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static void __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_verbosity); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_variable(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_variable(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_num_states); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_logic(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_factor_type, PyObject *__pyx_v_p_variables, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_pair(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, double __pyx_v_edge_log_potential, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_budget(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, int __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_knapsack(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, std::vector<double>  __pyx_v_costs, double __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_dense(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_multi_variables, std::vector<double>  __pyx_v_additional_log_potentials, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, struct __pyx_obj_6python_4base_PFactor *__pyx_v_p_factor, PyObject *__pyx_v_p_variables, bool __pyx_v_owned_by_graph); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, bool __pyx_v_adapt); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_threshold); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_primal_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_primal_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_eta, PyObject *__pyx_v_adapt, PyObject *__pyx_v_max_iter, PyObject *__pyx_v_tol, PyObject *__pyx_v_ensure_multi_variables, PyObject *__pyx_v_verbose, PyObject *__pyx_v_branch_and_bound); /* proto */
-static PyObject *__pyx_tp_new_6python_12factor_graph_PFactorGraph(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_3ad3_12factor_graph_12PFactorGraph___cinit__(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static void __pyx_pf_3ad3_12factor_graph_12PFactorGraph_2__dealloc__(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_4set_verbosity(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_verbosity); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_6create_binary_variable(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_8create_multi_variable(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_num_states); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_10create_factor_logic(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_factor_type, PyObject *__pyx_v_p_variables, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_12create_factor_pair(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, double __pyx_v_edge_log_potential, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_14create_factor_budget(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, int __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_16create_factor_knapsack(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, std::vector<double>  __pyx_v_costs, double __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_18create_factor_dense(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_multi_variables, std::vector<double>  __pyx_v_additional_log_potentials, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_20declare_factor(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_p_factor, PyObject *__pyx_v_p_variables, bool __pyx_v_owned_by_graph); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_24set_eta_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_30set_eta_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_32adapt_eta_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, bool __pyx_v_adapt); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_threshold); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_42get_dual_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_44get_local_primal_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_46get_global_primal_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_48solve(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_eta, PyObject *__pyx_v_adapt, PyObject *__pyx_v_max_iter, PyObject *__pyx_v_tol, PyObject *__pyx_v_ensure_multi_variables, PyObject *__pyx_v_verbose, PyObject *__pyx_v_branch_and_bound); /* proto */
+static PyObject *__pyx_tp_new_3ad3_12factor_graph_PFactorGraph(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_float_0_1;
 static PyObject *__pyx_float_1eneg_6;
 static PyObject *__pyx_int_1000;
@@ -1266,7 +1266,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 
-/* "python/factor_graph.pyx":13
+/* "ad3/factor_graph.pyx":13
  * 
  * 
  * cdef int _binary_vars_to_vector(             # <<<<<<<<<<<<<<
@@ -1274,8 +1274,8 @@ static PyObject *__pyx_tuple__5;
  * 
  */
 
-static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx_v_p_vars, std::vector<AD3::BinaryVariable *>  &__pyx_v_c_vars) {
-  struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_p_var = 0;
+static int __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(PyObject *__pyx_v_p_vars, std::vector<AD3::BinaryVariable *>  &__pyx_v_c_vars) {
+  struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_p_var = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1283,7 +1283,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("_binary_vars_to_vector", 0);
 
-  /* "python/factor_graph.pyx":17
+  /* "ad3/factor_graph.pyx":17
  * 
  *     cdef PBinaryVariable p_var
  *     for p_var in p_vars:             # <<<<<<<<<<<<<<
@@ -1303,11 +1303,11 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
     __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_6python_4base_PBinaryVariable))))) __PYX_ERR(0, 17, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_p_var, ((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_3ad3_4base_PBinaryVariable))))) __PYX_ERR(0, 17, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_p_var, ((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "python/factor_graph.pyx":19
+    /* "ad3/factor_graph.pyx":19
  *     for p_var in p_vars:
  *         with cython.nonecheck(True):
  *             c_vars.push_back(p_var.thisptr)             # <<<<<<<<<<<<<<
@@ -1325,7 +1325,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
       __PYX_ERR(0, 19, __pyx_L1_error)
     }
 
-    /* "python/factor_graph.pyx":17
+    /* "ad3/factor_graph.pyx":17
  * 
  *     cdef PBinaryVariable p_var
  *     for p_var in p_vars:             # <<<<<<<<<<<<<<
@@ -1335,7 +1335,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":20
+  /* "ad3/factor_graph.pyx":20
  *         with cython.nonecheck(True):
  *             c_vars.push_back(p_var.thisptr)
  *     return 0             # <<<<<<<<<<<<<<
@@ -1345,7 +1345,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":13
+  /* "ad3/factor_graph.pyx":13
  * 
  * 
  * cdef int _binary_vars_to_vector(             # <<<<<<<<<<<<<<
@@ -1357,7 +1357,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.factor_graph._binary_vars_to_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph._binary_vars_to_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_p_var);
@@ -1365,7 +1365,7 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":23
+/* "ad3/factor_graph.pyx":23
  * 
  * 
  * cdef int _multi_vars_to_vector(             # <<<<<<<<<<<<<<
@@ -1373,9 +1373,9 @@ static int __pyx_f_6python_12factor_graph__binary_vars_to_vector(PyObject *__pyx
  * 
  */
 
-static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_v_p_vars, std::vector<AD3::MultiVariable *>  &__pyx_v_c_vars) {
+static int __pyx_f_3ad3_12factor_graph__multi_vars_to_vector(PyObject *__pyx_v_p_vars, std::vector<AD3::MultiVariable *>  &__pyx_v_c_vars) {
   Py_ssize_t __pyx_v_expected;
-  struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_p_var = 0;
+  struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_p_var = 0;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1383,7 +1383,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("_multi_vars_to_vector", 0);
 
-  /* "python/factor_graph.pyx":26
+  /* "ad3/factor_graph.pyx":26
  *         list p_vars, vector[MultiVariable*]& c_vars) except -1:
  * 
  *     cdef Py_ssize_t expected = 1             # <<<<<<<<<<<<<<
@@ -1392,7 +1392,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
  */
   __pyx_v_expected = 1;
 
-  /* "python/factor_graph.pyx":28
+  /* "ad3/factor_graph.pyx":28
  *     cdef Py_ssize_t expected = 1
  *     cdef PMultiVariable p_var
  *     for p_var in p_vars:             # <<<<<<<<<<<<<<
@@ -1412,11 +1412,11 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
     __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_6python_4base_PMultiVariable))))) __PYX_ERR(0, 28, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_p_var, ((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_3ad3_4base_PMultiVariable))))) __PYX_ERR(0, 28, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_p_var, ((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "python/factor_graph.pyx":30
+    /* "ad3/factor_graph.pyx":30
  *     for p_var in p_vars:
  *         with cython.nonecheck(True):
  *             c_vars.push_back(p_var.thisptr)             # <<<<<<<<<<<<<<
@@ -1434,16 +1434,16 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
       __PYX_ERR(0, 30, __pyx_L1_error)
     }
 
-    /* "python/factor_graph.pyx":31
+    /* "ad3/factor_graph.pyx":31
  *         with cython.nonecheck(True):
  *             c_vars.push_back(p_var.thisptr)
  *         expected *= p_var._get_n_states()             # <<<<<<<<<<<<<<
  *     return expected
  * 
  */
-    __pyx_v_expected = (__pyx_v_expected * ((struct __pyx_vtabstruct_6python_4base_PMultiVariable *)__pyx_v_p_var->__pyx_vtab)->_get_n_states(__pyx_v_p_var));
+    __pyx_v_expected = (__pyx_v_expected * ((struct __pyx_vtabstruct_3ad3_4base_PMultiVariable *)__pyx_v_p_var->__pyx_vtab)->_get_n_states(__pyx_v_p_var));
 
-    /* "python/factor_graph.pyx":28
+    /* "ad3/factor_graph.pyx":28
  *     cdef Py_ssize_t expected = 1
  *     cdef PMultiVariable p_var
  *     for p_var in p_vars:             # <<<<<<<<<<<<<<
@@ -1453,7 +1453,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":32
+  /* "ad3/factor_graph.pyx":32
  *             c_vars.push_back(p_var.thisptr)
  *         expected *= p_var._get_n_states()
  *     return expected             # <<<<<<<<<<<<<<
@@ -1463,7 +1463,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
   __pyx_r = __pyx_v_expected;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":23
+  /* "ad3/factor_graph.pyx":23
  * 
  * 
  * cdef int _multi_vars_to_vector(             # <<<<<<<<<<<<<<
@@ -1475,7 +1475,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.factor_graph._multi_vars_to_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph._multi_vars_to_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_p_var);
@@ -1483,7 +1483,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":35
+/* "ad3/factor_graph.pyx":35
  * 
  * 
  * cdef int _validate_negated(list p_negated, vector[bool]& negated,             # <<<<<<<<<<<<<<
@@ -1491,7 +1491,7 @@ static int __pyx_f_6python_12factor_graph__multi_vars_to_vector(PyObject *__pyx_
  *     try:
  */
 
-static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_negated, std::vector<bool>  &__pyx_v_negated, Py_ssize_t __pyx_v_n) {
+static int __pyx_f_3ad3_12factor_graph__validate_negated(PyObject *__pyx_v_p_negated, std::vector<bool>  &__pyx_v_negated, Py_ssize_t __pyx_v_n) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1506,7 +1506,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("_validate_negated", 0);
 
-  /* "python/factor_graph.pyx":37
+  /* "ad3/factor_graph.pyx":37
  * cdef int _validate_negated(list p_negated, vector[bool]& negated,
  *                            Py_ssize_t n) except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -1522,7 +1522,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "python/factor_graph.pyx":39
+      /* "ad3/factor_graph.pyx":39
  *     try:
  *         with cython.nonecheck(True):
  *             (&negated)[0] = p_negated             # <<<<<<<<<<<<<<
@@ -1532,7 +1532,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
       __pyx_t_4 = __pyx_convert_vector_from_py_bool(__pyx_v_p_negated); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 39, __pyx_L3_error)
       ((&__pyx_v_negated)[0]) = __pyx_t_4;
 
-      /* "python/factor_graph.pyx":37
+      /* "ad3/factor_graph.pyx":37
  * cdef int _validate_negated(list p_negated, vector[bool]& negated,
  *                            Py_ssize_t n) except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -1547,7 +1547,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
     __pyx_L3_error:;
     __Pyx_PyThreadState_assign
 
-    /* "python/factor_graph.pyx":40
+    /* "ad3/factor_graph.pyx":40
  *         with cython.nonecheck(True):
  *             (&negated)[0] = p_negated
  *     except TypeError:             # <<<<<<<<<<<<<<
@@ -1556,13 +1556,13 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
  */
     __pyx_t_5 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_TypeError);
     if (__pyx_t_5) {
-      __Pyx_AddTraceback("python.factor_graph._validate_negated", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("ad3.factor_graph._validate_negated", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_7, &__pyx_t_8) < 0) __PYX_ERR(0, 40, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GOTREF(__pyx_t_8);
 
-      /* "python/factor_graph.pyx":41
+      /* "ad3/factor_graph.pyx":41
  *             (&negated)[0] = p_negated
  *     except TypeError:
  *             (&negated)[0] = vector[bool]()             # <<<<<<<<<<<<<<
@@ -1584,7 +1584,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "python/factor_graph.pyx":37
+    /* "ad3/factor_graph.pyx":37
  * cdef int _validate_negated(list p_negated, vector[bool]& negated,
  *                            Py_ssize_t n) except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -1606,7 +1606,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
     __pyx_L10_try_end:;
   }
 
-  /* "python/factor_graph.pyx":43
+  /* "ad3/factor_graph.pyx":43
  *             (&negated)[0] = vector[bool]()
  * 
  *     if negated.size() and negated.size() != n:             # <<<<<<<<<<<<<<
@@ -1624,7 +1624,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
   __pyx_L14_bool_binop_done:;
   if (__pyx_t_9) {
 
-    /* "python/factor_graph.pyx":44
+    /* "ad3/factor_graph.pyx":44
  * 
  *     if negated.size() and negated.size() != n:
  *         raise ValueError("Expected one negated flag per variable, "             # <<<<<<<<<<<<<<
@@ -1637,7 +1637,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __PYX_ERR(0, 44, __pyx_L1_error)
 
-    /* "python/factor_graph.pyx":43
+    /* "ad3/factor_graph.pyx":43
  *             (&negated)[0] = vector[bool]()
  * 
  *     if negated.size() and negated.size() != n:             # <<<<<<<<<<<<<<
@@ -1646,7 +1646,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
  */
   }
 
-  /* "python/factor_graph.pyx":46
+  /* "ad3/factor_graph.pyx":46
  *         raise ValueError("Expected one negated flag per variable, "
  *                          "or none at all.")
  *     return 0             # <<<<<<<<<<<<<<
@@ -1656,7 +1656,7 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":35
+  /* "ad3/factor_graph.pyx":35
  * 
  * 
  * cdef int _validate_negated(list p_negated, vector[bool]& negated,             # <<<<<<<<<<<<<<
@@ -1669,14 +1669,14 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("python.factor_graph._validate_negated", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph._validate_negated", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":55
+/* "ad3/factor_graph.pyx":55
  *     """
  *     cdef FactorGraph *thisptr
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -1685,27 +1685,27 @@ static int __pyx_f_6python_12factor_graph__validate_negated(PyObject *__pyx_v_p_
  */
 
 /* Python wrapper */
-static int __pyx_pw_6python_12factor_graph_12PFactorGraph_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6python_12factor_graph_12PFactorGraph_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_3ad3_12factor_graph_12PFactorGraph_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_3ad3_12factor_graph_12PFactorGraph_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph___cinit__(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static int __pyx_pf_3ad3_12factor_graph_12PFactorGraph___cinit__(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "python/factor_graph.pyx":56
+  /* "ad3/factor_graph.pyx":56
  *     cdef FactorGraph *thisptr
  *     def __cinit__(self):
  *         self.thisptr = new FactorGraph()             # <<<<<<<<<<<<<<
@@ -1714,7 +1714,7 @@ static int __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(struct __pyx
  */
   __pyx_v_self->thisptr = new AD3::FactorGraph();
 
-  /* "python/factor_graph.pyx":55
+  /* "ad3/factor_graph.pyx":55
  *     """
  *     cdef FactorGraph *thisptr
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -1728,7 +1728,7 @@ static int __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(struct __pyx
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":58
+/* "ad3/factor_graph.pyx":58
  *         self.thisptr = new FactorGraph()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1737,21 +1737,21 @@ static int __pyx_pf_6python_12factor_graph_12PFactorGraph___cinit__(struct __pyx
  */
 
 /* Python wrapper */
-static void __pyx_pw_6python_12factor_graph_12PFactorGraph_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6python_12factor_graph_12PFactorGraph_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_3ad3_12factor_graph_12PFactorGraph_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_3ad3_12factor_graph_12PFactorGraph_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_pf_3ad3_12factor_graph_12PFactorGraph_2__dealloc__(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static void __pyx_pf_3ad3_12factor_graph_12PFactorGraph_2__dealloc__(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "python/factor_graph.pyx":59
+  /* "ad3/factor_graph.pyx":59
  * 
  *     def __dealloc__(self):
  *         del self.thisptr             # <<<<<<<<<<<<<<
@@ -1760,7 +1760,7 @@ static void __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(struct _
  */
   delete __pyx_v_self->thisptr;
 
-  /* "python/factor_graph.pyx":58
+  /* "ad3/factor_graph.pyx":58
  *         self.thisptr = new FactorGraph()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1772,7 +1772,7 @@ static void __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(struct _
   __Pyx_RefNannyFinishContext();
 }
 
-/* "python/factor_graph.pyx":61
+/* "ad3/factor_graph.pyx":61
  *         del self.thisptr
  * 
  *     def set_verbosity(self, int verbosity):             # <<<<<<<<<<<<<<
@@ -1781,8 +1781,8 @@ static void __pyx_pf_6python_12factor_graph_12PFactorGraph_2__dealloc__(struct _
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_5set_verbosity(PyObject *__pyx_v_self, PyObject *__pyx_arg_verbosity); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_5set_verbosity(PyObject *__pyx_v_self, PyObject *__pyx_arg_verbosity) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_5set_verbosity(PyObject *__pyx_v_self, PyObject *__pyx_arg_verbosity); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_5set_verbosity(PyObject *__pyx_v_self, PyObject *__pyx_arg_verbosity) {
   int __pyx_v_verbosity;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -1792,23 +1792,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_5set_verbosity(P
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_verbosity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_verbosity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_verbosity));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_4set_verbosity(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_verbosity));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_verbosity) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_4set_verbosity(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_verbosity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_verbosity", 0);
 
-  /* "python/factor_graph.pyx":62
+  /* "ad3/factor_graph.pyx":62
  * 
  *     def set_verbosity(self, int verbosity):
  *         self.thisptr.SetVerbosity(verbosity)             # <<<<<<<<<<<<<<
@@ -1817,7 +1817,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(s
  */
   __pyx_v_self->thisptr->SetVerbosity(__pyx_v_verbosity);
 
-  /* "python/factor_graph.pyx":61
+  /* "ad3/factor_graph.pyx":61
  *         del self.thisptr
  * 
  *     def set_verbosity(self, int verbosity):             # <<<<<<<<<<<<<<
@@ -1832,7 +1832,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(s
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":64
+/* "ad3/factor_graph.pyx":64
  *         self.thisptr.SetVerbosity(verbosity)
  * 
  *     def create_binary_variable(self):             # <<<<<<<<<<<<<<
@@ -1841,29 +1841,29 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_4set_verbosity(s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_7create_binary_variable(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_6create_binary_variable[] = "Creates and returns a new binary variable.\n\n        Returns\n        -------\n\n        var, PBinaryVariable\n            The created variable.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_7create_binary_variable(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_7create_binary_variable(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_6create_binary_variable[] = "Creates and returns a new binary variable.\n\n        Returns\n        -------\n\n        var, PBinaryVariable\n            The created variable.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_7create_binary_variable(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("create_binary_variable (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_variable(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_6create_binary_variable(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_variable(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_6create_binary_variable(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   AD3::BinaryVariable *__pyx_v_variable;
-  struct __pyx_obj_6python_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
+  struct __pyx_obj_3ad3_4base_PBinaryVariable *__pyx_v_pvariable = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("create_binary_variable", 0);
 
-  /* "python/factor_graph.pyx":73
+  /* "ad3/factor_graph.pyx":73
  *             The created variable.
  *         """
  *         cdef BinaryVariable * variable = self.thisptr.CreateBinaryVariable()             # <<<<<<<<<<<<<<
@@ -1872,7 +1872,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
  */
   __pyx_v_variable = __pyx_v_self->thisptr->CreateBinaryVariable();
 
-  /* "python/factor_graph.pyx":74
+  /* "ad3/factor_graph.pyx":74
  *         """
  *         cdef BinaryVariable * variable = self.thisptr.CreateBinaryVariable()
  *         pvariable = PBinaryVariable(allocate=False)             # <<<<<<<<<<<<<<
@@ -1882,13 +1882,13 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_allocate, Py_False) < 0) __PYX_ERR(0, 74, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_PBinaryVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_pvariable = ((struct __pyx_obj_6python_4base_PBinaryVariable *)__pyx_t_2);
+  __pyx_v_pvariable = ((struct __pyx_obj_3ad3_4base_PBinaryVariable *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "python/factor_graph.pyx":75
+  /* "ad3/factor_graph.pyx":75
  *         cdef BinaryVariable * variable = self.thisptr.CreateBinaryVariable()
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable             # <<<<<<<<<<<<<<
@@ -1897,7 +1897,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
  */
   __pyx_v_pvariable->thisptr = __pyx_v_variable;
 
-  /* "python/factor_graph.pyx":76
+  /* "ad3/factor_graph.pyx":76
  *         pvariable = PBinaryVariable(allocate=False)
  *         pvariable.thisptr = variable
  *         return pvariable             # <<<<<<<<<<<<<<
@@ -1909,7 +1909,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
   __pyx_r = ((PyObject *)__pyx_v_pvariable);
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":64
+  /* "ad3/factor_graph.pyx":64
  *         self.thisptr.SetVerbosity(verbosity)
  * 
  *     def create_binary_variable(self):             # <<<<<<<<<<<<<<
@@ -1921,7 +1921,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_binary_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_binary_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_pvariable);
@@ -1930,7 +1930,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":78
+/* "ad3/factor_graph.pyx":78
  *         return pvariable
  * 
  *     def create_multi_variable(self, int num_states):             # <<<<<<<<<<<<<<
@@ -1939,9 +1939,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_6create_binary_v
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_9create_multi_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_8create_multi_variable[] = "Creates and returns a new multi-valued variable.\n\n        Parameters\n        ----------\n\n        n_states : int\n            The number of states the variable may be in.\n\n        Returns\n        -------\n\n        var, PMultiVariable\n            The created variable.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_9create_multi_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_9create_multi_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_8create_multi_variable[] = "Creates and returns a new multi-valued variable.\n\n        Parameters\n        ----------\n\n        n_states : int\n            The number of states the variable may be in.\n\n        Returns\n        -------\n\n        var, PMultiVariable\n            The created variable.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_9create_multi_variable(PyObject *__pyx_v_self, PyObject *__pyx_arg_num_states) {
   int __pyx_v_num_states;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -1951,27 +1951,27 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_9create_multi_va
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_multi_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_multi_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_variable(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_num_states));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_8create_multi_variable(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_num_states));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_variable(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_num_states) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_8create_multi_variable(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_num_states) {
   AD3::MultiVariable *__pyx_v_mv;
-  struct __pyx_obj_6python_4base_PMultiVariable *__pyx_v_pmult = NULL;
+  struct __pyx_obj_3ad3_4base_PMultiVariable *__pyx_v_pmult = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("create_multi_variable", 0);
 
-  /* "python/factor_graph.pyx":93
+  /* "ad3/factor_graph.pyx":93
  *             The created variable.
  *         """
  *         cdef MultiVariable * mv = self.thisptr.CreateMultiVariable(num_states)             # <<<<<<<<<<<<<<
@@ -1980,7 +1980,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
  */
   __pyx_v_mv = __pyx_v_self->thisptr->CreateMultiVariable(__pyx_v_num_states);
 
-  /* "python/factor_graph.pyx":94
+  /* "ad3/factor_graph.pyx":94
  *         """
  *         cdef MultiVariable * mv = self.thisptr.CreateMultiVariable(num_states)
  *         pmult = PMultiVariable(allocate=False)             # <<<<<<<<<<<<<<
@@ -1990,13 +1990,13 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_allocate, Py_False) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_PMultiVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_PMultiVariable), __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_pmult = ((struct __pyx_obj_6python_4base_PMultiVariable *)__pyx_t_2);
+  __pyx_v_pmult = ((struct __pyx_obj_3ad3_4base_PMultiVariable *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "python/factor_graph.pyx":95
+  /* "ad3/factor_graph.pyx":95
  *         cdef MultiVariable * mv = self.thisptr.CreateMultiVariable(num_states)
  *         pmult = PMultiVariable(allocate=False)
  *         pmult.thisptr = mv             # <<<<<<<<<<<<<<
@@ -2005,7 +2005,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
  */
   __pyx_v_pmult->thisptr = __pyx_v_mv;
 
-  /* "python/factor_graph.pyx":96
+  /* "ad3/factor_graph.pyx":96
  *         pmult = PMultiVariable(allocate=False)
  *         pmult.thisptr = mv
  *         return pmult             # <<<<<<<<<<<<<<
@@ -2017,7 +2017,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
   __pyx_r = ((PyObject *)__pyx_v_pmult);
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":78
+  /* "ad3/factor_graph.pyx":78
  *         return pvariable
  * 
  *     def create_multi_variable(self, int num_states):             # <<<<<<<<<<<<<<
@@ -2029,7 +2029,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_multi_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_multi_variable", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_pmult);
@@ -2038,7 +2038,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":98
+/* "ad3/factor_graph.pyx":98
  *         return pmult
  * 
  *     def create_factor_logic(self,             # <<<<<<<<<<<<<<
@@ -2047,9 +2047,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_8create_multi_va
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_logic(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_10create_factor_logic[] = "Create a logic constraint factor and bind it to the variables.\n\n        Parameters\n        ----------\n\n        factor_type : string\n            One of the following types of logic factor:\n            - XOR: allows exactly one variable to be turned on.\n            - OR: requires at least one variable to be turned on\n            - ATMOSTONE: requires at most one variable to be on\n            - IMPLY: if the first n - 1 variables are on, so must the last.\n            - XOROUT: XOR with output (see Notes).\n            - OROUT: OR with output (see Notes)\n            - ANDOUT: AND with output (see Notes)\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to. For some factors\n            the order is meaningful.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the logic factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        Notes\n        -----\n\n        For the factors with output (XOROUT, OROUT, ANDOUT) the last variable\n        is the output. For example, in all legal configurations of an XOROUT\n        factor over variables (a, b, c), c must be equal to ``a ^ b``.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_logic(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_11create_factor_logic(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_10create_factor_logic[] = "Create a logic constraint factor and bind it to the variables.\n\n        Parameters\n        ----------\n\n        factor_type : string\n            One of the following types of logic factor:\n            - XOR: allows exactly one variable to be turned on.\n            - OR: requires at least one variable to be turned on\n            - ATMOSTONE: requires at most one variable to be on\n            - IMPLY: if the first n - 1 variables are on, so must the last.\n            - XOROUT: XOR with output (see Notes).\n            - OROUT: OR with output (see Notes)\n            - ANDOUT: AND with output (see Notes)\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to. For some factors\n            the order is meaningful.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the logic factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        Notes\n        -----\n\n        For the factors with output (XOROUT, OROUT, ANDOUT) the last variable\n        is the output. For example, in all legal configurations of an XOROUT\n        factor over variables (a, b, c), c must be equal to ``a ^ b``.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_11create_factor_logic(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_factor_type = 0;
   PyObject *__pyx_v_p_variables = 0;
   PyObject *__pyx_v_negated = 0;
@@ -2061,7 +2061,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_factor_type,&__pyx_n_s_p_variables,&__pyx_n_s_negated,&__pyx_n_s_owned_by_graph,0};
     PyObject* values[4] = {0,0,0,0};
 
-    /* "python/factor_graph.pyx":101
+    /* "ad3/factor_graph.pyx":101
  *                             str factor_type,
  *                             list p_variables,
  *                             list negated=None,             # <<<<<<<<<<<<<<
@@ -2121,7 +2121,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_
       __pyx_v_owned_by_graph = __Pyx_PyObject_IsTrue(values[3]); if (unlikely((__pyx_v_owned_by_graph == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 102, __pyx_L3_error)
     } else {
 
-      /* "python/factor_graph.pyx":102
+      /* "ad3/factor_graph.pyx":102
  *                             list p_variables,
  *                             list negated=None,
  *                             bool owned_by_graph=True):             # <<<<<<<<<<<<<<
@@ -2135,16 +2135,16 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_factor_logic", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 98, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_logic", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_logic", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_factor_type), (&PyString_Type), 1, "factor_type", 1))) __PYX_ERR(0, 99, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_variables), (&PyList_Type), 1, "p_variables", 1))) __PYX_ERR(0, 100, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_negated), (&PyList_Type), 1, "negated", 1))) __PYX_ERR(0, 101, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_logic(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_factor_type, __pyx_v_p_variables, __pyx_v_negated, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_10create_factor_logic(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_factor_type, __pyx_v_p_variables, __pyx_v_negated, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":98
+  /* "ad3/factor_graph.pyx":98
  *         return pmult
  * 
  *     def create_factor_logic(self,             # <<<<<<<<<<<<<<
@@ -2161,11 +2161,11 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_logic(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_factor_type, PyObject *__pyx_v_p_variables, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_10create_factor_logic(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_factor_type, PyObject *__pyx_v_p_variables, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   std::vector<bool>  __pyx_v_negated_;
   AD3::Factor *__pyx_v_f;
-  struct __pyx_obj_6python_4base_PFactor *__pyx_v_pf = 0;
+  struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_pf = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -2177,25 +2177,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("create_factor_logic", 0);
 
-  /* "python/factor_graph.pyx":141
+  /* "ad3/factor_graph.pyx":141
  *         cdef vector[BinaryVariable*] variables
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)             # <<<<<<<<<<<<<<
  *         _validate_negated(negated, negated_, variables.size())
  * 
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 141, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":142
+  /* "ad3/factor_graph.pyx":142
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)
  *         _validate_negated(negated, negated_, variables.size())             # <<<<<<<<<<<<<<
  * 
  *         cdef Factor* f
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 142, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":146
+  /* "ad3/factor_graph.pyx":146
  *         cdef Factor* f
  * 
  *         if factor_type == 'XOR':             # <<<<<<<<<<<<<<
@@ -2206,7 +2206,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "python/factor_graph.pyx":147
+    /* "ad3/factor_graph.pyx":147
  * 
  *         if factor_type == 'XOR':
  *             f = self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2215,7 +2215,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorXOR(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":146
+    /* "ad3/factor_graph.pyx":146
  *         cdef Factor* f
  * 
  *         if factor_type == 'XOR':             # <<<<<<<<<<<<<<
@@ -2225,7 +2225,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":148
+  /* "ad3/factor_graph.pyx":148
  *         if factor_type == 'XOR':
  *             f = self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'XOROUT':             # <<<<<<<<<<<<<<
@@ -2236,7 +2236,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_2 = (__pyx_t_3 != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":149
+    /* "ad3/factor_graph.pyx":149
  *             f = self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'XOROUT':
  *             f = self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2245,7 +2245,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorXOROUT(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":148
+    /* "ad3/factor_graph.pyx":148
  *         if factor_type == 'XOR':
  *             f = self.thisptr.CreateFactorXOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'XOROUT':             # <<<<<<<<<<<<<<
@@ -2255,7 +2255,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":150
+  /* "ad3/factor_graph.pyx":150
  *         elif factor_type == 'XOROUT':
  *             f = self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ATMOSTONE':             # <<<<<<<<<<<<<<
@@ -2266,7 +2266,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "python/factor_graph.pyx":151
+    /* "ad3/factor_graph.pyx":151
  *             f = self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ATMOSTONE':
  *             f = self.thisptr.CreateFactorAtMostOne(variables, negated_,             # <<<<<<<<<<<<<<
@@ -2275,7 +2275,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorAtMostOne(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":150
+    /* "ad3/factor_graph.pyx":150
  *         elif factor_type == 'XOROUT':
  *             f = self.thisptr.CreateFactorXOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ATMOSTONE':             # <<<<<<<<<<<<<<
@@ -2285,7 +2285,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":153
+  /* "ad3/factor_graph.pyx":153
  *             f = self.thisptr.CreateFactorAtMostOne(variables, negated_,
  *                                                owned_by_graph)
  *         elif factor_type == 'OR':             # <<<<<<<<<<<<<<
@@ -2296,7 +2296,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_2 = (__pyx_t_3 != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":154
+    /* "ad3/factor_graph.pyx":154
  *                                                owned_by_graph)
  *         elif factor_type == 'OR':
  *             f = self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2305,7 +2305,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorOR(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":153
+    /* "ad3/factor_graph.pyx":153
  *             f = self.thisptr.CreateFactorAtMostOne(variables, negated_,
  *                                                owned_by_graph)
  *         elif factor_type == 'OR':             # <<<<<<<<<<<<<<
@@ -2315,7 +2315,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":155
+  /* "ad3/factor_graph.pyx":155
  *         elif factor_type == 'OR':
  *             f = self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'OROUT':             # <<<<<<<<<<<<<<
@@ -2326,7 +2326,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "python/factor_graph.pyx":156
+    /* "ad3/factor_graph.pyx":156
  *             f = self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'OROUT':
  *             f = self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2335,7 +2335,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorOROUT(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":155
+    /* "ad3/factor_graph.pyx":155
  *         elif factor_type == 'OR':
  *             f = self.thisptr.CreateFactorOR(variables, negated_, owned_by_graph)
  *         elif factor_type == 'OROUT':             # <<<<<<<<<<<<<<
@@ -2345,7 +2345,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":157
+  /* "ad3/factor_graph.pyx":157
  *         elif factor_type == 'OROUT':
  *             f = self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ANDOUT':             # <<<<<<<<<<<<<<
@@ -2356,7 +2356,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_2 = (__pyx_t_3 != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":158
+    /* "ad3/factor_graph.pyx":158
  *             f = self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ANDOUT':
  *             f = self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2365,7 +2365,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorANDOUT(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":157
+    /* "ad3/factor_graph.pyx":157
  *         elif factor_type == 'OROUT':
  *             f = self.thisptr.CreateFactorOROUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'ANDOUT':             # <<<<<<<<<<<<<<
@@ -2375,7 +2375,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":159
+  /* "ad3/factor_graph.pyx":159
  *         elif factor_type == 'ANDOUT':
  *             f = self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'IMPLY':             # <<<<<<<<<<<<<<
@@ -2386,7 +2386,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "python/factor_graph.pyx":160
+    /* "ad3/factor_graph.pyx":160
  *             f = self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'IMPLY':
  *             f = self.thisptr.CreateFactorIMPLY(variables, negated_, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -2395,7 +2395,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
     __pyx_v_f = __pyx_v_self->thisptr->CreateFactorIMPLY(__pyx_v_variables, __pyx_v_negated_, __pyx_v_owned_by_graph);
 
-    /* "python/factor_graph.pyx":159
+    /* "ad3/factor_graph.pyx":159
  *         elif factor_type == 'ANDOUT':
  *             f = self.thisptr.CreateFactorANDOUT(variables, negated_, owned_by_graph)
  *         elif factor_type == 'IMPLY':             # <<<<<<<<<<<<<<
@@ -2405,7 +2405,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     goto __pyx_L3;
   }
 
-  /* "python/factor_graph.pyx":162
+  /* "ad3/factor_graph.pyx":162
  *             f = self.thisptr.CreateFactorIMPLY(variables, negated_, owned_by_graph)
  *         else:
  *             raise NotImplementedError(             # <<<<<<<<<<<<<<
@@ -2414,7 +2414,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
   /*else*/ {
 
-    /* "python/factor_graph.pyx":163
+    /* "ad3/factor_graph.pyx":163
  *         else:
  *             raise NotImplementedError(
  *                 'Unknown factor type: {}'.format(factor_type))             # <<<<<<<<<<<<<<
@@ -2467,7 +2467,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "python/factor_graph.pyx":162
+    /* "ad3/factor_graph.pyx":162
  *             f = self.thisptr.CreateFactorIMPLY(variables, negated_, owned_by_graph)
  *         else:
  *             raise NotImplementedError(             # <<<<<<<<<<<<<<
@@ -2488,7 +2488,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   }
   __pyx_L3:;
 
-  /* "python/factor_graph.pyx":165
+  /* "ad3/factor_graph.pyx":165
  *                 'Unknown factor type: {}'.format(factor_type))
  * 
  *         cdef PFactor pf = PFactor(allocate=False)             # <<<<<<<<<<<<<<
@@ -2498,13 +2498,13 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_t_4 = PyDict_New(); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 165, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_allocate, Py_False) < 0) __PYX_ERR(0, 165, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6python_4base_PFactor), __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_3ad3_4base_PFactor), __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_v_pf = ((struct __pyx_obj_6python_4base_PFactor *)__pyx_t_5);
+  __pyx_v_pf = ((struct __pyx_obj_3ad3_4base_PFactor *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "python/factor_graph.pyx":166
+  /* "ad3/factor_graph.pyx":166
  * 
  *         cdef PFactor pf = PFactor(allocate=False)
  *         pf.thisptr = f             # <<<<<<<<<<<<<<
@@ -2513,7 +2513,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
   __pyx_v_pf->thisptr = __pyx_v_f;
 
-  /* "python/factor_graph.pyx":167
+  /* "ad3/factor_graph.pyx":167
  *         cdef PFactor pf = PFactor(allocate=False)
  *         pf.thisptr = f
  *         return pf             # <<<<<<<<<<<<<<
@@ -2525,7 +2525,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __pyx_r = ((PyObject *)__pyx_v_pf);
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":98
+  /* "ad3/factor_graph.pyx":98
  *         return pmult
  * 
  *     def create_factor_logic(self,             # <<<<<<<<<<<<<<
@@ -2539,7 +2539,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_logic", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_logic", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_pf);
@@ -2548,7 +2548,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":169
+/* "ad3/factor_graph.pyx":169
  *         return pf
  * 
  *     def create_factor_pair(self,             # <<<<<<<<<<<<<<
@@ -2557,9 +2557,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_10create_factor_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_pair(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_12create_factor_pair[] = "Create a pair factor between two binary variables.\n\n        Expresses a correlation between both variables being turned on,\n        with the specified ``edge_log_potential``. All other configurations\n        have a log-potential of 0.\n\n        Parameters\n        ----------\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to. For some factors\n            the order is meaningful.\n\n        edge_log_potential : double,\n            The score for both variables being turned on simultaneously.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_pair(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_13create_factor_pair(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_12create_factor_pair[] = "Create a pair factor between two binary variables.\n\n        Expresses a correlation between both variables being turned on,\n        with the specified ``edge_log_potential``. All other configurations\n        have a log-potential of 0.\n\n        Parameters\n        ----------\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to. For some factors\n            the order is meaningful.\n\n        edge_log_potential : double,\n            The score for both variables being turned on simultaneously.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_13create_factor_pair(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_p_variables = 0;
   double __pyx_v_edge_log_potential;
   bool __pyx_v_owned_by_graph;
@@ -2613,7 +2613,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_
       __pyx_v_owned_by_graph = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_owned_by_graph == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L3_error)
     } else {
 
-      /* "python/factor_graph.pyx":172
+      /* "ad3/factor_graph.pyx":172
  *                            list p_variables,
  *                            double edge_log_potential,
  *                            bool owned_by_graph=True):             # <<<<<<<<<<<<<<
@@ -2627,14 +2627,14 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_factor_pair", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 169, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_pair", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_pair", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_variables), (&PyList_Type), 1, "p_variables", 1))) __PYX_ERR(0, 170, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_pair(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_edge_log_potential, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_12create_factor_pair(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_edge_log_potential, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":169
+  /* "ad3/factor_graph.pyx":169
  *         return pf
  * 
  *     def create_factor_pair(self,             # <<<<<<<<<<<<<<
@@ -2651,7 +2651,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_pair(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, double __pyx_v_edge_log_potential, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_12create_factor_pair(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, double __pyx_v_edge_log_potential, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2660,16 +2660,16 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("create_factor_pair", 0);
 
-  /* "python/factor_graph.pyx":195
+  /* "ad3/factor_graph.pyx":195
  *         """
  *         cdef vector[BinaryVariable*] variables
  *         _binary_vars_to_vector(p_variables, variables)             # <<<<<<<<<<<<<<
  *         if variables.size() != 2:
  *             raise ValueError("Pair factors require exactly two binary "
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 195, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":196
+  /* "ad3/factor_graph.pyx":196
  *         cdef vector[BinaryVariable*] variables
  *         _binary_vars_to_vector(p_variables, variables)
  *         if variables.size() != 2:             # <<<<<<<<<<<<<<
@@ -2679,7 +2679,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
   __pyx_t_2 = ((__pyx_v_variables.size() != 2) != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":197
+    /* "ad3/factor_graph.pyx":197
  *         _binary_vars_to_vector(p_variables, variables)
  *         if variables.size() != 2:
  *             raise ValueError("Pair factors require exactly two binary "             # <<<<<<<<<<<<<<
@@ -2692,7 +2692,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(0, 197, __pyx_L1_error)
 
-    /* "python/factor_graph.pyx":196
+    /* "ad3/factor_graph.pyx":196
  *         cdef vector[BinaryVariable*] variables
  *         _binary_vars_to_vector(p_variables, variables)
  *         if variables.size() != 2:             # <<<<<<<<<<<<<<
@@ -2701,7 +2701,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
  */
   }
 
-  /* "python/factor_graph.pyx":199
+  /* "ad3/factor_graph.pyx":199
  *             raise ValueError("Pair factors require exactly two binary "
  *                              "variables.")
  *         self.thisptr.CreateFactorPAIR(variables, edge_log_potential,             # <<<<<<<<<<<<<<
@@ -2710,7 +2710,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
  */
   __pyx_v_self->thisptr->CreateFactorPAIR(__pyx_v_variables, __pyx_v_edge_log_potential, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":169
+  /* "ad3/factor_graph.pyx":169
  *         return pf
  * 
  *     def create_factor_pair(self,             # <<<<<<<<<<<<<<
@@ -2723,7 +2723,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_pair", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_pair", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2731,7 +2731,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":202
+/* "ad3/factor_graph.pyx":202
  *                                       owned_by_graph)
  * 
  *     def create_factor_budget(self, list p_variables, int budget,             # <<<<<<<<<<<<<<
@@ -2740,9 +2740,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_12create_factor_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_budget(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_14create_factor_budget[] = "Creates and binds a budget factor to the passed binary variables.\n\n        A budget factor limits the maximum amount of variables that can be\n        turned on. The variables with highest log-potentials will be selected.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        budget : int,\n            Maximum number of variables that can be turned on.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_budget(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_15create_factor_budget(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_14create_factor_budget[] = "Creates and binds a budget factor to the passed binary variables.\n\n        A budget factor limits the maximum amount of variables that can be\n        turned on. The variables with highest log-potentials will be selected.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        budget : int,\n            Maximum number of variables that can be turned on.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_15create_factor_budget(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_p_variables = 0;
   int __pyx_v_budget;
   PyObject *__pyx_v_negated = 0;
@@ -2754,7 +2754,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_p_variables,&__pyx_n_s_budget,&__pyx_n_s_negated,&__pyx_n_s_owned_by_graph,0};
     PyObject* values[4] = {0,0,0,0};
 
-    /* "python/factor_graph.pyx":203
+    /* "ad3/factor_graph.pyx":203
  * 
  *     def create_factor_budget(self, list p_variables, int budget,
  *                              list negated=None, bool owned_by_graph=True):             # <<<<<<<<<<<<<<
@@ -2820,15 +2820,15 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_factor_budget", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 202, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_budget", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_budget", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_variables), (&PyList_Type), 1, "p_variables", 1))) __PYX_ERR(0, 202, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_negated), (&PyList_Type), 1, "negated", 1))) __PYX_ERR(0, 203, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_budget(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_budget, __pyx_v_negated, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_14create_factor_budget(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_budget, __pyx_v_negated, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":202
+  /* "ad3/factor_graph.pyx":202
  *                                       owned_by_graph)
  * 
  *     def create_factor_budget(self, list p_variables, int budget,             # <<<<<<<<<<<<<<
@@ -2845,7 +2845,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_budget(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, int __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_14create_factor_budget(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, int __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   std::vector<bool>  __pyx_v_negated_;
   PyObject *__pyx_r = NULL;
@@ -2853,25 +2853,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("create_factor_budget", 0);
 
-  /* "python/factor_graph.pyx":227
+  /* "ad3/factor_graph.pyx":227
  *         cdef vector[BinaryVariable*] variables
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)             # <<<<<<<<<<<<<<
  *         _validate_negated(negated, negated_, variables.size())
  * 
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 227, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":228
+  /* "ad3/factor_graph.pyx":228
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)
  *         _validate_negated(negated, negated_, variables.size())             # <<<<<<<<<<<<<<
  * 
  *         self.thisptr.CreateFactorBUDGET(variables, negated_, budget,
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 228, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":230
+  /* "ad3/factor_graph.pyx":230
  *         _validate_negated(negated, negated_, variables.size())
  * 
  *         self.thisptr.CreateFactorBUDGET(variables, negated_, budget,             # <<<<<<<<<<<<<<
@@ -2880,7 +2880,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_
  */
   __pyx_v_self->thisptr->CreateFactorBUDGET(__pyx_v_variables, __pyx_v_negated_, __pyx_v_budget, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":202
+  /* "ad3/factor_graph.pyx":202
  *                                       owned_by_graph)
  * 
  *     def create_factor_budget(self, list p_variables, int budget,             # <<<<<<<<<<<<<<
@@ -2892,7 +2892,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_budget", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_budget", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2900,7 +2900,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":233
+/* "ad3/factor_graph.pyx":233
  *                                         owned_by_graph)
  * 
  *     def create_factor_knapsack(self,             # <<<<<<<<<<<<<<
@@ -2909,9 +2909,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_14create_factor_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_knapsack(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_16create_factor_knapsack[] = "Creates and binds a knapsack factor to the passed binary variables.\n\n        A knapsack factor limits the total cost of the active variables. This\n        is a weighted version of ``create_factor_budget``.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        costs : list of double,\n            Costs associated with turning on binary variables. Must have the\n            same length as ``p_variables``.\n\n        budget : int,\n            Maximum total cost of the variables that can be turned on.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_knapsack(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_17create_factor_knapsack(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_16create_factor_knapsack[] = "Creates and binds a knapsack factor to the passed binary variables.\n\n        A knapsack factor limits the total cost of the active variables. This\n        is a weighted version of ``create_factor_budget``.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        costs : list of double,\n            Costs associated with turning on binary variables. Must have the\n            same length as ``p_variables``.\n\n        budget : int,\n            Maximum total cost of the variables that can be turned on.\n\n        negated : list of bool, optional\n            List of boolean flags the same length as ``p_variables``, indicating\n            if the output of each variable should be flipped before applying\n            the factor. By default no variables are flipped.\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_17create_factor_knapsack(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_p_variables = 0;
   std::vector<double>  __pyx_v_costs;
   double __pyx_v_budget;
@@ -2924,7 +2924,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_p_variables,&__pyx_n_s_costs,&__pyx_n_s_budget,&__pyx_n_s_negated,&__pyx_n_s_owned_by_graph,0};
     PyObject* values[5] = {0,0,0,0,0};
 
-    /* "python/factor_graph.pyx":237
+    /* "ad3/factor_graph.pyx":237
  *                                vector[double] costs,
  *                                double budget,
  *                                list negated=None,             # <<<<<<<<<<<<<<
@@ -2992,7 +2992,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_
       __pyx_v_owned_by_graph = __Pyx_PyObject_IsTrue(values[4]); if (unlikely((__pyx_v_owned_by_graph == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 238, __pyx_L3_error)
     } else {
 
-      /* "python/factor_graph.pyx":238
+      /* "ad3/factor_graph.pyx":238
  *                                double budget,
  *                                list negated=None,
  *                                bool owned_by_graph=True):             # <<<<<<<<<<<<<<
@@ -3006,15 +3006,15 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_factor_knapsack", 0, 3, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 233, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_knapsack", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_knapsack", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_variables), (&PyList_Type), 1, "p_variables", 1))) __PYX_ERR(0, 234, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_negated), (&PyList_Type), 1, "negated", 1))) __PYX_ERR(0, 237, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_knapsack(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_costs, __pyx_v_budget, __pyx_v_negated, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_16create_factor_knapsack(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_variables, __pyx_v_costs, __pyx_v_budget, __pyx_v_negated, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":233
+  /* "ad3/factor_graph.pyx":233
  *                                         owned_by_graph)
  * 
  *     def create_factor_knapsack(self,             # <<<<<<<<<<<<<<
@@ -3031,7 +3031,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_knapsack(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, std::vector<double>  __pyx_v_costs, double __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_16create_factor_knapsack(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_variables, std::vector<double>  __pyx_v_costs, double __pyx_v_budget, PyObject *__pyx_v_negated, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   std::vector<bool>  __pyx_v_negated_;
   PyObject *__pyx_r = NULL;
@@ -3041,25 +3041,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("create_factor_knapsack", 0);
 
-  /* "python/factor_graph.pyx":265
+  /* "ad3/factor_graph.pyx":265
  *         cdef vector[BinaryVariable*] variables
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)             # <<<<<<<<<<<<<<
  *         _validate_negated(negated, negated_, variables.size())
  * 
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 265, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 265, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":266
+  /* "ad3/factor_graph.pyx":266
  *         cdef vector[bool] negated_
  *         _binary_vars_to_vector(p_variables, variables)
  *         _validate_negated(negated, negated_, variables.size())             # <<<<<<<<<<<<<<
  * 
  *         with cython.nonecheck(True):
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__validate_negated(__pyx_v_negated, __pyx_v_negated_, __pyx_v_variables.size()); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 266, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":269
+  /* "ad3/factor_graph.pyx":269
  * 
  *         with cython.nonecheck(True):
  *             if costs.size() != variables.size():             # <<<<<<<<<<<<<<
@@ -3069,7 +3069,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
   __pyx_t_2 = ((__pyx_v_costs.size() != __pyx_v_variables.size()) != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":270
+    /* "ad3/factor_graph.pyx":270
  *         with cython.nonecheck(True):
  *             if costs.size() != variables.size():
  *                 raise ValueError("Must provide one cost per variable.")             # <<<<<<<<<<<<<<
@@ -3082,7 +3082,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(0, 270, __pyx_L1_error)
 
-    /* "python/factor_graph.pyx":269
+    /* "ad3/factor_graph.pyx":269
  * 
  *         with cython.nonecheck(True):
  *             if costs.size() != variables.size():             # <<<<<<<<<<<<<<
@@ -3091,7 +3091,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
  */
   }
 
-  /* "python/factor_graph.pyx":272
+  /* "ad3/factor_graph.pyx":272
  *                 raise ValueError("Must provide one cost per variable.")
  * 
  *         self.thisptr.CreateFactorKNAPSACK(variables, negated_, costs, budget,             # <<<<<<<<<<<<<<
@@ -3100,7 +3100,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
  */
   __pyx_v_self->thisptr->CreateFactorKNAPSACK(__pyx_v_variables, __pyx_v_negated_, __pyx_v_costs, __pyx_v_budget, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":233
+  /* "ad3/factor_graph.pyx":233
  *                                         owned_by_graph)
  * 
  *     def create_factor_knapsack(self,             # <<<<<<<<<<<<<<
@@ -3113,7 +3113,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_knapsack", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_knapsack", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3121,7 +3121,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":275
+/* "ad3/factor_graph.pyx":275
  *                                           owned_by_graph)
  * 
  *     def create_factor_dense(self, list p_multi_variables,             # <<<<<<<<<<<<<<
@@ -3130,9 +3130,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_16create_factor_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_dense(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_18create_factor_dense[] = "Creates and binds a dense factor to several multi-variables.\n\n        Assigns as potential to each joint assignment of the passed variables.\n\n        p_multi_variables : list of PMultiVariable objects,\n            The bound multi-valued variables that the factor applies to.\n\n        additional_log_potentials : list of doubles,\n            Log-potentials for each joint configuration, in lexicographic order.\n            Required length ``product(len(var) for var in p_multi_variables)``\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_dense(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_19create_factor_dense(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_18create_factor_dense[] = "Creates and binds a dense factor to several multi-variables.\n\n        Assigns as potential to each joint assignment of the passed variables.\n\n        p_multi_variables : list of PMultiVariable objects,\n            The bound multi-valued variables that the factor applies to.\n\n        additional_log_potentials : list of doubles,\n            Log-potentials for each joint configuration, in lexicographic order.\n            Required length ``product(len(var) for var in p_multi_variables)``\n\n        owned_by_graph : bool, default: True\n            If False, the factor does not get deleted when the factor graph\n            gets garbage collected.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_19create_factor_dense(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_p_multi_variables = 0;
   std::vector<double>  __pyx_v_additional_log_potentials;
   bool __pyx_v_owned_by_graph;
@@ -3186,7 +3186,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_
       __pyx_v_owned_by_graph = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_owned_by_graph == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L3_error)
     } else {
 
-      /* "python/factor_graph.pyx":277
+      /* "ad3/factor_graph.pyx":277
  *     def create_factor_dense(self, list p_multi_variables,
  *                             vector[double] additional_log_potentials,
  *                             bool owned_by_graph=True):             # <<<<<<<<<<<<<<
@@ -3200,14 +3200,14 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_factor_dense", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 275, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_dense", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_dense", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_multi_variables), (&PyList_Type), 1, "p_multi_variables", 1))) __PYX_ERR(0, 275, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_dense(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_multi_variables, __pyx_v_additional_log_potentials, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_18create_factor_dense(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_multi_variables, __pyx_v_additional_log_potentials, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":275
+  /* "ad3/factor_graph.pyx":275
  *                                           owned_by_graph)
  * 
  *     def create_factor_dense(self, list p_multi_variables,             # <<<<<<<<<<<<<<
@@ -3224,7 +3224,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_dense(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_multi_variables, std::vector<double>  __pyx_v_additional_log_potentials, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_18create_factor_dense(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_p_multi_variables, std::vector<double>  __pyx_v_additional_log_potentials, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::MultiVariable *>  __pyx_v_multi_variables;
   Py_ssize_t __pyx_v_n_expected;
   PyObject *__pyx_r = NULL;
@@ -3234,17 +3234,17 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("create_factor_dense", 0);
 
-  /* "python/factor_graph.pyx":294
+  /* "ad3/factor_graph.pyx":294
  *         """
  *         cdef vector[MultiVariable*] multi_variables
  *         cdef Py_ssize_t n_expected = _multi_vars_to_vector(p_multi_variables,             # <<<<<<<<<<<<<<
  *                                                            multi_variables)
  * 
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__multi_vars_to_vector(__pyx_v_p_multi_variables, __pyx_v_multi_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__multi_vars_to_vector(__pyx_v_p_multi_variables, __pyx_v_multi_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 294, __pyx_L1_error)
   __pyx_v_n_expected = __pyx_t_1;
 
-  /* "python/factor_graph.pyx":298
+  /* "ad3/factor_graph.pyx":298
  * 
  *         with cython.nonecheck(True):
  *             if additional_log_potentials.size() !=  n_expected:             # <<<<<<<<<<<<<<
@@ -3254,7 +3254,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
   __pyx_t_2 = ((__pyx_v_additional_log_potentials.size() != __pyx_v_n_expected) != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":299
+    /* "ad3/factor_graph.pyx":299
  *         with cython.nonecheck(True):
  *             if additional_log_potentials.size() !=  n_expected:
  *                 raise ValueError("Must provide one log-potential per joint "             # <<<<<<<<<<<<<<
@@ -3267,7 +3267,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(0, 299, __pyx_L1_error)
 
-    /* "python/factor_graph.pyx":298
+    /* "ad3/factor_graph.pyx":298
  * 
  *         with cython.nonecheck(True):
  *             if additional_log_potentials.size() !=  n_expected:             # <<<<<<<<<<<<<<
@@ -3276,7 +3276,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
  */
   }
 
-  /* "python/factor_graph.pyx":302
+  /* "ad3/factor_graph.pyx":302
  *                                  "state assignment of all the variables.")
  * 
  *         self.thisptr.CreateFactorDense(multi_variables,             # <<<<<<<<<<<<<<
@@ -3285,7 +3285,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
  */
   __pyx_v_self->thisptr->CreateFactorDense(__pyx_v_multi_variables, __pyx_v_additional_log_potentials, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":275
+  /* "ad3/factor_graph.pyx":275
  *                                           owned_by_graph)
  * 
  *     def create_factor_dense(self, list p_multi_variables,             # <<<<<<<<<<<<<<
@@ -3298,7 +3298,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.create_factor_dense", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.create_factor_dense", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3306,7 +3306,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":306
+/* "ad3/factor_graph.pyx":306
  *                                        owned_by_graph)
  * 
  *     def declare_factor(self, PFactor p_factor not None,             # <<<<<<<<<<<<<<
@@ -3315,10 +3315,10 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_18create_factor_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_20declare_factor[] = "Bind a separately-created factor to variables in the graph.\n\n        Parameters\n        ----------\n\n        p_factor : instance of PFactor,\n            The instantiated factor to bind to the graph.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        owned_by_graph : bool, default: False\n            By default, the factor does not get deleted when the factor graph\n            gets garbage collected. If True, it will be deleted.\n\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_6python_4base_PFactor *__pyx_v_p_factor = 0;
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_21declare_factor(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_20declare_factor[] = "Bind a separately-created factor to variables in the graph.\n\n        Parameters\n        ----------\n\n        p_factor : instance of PFactor,\n            The instantiated factor to bind to the graph.\n\n        p_variables : list of PBinaryVariable objects,\n            The bound variables that the factor applies to.\n\n        owned_by_graph : bool, default: False\n            By default, the factor does not get deleted when the factor graph\n            gets garbage collected. If True, it will be deleted.\n\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_21declare_factor(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_p_factor = 0;
   PyObject *__pyx_v_p_variables = 0;
   bool __pyx_v_owned_by_graph;
   PyObject *__pyx_r = 0;
@@ -3365,13 +3365,13 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_p_factor = ((struct __pyx_obj_6python_4base_PFactor *)values[0]);
+    __pyx_v_p_factor = ((struct __pyx_obj_3ad3_4base_PFactor *)values[0]);
     __pyx_v_p_variables = ((PyObject*)values[1]);
     if (values[2]) {
       __pyx_v_owned_by_graph = __Pyx_PyObject_IsTrue(values[2]); if (unlikely((__pyx_v_owned_by_graph == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 307, __pyx_L3_error)
     } else {
 
-      /* "python/factor_graph.pyx":307
+      /* "ad3/factor_graph.pyx":307
  * 
  *     def declare_factor(self, PFactor p_factor not None,
  *                        list p_variables, bool owned_by_graph=False):             # <<<<<<<<<<<<<<
@@ -3385,15 +3385,15 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("declare_factor", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 306, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.declare_factor", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.declare_factor", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_factor), __pyx_ptype_6python_4base_PFactor, 0, "p_factor", 0))) __PYX_ERR(0, 306, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_factor), __pyx_ptype_3ad3_4base_PFactor, 0, "p_factor", 0))) __PYX_ERR(0, 306, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_variables), (&PyList_Type), 1, "p_variables", 1))) __PYX_ERR(0, 307, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_factor, __pyx_v_p_variables, __pyx_v_owned_by_graph);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_20declare_factor(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_p_factor, __pyx_v_p_variables, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":306
+  /* "ad3/factor_graph.pyx":306
  *                                        owned_by_graph)
  * 
  *     def declare_factor(self, PFactor p_factor not None,             # <<<<<<<<<<<<<<
@@ -3410,7 +3410,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, struct __pyx_obj_6python_4base_PFactor *__pyx_v_p_factor, PyObject *__pyx_v_p_variables, bool __pyx_v_owned_by_graph) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_20declare_factor(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, struct __pyx_obj_3ad3_4base_PFactor *__pyx_v_p_factor, PyObject *__pyx_v_p_variables, bool __pyx_v_owned_by_graph) {
   std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   AD3::Factor *__pyx_v_factor;
   PyObject *__pyx_r = NULL;
@@ -3422,16 +3422,16 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
   AD3::Factor *__pyx_t_5;
   __Pyx_RefNannySetupContext("declare_factor", 0);
 
-  /* "python/factor_graph.pyx":325
+  /* "ad3/factor_graph.pyx":325
  *         """
  *         cdef vector[BinaryVariable*] variables
  *         _binary_vars_to_vector(p_variables, variables)             # <<<<<<<<<<<<<<
  * 
  *         cdef Factor *factor
  */
-  __pyx_t_1 = __pyx_f_6python_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_12factor_graph__binary_vars_to_vector(__pyx_v_p_variables, __pyx_v_variables); if (unlikely(__pyx_t_1 == -1)) __PYX_ERR(0, 325, __pyx_L1_error)
 
-  /* "python/factor_graph.pyx":328
+  /* "ad3/factor_graph.pyx":328
  * 
  *         cdef Factor *factor
  *         if owned_by_graph:             # <<<<<<<<<<<<<<
@@ -3441,7 +3441,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
   __pyx_t_2 = (__pyx_v_owned_by_graph != 0);
   if (__pyx_t_2) {
 
-    /* "python/factor_graph.pyx":329
+    /* "ad3/factor_graph.pyx":329
  *         cdef Factor *factor
  *         if owned_by_graph:
  *             p_factor.set_allocate(False)             # <<<<<<<<<<<<<<
@@ -3455,7 +3455,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "python/factor_graph.pyx":328
+    /* "ad3/factor_graph.pyx":328
  * 
  *         cdef Factor *factor
  *         if owned_by_graph:             # <<<<<<<<<<<<<<
@@ -3464,7 +3464,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
  */
   }
 
-  /* "python/factor_graph.pyx":330
+  /* "ad3/factor_graph.pyx":330
  *         if owned_by_graph:
  *             p_factor.set_allocate(False)
  *         factor = p_factor.thisptr             # <<<<<<<<<<<<<<
@@ -3474,7 +3474,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
   __pyx_t_5 = __pyx_v_p_factor->thisptr;
   __pyx_v_factor = __pyx_t_5;
 
-  /* "python/factor_graph.pyx":332
+  /* "ad3/factor_graph.pyx":332
  *         factor = p_factor.thisptr
  * 
  *         self.thisptr.DeclareFactor(factor, variables, owned_by_graph)             # <<<<<<<<<<<<<<
@@ -3483,7 +3483,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
  */
   __pyx_v_self->thisptr->DeclareFactor(__pyx_v_factor, __pyx_v_variables, __pyx_v_owned_by_graph);
 
-  /* "python/factor_graph.pyx":306
+  /* "ad3/factor_graph.pyx":306
  *                                        owned_by_graph)
  * 
  *     def declare_factor(self, PFactor p_factor not None,             # <<<<<<<<<<<<<<
@@ -3497,7 +3497,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.declare_factor", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.declare_factor", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3505,7 +3505,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":334
+/* "ad3/factor_graph.pyx":334
  *         self.thisptr.DeclareFactor(factor, variables, owned_by_graph)
  * 
  *     def fix_multi_variables_without_factors(self):             # <<<<<<<<<<<<<<
@@ -3514,25 +3514,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_20declare_factor
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors[] = "Add one-of-K constraint to unbound multi-variables.\n\n        The well-formedness one-of-K constraint of multi-variables is\n        enforced not by the variables but by the dense factors bound to them.\n        This function checks for unbound multi-variables and adds XOR logic\n        factors on top of them to enforce the constraint. ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors[] = "Add one-of-K constraint to unbound multi-variables.\n\n        The well-formedness one-of-K constraint of multi-variables is\n        enforced not by the variables but by the dense factors bound to them.\n        This function checks for unbound multi-variables and adds XOR logic\n        factors on top of them to enforce the constraint. ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fix_multi_variables_without_factors (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fix_multi_variables_without_factors", 0);
 
-  /* "python/factor_graph.pyx":341
+  /* "ad3/factor_graph.pyx":341
  *         This function checks for unbound multi-variables and adds XOR logic
  *         factors on top of them to enforce the constraint. """
  *         self.thisptr.FixMultiVariablesWithoutFactors()             # <<<<<<<<<<<<<<
@@ -3541,7 +3541,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_vari
  */
   __pyx_v_self->thisptr->FixMultiVariablesWithoutFactors();
 
-  /* "python/factor_graph.pyx":334
+  /* "ad3/factor_graph.pyx":334
  *         self.thisptr.DeclareFactor(factor, variables, owned_by_graph)
  * 
  *     def fix_multi_variables_without_factors(self):             # <<<<<<<<<<<<<<
@@ -3556,7 +3556,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_vari
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":343
+/* "ad3/factor_graph.pyx":343
  *         self.thisptr.FixMultiVariablesWithoutFactors()
  * 
  *     def set_eta_psdd(self, double eta):             # <<<<<<<<<<<<<<
@@ -3565,8 +3565,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_22fix_multi_vari
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_25set_eta_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_25set_eta_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_25set_eta_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_25set_eta_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta) {
   double __pyx_v_eta;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3576,23 +3576,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_25set_eta_psdd(P
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_eta_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_eta_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_eta));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_24set_eta_psdd(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_eta));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_24set_eta_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_eta_psdd", 0);
 
-  /* "python/factor_graph.pyx":344
+  /* "ad3/factor_graph.pyx":344
  * 
  *     def set_eta_psdd(self, double eta):
  *         self.thisptr.SetEtaPSDD(eta)             # <<<<<<<<<<<<<<
@@ -3601,7 +3601,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(s
  */
   __pyx_v_self->thisptr->SetEtaPSDD(__pyx_v_eta);
 
-  /* "python/factor_graph.pyx":343
+  /* "ad3/factor_graph.pyx":343
  *         self.thisptr.FixMultiVariablesWithoutFactors()
  * 
  *     def set_eta_psdd(self, double eta):             # <<<<<<<<<<<<<<
@@ -3616,7 +3616,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(s
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":346
+/* "ad3/factor_graph.pyx":346
  *         self.thisptr.SetEtaPSDD(eta)
  * 
  *     def set_max_iterations_psdd(self, int max_iterations):             # <<<<<<<<<<<<<<
@@ -3625,8 +3625,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_24set_eta_psdd(s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_27set_max_iterations_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_27set_max_iterations_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_27set_max_iterations_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_27set_max_iterations_psdd(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations) {
   int __pyx_v_max_iterations;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3636,23 +3636,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_27set_max_iterat
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_max_iterations_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_max_iterations_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_max_iterations));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_max_iterations));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_26set_max_iterations_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_max_iterations_psdd", 0);
 
-  /* "python/factor_graph.pyx":347
+  /* "ad3/factor_graph.pyx":347
  * 
  *     def set_max_iterations_psdd(self, int max_iterations):
  *         self.thisptr.SetMaxIterationsPSDD(max_iterations)             # <<<<<<<<<<<<<<
@@ -3661,7 +3661,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterat
  */
   __pyx_v_self->thisptr->SetMaxIterationsPSDD(__pyx_v_max_iterations);
 
-  /* "python/factor_graph.pyx":346
+  /* "ad3/factor_graph.pyx":346
  *         self.thisptr.SetEtaPSDD(eta)
  * 
  *     def set_max_iterations_psdd(self, int max_iterations):             # <<<<<<<<<<<<<<
@@ -3676,7 +3676,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterat
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":349
+/* "ad3/factor_graph.pyx":349
  *         self.thisptr.SetMaxIterationsPSDD(max_iterations)
  * 
  *     def solve_lp_map_psdd(self):             # <<<<<<<<<<<<<<
@@ -3685,19 +3685,19 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_26set_max_iterat
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_29solve_lp_map_psdd(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_29solve_lp_map_psdd(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_29solve_lp_map_psdd(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_29solve_lp_map_psdd(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("solve_lp_map_psdd (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_28solve_lp_map_psdd(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   std::vector<double>  __pyx_v_posteriors;
   std::vector<double>  __pyx_v_additional_posteriors;
   double __pyx_v_value;
@@ -3709,7 +3709,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("solve_lp_map_psdd", 0);
 
-  /* "python/factor_graph.pyx":353
+  /* "ad3/factor_graph.pyx":353
  *         cdef vector[double] additional_posteriors
  *         cdef double value
  *         self.thisptr.SolveLPMAPWithPSDD(&posteriors, &additional_posteriors,             # <<<<<<<<<<<<<<
@@ -3718,7 +3718,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
  */
   __pyx_v_self->thisptr->SolveLPMAPWithPSDD((&__pyx_v_posteriors), (&__pyx_v_additional_posteriors), (&__pyx_v_value));
 
-  /* "python/factor_graph.pyx":356
+  /* "ad3/factor_graph.pyx":356
  *                                         &value)
  * 
  *         return value, posteriors, additional_posteriors             # <<<<<<<<<<<<<<
@@ -3747,7 +3747,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":349
+  /* "ad3/factor_graph.pyx":349
  *         self.thisptr.SetMaxIterationsPSDD(max_iterations)
  * 
  *     def solve_lp_map_psdd(self):             # <<<<<<<<<<<<<<
@@ -3761,7 +3761,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.solve_lp_map_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.solve_lp_map_psdd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3769,7 +3769,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":358
+/* "ad3/factor_graph.pyx":358
  *         return value, posteriors, additional_posteriors
  * 
  *     def set_eta_ad3(self, double eta):             # <<<<<<<<<<<<<<
@@ -3778,8 +3778,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_28solve_lp_map_p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_31set_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_31set_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_31set_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_31set_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_eta) {
   double __pyx_v_eta;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3789,23 +3789,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_31set_eta_ad3(Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_eta_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_eta_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_eta));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_30set_eta_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_eta));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_30set_eta_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_eta) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_eta_ad3", 0);
 
-  /* "python/factor_graph.pyx":359
+  /* "ad3/factor_graph.pyx":359
  * 
  *     def set_eta_ad3(self, double eta):
  *         self.thisptr.SetEtaAD3(eta)             # <<<<<<<<<<<<<<
@@ -3814,7 +3814,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(st
  */
   __pyx_v_self->thisptr->SetEtaAD3(__pyx_v_eta);
 
-  /* "python/factor_graph.pyx":358
+  /* "ad3/factor_graph.pyx":358
  *         return value, posteriors, additional_posteriors
  * 
  *     def set_eta_ad3(self, double eta):             # <<<<<<<<<<<<<<
@@ -3829,7 +3829,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(st
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":361
+/* "ad3/factor_graph.pyx":361
  *         self.thisptr.SetEtaAD3(eta)
  * 
  *     def adapt_eta_ad3(self, bool adapt):             # <<<<<<<<<<<<<<
@@ -3838,8 +3838,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_30set_eta_ad3(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_33adapt_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_adapt); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_33adapt_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_adapt) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_33adapt_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_adapt); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_33adapt_eta_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_adapt) {
   bool __pyx_v_adapt;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3849,23 +3849,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_33adapt_eta_ad3(
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.adapt_eta_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.adapt_eta_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((bool)__pyx_v_adapt));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_32adapt_eta_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((bool)__pyx_v_adapt));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, bool __pyx_v_adapt) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_32adapt_eta_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, bool __pyx_v_adapt) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("adapt_eta_ad3", 0);
 
-  /* "python/factor_graph.pyx":362
+  /* "ad3/factor_graph.pyx":362
  * 
  *     def adapt_eta_ad3(self, bool adapt):
  *         self.thisptr.AdaptEtaAD3(adapt)             # <<<<<<<<<<<<<<
@@ -3874,7 +3874,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(
  */
   __pyx_v_self->thisptr->AdaptEtaAD3(__pyx_v_adapt);
 
-  /* "python/factor_graph.pyx":361
+  /* "ad3/factor_graph.pyx":361
  *         self.thisptr.SetEtaAD3(eta)
  * 
  *     def adapt_eta_ad3(self, bool adapt):             # <<<<<<<<<<<<<<
@@ -3889,7 +3889,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":364
+/* "ad3/factor_graph.pyx":364
  *         self.thisptr.AdaptEtaAD3(adapt)
  * 
  *     def set_max_iterations_ad3(self, int max_iterations):             # <<<<<<<<<<<<<<
@@ -3898,8 +3898,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_32adapt_eta_ad3(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_35set_max_iterations_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_35set_max_iterations_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_35set_max_iterations_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_35set_max_iterations_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_max_iterations) {
   int __pyx_v_max_iterations;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3909,23 +3909,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_35set_max_iterat
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_max_iterations_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_max_iterations_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_max_iterations));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((int)__pyx_v_max_iterations));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_34set_max_iterations_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, int __pyx_v_max_iterations) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_max_iterations_ad3", 0);
 
-  /* "python/factor_graph.pyx":365
+  /* "ad3/factor_graph.pyx":365
  * 
  *     def set_max_iterations_ad3(self, int max_iterations):
  *         self.thisptr.SetMaxIterationsAD3(max_iterations)             # <<<<<<<<<<<<<<
@@ -3934,7 +3934,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterat
  */
   __pyx_v_self->thisptr->SetMaxIterationsAD3(__pyx_v_max_iterations);
 
-  /* "python/factor_graph.pyx":364
+  /* "ad3/factor_graph.pyx":364
  *         self.thisptr.AdaptEtaAD3(adapt)
  * 
  *     def set_max_iterations_ad3(self, int max_iterations):             # <<<<<<<<<<<<<<
@@ -3949,7 +3949,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterat
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":367
+/* "ad3/factor_graph.pyx":367
  *         self.thisptr.SetMaxIterationsAD3(max_iterations)
  * 
  *     def set_residual_threshold_ad3(self, double threshold):             # <<<<<<<<<<<<<<
@@ -3958,8 +3958,8 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_34set_max_iterat
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_threshold); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_threshold) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_threshold); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3(PyObject *__pyx_v_self, PyObject *__pyx_arg_threshold) {
   double __pyx_v_threshold;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3969,23 +3969,23 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_37set_residual_t
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.set_residual_threshold_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.set_residual_threshold_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_threshold));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), ((double)__pyx_v_threshold));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_threshold) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_36set_residual_threshold_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, double __pyx_v_threshold) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_residual_threshold_ad3", 0);
 
-  /* "python/factor_graph.pyx":368
+  /* "ad3/factor_graph.pyx":368
  * 
  *     def set_residual_threshold_ad3(self, double threshold):
  *         self.thisptr.SetResidualThresholdAD3(threshold)             # <<<<<<<<<<<<<<
@@ -3994,7 +3994,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_t
  */
   __pyx_v_self->thisptr->SetResidualThresholdAD3(__pyx_v_threshold);
 
-  /* "python/factor_graph.pyx":367
+  /* "ad3/factor_graph.pyx":367
  *         self.thisptr.SetMaxIterationsAD3(max_iterations)
  * 
  *     def set_residual_threshold_ad3(self, double threshold):             # <<<<<<<<<<<<<<
@@ -4009,7 +4009,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_t
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":370
+/* "ad3/factor_graph.pyx":370
  *         self.thisptr.SetResidualThresholdAD3(threshold)
  * 
  *     def solve_lp_map_ad3(self):             # <<<<<<<<<<<<<<
@@ -4018,19 +4018,19 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_36set_residual_t
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_39solve_lp_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_39solve_lp_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_39solve_lp_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_39solve_lp_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("solve_lp_map_ad3 (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_38solve_lp_map_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   std::vector<double>  __pyx_v_posteriors;
   std::vector<double>  __pyx_v_additional_posteriors;
   double __pyx_v_value;
@@ -4044,7 +4044,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("solve_lp_map_ad3", 0);
 
-  /* "python/factor_graph.pyx":375
+  /* "ad3/factor_graph.pyx":375
  *         cdef double value
  *         cdef int solver_status
  *         solver_status = self.thisptr.SolveLPMAPWithAD3(&posteriors,             # <<<<<<<<<<<<<<
@@ -4053,7 +4053,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
  */
   __pyx_v_solver_status = __pyx_v_self->thisptr->SolveLPMAPWithAD3((&__pyx_v_posteriors), (&__pyx_v_additional_posteriors), (&__pyx_v_value));
 
-  /* "python/factor_graph.pyx":378
+  /* "ad3/factor_graph.pyx":378
  *                                                        &additional_posteriors,
  *                                                        &value)
  *         return value, posteriors, additional_posteriors, solver_status             # <<<<<<<<<<<<<<
@@ -4087,7 +4087,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":370
+  /* "ad3/factor_graph.pyx":370
  *         self.thisptr.SetResidualThresholdAD3(threshold)
  * 
  *     def solve_lp_map_ad3(self):             # <<<<<<<<<<<<<<
@@ -4102,7 +4102,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.solve_lp_map_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.solve_lp_map_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4110,7 +4110,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":380
+/* "ad3/factor_graph.pyx":380
  *         return value, posteriors, additional_posteriors, solver_status
  * 
  *     def solve_exact_map_ad3(self):             # <<<<<<<<<<<<<<
@@ -4119,19 +4119,19 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_38solve_lp_map_a
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_41solve_exact_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_41solve_exact_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_41solve_exact_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_41solve_exact_map_ad3(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("solve_exact_map_ad3 (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_40solve_exact_map_ad3(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   std::vector<double>  __pyx_v_posteriors;
   std::vector<double>  __pyx_v_additional_posteriors;
   double __pyx_v_value;
@@ -4145,7 +4145,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("solve_exact_map_ad3", 0);
 
-  /* "python/factor_graph.pyx":385
+  /* "ad3/factor_graph.pyx":385
  *         cdef double value
  *         cdef int solver_status
  *         solver_status = self.thisptr.SolveExactMAPWithAD3(&posteriors,             # <<<<<<<<<<<<<<
@@ -4154,7 +4154,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
  */
   __pyx_v_solver_status = __pyx_v_self->thisptr->SolveExactMAPWithAD3((&__pyx_v_posteriors), (&__pyx_v_additional_posteriors), (&__pyx_v_value));
 
-  /* "python/factor_graph.pyx":388
+  /* "ad3/factor_graph.pyx":388
  *                                                           &additional_posteriors,
  *                                                           &value)
  *         return value, posteriors, additional_posteriors, solver_status             # <<<<<<<<<<<<<<
@@ -4188,7 +4188,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":380
+  /* "ad3/factor_graph.pyx":380
  *         return value, posteriors, additional_posteriors, solver_status
  * 
  *     def solve_exact_map_ad3(self):             # <<<<<<<<<<<<<<
@@ -4203,7 +4203,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.solve_exact_map_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.solve_exact_map_ad3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4211,7 +4211,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":390
+/* "ad3/factor_graph.pyx":390
  *         return value, posteriors, additional_posteriors, solver_status
  * 
  *     def get_dual_variables(self):             # <<<<<<<<<<<<<<
@@ -4220,25 +4220,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_40solve_exact_ma
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_43get_dual_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_43get_dual_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_43get_dual_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_43get_dual_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_dual_variables (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_variables(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_42get_dual_variables(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_42get_dual_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_dual_variables", 0);
 
-  /* "python/factor_graph.pyx":391
+  /* "ad3/factor_graph.pyx":391
  * 
  *     def get_dual_variables(self):
  *         return self.thisptr.GetDualVariables()             # <<<<<<<<<<<<<<
@@ -4252,7 +4252,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_varia
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":390
+  /* "ad3/factor_graph.pyx":390
  *         return value, posteriors, additional_posteriors, solver_status
  * 
  *     def get_dual_variables(self):             # <<<<<<<<<<<<<<
@@ -4263,7 +4263,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_varia
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.get_dual_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.get_dual_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4271,7 +4271,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_varia
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":393
+/* "ad3/factor_graph.pyx":393
  *         return self.thisptr.GetDualVariables()
  * 
  *     def get_local_primal_variables(self):             # <<<<<<<<<<<<<<
@@ -4280,25 +4280,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_42get_dual_varia
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_45get_local_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_45get_local_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_45get_local_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_45get_local_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_local_primal_variables (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_primal_variables(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_44get_local_primal_variables(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_primal_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_44get_local_primal_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_local_primal_variables", 0);
 
-  /* "python/factor_graph.pyx":394
+  /* "ad3/factor_graph.pyx":394
  * 
  *     def get_local_primal_variables(self):
  *         return self.thisptr.GetLocalPrimalVariables()             # <<<<<<<<<<<<<<
@@ -4312,7 +4312,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_prim
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":393
+  /* "ad3/factor_graph.pyx":393
  *         return self.thisptr.GetDualVariables()
  * 
  *     def get_local_primal_variables(self):             # <<<<<<<<<<<<<<
@@ -4323,7 +4323,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_prim
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.get_local_primal_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.get_local_primal_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4331,7 +4331,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_prim
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":396
+/* "ad3/factor_graph.pyx":396
  *         return self.thisptr.GetLocalPrimalVariables()
  * 
  *     def get_global_primal_variables(self):             # <<<<<<<<<<<<<<
@@ -4340,25 +4340,25 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_44get_local_prim
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_47get_global_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_47get_global_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_47get_global_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_47get_global_primal_variables(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_global_primal_variables (wrapper)", 0);
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_primal_variables(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_46get_global_primal_variables(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_primal_variables(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_46get_global_primal_variables(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_global_primal_variables", 0);
 
-  /* "python/factor_graph.pyx":397
+  /* "ad3/factor_graph.pyx":397
  * 
  *     def get_global_primal_variables(self):
  *         return self.thisptr.GetGlobalPrimalVariables()             # <<<<<<<<<<<<<<
@@ -4372,7 +4372,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_pri
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":396
+  /* "ad3/factor_graph.pyx":396
  *         return self.thisptr.GetLocalPrimalVariables()
  * 
  *     def get_global_primal_variables(self):             # <<<<<<<<<<<<<<
@@ -4383,7 +4383,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_pri
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.get_global_primal_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.get_global_primal_variables", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4391,7 +4391,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_pri
   return __pyx_r;
 }
 
-/* "python/factor_graph.pyx":399
+/* "ad3/factor_graph.pyx":399
  *         return self.thisptr.GetGlobalPrimalVariables()
  * 
  *     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,             # <<<<<<<<<<<<<<
@@ -4400,9 +4400,9 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_46get_global_pri
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6python_12factor_graph_12PFactorGraph_48solve[] = "Solve the MAP inference problem associated with the factor graph.\n\n        Parameters\n        ---------\n\n        eta : float, default: 0.1\n            Value of the penalty constant. If adapt_eta is true, this is the\n            initial penalty, otherwise every iteration will apply this amount\n            of penalty.\n\n        adapt_eta : boolean, default: True\n            If true, adapt the penalty constant using the strategy in [2].\n\n        max_iter : int, default: 1000\n            Maximum number of iterations to perform.\n\n        tol : double, default: 1e-6\n            Theshold for the primal and dual residuals in AD3. The algorithm\n            ends early when both residuals are below this threshold.\n\n        ensure_multi_variables : bool, default: True\n            The well-formedness one-of-K constraint of multi-variables is\n            enforced not by the variables but by the dense factors bound to\n            them. This function checks for unbound multi-variables and adds\n            XOR logic factors on top of them to enforce the constraint.\n\n        verbose : int, optional\n            Degree of verbosity of debugging information to display. By default,\n            nothing is printed.\n\n        branch_and_bound : boolean, default: False\n            If true, apply a branch-and-bound procedure for obtaining the exact\n            MAP (note: this can be slow if the relaxation is \"too fractional\").\n\n        Returns\n        -------\n\n        value : double\n            The total score (negative energy) of the solution.\n\n        posteriors : list\n            The MAP assignment of each binarized variable in the graph,\n            in the order in which they were created. Multi-valued variables\n            are represented using a value for each state.  If solution is\n            approximate, the values may be fractional.\n\n        additional_posteriors : list\n            Additional posteriors for each log-potential in the fac""tors.\n\n        status : string, (integral|fractional|infeasible|unsolved)\n            Inference status.\n        ";
-static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_49solve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3ad3_12factor_graph_12PFactorGraph_48solve[] = "Solve the MAP inference problem associated with the factor graph.\n\n        Parameters\n        ---------\n\n        eta : float, default: 0.1\n            Value of the penalty constant. If adapt_eta is true, this is the\n            initial penalty, otherwise every iteration will apply this amount\n            of penalty.\n\n        adapt_eta : boolean, default: True\n            If true, adapt the penalty constant using the strategy in [2].\n\n        max_iter : int, default: 1000\n            Maximum number of iterations to perform.\n\n        tol : double, default: 1e-6\n            Theshold for the primal and dual residuals in AD3. The algorithm\n            ends early when both residuals are below this threshold.\n\n        ensure_multi_variables : bool, default: True\n            The well-formedness one-of-K constraint of multi-variables is\n            enforced not by the variables but by the dense factors bound to\n            them. This function checks for unbound multi-variables and adds\n            XOR logic factors on top of them to enforce the constraint.\n\n        verbose : int, optional\n            Degree of verbosity of debugging information to display. By default,\n            nothing is printed.\n\n        branch_and_bound : boolean, default: False\n            If true, apply a branch-and-bound procedure for obtaining the exact\n            MAP (note: this can be slow if the relaxation is \"too fractional\").\n\n        Returns\n        -------\n\n        value : double\n            The total score (negative energy) of the solution.\n\n        posteriors : list\n            The MAP assignment of each binarized variable in the graph,\n            in the order in which they were created. Multi-valued variables\n            are represented using a value for each state.  If solution is\n            approximate, the values may be fractional.\n\n        additional_posteriors : list\n            Additional posteriors for each log-potential in the fac""tors.\n\n        status : string, (integral|fractional|infeasible|unsolved)\n            Inference status.\n        ";
+static PyObject *__pyx_pw_3ad3_12factor_graph_12PFactorGraph_49solve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_eta = 0;
   PyObject *__pyx_v_adapt = 0;
   PyObject *__pyx_v_max_iter = 0;
@@ -4421,7 +4421,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject
     values[2] = ((PyObject *)__pyx_int_1000);
     values[3] = ((PyObject *)__pyx_float_1eneg_6);
 
-    /* "python/factor_graph.pyx":400
+    /* "ad3/factor_graph.pyx":400
  * 
  *     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,
  *               ensure_multi_variables=True, verbose=False,             # <<<<<<<<<<<<<<
@@ -4431,7 +4431,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject
     values[4] = ((PyObject *)Py_True);
     values[5] = ((PyObject *)Py_False);
 
-    /* "python/factor_graph.pyx":401
+    /* "ad3/factor_graph.pyx":401
  *     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,
  *               ensure_multi_variables=True, verbose=False,
  *               branch_and_bound=False):             # <<<<<<<<<<<<<<
@@ -4519,13 +4519,13 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("solve", 0, 0, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 399, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(((struct __pyx_obj_6python_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_eta, __pyx_v_adapt, __pyx_v_max_iter, __pyx_v_tol, __pyx_v_ensure_multi_variables, __pyx_v_verbose, __pyx_v_branch_and_bound);
+  __pyx_r = __pyx_pf_3ad3_12factor_graph_12PFactorGraph_48solve(((struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *)__pyx_v_self), __pyx_v_eta, __pyx_v_adapt, __pyx_v_max_iter, __pyx_v_tol, __pyx_v_ensure_multi_variables, __pyx_v_verbose, __pyx_v_branch_and_bound);
 
-  /* "python/factor_graph.pyx":399
+  /* "ad3/factor_graph.pyx":399
  *         return self.thisptr.GetGlobalPrimalVariables()
  * 
  *     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,             # <<<<<<<<<<<<<<
@@ -4538,7 +4538,7 @@ static PyObject *__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve(PyObject
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct __pyx_obj_6python_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_eta, PyObject *__pyx_v_adapt, PyObject *__pyx_v_max_iter, PyObject *__pyx_v_tol, PyObject *__pyx_v_ensure_multi_variables, PyObject *__pyx_v_verbose, PyObject *__pyx_v_branch_and_bound) {
+static PyObject *__pyx_pf_3ad3_12factor_graph_12PFactorGraph_48solve(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph *__pyx_v_self, PyObject *__pyx_v_eta, PyObject *__pyx_v_adapt, PyObject *__pyx_v_max_iter, PyObject *__pyx_v_tol, PyObject *__pyx_v_ensure_multi_variables, PyObject *__pyx_v_verbose, PyObject *__pyx_v_branch_and_bound) {
   PyObject *__pyx_v_result = NULL;
   PyObject *__pyx_v_value = NULL;
   PyObject *__pyx_v_marginals = NULL;
@@ -4556,7 +4556,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   PyObject *(*__pyx_t_7)(PyObject *);
   __Pyx_RefNannySetupContext("solve", 0);
 
-  /* "python/factor_graph.pyx":455
+  /* "ad3/factor_graph.pyx":455
  *         """
  * 
  *         self.set_verbosity(verbose)             # <<<<<<<<<<<<<<
@@ -4610,7 +4610,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":456
+  /* "ad3/factor_graph.pyx":456
  * 
  *         self.set_verbosity(verbose)
  *         self.set_eta_ad3(eta)             # <<<<<<<<<<<<<<
@@ -4664,7 +4664,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":457
+  /* "ad3/factor_graph.pyx":457
  *         self.set_verbosity(verbose)
  *         self.set_eta_ad3(eta)
  *         self.adapt_eta_ad3(adapt)             # <<<<<<<<<<<<<<
@@ -4718,7 +4718,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":458
+  /* "ad3/factor_graph.pyx":458
  *         self.set_eta_ad3(eta)
  *         self.adapt_eta_ad3(adapt)
  *         self.set_max_iterations_ad3(max_iter)             # <<<<<<<<<<<<<<
@@ -4772,7 +4772,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":459
+  /* "ad3/factor_graph.pyx":459
  *         self.adapt_eta_ad3(adapt)
  *         self.set_max_iterations_ad3(max_iter)
  *         self.set_residual_threshold_ad3(tol)             # <<<<<<<<<<<<<<
@@ -4826,7 +4826,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "python/factor_graph.pyx":460
+  /* "ad3/factor_graph.pyx":460
  *         self.set_max_iterations_ad3(max_iter)
  *         self.set_residual_threshold_ad3(tol)
  *         if ensure_multi_variables:             # <<<<<<<<<<<<<<
@@ -4836,7 +4836,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_ensure_multi_variables); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 460, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "python/factor_graph.pyx":461
+    /* "ad3/factor_graph.pyx":461
  *         self.set_residual_threshold_ad3(tol)
  *         if ensure_multi_variables:
  *             self.fix_multi_variables_without_factors()             # <<<<<<<<<<<<<<
@@ -4865,7 +4865,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "python/factor_graph.pyx":460
+    /* "ad3/factor_graph.pyx":460
  *         self.set_max_iterations_ad3(max_iter)
  *         self.set_residual_threshold_ad3(tol)
  *         if ensure_multi_variables:             # <<<<<<<<<<<<<<
@@ -4874,7 +4874,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
  */
   }
 
-  /* "python/factor_graph.pyx":463
+  /* "ad3/factor_graph.pyx":463
  *             self.fix_multi_variables_without_factors()
  * 
  *         if branch_and_bound:             # <<<<<<<<<<<<<<
@@ -4884,7 +4884,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_branch_and_bound); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 463, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "python/factor_graph.pyx":464
+    /* "ad3/factor_graph.pyx":464
  * 
  *         if branch_and_bound:
  *             result = self.solve_exact_map_ad3()             # <<<<<<<<<<<<<<
@@ -4914,7 +4914,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
     __pyx_v_result = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "python/factor_graph.pyx":463
+    /* "ad3/factor_graph.pyx":463
  *             self.fix_multi_variables_without_factors()
  * 
  *         if branch_and_bound:             # <<<<<<<<<<<<<<
@@ -4924,7 +4924,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
     goto __pyx_L4;
   }
 
-  /* "python/factor_graph.pyx":466
+  /* "ad3/factor_graph.pyx":466
  *             result = self.solve_exact_map_ad3()
  *         else:
  *             result = self.solve_lp_map_ad3()             # <<<<<<<<<<<<<<
@@ -4957,7 +4957,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   }
   __pyx_L4:;
 
-  /* "python/factor_graph.pyx":468
+  /* "ad3/factor_graph.pyx":468
  *             result = self.solve_lp_map_ad3()
  * 
  *         value, marginals, edge_marginals, solver_status = result             # <<<<<<<<<<<<<<
@@ -5034,7 +5034,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __pyx_v_solver_status = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "python/factor_graph.pyx":470
+  /* "ad3/factor_graph.pyx":470
  *         value, marginals, edge_marginals, solver_status = result
  * 
  *         solver_string = ["integral", "fractional", "infeasible", "unsolved"]             # <<<<<<<<<<<<<<
@@ -5057,7 +5057,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __pyx_v_solver_string = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "python/factor_graph.pyx":471
+  /* "ad3/factor_graph.pyx":471
  * 
  *         solver_string = ["integral", "fractional", "infeasible", "unsolved"]
  *         return value, marginals, edge_marginals, solver_string[solver_status]             # <<<<<<<<<<<<<<
@@ -5083,7 +5083,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "python/factor_graph.pyx":399
+  /* "ad3/factor_graph.pyx":399
  *         return self.thisptr.GetGlobalPrimalVariables()
  * 
  *     def solve(self, eta=0.1, adapt=True, max_iter=1000, tol=1e-6,             # <<<<<<<<<<<<<<
@@ -5098,7 +5098,7 @@ static PyObject *__pyx_pf_6python_12factor_graph_12PFactorGraph_48solve(struct _
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("python.factor_graph.PFactorGraph.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("ad3.factor_graph.PFactorGraph.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_result);
@@ -5400,7 +5400,7 @@ static PyObject *__pyx_convert_vector_to_py_double(const std::vector<double>  &_
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_6python_12factor_graph_PFactorGraph(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3ad3_12factor_graph_PFactorGraph(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -5408,14 +5408,14 @@ static PyObject *__pyx_tp_new_6python_12factor_graph_PFactorGraph(PyTypeObject *
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_6python_12factor_graph_12PFactorGraph_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_3ad3_12factor_graph_12PFactorGraph_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6python_12factor_graph_PFactorGraph(PyObject *o) {
+static void __pyx_tp_dealloc_3ad3_12factor_graph_PFactorGraph(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -5425,46 +5425,46 @@ static void __pyx_tp_dealloc_6python_12factor_graph_PFactorGraph(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_6python_12factor_graph_12PFactorGraph_3__dealloc__(o);
+    __pyx_pw_3ad3_12factor_graph_12PFactorGraph_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_6python_12factor_graph_PFactorGraph[] = {
-  {"set_verbosity", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_5set_verbosity, METH_O, 0},
-  {"create_binary_variable", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_7create_binary_variable, METH_NOARGS, __pyx_doc_6python_12factor_graph_12PFactorGraph_6create_binary_variable},
-  {"create_multi_variable", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_9create_multi_variable, METH_O, __pyx_doc_6python_12factor_graph_12PFactorGraph_8create_multi_variable},
-  {"create_factor_logic", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_11create_factor_logic, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_10create_factor_logic},
-  {"create_factor_pair", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_13create_factor_pair, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_12create_factor_pair},
-  {"create_factor_budget", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_15create_factor_budget, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_14create_factor_budget},
-  {"create_factor_knapsack", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_17create_factor_knapsack, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_16create_factor_knapsack},
-  {"create_factor_dense", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_19create_factor_dense, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_18create_factor_dense},
-  {"declare_factor", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_21declare_factor, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_20declare_factor},
-  {"fix_multi_variables_without_factors", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors, METH_NOARGS, __pyx_doc_6python_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors},
-  {"set_eta_psdd", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_25set_eta_psdd, METH_O, 0},
-  {"set_max_iterations_psdd", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_27set_max_iterations_psdd, METH_O, 0},
-  {"solve_lp_map_psdd", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_29solve_lp_map_psdd, METH_NOARGS, 0},
-  {"set_eta_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_31set_eta_ad3, METH_O, 0},
-  {"adapt_eta_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_33adapt_eta_ad3, METH_O, 0},
-  {"set_max_iterations_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_35set_max_iterations_ad3, METH_O, 0},
-  {"set_residual_threshold_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3, METH_O, 0},
-  {"solve_lp_map_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_39solve_lp_map_ad3, METH_NOARGS, 0},
-  {"solve_exact_map_ad3", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_41solve_exact_map_ad3, METH_NOARGS, 0},
-  {"get_dual_variables", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_43get_dual_variables, METH_NOARGS, 0},
-  {"get_local_primal_variables", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_45get_local_primal_variables, METH_NOARGS, 0},
-  {"get_global_primal_variables", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_47get_global_primal_variables, METH_NOARGS, 0},
-  {"solve", (PyCFunction)__pyx_pw_6python_12factor_graph_12PFactorGraph_49solve, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6python_12factor_graph_12PFactorGraph_48solve},
+static PyMethodDef __pyx_methods_3ad3_12factor_graph_PFactorGraph[] = {
+  {"set_verbosity", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_5set_verbosity, METH_O, 0},
+  {"create_binary_variable", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_7create_binary_variable, METH_NOARGS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_6create_binary_variable},
+  {"create_multi_variable", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_9create_multi_variable, METH_O, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_8create_multi_variable},
+  {"create_factor_logic", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_11create_factor_logic, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_10create_factor_logic},
+  {"create_factor_pair", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_13create_factor_pair, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_12create_factor_pair},
+  {"create_factor_budget", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_15create_factor_budget, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_14create_factor_budget},
+  {"create_factor_knapsack", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_17create_factor_knapsack, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_16create_factor_knapsack},
+  {"create_factor_dense", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_19create_factor_dense, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_18create_factor_dense},
+  {"declare_factor", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_21declare_factor, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_20declare_factor},
+  {"fix_multi_variables_without_factors", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_23fix_multi_variables_without_factors, METH_NOARGS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_22fix_multi_variables_without_factors},
+  {"set_eta_psdd", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_25set_eta_psdd, METH_O, 0},
+  {"set_max_iterations_psdd", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_27set_max_iterations_psdd, METH_O, 0},
+  {"solve_lp_map_psdd", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_29solve_lp_map_psdd, METH_NOARGS, 0},
+  {"set_eta_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_31set_eta_ad3, METH_O, 0},
+  {"adapt_eta_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_33adapt_eta_ad3, METH_O, 0},
+  {"set_max_iterations_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_35set_max_iterations_ad3, METH_O, 0},
+  {"set_residual_threshold_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_37set_residual_threshold_ad3, METH_O, 0},
+  {"solve_lp_map_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_39solve_lp_map_ad3, METH_NOARGS, 0},
+  {"solve_exact_map_ad3", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_41solve_exact_map_ad3, METH_NOARGS, 0},
+  {"get_dual_variables", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_43get_dual_variables, METH_NOARGS, 0},
+  {"get_local_primal_variables", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_45get_local_primal_variables, METH_NOARGS, 0},
+  {"get_global_primal_variables", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_47get_global_primal_variables, METH_NOARGS, 0},
+  {"solve", (PyCFunction)__pyx_pw_3ad3_12factor_graph_12PFactorGraph_49solve, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3ad3_12factor_graph_12PFactorGraph_48solve},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6python_12factor_graph_PFactorGraph = {
+static PyTypeObject __pyx_type_3ad3_12factor_graph_PFactorGraph = {
   PyVarObject_HEAD_INIT(0, 0)
-  "python.factor_graph.PFactorGraph", /*tp_name*/
-  sizeof(struct __pyx_obj_6python_12factor_graph_PFactorGraph), /*tp_basicsize*/
+  "ad3.factor_graph.PFactorGraph", /*tp_name*/
+  sizeof(struct __pyx_obj_3ad3_12factor_graph_PFactorGraph), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6python_12factor_graph_PFactorGraph, /*tp_dealloc*/
+  __pyx_tp_dealloc_3ad3_12factor_graph_PFactorGraph, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -5492,7 +5492,7 @@ static PyTypeObject __pyx_type_6python_12factor_graph_PFactorGraph = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6python_12factor_graph_PFactorGraph, /*tp_methods*/
+  __pyx_methods_3ad3_12factor_graph_PFactorGraph, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5502,7 +5502,7 @@ static PyTypeObject __pyx_type_6python_12factor_graph_PFactorGraph = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6python_12factor_graph_PFactorGraph, /*tp_new*/
+  __pyx_tp_new_3ad3_12factor_graph_PFactorGraph, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5607,7 +5607,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "python/factor_graph.pyx":44
+  /* "ad3/factor_graph.pyx":44
  * 
  *     if negated.size() and negated.size() != n:
  *         raise ValueError("Expected one negated flag per variable, "             # <<<<<<<<<<<<<<
@@ -5618,7 +5618,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "python/factor_graph.pyx":197
+  /* "ad3/factor_graph.pyx":197
  *         _binary_vars_to_vector(p_variables, variables)
  *         if variables.size() != 2:
  *             raise ValueError("Pair factors require exactly two binary "             # <<<<<<<<<<<<<<
@@ -5629,7 +5629,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "python/factor_graph.pyx":270
+  /* "ad3/factor_graph.pyx":270
  *         with cython.nonecheck(True):
  *             if costs.size() != variables.size():
  *                 raise ValueError("Must provide one cost per variable.")             # <<<<<<<<<<<<<<
@@ -5640,7 +5640,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "python/factor_graph.pyx":299
+  /* "ad3/factor_graph.pyx":299
  *         with cython.nonecheck(True):
  *             if additional_log_potentials.size() !=  n_expected:
  *                 raise ValueError("Must provide one log-potential per joint "             # <<<<<<<<<<<<<<
@@ -5651,7 +5651,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "python/factor_graph.pyx":329
+  /* "ad3/factor_graph.pyx":329
  *         cdef Factor *factor
  *         if owned_by_graph:
  *             p_factor.set_allocate(False)             # <<<<<<<<<<<<<<
@@ -5743,14 +5743,14 @@ PyMODINIT_FUNC PyInit_factor_graph(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_python__factor_graph) {
+  if (__pyx_module_is_main_ad3__factor_graph) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "python.factor_graph")) {
-      if (unlikely(PyDict_SetItemString(modules, "python.factor_graph", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "ad3.factor_graph")) {
+      if (unlikely(PyDict_SetItemString(modules, "ad3.factor_graph", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -5762,17 +5762,17 @@ PyMODINIT_FUNC PyInit_factor_graph(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_6python_12factor_graph_PFactorGraph) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
-  __pyx_type_6python_12factor_graph_PFactorGraph.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PFactorGraph", (PyObject *)&__pyx_type_6python_12factor_graph_PFactorGraph) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
-  __pyx_ptype_6python_12factor_graph_PFactorGraph = &__pyx_type_6python_12factor_graph_PFactorGraph;
+  if (PyType_Ready(&__pyx_type_3ad3_12factor_graph_PFactorGraph) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_type_3ad3_12factor_graph_PFactorGraph.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "PFactorGraph", (PyObject *)&__pyx_type_3ad3_12factor_graph_PFactorGraph) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_ptype_3ad3_12factor_graph_PFactorGraph = &__pyx_type_3ad3_12factor_graph_PFactorGraph;
   /*--- Type import code ---*/
-  __pyx_ptype_6python_4base_PBinaryVariable = __Pyx_ImportType("python.base", "PBinaryVariable", sizeof(struct __pyx_obj_6python_4base_PBinaryVariable), 1); if (unlikely(!__pyx_ptype_6python_4base_PBinaryVariable)) __PYX_ERR(2, 122, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PMultiVariable = __Pyx_ImportType("python.base", "PMultiVariable", sizeof(struct __pyx_obj_6python_4base_PMultiVariable), 1); if (unlikely(!__pyx_ptype_6python_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
-  __pyx_vtabptr_6python_4base_PMultiVariable = (struct __pyx_vtabstruct_6python_4base_PMultiVariable*)__Pyx_GetVtable(__pyx_ptype_6python_4base_PMultiVariable->tp_dict); if (unlikely(!__pyx_vtabptr_6python_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PFactor = __Pyx_ImportType("python.base", "PFactor", sizeof(struct __pyx_obj_6python_4base_PFactor), 1); if (unlikely(!__pyx_ptype_6python_4base_PFactor)) __PYX_ERR(2, 134, __pyx_L1_error)
-  __pyx_ptype_6python_4base_PGenericFactor = __Pyx_ImportType("python.base", "PGenericFactor", sizeof(struct __pyx_obj_6python_4base_PGenericFactor), 1); if (unlikely(!__pyx_ptype_6python_4base_PGenericFactor)) __PYX_ERR(2, 139, __pyx_L1_error)
-  __pyx_vtabptr_6python_4base_PGenericFactor = (struct __pyx_vtabstruct_6python_4base_PGenericFactor*)__Pyx_GetVtable(__pyx_ptype_6python_4base_PGenericFactor->tp_dict); if (unlikely(!__pyx_vtabptr_6python_4base_PGenericFactor)) __PYX_ERR(2, 139, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PBinaryVariable = __Pyx_ImportType("ad3.base", "PBinaryVariable", sizeof(struct __pyx_obj_3ad3_4base_PBinaryVariable), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PBinaryVariable)) __PYX_ERR(2, 122, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PMultiVariable = __Pyx_ImportType("ad3.base", "PMultiVariable", sizeof(struct __pyx_obj_3ad3_4base_PMultiVariable), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
+  __pyx_vtabptr_3ad3_4base_PMultiVariable = (struct __pyx_vtabstruct_3ad3_4base_PMultiVariable*)__Pyx_GetVtable(__pyx_ptype_3ad3_4base_PMultiVariable->tp_dict); if (unlikely(!__pyx_vtabptr_3ad3_4base_PMultiVariable)) __PYX_ERR(2, 127, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PFactor = __Pyx_ImportType("ad3.base", "PFactor", sizeof(struct __pyx_obj_3ad3_4base_PFactor), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PFactor)) __PYX_ERR(2, 134, __pyx_L1_error)
+  __pyx_ptype_3ad3_4base_PGenericFactor = __Pyx_ImportType("ad3.base", "PGenericFactor", sizeof(struct __pyx_obj_3ad3_4base_PGenericFactor), 1); if (unlikely(!__pyx_ptype_3ad3_4base_PGenericFactor)) __PYX_ERR(2, 139, __pyx_L1_error)
+  __pyx_vtabptr_3ad3_4base_PGenericFactor = (struct __pyx_vtabstruct_3ad3_4base_PGenericFactor*)__Pyx_GetVtable(__pyx_ptype_3ad3_4base_PGenericFactor->tp_dict); if (unlikely(!__pyx_vtabptr_3ad3_4base_PGenericFactor)) __PYX_ERR(2, 139, __pyx_L1_error)
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
   /*--- Execution code ---*/
@@ -5780,7 +5780,7 @@ PyMODINIT_FUNC PyInit_factor_graph(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "python/factor_graph.pyx":1
+  /* "ad3/factor_graph.pyx":1
  * from libcpp.vector cimport vector             # <<<<<<<<<<<<<<
  * from libcpp cimport bool
  * 
@@ -5805,11 +5805,11 @@ PyMODINIT_FUNC PyInit_factor_graph(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init python.factor_graph", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init ad3.factor_graph", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init python.factor_graph");
+    PyErr_SetString(PyExc_ImportError, "init ad3.factor_graph");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

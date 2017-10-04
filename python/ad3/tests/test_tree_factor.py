@@ -1,8 +1,8 @@
 import pytest
 import numpy as np
 
-from .. import PFactorGraph
-from ..extensions import PFactorTree
+from ad3 import PFactorGraph
+from ad3.extensions import PFactorTree
 
 
 def test_tree_factor():
