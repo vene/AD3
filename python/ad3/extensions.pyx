@@ -17,6 +17,12 @@ cdef extern from "../examples/cpp/dense/FactorSequence.h" namespace "AD3":
         void Initialize(vector[int] num_states)
 
 
+cdef extern from "../examples/cpp/dense/FactorSequenceDistance.h" namespace "AD3":
+    cdef cppclass FactorSequenceDistance(Factor):
+        FactorSequenceDistance()
+        void Initialize(int n_nodes, int n_states, int bandwidth)
+
+
 cdef extern from "../examples/cpp/summarization/FactorSequenceCompressor.h" namespace "AD3":
     cdef cppclass FactorSequenceCompressor(Factor):
         FactorSequenceCompressor()
@@ -109,6 +115,22 @@ cdef class PFactorSequence(PGenericFactor):
 
     def initialize(self, vector[int] num_states):
         (<FactorSequence*>self.thisptr).Initialize(num_states)
+
+
+cdef class PFactorSequenceDistance(PGenericFactor):
+    def __cinit__(self, allocate=True):
+        self.allocate = allocate
+        if allocate:
+           self.thisptr = new FactorSequenceDistance()
+
+    def __dealloc__(self):
+        if self.allocate:
+            del self.thisptr
+
+    def initialize(self, int n_nodes, int n_states, int bandwidth):
+        (<FactorSequenceDistance*>self.thisptr).Initialize(n_nodes,
+                                                           n_states,
+                                                           bandwidth)
 
 
 cdef class PFactorSequenceCompressor(PGenericFactor):
@@ -254,9 +276,9 @@ cdef class PFactorTree(PGenericFactor):
                                  " modifier")
             arcs_v.push_back(new Arc(head, modifier))
 
-        if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
-            raise ValueError("Number of arcs differs from number of bound "
-                             "variables.")
+        # if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
+        #    raise ValueError("Number of arcs differs from number of bound "
+        #                     "variables.")
         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)
 
         for arcp in arcs_v:

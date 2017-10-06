@@ -5,6 +5,7 @@ from cython.view cimport array as cvarray
 from cython.view cimport array_cwrapper
 
 from .base cimport PGenericFactor, GenericFactor, Configuration
+from .base cimport FactorGraph, BinaryVariable, Factor
 
 import numpy as np
 cimport numpy as np
@@ -53,7 +54,9 @@ cpdef sparsemap_qp(PGenericFactor f,
                   int max_iter=10):
 
     cdef:
-        int n_active, n_var, n_add
+        int i, n_active, n_var, n_add
+
+        vector[BinaryVariable*] variables
 
         vector[double] post_unaries
         vector[double] post_additionals
@@ -64,6 +67,16 @@ cpdef sparsemap_qp(PGenericFactor f,
 
         GenericFactor* gf
 
+    n_var = unaries.size()
+
+    cdef FactorGraph fg;
+
+    variables.resize(n_var)
+    for i in range(n_var):
+        variables[i] = fg.CreateBinaryVariable();
+
+    fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+    f.thisptr.SetAdditionalLogPotentials(additionals)
     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
 
     gf = <GenericFactor*?> f.thisptr
@@ -74,7 +87,6 @@ cpdef sparsemap_qp(PGenericFactor f,
     gf.GetCorrespondence(&M, &Madd)
 
     n_active = active_set_c.size()
-    n_var = post_unaries.size()
     n_add = post_additionals.size()
 
     post_unaries_np = asfloatvec(post_unaries.data(), n_var)

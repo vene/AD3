@@ -1040,7 +1040,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 struct __pyx_opt_args_3ad3_9sparsemap_sparsemap_qp;
 
-/* "ad3/sparsemap.pyx":50
+/* "ad3/sparsemap.pyx":51
  * 
  * 
  * cpdef sparsemap_qp(PGenericFactor f,             # <<<<<<<<<<<<<<
@@ -1325,6 +1325,25 @@ static struct __pyx_vtabstruct__memoryviewslice *__pyx_vtabptr__memoryviewslice;
 #define __Pyx_CLEAR(r)    do { PyObject* tmp = ((PyObject*)(r)); r = NULL; __Pyx_DECREF(tmp);} while(0)
 #define __Pyx_XCLEAR(r)   do { if((r) != NULL) {PyObject* tmp = ((PyObject*)(r)); r = NULL; __Pyx_DECREF(tmp);}} while(0)
 
+/* PyObjectGetAttrStr.proto */
+#if CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_getattro))
+        return tp->tp_getattro(obj, attr_name);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_getattr))
+        return tp->tp_getattr(obj, PyString_AS_STRING(attr_name));
+#endif
+    return PyObject_GetAttr(obj, attr_name);
+}
+#else
+#define __Pyx_PyObject_GetAttrStr(o,n) PyObject_GetAttr(o,n)
+#endif
+
+/* GetBuiltinName.proto */
+static PyObject *__Pyx_GetBuiltinName(PyObject *name);
+
 /* ExtTypeTest.proto */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
 
@@ -1360,25 +1379,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
 /* ArgTypeTest.proto */
 static CYTHON_INLINE int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, int none_allowed,
     const char *name, int exact);
-
-/* PyObjectGetAttrStr.proto */
-#if CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name) {
-    PyTypeObject* tp = Py_TYPE(obj);
-    if (likely(tp->tp_getattro))
-        return tp->tp_getattro(obj, attr_name);
-#if PY_MAJOR_VERSION < 3
-    if (likely(tp->tp_getattr))
-        return tp->tp_getattr(obj, PyString_AS_STRING(attr_name));
-#endif
-    return PyObject_GetAttr(obj, attr_name);
-}
-#else
-#define __Pyx_PyObject_GetAttrStr(o,n) PyObject_GetAttr(o,n)
-#endif
-
-/* GetBuiltinName.proto */
-static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 
 /* PyObjectCall.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
@@ -1683,6 +1683,51 @@ static int __pyx_slices_overlap(__Pyx_memviewslice *slice1,
 /* Capsule.proto */
 static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
 
+/* CppExceptionConversion.proto */
+#ifndef __Pyx_CppExn2PyErr
+#include <new>
+#include <typeinfo>
+#include <stdexcept>
+#include <ios>
+static void __Pyx_CppExn2PyErr() {
+  try {
+    if (PyErr_Occurred())
+      ; // let the latest Python exn pass through and ignore the current one
+    else
+      throw;
+  } catch (const std::bad_alloc& exn) {
+    PyErr_SetString(PyExc_MemoryError, exn.what());
+  } catch (const std::bad_cast& exn) {
+    PyErr_SetString(PyExc_TypeError, exn.what());
+  } catch (const std::bad_typeid& exn) {
+    PyErr_SetString(PyExc_TypeError, exn.what());
+  } catch (const std::domain_error& exn) {
+    PyErr_SetString(PyExc_ValueError, exn.what());
+  } catch (const std::invalid_argument& exn) {
+    PyErr_SetString(PyExc_ValueError, exn.what());
+  } catch (const std::ios_base::failure& exn) {
+    PyErr_SetString(PyExc_IOError, exn.what());
+  } catch (const std::out_of_range& exn) {
+    PyErr_SetString(PyExc_IndexError, exn.what());
+  } catch (const std::overflow_error& exn) {
+    PyErr_SetString(PyExc_OverflowError, exn.what());
+  } catch (const std::range_error& exn) {
+    PyErr_SetString(PyExc_ArithmeticError, exn.what());
+  } catch (const std::underflow_error& exn) {
+    PyErr_SetString(PyExc_ArithmeticError, exn.what());
+  } catch (const std::exception& exn) {
+    PyErr_SetString(PyExc_RuntimeError, exn.what());
+  }
+  catch (...)
+  {
+    PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
+  }
+}
+#endif
+
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -1780,9 +1825,6 @@ static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
         static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_pow_double(__pyx_t_double_complex, __pyx_t_double_complex);
     #endif
 #endif
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value);
@@ -2034,8 +2076,8 @@ static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize
 int __pyx_module_is_main_ad3__sparsemap = 0;
 
 /* Implementation of 'ad3.sparsemap' */
-static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_range;
+static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_RuntimeError;
 static PyObject *__pyx_builtin_ImportError;
 static PyObject *__pyx_builtin_MemoryError;
@@ -2278,7 +2320,7 @@ static PyObject *__pyx_tuple__25;
 static PyObject *__pyx_tuple__26;
 static PyObject *__pyx_tuple__27;
 
-/* "ad3/sparsemap.pyx":15
+/* "ad3/sparsemap.pyx":16
  * 
  * # MAKES A COPY but should not leak
  * cdef asfloatvec(void* vec, int n):             # <<<<<<<<<<<<<<
@@ -2295,7 +2337,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("asfloatvec", 0);
 
-  /* "ad3/sparsemap.pyx":18
+  /* "ad3/sparsemap.pyx":19
  *     cdef np.npy_intp shape[1]
  * 
  *     shape[0] = n             # <<<<<<<<<<<<<<
@@ -2304,32 +2346,32 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx
  */
   (__pyx_v_shape[0]) = __pyx_v_n;
 
-  /* "ad3/sparsemap.pyx":19
+  /* "ad3/sparsemap.pyx":20
  * 
  *     shape[0] = n
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)             # <<<<<<<<<<<<<<
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr
  */
-  __pyx_t_1 = PyArray_SimpleNewFromData(1, __pyx_v_shape, NPY_DOUBLE, __pyx_v_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_1 = PyArray_SimpleNewFromData(1, __pyx_v_shape, NPY_DOUBLE, __pyx_v_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_arr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "ad3/sparsemap.pyx":20
+  /* "ad3/sparsemap.pyx":21
  *     shape[0] = n
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)             # <<<<<<<<<<<<<<
  *     return farr
  * 
  */
-  if (!(likely(((__pyx_v_arr) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_arr, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 20, __pyx_L1_error)
-  __pyx_t_1 = PyArray_Cast(((PyArrayObject *)__pyx_v_arr), NPY_FLOAT32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (!(likely(((__pyx_v_arr) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_arr, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_1 = PyArray_Cast(((PyArrayObject *)__pyx_v_arr), NPY_FLOAT32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_farr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "ad3/sparsemap.pyx":21
+  /* "ad3/sparsemap.pyx":22
  *     arr = np.PyArray_SimpleNewFromData(1, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr             # <<<<<<<<<<<<<<
@@ -2341,7 +2383,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx
   __pyx_r = __pyx_v_farr;
   goto __pyx_L0;
 
-  /* "ad3/sparsemap.pyx":15
+  /* "ad3/sparsemap.pyx":16
  * 
  * # MAKES A COPY but should not leak
  * cdef asfloatvec(void* vec, int n):             # <<<<<<<<<<<<<<
@@ -2362,7 +2404,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatvec(void *__pyx_v_vec, int __pyx
   return __pyx_r;
 }
 
-/* "ad3/sparsemap.pyx":24
+/* "ad3/sparsemap.pyx":25
  * 
  * 
  * cdef asfloatarray(void* vec, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -2379,7 +2421,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("asfloatarray", 0);
 
-  /* "ad3/sparsemap.pyx":26
+  /* "ad3/sparsemap.pyx":27
  * cdef asfloatarray(void* vec, int rows, int cols):
  *     cdef np.npy_intp shape[2]
  *     shape[0] = <np.npy_intp> rows             # <<<<<<<<<<<<<<
@@ -2388,7 +2430,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
  */
   (__pyx_v_shape[0]) = ((npy_intp)__pyx_v_rows);
 
-  /* "ad3/sparsemap.pyx":27
+  /* "ad3/sparsemap.pyx":28
  *     cdef np.npy_intp shape[2]
  *     shape[0] = <np.npy_intp> rows
  *     shape[1] = <np.npy_intp> cols             # <<<<<<<<<<<<<<
@@ -2397,32 +2439,32 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
  */
   (__pyx_v_shape[1]) = ((npy_intp)__pyx_v_cols);
 
-  /* "ad3/sparsemap.pyx":28
+  /* "ad3/sparsemap.pyx":29
  *     shape[0] = <np.npy_intp> rows
  *     shape[1] = <np.npy_intp> cols
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)             # <<<<<<<<<<<<<<
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr
  */
-  __pyx_t_1 = PyArray_SimpleNewFromData(2, __pyx_v_shape, NPY_DOUBLE, __pyx_v_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_1 = PyArray_SimpleNewFromData(2, __pyx_v_shape, NPY_DOUBLE, __pyx_v_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_arr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "ad3/sparsemap.pyx":29
+  /* "ad3/sparsemap.pyx":30
  *     shape[1] = <np.npy_intp> cols
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)             # <<<<<<<<<<<<<<
  *     return farr
  * 
  */
-  if (!(likely(((__pyx_v_arr) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_arr, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 29, __pyx_L1_error)
-  __pyx_t_1 = PyArray_Cast(((PyArrayObject *)__pyx_v_arr), NPY_FLOAT32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (!(likely(((__pyx_v_arr) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_arr, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_1 = PyArray_Cast(((PyArrayObject *)__pyx_v_arr), NPY_FLOAT32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_farr = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "ad3/sparsemap.pyx":30
+  /* "ad3/sparsemap.pyx":31
  *     arr = np.PyArray_SimpleNewFromData(2, shape, np.NPY_DOUBLE, vec)
  *     farr = np.PyArray_Cast(arr, np.NPY_FLOAT32)
  *     return farr             # <<<<<<<<<<<<<<
@@ -2434,7 +2476,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
   __pyx_r = __pyx_v_farr;
   goto __pyx_L0;
 
-  /* "ad3/sparsemap.pyx":24
+  /* "ad3/sparsemap.pyx":25
  * 
  * 
  * cdef asfloatarray(void* vec, int rows, int cols):             # <<<<<<<<<<<<<<
@@ -2455,7 +2497,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
   return __pyx_r;
 }
 
-/* "ad3/sparsemap.pyx":50
+/* "ad3/sparsemap.pyx":51
  * 
  * 
  * cpdef sparsemap_qp(PGenericFactor f,             # <<<<<<<<<<<<<<
@@ -2466,9 +2508,11 @@ static PyObject *__pyx_f_3ad3_9sparsemap_asfloatarray(void *__pyx_v_vec, int __p
 static PyObject *__pyx_pw_3ad3_9sparsemap_1sparsemap_qp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4base_PGenericFactor *__pyx_v_f, std::vector<double>  __pyx_v_unaries, std::vector<double>  __pyx_v_additionals, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_3ad3_9sparsemap_sparsemap_qp *__pyx_optional_args) {
   int __pyx_v_max_iter = ((int)10);
+  int __pyx_v_i;
   int __pyx_v_n_active;
   int __pyx_v_n_var;
   int __pyx_v_n_add;
+  std::vector<AD3::BinaryVariable *>  __pyx_v_variables;
   std::vector<double>  __pyx_v_post_unaries;
   std::vector<double>  __pyx_v_post_additionals;
   std::vector<AD3::Configuration>  __pyx_v_active_set_c;
@@ -2477,6 +2521,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
   std::vector<double>  __pyx_v_M;
   std::vector<double>  __pyx_v_Madd;
   AD3::GenericFactor *__pyx_v_gf;
+  AD3::FactorGraph __pyx_v_fg;
   PyObject *__pyx_v_post_unaries_np = NULL;
   PyObject *__pyx_v_post_additionals_np = NULL;
   PyObject *__pyx_v_distribution_np = NULL;
@@ -2488,10 +2533,12 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
   AD3::Configuration __pyx_v_x;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  std::vector<AD3::Configuration> ::iterator __pyx_t_2;
-  AD3::Configuration __pyx_t_3;
-  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  std::vector<AD3::Configuration> ::iterator __pyx_t_4;
+  AD3::Configuration __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("sparsemap_qp", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
@@ -2499,16 +2546,78 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
     }
   }
 
-  /* "ad3/sparsemap.pyx":67
+  /* "ad3/sparsemap.pyx":70
  *         GenericFactor* gf
  * 
+ *     n_var = unaries.size()             # <<<<<<<<<<<<<<
+ * 
+ *     cdef FactorGraph fg;
+ */
+  __pyx_v_n_var = __pyx_v_unaries.size();
+
+  /* "ad3/sparsemap.pyx":74
+ *     cdef FactorGraph fg;
+ * 
+ *     variables.resize(n_var)             # <<<<<<<<<<<<<<
+ *     for i in range(n_var):
+ *         variables[i] = fg.CreateBinaryVariable();
+ */
+  try {
+    __pyx_v_variables.resize(__pyx_v_n_var);
+  } catch(...) {
+    __Pyx_CppExn2PyErr();
+    __PYX_ERR(0, 74, __pyx_L1_error)
+  }
+
+  /* "ad3/sparsemap.pyx":75
+ * 
+ *     variables.resize(n_var)
+ *     for i in range(n_var):             # <<<<<<<<<<<<<<
+ *         variables[i] = fg.CreateBinaryVariable();
+ * 
+ */
+  __pyx_t_1 = __pyx_v_n_var;
+  for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
+    __pyx_v_i = __pyx_t_2;
+
+    /* "ad3/sparsemap.pyx":76
+ *     variables.resize(n_var)
+ *     for i in range(n_var):
+ *         variables[i] = fg.CreateBinaryVariable();             # <<<<<<<<<<<<<<
+ * 
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+ */
+    (__pyx_v_variables[__pyx_v_i]) = __pyx_v_fg.CreateBinaryVariable();
+  }
+
+  /* "ad3/sparsemap.pyx":78
+ *         variables[i] = fg.CreateBinaryVariable();
+ * 
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)             # <<<<<<<<<<<<<<
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
+ */
+  __pyx_v_fg.DeclareFactor(((AD3::Factor *)__pyx_v_f->__pyx_base.thisptr), __pyx_v_variables, 0);
+
+  /* "ad3/sparsemap.pyx":79
+ * 
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)             # <<<<<<<<<<<<<<
+ *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
+ * 
+ */
+  __pyx_v_f->__pyx_base.thisptr->SetAdditionalLogPotentials(__pyx_v_additionals);
+
+  /* "ad3/sparsemap.pyx":80
+ *     fg.DeclareFactor(<Factor*> f.thisptr, variables, False)
+ *     f.thisptr.SetAdditionalLogPotentials(additionals)
  *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)             # <<<<<<<<<<<<<<
  * 
  *     gf = <GenericFactor*?> f.thisptr
  */
   __pyx_v_f->__pyx_base.thisptr->SolveQP(__pyx_v_unaries, __pyx_v_additionals, (&__pyx_v_post_unaries), (&__pyx_v_post_additionals));
 
-  /* "ad3/sparsemap.pyx":69
+  /* "ad3/sparsemap.pyx":82
  *     f.thisptr.SolveQP(unaries, additionals, &post_unaries, &post_additionals)
  * 
  *     gf = <GenericFactor*?> f.thisptr             # <<<<<<<<<<<<<<
@@ -2517,7 +2626,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_gf = ((AD3::GenericFactor *)__pyx_v_f->__pyx_base.thisptr);
 
-  /* "ad3/sparsemap.pyx":70
+  /* "ad3/sparsemap.pyx":83
  * 
  *     gf = <GenericFactor*?> f.thisptr
  *     gf.SetQPMaxIter(max_iter)             # <<<<<<<<<<<<<<
@@ -2526,7 +2635,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_gf->SetQPMaxIter(__pyx_v_max_iter);
 
-  /* "ad3/sparsemap.pyx":71
+  /* "ad3/sparsemap.pyx":84
  *     gf = <GenericFactor*?> f.thisptr
  *     gf.SetQPMaxIter(max_iter)
  *     active_set_c = gf.GetQPActiveSet()             # <<<<<<<<<<<<<<
@@ -2535,7 +2644,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_active_set_c = __pyx_v_gf->GetQPActiveSet();
 
-  /* "ad3/sparsemap.pyx":72
+  /* "ad3/sparsemap.pyx":85
  *     gf.SetQPMaxIter(max_iter)
  *     active_set_c = gf.GetQPActiveSet()
  *     distribution = gf.GetQPDistribution()             # <<<<<<<<<<<<<<
@@ -2544,7 +2653,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_distribution = __pyx_v_gf->GetQPDistribution();
 
-  /* "ad3/sparsemap.pyx":73
+  /* "ad3/sparsemap.pyx":86
  *     active_set_c = gf.GetQPActiveSet()
  *     distribution = gf.GetQPDistribution()
  *     inverse_A = gf.GetQPInvA()             # <<<<<<<<<<<<<<
@@ -2553,7 +2662,7 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_inverse_A = __pyx_v_gf->GetQPInvA();
 
-  /* "ad3/sparsemap.pyx":74
+  /* "ad3/sparsemap.pyx":87
  *     distribution = gf.GetQPDistribution()
  *     inverse_A = gf.GetQPInvA()
  *     gf.GetCorrespondence(&M, &Madd)             # <<<<<<<<<<<<<<
@@ -2562,199 +2671,190 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
  */
   __pyx_v_gf->GetCorrespondence((&__pyx_v_M), (&__pyx_v_Madd));
 
-  /* "ad3/sparsemap.pyx":76
+  /* "ad3/sparsemap.pyx":89
  *     gf.GetCorrespondence(&M, &Madd)
  * 
  *     n_active = active_set_c.size()             # <<<<<<<<<<<<<<
- *     n_var = post_unaries.size()
  *     n_add = post_additionals.size()
+ * 
  */
   __pyx_v_n_active = __pyx_v_active_set_c.size();
 
-  /* "ad3/sparsemap.pyx":77
+  /* "ad3/sparsemap.pyx":90
  * 
  *     n_active = active_set_c.size()
- *     n_var = post_unaries.size()             # <<<<<<<<<<<<<<
- *     n_add = post_additionals.size()
- * 
- */
-  __pyx_v_n_var = __pyx_v_post_unaries.size();
-
-  /* "ad3/sparsemap.pyx":78
- *     n_active = active_set_c.size()
- *     n_var = post_unaries.size()
  *     n_add = post_additionals.size()             # <<<<<<<<<<<<<<
  * 
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
  */
   __pyx_v_n_add = __pyx_v_post_additionals.size();
 
-  /* "ad3/sparsemap.pyx":80
+  /* "ad3/sparsemap.pyx":92
  *     n_add = post_additionals.size()
  * 
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)             # <<<<<<<<<<<<<<
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_post_unaries.data(), __pyx_v_n_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_post_unaries_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_post_unaries.data(), __pyx_v_n_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_post_unaries_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":81
+  /* "ad3/sparsemap.pyx":93
  * 
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)             # <<<<<<<<<<<<<<
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_post_additionals.data(), __pyx_v_n_add); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_post_additionals_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_post_additionals.data(), __pyx_v_n_add); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_post_additionals_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":82
+  /* "ad3/sparsemap.pyx":94
  *     post_unaries_np = asfloatvec(post_unaries.data(), n_var)
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)             # <<<<<<<<<<<<<<
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_distribution.data(), __pyx_v_n_active); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_distribution_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatvec(__pyx_v_distribution.data(), __pyx_v_n_active); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_distribution_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":83
+  /* "ad3/sparsemap.pyx":95
  *     post_additionals_np = asfloatvec(post_additionals.data(), n_add)
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)             # <<<<<<<<<<<<<<
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_inverse_A.data(), (1 + __pyx_v_n_active), (1 + __pyx_v_n_active)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_invA_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_inverse_A.data(), (1 + __pyx_v_n_active), (1 + __pyx_v_n_active)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_invA_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":84
+  /* "ad3/sparsemap.pyx":96
  *     distribution_np = asfloatvec(distribution.data(), n_active)
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)             # <<<<<<<<<<<<<<
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  * 
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_M.data(), __pyx_v_n_active, __pyx_v_n_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_M_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_M.data(), __pyx_v_n_active, __pyx_v_n_var); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_M_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":85
+  /* "ad3/sparsemap.pyx":97
  *     invA_np = asfloatarray(inverse_A.data(), 1 + n_active, 1 + n_active)
  *     M_np = asfloatarray(M.data(), n_active, n_var)
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)             # <<<<<<<<<<<<<<
  * 
  *     active_set_py = [f.cast_configuration(x) for x in active_set_c]
  */
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_Madd.data(), __pyx_v_n_active, __pyx_v_n_add); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Madd_np = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_f_3ad3_9sparsemap_asfloatarray(__pyx_v_Madd.data(), __pyx_v_n_active, __pyx_v_n_add); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_Madd_np = __pyx_t_3;
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":87
+  /* "ad3/sparsemap.pyx":99
  *     Madd_np = asfloatarray(Madd.data(), n_active, n_add)
  * 
  *     active_set_py = [f.cast_configuration(x) for x in active_set_c]             # <<<<<<<<<<<<<<
  * 
  *     solver_data = {
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_v_active_set_c.begin();
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __pyx_v_active_set_c.begin();
   for (;;) {
-    if (!(__pyx_t_2 != __pyx_v_active_set_c.end())) break;
-    __pyx_t_3 = *__pyx_t_2;
-    ++__pyx_t_2;
-    __pyx_v_x = __pyx_t_3;
-    __pyx_t_4 = ((struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *)__pyx_v_f->__pyx_vtab)->cast_configuration(__pyx_v_f, __pyx_v_x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 87, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 87, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (!(__pyx_t_4 != __pyx_v_active_set_c.end())) break;
+    __pyx_t_5 = *__pyx_t_4;
+    ++__pyx_t_4;
+    __pyx_v_x = __pyx_t_5;
+    __pyx_t_6 = ((struct __pyx_vtabstruct_3ad3_4base_PGenericFactor *)__pyx_v_f->__pyx_vtab)->cast_configuration(__pyx_v_f, __pyx_v_x); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 99, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 99, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_v_active_set_py = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_v_active_set_py = ((PyObject*)__pyx_t_3);
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":90
+  /* "ad3/sparsemap.pyx":102
  * 
  *     solver_data = {
  *         'active_set': active_set_py,             # <<<<<<<<<<<<<<
  *         'distribution': distribution_np,
  *         'inverse_A': invA_np,
  */
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_active_set, __pyx_v_active_set_py) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_active_set, __pyx_v_active_set_py) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
 
-  /* "ad3/sparsemap.pyx":91
+  /* "ad3/sparsemap.pyx":103
  *     solver_data = {
  *         'active_set': active_set_py,
  *         'distribution': distribution_np,             # <<<<<<<<<<<<<<
  *         'inverse_A': invA_np,
  *         'M': M_np,
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_distribution, __pyx_v_distribution_np) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_distribution, __pyx_v_distribution_np) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
 
-  /* "ad3/sparsemap.pyx":92
+  /* "ad3/sparsemap.pyx":104
  *         'active_set': active_set_py,
  *         'distribution': distribution_np,
  *         'inverse_A': invA_np,             # <<<<<<<<<<<<<<
  *         'M': M_np,
  *         'Madd': Madd_np
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_inverse_A, __pyx_v_invA_np) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_inverse_A, __pyx_v_invA_np) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
 
-  /* "ad3/sparsemap.pyx":93
+  /* "ad3/sparsemap.pyx":105
  *         'distribution': distribution_np,
  *         'inverse_A': invA_np,
  *         'M': M_np,             # <<<<<<<<<<<<<<
  *         'Madd': Madd_np
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_M, __pyx_v_M_np) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_M, __pyx_v_M_np) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
 
-  /* "ad3/sparsemap.pyx":95
+  /* "ad3/sparsemap.pyx":107
  *         'M': M_np,
  *         'Madd': Madd_np
  *     }             # <<<<<<<<<<<<<<
  * 
  *     return post_unaries_np, post_additionals_np, solver_data
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_Madd, __pyx_v_Madd_np) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  __pyx_v_solver_data = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_Madd, __pyx_v_Madd_np) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_v_solver_data = ((PyObject*)__pyx_t_3);
+  __pyx_t_3 = 0;
 
-  /* "ad3/sparsemap.pyx":97
+  /* "ad3/sparsemap.pyx":109
  *     }
  * 
  *     return post_unaries_np, post_additionals_np, solver_data             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_post_unaries_np);
   __Pyx_GIVEREF(__pyx_v_post_unaries_np);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_post_unaries_np);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_post_unaries_np);
   __Pyx_INCREF(__pyx_v_post_additionals_np);
   __Pyx_GIVEREF(__pyx_v_post_additionals_np);
-  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_post_additionals_np);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_post_additionals_np);
   __Pyx_INCREF(__pyx_v_solver_data);
   __Pyx_GIVEREF(__pyx_v_solver_data);
-  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_solver_data);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_solver_data);
+  __pyx_r = __pyx_t_3;
+  __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "ad3/sparsemap.pyx":50
+  /* "ad3/sparsemap.pyx":51
  * 
  * 
  * cpdef sparsemap_qp(PGenericFactor f,             # <<<<<<<<<<<<<<
@@ -2764,8 +2864,8 @@ static PyObject *__pyx_f_3ad3_9sparsemap_sparsemap_qp(struct __pyx_obj_3ad3_4bas
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_AddTraceback("ad3.sparsemap.sparsemap_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
@@ -2814,12 +2914,12 @@ static PyObject *__pyx_pw_3ad3_9sparsemap_1sparsemap_qp(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_unaries)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, 1); __PYX_ERR(0, 50, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, 1); __PYX_ERR(0, 51, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_additionals)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, 2); __PYX_ERR(0, 50, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, 2); __PYX_ERR(0, 51, __pyx_L3_error)
         }
         case  3:
         if (kw_args > 0) {
@@ -2828,7 +2928,7 @@ static PyObject *__pyx_pw_3ad3_9sparsemap_1sparsemap_qp(PyObject *__pyx_self, Py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sparsemap_qp") < 0)) __PYX_ERR(0, 50, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sparsemap_qp") < 0)) __PYX_ERR(0, 51, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2841,23 +2941,23 @@ static PyObject *__pyx_pw_3ad3_9sparsemap_1sparsemap_qp(PyObject *__pyx_self, Py
       }
     }
     __pyx_v_f = ((struct __pyx_obj_3ad3_4base_PGenericFactor *)values[0]);
-    __pyx_v_unaries = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L3_error)
-    __pyx_v_additionals = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
+    __pyx_v_unaries = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
+    __pyx_v_additionals = __pyx_convert_vector_from_py_double(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
     if (values[3]) {
-      __pyx_v_max_iter = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_max_iter == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
+      __pyx_v_max_iter = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_max_iter == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L3_error)
     } else {
       __pyx_v_max_iter = ((int)10);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 50, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sparsemap_qp", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 51, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("ad3.sparsemap.sparsemap_qp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_f), __pyx_ptype_3ad3_4base_PGenericFactor, 1, "f", 0))) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_f), __pyx_ptype_3ad3_4base_PGenericFactor, 1, "f", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
   __pyx_r = __pyx_pf_3ad3_9sparsemap_sparsemap_qp(__pyx_self, __pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, __pyx_v_max_iter);
 
   /* function exit code */
@@ -2878,7 +2978,7 @@ static PyObject *__pyx_pf_3ad3_9sparsemap_sparsemap_qp(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.max_iter = __pyx_v_max_iter;
-  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_sparsemap_qp(__pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3ad3_9sparsemap_sparsemap_qp(__pyx_v_f, __pyx_v_unaries, __pyx_v_additionals, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -17956,8 +18056,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 75, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 218, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 231, __pyx_L1_error)
   __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(1, 799, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 989, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(2, 146, __pyx_L1_error)
@@ -18438,26 +18538,26 @@ PyMODINIT_FUNC PyInit_sparsemap(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "ad3/sparsemap.pyx":9
- * from .base cimport PGenericFactor, GenericFactor, Configuration
+  /* "ad3/sparsemap.pyx":10
+ * from .base cimport FactorGraph, BinaryVariable, Factor
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * np.import_array()
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "ad3/sparsemap.pyx":11
+  /* "ad3/sparsemap.pyx":12
  * import numpy as np
  * cimport numpy as np
  * np.import_array()             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "ad3/sparsemap.pyx":1
  * from libcpp.vector cimport vector             # <<<<<<<<<<<<<<
@@ -18652,6 +18752,20 @@ end:
 }
 #endif
 
+/* GetBuiltinName */
+static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
+    PyObject* result = __Pyx_PyObject_GetAttrStr(__pyx_b, name);
+    if (unlikely(!result)) {
+        PyErr_Format(PyExc_NameError,
+#if PY_MAJOR_VERSION >= 3
+            "name '%U' is not defined", name);
+#else
+            "name '%.200s' is not defined", PyString_AS_STRING(name));
+#endif
+    }
+    return result;
+}
+
 /* ExtTypeTest */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
     if (unlikely(!type)) {
@@ -18832,20 +18946,6 @@ static CYTHON_INLINE int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, in
     }
     __Pyx_RaiseArgumentTypeInvalid(name, obj, type);
     return 0;
-}
-
-/* GetBuiltinName */
-static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
-    PyObject* result = __Pyx_PyObject_GetAttrStr(__pyx_b, name);
-    if (unlikely(!result)) {
-        PyErr_Format(PyExc_NameError,
-#if PY_MAJOR_VERSION >= 3
-            "name '%U' is not defined", name);
-#else
-            "name '%.200s' is not defined", PyString_AS_STRING(name));
-#endif
-    }
-    return result;
 }
 
 /* PyObjectCall */
@@ -20213,6 +20313,37 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
         return (target_type) value;\
     }
 
+/* CIntToPy */
+      static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
+    const int neg_one = (int) -1, const_zero = (int) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(int) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(int) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
+}
+
 /* Declarations */
       #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -20522,37 +20653,6 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
         }
     #endif
 #endif
-
-/* CIntToPy */
-      static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
-    const int neg_one = (int) -1, const_zero = (int) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
-}
 
 /* CIntToPy */
       static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value) {
