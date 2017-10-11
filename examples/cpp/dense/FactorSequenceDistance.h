@@ -39,27 +39,30 @@ class FactorSequenceDistance : public FactorSequence {
                 index_edges_[i][prev].resize(n_curr_states);
                 for (int curr = 0; curr < n_curr_states; ++curr) {
 
-                    if (i == 0)
+                    if (i == 0) {
                         // at the beginning it's as if the prev state were -1
-                        index = curr - (-1);
-                    else if (i == length)
+                        index = std::min(range, curr + 1) - 1;
+                    }
+                    else if (i == length) {
                         // at the end it's as if the next state is n + 1
-                        index = (n_states + 1) - prev;
-                    else
+                        index = std::min(range, (n_states - prev)) - 1;
+                        index += range;
+                    }
+                    else {
                         // the relative distance gives the index
-                        index = curr - prev;
+                        index = std::max(-range, std::min(curr - prev, range));
+                        index += 3 * range;  // first 2 are for start/end
+                                             // last is to ensure positive
+                                             // shift to [0, 2 * range]
+                    }
 
-                    // clamp to (-range, range)
-                    index = std::max(-range, std::min(index, range));
 
-                    // shift to [0, 2 * range] to have valid array indices
-                    index += range;
                     index_edges_[i][prev][curr] = index;
 
                     /*
                     cout << i << ", " << prev << ", " << curr;
                     cout << " -> " << index;
-                    cout << " = " << additional_log_potentials_[index];
+                    // cout << " = " << additional_log_potentials_[index];
                     cout << endl;
                     */
                 }
