@@ -67,6 +67,7 @@ setup(name='ad3',
       packages=['ad3', 'ad3.tests'],
       libraries=[libad3],
       cmdclass=cmdclass,
+      include_package_data=True,
       ext_modules=cythonize([
           Extension("ad3.factor_graph",
                     ["python/ad3/factor_graph.pyx"],
