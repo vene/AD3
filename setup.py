@@ -5,7 +5,6 @@ from setuptools.extension import Extension
 
 from Cython.Build import cythonize
 
-import numpy
 
 
 AD3_COMPILE_ARGS = [
@@ -82,11 +81,6 @@ setup(name='ad3',
           Extension("ad3.extensions",
                     ["python/ad3/extensions.pyx"],
                     include_dirs=[".", "ad3"],
-                    language="c++",
-                    extra_compile_args=AD3_COMPILE_ARGS),
-          Extension("ad3.sparsemap",
-                    ["python/ad3/sparsemap.pyx"],
-                    include_dirs=[".", "ad3", numpy.get_include()],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
           ]))

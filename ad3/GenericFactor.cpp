@@ -317,6 +317,7 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
                             const vector<double> &additional_log_potentials,
                             vector<double> *variable_posteriors,
                             vector<double> *additional_posteriors) {
+
   // Initialize the active set.
   if (active_set_.size() == 0) {
     variable_posteriors->resize(variable_log_potentials.size());
@@ -405,6 +406,9 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
       if (value <= tau + very_small_threshold) { // value <= tau.
         // We have found the solution;
         // the distribution, active set, and inv(A) are cached for the next round.
+        if (verbosity_ > 2) {
+            cout << "We found the solution, max value is tiny" << endl;
+        }
         DeleteConfiguration(configuration);
         return;
       } else {
@@ -608,6 +612,9 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
     }
   }
 
+  if (verbosity_ > 2) {
+      cout << "max iter reached" << endl;
+  }
   // Maximum number of iterations reached.
   // Return the best existing solution by computing the variable marginals
   // from the full distribution stored in z.
