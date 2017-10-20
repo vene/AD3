@@ -39,6 +39,7 @@ cdef extern from "../ad3/GenericFactor.h" namespace "AD3":
         vector[double] GetQPInvA()
         void GetCorrespondence(vector[double]*, vector[double]*)
         void SetQPMaxIter(int)
+        void SetClearCache(bool)
 
 
 cdef extern from "../ad3/MultiVariable.h" namespace "AD3":
