@@ -102,15 +102,15 @@ def _general_graph_multitype(l_unaries, l_edges, l_edge_weights, verbose=1,
 
     Similar to _general_graph except that we have different type of nodes.
     The number of possible states of a node depends on its type.
-    
+
     For instance, instead of getting 1 unaries matrix, we get 1 per type.
-    
+
     for T types:
     - l_unaries is a list of T unaries
     - l_edges is a list of length T^2 of edges from type I to type J,
         with I and J in [1,T]
     - l_edge_weights is a list of length T^2 of edge weights (as above)
-    
+
     Developed  for the EU project READ. The READ project has received funding
     from the European Union's Horizon 2020 research and innovation programme
     under grant agreement No 674943.
