@@ -47,6 +47,12 @@ See [AD3](https://github.com/andre-martins/AD3) documentation and/or [pystruct+]
 
 ## Change Log
 
+### Release 2.2.2
+
+- Code is PEP8 compliant
+- Several exemple of use of simple_inference/py and simple_constraint_inference.py
+- some better explanation of the API of same modules
+
 ### Release 2.2.1
 
 - same code based on most recent version of AD3 "2.2.dev0" by vene 
