@@ -3,6 +3,7 @@ Created on 30 Jan 2017
 
 @author: meunier
 '''
+import future
 import numpy as np
 from numpy.testing import (assert_array_equal, assert_array_almost_equal,
                            assert_almost_equal, assert_equal)
@@ -46,11 +47,11 @@ def test_general_constrained_graph_mulitype():
                        , np.zeros((0,0))
                        , np.zeros((0,0))
                        ]
-    print [o.shape for o in edge_weights]
+    print([o.shape for o in edge_weights])
     ret = general_constrained_graph_multitype(unaries, edges, edge_weights, None, verbose=1)
     
     marginals, edge_marginals, value, solver_status = ret
-    print ret
+    print(ret)
     assert_array_almost_equal( marginals[0], np.array([[ 0,  1]]) )
     assert_array_almost_equal( marginals[1], np.array([[0, 0, 1]]) )
     
@@ -153,4 +154,4 @@ def test_general_constrained_graph_mulitype():
 if __name__ == "__main__":
     test_general_constrained_graph_singletype()
     test_general_constrained_graph_mulitype()
-    print "OK"
+    print("OK")
