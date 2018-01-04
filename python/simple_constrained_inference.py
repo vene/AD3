@@ -30,7 +30,7 @@ under grant agreement No 674943.
 
 """
 import numpy as np
-import factor_graph as fg
+from . import factor_graph as fg
 
 
 def general_constrained_graph(unaries, edges, edge_weights, constraints,
