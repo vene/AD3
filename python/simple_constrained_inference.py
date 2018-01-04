@@ -298,8 +298,8 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
                 op, l_l_unary_i, l_l_state, l_l_negated = tup
                 last_type = None
             except ValueError:
-                op, l_l_unary_i, l_l_state, l_l_negated,
-                (last_type, last_unary, last_state, last_neg) = tup
+                (op, l_l_unary_i, l_l_state, l_l_negated, 
+                 (last_type, last_unary, last_state, last_neg)) = tup
 
             lVar = list()      # listing the implied unaries
             lNegated = list()  # we flatten it from the per type information
