@@ -29,6 +29,7 @@ from the European Union's Horizon 2020 research and innovation programme
 under grant agreement No 674943.
 
 """
+from past.builtins import xrange
 import numpy as np
 from . import factor_graph as fg
 
