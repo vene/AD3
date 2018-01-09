@@ -1,3 +1,8 @@
+2018-01-01 AD3 2.2.2 jean-luc.meunier@naverlabs.com
+ code -s PEP8 compliant
+ documented examples
+ python 2 and 3 compatible (now requires the future package)
+
 2017-09-14 AD3 2.2.1 jean-luc.meunier@naverlabs.com
   Added 2 capabilities to the Python wrapper:
   - handling logic constraints
