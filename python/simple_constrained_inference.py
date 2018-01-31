@@ -4,7 +4,11 @@
 Inference on CRF graphs, possibly with hard-logic constraints, possibly with
 multiple node types
 
-Copyright Xerox(C) 2017 JL. Meunier
+January 2017 JL. Meunier
+
+Developed  for the EU project READ. The READ project has received funding
+from the European Union's Horizon 2020 research and innovation programme
+under grant agreement No 674943.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +27,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Developed  for the EU project READ. The READ project has received funding
-from the European Union's Horizon 2020 research and innovation programme
-under grant agreement No 674943.
-
 """
+
 from past.builtins import xrange
 import numpy as np
 from . import factor_graph as fg
@@ -37,17 +37,92 @@ from . import factor_graph as fg
 def general_constrained_graph(unaries, edges, edge_weights, constraints,
                               verbose=1, n_iterations=1000, eta=0.1,
                               exact=False):
-    """
-    inference on a graph, taking into account logical constraints between
+    """Inference on a general graph, where nodes have unary and pairwise
+    potentials, taking into account logical constraints between
     unaries.
+    
+    This graph can take one of two forms:
+    - simple form, where all nodes share the same set of L labels.
+    - typed form, where each node is typed and the node type t defines the set
+    of Lt labels that the node can take.
+    
+    The input parameters differ according to the form of graph.
+    
+    Parameters
+    ----------
+    unaries : array or list of arrays
+        `unaries` gives the unary potentials of the nodes of the graph. 
+        In the simple form, for N nodes, this is a N x L array.
+        In the typed form, for T types, this is a list of Nt x Lt arrays, where
+        Nt is the number of nodes of type t, and Lt is the number of labels of
+        type t.
+    edges : 2-column array or list of 2-columns arrays
+        `edges` defines the edges of the graph.
+        In the simple form, for E edges, this is a E x 2 array, giving the
+        source node index and target node index of each edge of the graph.
+        In the typed form, this is a list of length T^2 of 2-column array, each
+        such array defining all the Et1t2 edges from a source node of type t1
+        to a target node of type t2, for t1 in [1..T] and t2 in [1..T].
+    edge_weights : array of list of arrays
+        `edge_weights` gives the pairwise potentials of the pairs of nodes
+        linked by an edge in the graph.
+        In the simple form, for E edges, it is a E x L x L array.
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        [1..T] and t2 in [1..T].
+    constraints : list of tuples
+        In the simple form, `constraints` is a list of tuples like:
+                ( <operator>, <nodes>, <states>, <negated> ) 
+        where:
+        - `operator` is one of the strings: XOR XOROUT ATMOSTONE OR OROUT ANDOUT
+            IMPLY
+        - `nodes` is a list of the index of the nodes involved in this 
+            constraint
+        - states is a list of states (int), 1 per involved node.
+            If the states are all the same for all the involved node, you can
+            pass it directly as a scalar value.
+        - negated is a list of boolean indicated if the node state is be 
+            negated. Again, if all values are the same, pass a single boolean 
+            value instead of a list 
+        In the typed form, `constraints` is a list of tuples like:
+               ( <operator>, <l_nodes>, <l_states>, <l_negated> )
+            or ( <operator>, <l_nodes>, <l_states>, <l_negated> ,
+                 (type, node, state, negated))
+        where:
+        - operator is one of the strings XOR XOROUT ATMOSTONE OR OROUT ANDOUT
+            IMPLY
+        - l_nodes is a list of nodes per type. Each item is a list of the index
+            of the nodes of that type involved in this constraint
+        - l_states is a list of states per type. Each item is a list of the state
+            of the involved nodes. If the states are all the same for a type, 
+            you can pass it directly as a scalar value.
+        - l_negated is a list of "negated" per type. Each item is a list of
+            booleans indicating if the unary must be negated.
+            Again, if all values are the same for a type, pass a single boolean
+            value instead of a list
+        - the optional (type, node, state, negated) allows to refer to a certain
+            node of a certain type in a certain state, possibly negated.
+            This is the final node of the logic operator, which can be key for
+            instance for XOROUT, OROUT, ANDOUT, IMPLY operators.
+            (Because the other terms of the operator are grouped and ordered by
+            type)
+        `constraints` differs for simple form and typed form of graphs.  
+    verbose : AD3 verbosity level
+    n_iterations : AD3 number of iterations
+    eta : AD3 eta
+    exact : AD3 type of inference
 
-    The constraints structure differs for single- versus multi-type graphs.
-    See in each function below.
-
-    NOTE: I had to re-compile AD3 since v2.0.1 from Anaconda missed the
-    create_binary_variable method
-
-    JL Meunier - January 2017
+    Returns
+    -------
+    marginals : array
+        Marginals for all nodes of the graph, in same order as the `unaries`,
+        after flattening.
+    edge_marginals : array
+        Marginals for all edges of the graph, in same order as the 
+        `edge_weights`, after flattening.
+    value : float
+        Graph energy.
+    solver_status : str
+        status of the solver.
     """
     if isinstance(unaries, list):
         # this must be a graph with multiple node types
@@ -67,33 +142,75 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
                                          constraints, verbose=1,
                                          n_iterations=1000, eta=0.1,
                                          exact=False):
+    """Inference on a general graph, where nodes have unary and pairwise
+    potentials, taking into account logical constraints between
+    unaries.
+    The graph is binarized as explained in Martins et al. ICML 2011
+    paper: "An Augmented Lagrangian Approach to Constrained MAP Inference".
+    See also Meunier, CAp 2017, "Joint Structured Learning and Predictions
+    under Logical Constraints in Conditional Random Fields"
+    
+    This graph can take one of two forms:
+    - simple form, where all nodes share the same set of L labels.
+    - typed form, where each node is typed and the node type t defines the set
+    of Lt labels that the node can take.
+    
+    The input parameters differ according to the form of graph.
+    
+    Parameters
+    ----------
+    unaries : array or list of arrays
+        `unaries` gives the unary potentials of the nodes of the graph. 
+        In the simple form, for N nodes, this is a N x L array.
+        In the typed form, for T types, this is a list of Nt x Lt arrays, where
+        Nt is the number of nodes of type t, and Lt is the number of labels of
+        type t.
+    edges : 2-column array or list of 2-columns arrays
+        `edges` defines the edges of the graph.
+        In the simple form, for E edges, this is a E x 2 array, giving the
+        source node index and target node index of each edge of the graph.
+        In the typed form, this is a list of length T^2 of 2-column array, each
+        such array defining all the Et1t2 edges from a source node of type t1
+        to a target node of type t2, for t1 in [1..T] and t2 in [1..T].
+    edge_weights : array of list of arrays
+        `edge_weights` gives the pairwise potentials of the pairs of nodes
+        linked by an edge in the graph.
+        In the simple form, for E edges, it is a E x L x L array.
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        [1..T] and t2 in [1..T].
+    constraints : list of tuples
+        `constraints` is a list of tuples like:
+                ( <operator>, <nodes>, <states>, <negated> ) 
+        where:
+        - `operator` is one of the strings: XOR XOROUT ATMOSTONE OR OROUT ANDOUT
+            IMPLY
+        - `nodes` is a list of the index of the nodes involved in this 
+            constraint
+        - states is a list of states (int), 1 per involved node.
+            If the states are all the same for all the involved node, you can
+            pass it directly as a scalar value.
+        - negated is a list of boolean indicated if the node state is be 
+            negated. Again, if all values are the same, pass a single boolean 
+            value instead of a list 
+    verbose : AD3 verbosity level
+    n_iterations : AD3 number of iterations
+    eta : AD3 eta
+    exact : AD3 type of inference
+
+    Returns
+    -------
+    marginals : array
+        Marginals for all nodes of the graph, in same order as the `unaries`,
+        after flattening.
+    edge_marginals : array
+        Marginals for all edges of the graph, in same order as the 
+        `edge_weights`, after flattening.
+    value : float
+        Graph energy.
+    solver_status : str
+        status of the solver.
     """
-    inference on a graph, with one type of node, taking into account logical
-    constraints between unaries.
 
-    The constraints must be a list of tuples like:
-        ( <operator>, <unaries>, <states>, <negated> )
-    The tuple is defined differently for single- and multi-type inference.
-    See in each function below.
-
-    where:
-    - operator is 1 of the strings: XOR XOROUT ATMOSTONE OR OROUT ANDOUT IMPLY
-    - unaries is a list of the index of the unaries involved in this constraint
-    - states is a list of unary states, 1 per involved unary.
-        If the states are all the same, you can pass it directly as a scalar
-        value.
-    - negated is a list of boolean indicated if the unary must be negated.
-        Again, if all values are the same, pass a single boolean value instead
-        of a list
-
-    The graph is binarized as explained in Martins et al. ICML 2011 paper: "An
-    Augmented Lagrangian Approach to Constrained MAP Inference".
-
-    NOTE: I had to re-compile AD3 since v2.0.1 from Anaconda missed the
-    create_binary_variable method
-
-    JL Meunier - October 2016
-    """
     if unaries.shape[1] != edge_weights.shape[1]:
         raise ValueError("incompatible shapes of unaries"
                          " and edge_weights.")
@@ -212,38 +329,84 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
                                         constraints, verbose=1,
                                         n_iterations=1000, eta=0.1,
                                         exact=False):
+    """Inference on a general graph, where nodes have unary and pairwise
+    potentials, taking into account logical constraints between
+    unaries.
+    The graph is binarized as explained in Martins et al. ICML 2011
+    paper: "An Augmented Lagrangian Approach to Constrained MAP Inference".
+    See also Meunier, CAp 2017, "Joint Structured Learning and Predictions
+    under Logical Constraints in Conditional Random Fields"
+    
+    This graph can take one of two forms:
+    - simple form, where all nodes share the same set of L labels.
+    - typed form, where each node is typed and the node type t defines the set
+    of Lt labels that the node can take.
+    
+    The input parameters differ according to the form of graph.
+    
+    Parameters
+    ----------
+    unaries : array or list of arrays
+        `unaries` gives the unary potentials of the nodes of the graph. 
+        In the simple form, for N nodes, this is a N x L array.
+        In the typed form, for T types, this is a list of Nt x Lt arrays, where
+        Nt is the number of nodes of type t, and Lt is the number of labels of
+        type t.
+    edges : 2-column array or list of 2-columns arrays
+        `edges` defines the edges of the graph.
+        In the simple form, for E edges, this is a E x 2 array, giving the
+        source node index and target node index of each edge of the graph.
+        In the typed form, this is a list of length T^2 of 2-column array, each
+        such array defining all the Et1t2 edges from a source node of type t1
+        to a target node of type t2, for t1 in [1..T] and t2 in [1..T].
+    edge_weights : array of list of arrays
+        `edge_weights` gives the pairwise potentials of the pairs of nodes
+        linked by an edge in the graph.
+        In the simple form, for E edges, it is a E x L x L array.
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        [1..T] and t2 in [1..T].
+    constraints : list of tuples
+        The constraints is a list of tuples like:
+           ( <operator>, <l_nodes>, <l_states>, <l_negated> )
+        or ( <operator>, <l_nodes>, <l_states>, <l_negated> ,
+             (type, node, state, negated))
+        where:
+        - operator is one of the strings XOR XOROUT ATMOSTONE OR OROUT ANDOUT
+            IMPLY
+        - l_nodes is a list of nodes per type. Each item is a list of the index
+            of the nodes of that type involved in this constraint
+        - l_states is a list of states per type. Each item is a list of the state
+            of the involved nodes. If the states are all the same for a type, 
+            you can pass it directly as a scalar value.
+        - l_negated is a list of "negated" per type. Each item is a list of
+            booleans indicating if the unary must be negated.
+            Again, if all values are the same for a type, pass a single boolean
+            value instead of a list
+        - the optional (type, node, state, negated) allows to refer to a certain
+            node of a certain type in a certain state, possibly negated.
+            This is the final node of the logic operator, which can be key for
+            instance for XOROUT, OROUT, ANDOUT, IMPLY operators.
+            (Because the other terms of the operator are grouped and ordered by
+            type)
+    verbose : AD3 verbosity level
+    n_iterations : AD3 number of iterations
+    eta : AD3 eta
+    exact : AD3 type of inference
+
+    Returns
+    -------
+    marginals : array
+        Marginals for all nodes of the graph, in same order as the `unaries`,
+        after flattening.
+    edge_marginals : array
+        Marginals for all edges of the graph, in same order as the 
+        `edge_weights`, after flattening.
+    value : float
+        Graph energy.
+    solver_status : str
+        status of the solver.
     """
-    inference on a graph with multiple node types, taking into account logical
-    constraints between unaries.
 
-    The constraints must be a list of tuples like:
-           ( <operator>, <l_unaries>, <l_states>, <l_negated> )
-        or ( <operator>, <l_unaries>, <l_states>, <l_negated> ,
-             (type, unary, state, negated))
-    where:
-    - operator is one of the strings XOR XOROUT ATMOSTONE OR OROUT ANDOUT IMPLY
-
-    - l_unaries is a list of unaries per type. Each item is a list of the index
-        of the unaries of that type involved in this constraint
-    - l_states is a list of states per type. Each item is a list of the state
-        of the involved unaries.
-            If the states are all the same for a type, you can pass it directly
-            as a scalar value.
-    - l_negated is a list of "negated" per type. Each item is a list of
-        booleans indicating if the unary must be negated.
-        Again, if all values are the same for a type, pass a single boolean
-        value instead of a list
-    - the optional (type, unary, state, negated) allows to refer to a certain
-        unary of a certain type in a certain state, possibly negated.
-        This is the final node of the logic operator, which can be key for
-        instance for XOROUT, OROUT, ANDOUT, IMPLY operators.
-        (Because the other terms of the operator are grouped and ordered by
-        type)
-
-    The graph is binarized as explained in CAp 2017 publication.
-
-    JL Meunier - January 2017
-    """
     # number of nodes and of states per type
     l_n_nodes, l_n_states = zip(*[unary.shape for unary in l_unaries])
 

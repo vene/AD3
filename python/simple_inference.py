@@ -38,6 +38,55 @@ def simple_grid(unaries, pairwise, verbose=1):
 
 def general_graph(unaries, edges, edge_weights, verbose=1, n_iterations=1000,
                   eta=.1, exact=False):
+    """Inference on a general graph, where nodes have unary and pairwise
+    potentials.
+    
+    This graph can take one of two forms:
+    - simple form, where all nodes share the same set of L labels.
+    - typed form, where each node is typed and the node type t defines the set
+    of Lt labels that the node can take.
+    
+    The input parameters differ according to the form of graph.
+    
+    Parameters
+    ----------
+    unaries : array or list of arrays
+        `unaries` gives the unary potentials of the nodes of the graph. 
+        In the simple form, for N nodes, this is a N x L array.
+        In the typed form, for T types, this is a list of Nt x Lt arrays, where
+        Nt is the number of nodes of type t, and Lt is the number of labels of
+        type t.
+    edges : 2-column array or list of 2-columns arrays
+        `edges` defines the edges of the graph.
+        In the simple form, for E edges, this is a E x 2 array, giving the
+        source node index and target node index of each edge of the graph.
+        In the typed form, this is a list of length T^2 of 2-column array, each
+        such array defining all the Et1t2 edges from a source node of type t1
+        to a target node of type t2, for t1 in [1..T] and t2 in [1..T].
+    edge_weights : array of list of arrays
+        `edge_weights` gives the pairwise potentials of the pairs of nodes
+        linked by an edge in the graph.
+        In the simple form, for E edges, it is a E x L x L array.
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        [1..T] and t2 in [1..T].
+    verbose : AD3 verbosity level
+    n_iterations : AD3 number of iterations
+    eta : AD3 eta
+    exact : AD3 type of inference
+
+    Returns
+    -------
+    marginals : array
+        Marginals for all nodes of the graph, in same order as the `unaries`,
+        after flattening.
+    edge_marginals : array
+        Marginals for all edges of the graph, in same order as the 
+        `edge_weights`, after flattening.
+    value : float
+        Graph energy.
+    solver_status : str
+        status of the solver.
+    """
     if isinstance(unaries, list):
         return _general_graph_multitype(unaries, edges, edge_weights, verbose,
                                         n_iterations, eta, exact)
@@ -49,8 +98,9 @@ def general_graph(unaries, edges, edge_weights, verbose=1, n_iterations=1000,
 def _general_graph(unaries, edges, edge_weights, verbose=1, n_iterations=1000,
                    eta=.1, exact=False):
     """
-    The original code of AD3
-    for N nodes, L labels, E edges
+    General graph, where nodes take 1 of L labels, have unary and pairwise 
+    potentials.
+    For N nodes, L labels, E edges:
     - unaries is N x L    "potential" of each possible state of the node
     - edge is E x 2        source and target nodes per edge
     - edge_weights is E x L x L    "potential" of the edge depending on the
@@ -118,6 +168,12 @@ def _general_graph_multitype(l_unaries, l_edges, l_edge_weights, verbose=1,
     See CAp 2017 paper (also at arXiv:1708.07644)
 
     JL Meunier - Feb 2017
+
+    January 2017 JL. Meunier
+    
+    Developed  for the EU project READ. The READ project has received funding
+    from the European Union's Horizon 2020 research and innovation programme
+    under grant agreement No 674943.    
     """
     # number of nodes and of states per type
     l_n_nodes, l_n_states = zip(*[unary.shape for unary in l_unaries])
