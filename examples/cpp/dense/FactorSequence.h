@@ -205,6 +205,7 @@ class FactorSequence : public GenericFactor {
     const Configuration &configuration2) {
     const vector<int> *sequence1 = static_cast<const vector<int>*>(configuration1);
     const vector<int> *sequence2 = static_cast<const vector<int>*>(configuration2);
+
     assert(sequence1->size() == sequence2->size());
     for (int i = 0; i < sequence1->size(); ++i) {
       if ((*sequence1)[i] != (*sequence2)[i]) return false;

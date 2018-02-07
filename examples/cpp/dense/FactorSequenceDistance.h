@@ -1,6 +1,5 @@
 #ifndef FACTOR_SEQUENCE_DISTANCE
 #define FACTOR_SEQUENCE_DISTANCE
-
 #include <algorithm>
 #include "FactorSequence.h"
 
