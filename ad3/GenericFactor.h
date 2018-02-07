@@ -97,7 +97,7 @@ class GenericFactor : public Factor {
                   vector<double> &eigenvectors,
                   vector<double> *null_space_basis);
 
- protected:
+ public:
   // Compute the score of a given assignment.
   // This must be implemented in the user-defined factor.
   virtual void Evaluate(const vector<double> &variable_log_potentials,
@@ -137,7 +137,6 @@ class GenericFactor : public Factor {
   virtual void DeleteConfiguration(
     Configuration configuration) = 0;
 
- public:
   // Compute the MAP (local subproblem in the projected subgradient algorithm).
   // The user-defined factor may override this.
   virtual void SolveMAP(const vector<double> &variable_log_potentials,
