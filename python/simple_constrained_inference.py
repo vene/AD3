@@ -29,7 +29,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from past.builtins import xrange
 import numpy as np
 from . import factor_graph as fg
 
@@ -37,21 +36,19 @@ from . import factor_graph as fg
 def general_constrained_graph(unaries, edges, edge_weights, constraints,
                               verbose=1, n_iterations=1000, eta=0.1,
                               exact=False):
-    """Inference on a general graph, where nodes have unary and pairwise
-    potentials, taking into account logical constraints between
-    unaries.
-    
+    """Inference on a general graph, with logical constraints.
+
     This graph can take one of two forms:
     - simple form, where all nodes share the same set of L labels.
     - typed form, where each node is typed and the node type t defines the set
     of Lt labels that the node can take.
-    
+
     The input parameters differ according to the form of graph.
-    
+
     Parameters
     ----------
     unaries : array or list of arrays
-        `unaries` gives the unary potentials of the nodes of the graph. 
+        `unaries` gives the unary potentials of the nodes of the graph.
         In the simple form, for N nodes, this is a N x L array.
         In the typed form, for T types, this is a list of Nt x Lt arrays, where
         Nt is the number of nodes of type t, and Lt is the number of labels of
@@ -67,22 +64,22 @@ def general_constrained_graph(unaries, edges, edge_weights, constraints,
         `edge_weights` gives the pairwise potentials of the pairs of nodes
         linked by an edge in the graph.
         In the simple form, for E edges, it is a E x L x L array.
-        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in
         [1..T] and t2 in [1..T].
     constraints : list of tuples
         In the simple form, `constraints` is a list of tuples like:
-                ( <operator>, <nodes>, <states>, <negated> ) 
+                ( <operator>, <nodes>, <states>, <negated> )
         where:
         - `operator` is one of the strings: XOR XOROUT ATMOSTONE OR OROUT ANDOUT
             IMPLY
-        - `nodes` is a list of the index of the nodes involved in this 
+        - `nodes` is a list of the index of the nodes involved in this
             constraint
         - states is a list of states (int), 1 per involved node.
             If the states are all the same for all the involved node, you can
             pass it directly as a scalar value.
-        - negated is a list of boolean indicated if the node state is be 
-            negated. Again, if all values are the same, pass a single boolean 
-            value instead of a list 
+        - negated is a list of boolean indicated if the node state is be
+            negated. Again, if all values are the same, pass a single boolean
+            value instead of a list
         In the typed form, `constraints` is a list of tuples like:
                ( <operator>, <l_nodes>, <l_states>, <l_negated> )
             or ( <operator>, <l_nodes>, <l_states>, <l_negated> ,
@@ -93,7 +90,7 @@ def general_constrained_graph(unaries, edges, edge_weights, constraints,
         - l_nodes is a list of nodes per type. Each item is a list of the index
             of the nodes of that type involved in this constraint
         - l_states is a list of states per type. Each item is a list of the state
-            of the involved nodes. If the states are all the same for a type, 
+            of the involved nodes. If the states are all the same for a type,
             you can pass it directly as a scalar value.
         - l_negated is a list of "negated" per type. Each item is a list of
             booleans indicating if the unary must be negated.
@@ -105,7 +102,7 @@ def general_constrained_graph(unaries, edges, edge_weights, constraints,
             instance for XOROUT, OROUT, ANDOUT, IMPLY operators.
             (Because the other terms of the operator are grouped and ordered by
             type)
-        `constraints` differs for simple form and typed form of graphs.  
+        `constraints` differs for simple form and typed form of graphs.
     verbose : AD3 verbosity level
     n_iterations : AD3 number of iterations
     eta : AD3 eta
@@ -117,7 +114,7 @@ def general_constrained_graph(unaries, edges, edge_weights, constraints,
         Marginals for all nodes of the graph, in same order as the `unaries`,
         after flattening.
     edge_marginals : array
-        Marginals for all edges of the graph, in same order as the 
+        Marginals for all edges of the graph, in same order as the
         `edge_weights`, after flattening.
     value : float
         Graph energy.
@@ -137,30 +134,28 @@ def general_constrained_graph(unaries, edges, edge_weights, constraints,
                                                     exact)
 
 
-# ---------  SINGLE-TYPE ------------------------------------------------------
 def general_constrained_graph_singletype(unaries, edges, edge_weights,
                                          constraints, verbose=1,
                                          n_iterations=1000, eta=0.1,
                                          exact=False):
-    """Inference on a general graph, where nodes have unary and pairwise
-    potentials, taking into account logical constraints between
-    unaries.
+    """Inference on a general constrained graph with a single node type.
+
     The graph is binarized as explained in Martins et al. ICML 2011
     paper: "An Augmented Lagrangian Approach to Constrained MAP Inference".
     See also Meunier, CAp 2017, "Joint Structured Learning and Predictions
     under Logical Constraints in Conditional Random Fields"
-    
+
     This graph can take one of two forms:
     - simple form, where all nodes share the same set of L labels.
     - typed form, where each node is typed and the node type t defines the set
     of Lt labels that the node can take.
-    
+
     The input parameters differ according to the form of graph.
-    
+
     Parameters
     ----------
     unaries : array or list of arrays
-        `unaries` gives the unary potentials of the nodes of the graph. 
+        `unaries` gives the unary potentials of the nodes of the graph.
         In the simple form, for N nodes, this is a N x L array.
         In the typed form, for T types, this is a list of Nt x Lt arrays, where
         Nt is the number of nodes of type t, and Lt is the number of labels of
@@ -176,22 +171,22 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
         `edge_weights` gives the pairwise potentials of the pairs of nodes
         linked by an edge in the graph.
         In the simple form, for E edges, it is a E x L x L array.
-        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in
         [1..T] and t2 in [1..T].
     constraints : list of tuples
         `constraints` is a list of tuples like:
-                ( <operator>, <nodes>, <states>, <negated> ) 
+                ( <operator>, <nodes>, <states>, <negated> )
         where:
         - `operator` is one of the strings: XOR XOROUT ATMOSTONE OR OROUT ANDOUT
             IMPLY
-        - `nodes` is a list of the index of the nodes involved in this 
+        - `nodes` is a list of the index of the nodes involved in this
             constraint
         - states is a list of states (int), 1 per involved node.
             If the states are all the same for all the involved node, you can
             pass it directly as a scalar value.
-        - negated is a list of boolean indicated if the node state is be 
-            negated. Again, if all values are the same, pass a single boolean 
-            value instead of a list 
+        - negated is a list of boolean indicated if the node state is be
+            negated. Again, if all values are the same, pass a single boolean
+            value instead of a list
     verbose : AD3 verbosity level
     n_iterations : AD3 number of iterations
     eta : AD3 eta
@@ -203,7 +198,7 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
         Marginals for all nodes of the graph, in same order as the `unaries`,
         after flattening.
     edge_marginals : array
-        Marginals for all edges of the graph, in same order as the 
+        Marginals for all edges of the graph, in same order as the
         `edge_weights`, after flattening.
     value : float
         Graph energy.
@@ -225,11 +220,11 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
     n_states = unaries.shape[-1]
 
     binary_variables = []
-    """
-    define one binary variable Uik per possible state k of the node i.
-    Uik = binary_variables[ i*n_states+k ]
-    the Ith unaries is represented by [Uik for k in range(n_states)]
-    """
+
+    #  define one binary variable Uik per possible state k of the node i.
+    #  Uik = binary_variables[ i*n_states+k ]
+    #  the Ith unaries is represented by [Uik for k in range(n_states)]
+
     for u in unaries:
         lUi = []
         for _, cost in enumerate(u):
@@ -242,9 +237,7 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
         factor_graph.create_factor_logic("XOR", lUi, [False]*len(lUi))
         binary_variables.extend(lUi)
 
-    """
-    create the logical constraints
-    """
+    #  create the logical constraints
     if constraints:
         # this is a trick to force the graph binarization
         if constraints is not True:
@@ -266,11 +259,9 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
                         for i, k in zip(l_unary_i, l_state)]
                 factor_graph.create_factor_logic(op, lVar, l_negated)
 
-    """
-    Define one Uijkl binary variable per edge i,j for each pair of state k,l
-    a) Link variable [Uijkl for all l] and not(Uik) for all k
-    b) Link variable [Uijkl for all k] and not(Ujl) for all l
-    """
+    #  Define one Uijkl binary variable per edge i,j for each pair of state k,l
+    #  a) Link variable [Uijkl for all l] and not(Uik) for all k
+    #  b) Link variable [Uijkl for all k] and not(Ujl) for all l
     for ei, e in enumerate(edges):
         i, j = e
         lUij = []  # Uijkl = lUij[ k*n_states + l ]
@@ -324,30 +315,28 @@ def general_constrained_graph_singletype(unaries, edges, edge_weights,
     return marginals, edge_marginals, value, solver_status
 
 
-# ---------  MULTY-TYPE -------------------------------------------------------
 def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
                                         constraints, verbose=1,
                                         n_iterations=1000, eta=0.1,
                                         exact=False):
-    """Inference on a general graph, where nodes have unary and pairwise
-    potentials, taking into account logical constraints between
-    unaries.
+    """Inference on a general constrained graph with multiple node types.
+
     The graph is binarized as explained in Martins et al. ICML 2011
     paper: "An Augmented Lagrangian Approach to Constrained MAP Inference".
     See also Meunier, CAp 2017, "Joint Structured Learning and Predictions
     under Logical Constraints in Conditional Random Fields"
-    
+
     This graph can take one of two forms:
     - simple form, where all nodes share the same set of L labels.
     - typed form, where each node is typed and the node type t defines the set
     of Lt labels that the node can take.
-    
+
     The input parameters differ according to the form of graph.
-    
+
     Parameters
     ----------
     unaries : array or list of arrays
-        `unaries` gives the unary potentials of the nodes of the graph. 
+        `unaries` gives the unary potentials of the nodes of the graph.
         In the simple form, for N nodes, this is a N x L array.
         In the typed form, for T types, this is a list of Nt x Lt arrays, where
         Nt is the number of nodes of type t, and Lt is the number of labels of
@@ -363,7 +352,7 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
         `edge_weights` gives the pairwise potentials of the pairs of nodes
         linked by an edge in the graph.
         In the simple form, for E edges, it is a E x L x L array.
-        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in 
+        In the typed form, it is a list of Et1t2 x Lt1 x Lt2 array, for t1 in
         [1..T] and t2 in [1..T].
     constraints : list of tuples
         The constraints is a list of tuples like:
@@ -376,7 +365,7 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
         - l_nodes is a list of nodes per type. Each item is a list of the index
             of the nodes of that type involved in this constraint
         - l_states is a list of states per type. Each item is a list of the state
-            of the involved nodes. If the states are all the same for a type, 
+            of the involved nodes. If the states are all the same for a type,
             you can pass it directly as a scalar value.
         - l_negated is a list of "negated" per type. Each item is a list of
             booleans indicating if the unary must be negated.
@@ -399,7 +388,7 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
         Marginals for all nodes of the graph, in same order as the `unaries`,
         after flattening.
     edge_marginals : array
-        Marginals for all edges of the graph, in same order as the 
+        Marginals for all edges of the graph, in same order as the
         `edge_weights`, after flattening.
     value : float
         Graph energy.
@@ -420,8 +409,8 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
     assert len(l_edges) == len(l_edge_weights)
 
     # when  making binary variable, index of 1st variable given a type
-    #Before PEP8 its name was: a_binaryvariable_startindex_by_type 
-    a_by_type= np.cumsum([0] +[_n_states * _n_nodes
+    #Before PEP8 its name was: a_binaryvariable_startindex_by_type
+    a_by_type = np.cumsum([0] +[_n_states * _n_nodes
                                for _n_states, _n_nodes
                                in zip(l_n_states, l_n_nodes)])
 
@@ -430,19 +419,17 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
     # table giving the index of first Uik for i
     # variables indicating the graph node states
     unary_binary_variables = []
-    """
-    define one binary variable Uik per possible state k of the node i of type T
-    Uik = unary_binary_variables[ a_by_type[T] + i_in_typ*typ_n_states + k ]
+    #  define one binary variable Uik per possible state k of the node i of type T
+    #  Uik = unary_binary_variables[ a_by_type[T] + i_in_typ*typ_n_states + k ]
 
-    the Ith unaries is represented by [Uik for k in range(n_states)]
-    """
+    #  the Ith unaries is represented by [Uik for k in range(n_states)]
     for _n_nodes, _n_states, type_unaries in zip(l_n_nodes, l_n_states,
                                                  l_unaries):
         assert type_unaries.shape == (_n_nodes, _n_states)
-        for i in xrange(_n_nodes):
+        for i in range(_n_nodes):
             lUi = list()  # All binary nodes for that node of that type
 
-            for state in xrange(_n_states):
+            for state in range(_n_states):
                 Uik = factor_graph.create_binary_variable()
                 Uik.set_log_potential(type_unaries[i, state])
                 lUi.append(Uik)
@@ -453,16 +440,14 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
 
             unary_binary_variables.extend(lUi)
 
-    """
-    create the logical constraints
-    """
+    #  create the logical constraints
     if constraints:
         for tup in constraints:
             try:
                 op, l_l_unary_i, l_l_state, l_l_negated = tup
                 last_type = None
             except ValueError:
-                (op, l_l_unary_i, l_l_state, l_l_negated, 
+                (op, l_l_unary_i, l_l_state, l_l_negated,
                  (last_type, last_unary, last_state, last_neg)) = tup
 
             lVar = list()      # listing the implied unaries
@@ -510,11 +495,9 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
 
             factor_graph.create_factor_logic(op, lVar, lNegated)
 
-    """
-    Define one Uijkl binary variable per edge i,j for each pair of state k,l
-    a) Link variable [Uijkl for all l] and not(Uik) for all k
-    b) Link variable [Uijkl for all k] and not(Ujl) for all l
-    """
+    #  Define one Uijkl binary variable per edge i,j for each pair of state k,l
+    #  a) Link variable [Uijkl for all l] and not(Uik) for all k
+    #  b) Link variable [Uijkl for all k] and not(Ujl) for all l
     i_typ_typ = 0
     for typ_i, n_states_i in enumerate(l_n_states):
         for typ_j, n_states_j in enumerate(l_n_states):
@@ -537,7 +520,7 @@ def general_constrained_graph_multitype(l_unaries, l_edges, l_edge_weights,
                 #          node i and node j, for all possible pairs of states
                 lUij = []
                 # Uij for all l
-                lUijl_by_l = [list() for _ in xrange(n_states_j)]
+                lUijl_by_l = [list() for _ in range(n_states_j)]
                 for k in range(n_states_i):
                     cost_k = cost[k]
                     Uik = unary_binary_variables[index_Ui_base + k]

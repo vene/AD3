@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 An example of use of the simple_constrained_inference module.
 
@@ -9,7 +8,7 @@ JL Meunier
 Dec 2017
 """
 
-
+from __future__ import print_function
 import numpy as np
 from ad3.simple_constrained_inference import general_constrained_graph
 from example_simple_inference import get_grid_label
@@ -17,10 +16,9 @@ from example_simple_inference import prepare_single_type
 from example_simple_inference import prepare_multi_type
 
 NO_CONSTRAINT = []
-# ===========================================================================
-print "--- SINGLE TYPE ---"
 
-# ========   TEST  ========
+print("--- SINGLE TYPE ---")
+
 unaries, edges, edge_weights = prepare_single_type()
 marginals, edge_marginals, _, _ = general_constrained_graph(unaries,
                                                             edges,
@@ -44,14 +42,14 @@ marginals, edge_marginals, _, _ = general_constrained_graph(unaries,
                                                             exact=True
                                                             )
 labels = get_grid_label(2, 3, marginals)
-print "--->"
-print labels
+print("--->")
+print(labels)
 
 assert labels.tolist() == [[3, 4, 5],
                            [2, 1, 0]]
 
 # ===========================================================================
-print "--- MULTI TYPE ---"
+print("--- MULTI TYPE ---")
 
 # ========   TEST  ========
 lUnary, lEdges, lEdgeWeights = prepare_multi_type()
@@ -84,11 +82,11 @@ marginals, edge_marginals, _, _ = general_constrained_graph(lUnary,
                                                             constraints,
                                                             exact=True
                                                             )
-print "--->"
+print("--->")
 labels_N = get_grid_label(1, 3, marginals[0])
-print labels_N
+print(labels_N)
 labels_M = get_grid_label(1, 3, marginals[1])
-print labels_M
+print(labels_M)
 # it is better to have N1 labeled 2 to get the +1 bonus from the vertical edge
 # it is better to have N2 labeled 3 to get the +1 bonus from the vertical edge
 assert labels_N.tolist() == [[3, 2, 1]]
@@ -109,6 +107,3 @@ labels_N = get_grid_label(1, 3, marginals[0])
 labels_M = get_grid_label(1, 3, marginals[1])
 assert labels_N.tolist() == [[3, 4, 3]]
 assert labels_M.tolist() == [[2, 1, 2]]
-
-# ===========================================================================
-print "DONE, OKAY"

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 An example of use of the simple_inference module.
 
@@ -7,12 +6,13 @@ JL Meunier
 Dec 2017
 """
 
+from __future__ import print_function
 import numpy as np
 from ad3.simple_inference import general_graph
 
 
 def get_grid_label(nRow, nCol, nodes):
-    assert nRow*nCol == nodes.shape[0]
+    assert nRow * nCol == nodes.shape[0]
     labels = nodes.argmax(axis=1).reshape(nRow, nCol).astype(np.int)
     return labels
 
@@ -59,7 +59,7 @@ def prepare_single_type():
     # simple case
     unaries[0, 3] = 1.0  # pushing for node 0 being label 3
     unaries[1, 4] = 1.0  # pushing for node 1 being label 4
-    print get_grid_label(2, 3, unaries)
+    print(get_grid_label(2, 3, unaries))
 
     return unaries, edges, edge_weights
 
@@ -120,8 +120,8 @@ def prepare_multi_type():
 
     unaries_N[0, 3] = 1.0  # pushing for node N 0 being label 3
     unaries_N[1, 4] = 1.0  # pushing for node N 1 being label 4
-    print get_grid_label(1, 3, unaries_N)
-    print get_grid_label(1, 3, unaries_M)
+    print(get_grid_label(1, 3, unaries_N))
+    print(get_grid_label(1, 3, unaries_M))
 
     return (
         [unaries_N, unaries_M],
@@ -131,10 +131,9 @@ def prepare_multi_type():
 
 
 if __name__ == "__main__":
-    # =========================================================================
-    print "--- SINGLE TYPE ---"
 
-    # ========   TEST  ========
+    print("--- SINGLE TYPE ---")
+
     unaries, edges, edge_weights = prepare_single_type()
     marginals, edge_marginals, value, status = general_graph(unaries,
                                                              edges,
@@ -142,27 +141,25 @@ if __name__ == "__main__":
                                                              exact=True
                                                              )
     labels = get_grid_label(2, 3, marginals)
-    print "--->"
-    print labels
+    print("--->")
+    print(labels)
 
     assert labels.tolist() == [[3, 4, 5],
                                [4, 5, 4]]
 
-    # =========================================================================
-    print "--- MULTI TYPE ---"
+    print("--- MULTI TYPE ---")
 
-    # ========   TEST  ========
     lUnary, lEdges, lEdgeWeights = prepare_multi_type()
     marginals, edge_marginals, value, status = general_graph(lUnary,
                                                              lEdges,
                                                              lEdgeWeights,
                                                              exact=True
                                                              )
-    print "--->"
+    print("--->")
     labels_N = get_grid_label(1, 3, marginals[0])
-    print labels_N
+    print(labels_N)
     labels_M = get_grid_label(1, 3, marginals[1])
-    print labels_M
+    print(labels_M)
     # it is better to have N1 as 2 to get the +1 bonus from the vertical edge
     # it is better to have N2 as 3 to get the +1 bonus from the vertical edge
     assert labels_N.tolist() == [[3, 2, 3]]
@@ -178,14 +175,12 @@ if __name__ == "__main__":
                                                              lEdgeWeights,
                                                              exact=True
                                                              )
-    print "--->"
+    print("--->")
     labels_N = get_grid_label(1, 3, marginals[0])
-    print labels_N
+    print(labels_N)
     labels_M = get_grid_label(1, 3, marginals[1])
-    print labels_M
+    print(labels_M)
 
     assert labels_N.tolist() == [[3, 4, 3]]
     assert labels_M.tolist() == [[2, 1, 2]]
 
-    # =========================================================================
-    print "DONE, OKAY"

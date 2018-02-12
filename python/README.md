@@ -28,20 +28,20 @@ to install them in AD3/python/ad3 directory
 See ``example_grid.py`` or the notebook for an example.
 
 
-We extend here the __Python API to AD3__ to support:
+# Support for logic constraints and typed nodes
+
+This section documents support for
 - hard-logic constraints in inference methods
 - inference on graph where nodes have different natures
 
-We did those extensions in order to extend the pystruct structured learning library. See [Pystruct+](https://github.com/jlmeunier/pystruct)
+We did those extensions in order to extend the pystruct structured learning
+library. See [Pystruct+](https://github.com/jlmeunier/pystruct)
 
-100% ascendant compatible, so your code should work on AD3+, if it worked with AD3.
-
-# Extension: logic constraints and typed nodes
-JL Meunier, 2017
-
-Developed for the EU project READ. The READ project has received funding 
-from the European Union's Horizon 2020 research and innovation programme 
+Extension originally implemented by JL Meunier, 2017.
+Developed for the EU project READ. The READ project has received
+funding from the European Union's Horizon 2020 research and innovation programme
 under grant agreement No 674943.
+
 
 ## Hard Logic Constraints
 As explained in André's ICML paper [1], one can **binarize the graph** and make inference on boolean values.
