@@ -5,9 +5,6 @@ from setuptools.extension import Extension
 
 
 AD3_COMPILE_ARGS = [
-    '-std=c++11',
-    '-Wno-sign-compare',
-    '-Wall',
     '-fPIC',
     '-O3',
     '-c',
