@@ -132,63 +132,14 @@ cdef class PFactor:
 
         return value, posteriors, additional_posteriors
 
-    def solve_qp(self, vector[double] variable_log_potentials,
-                 vector[double] additional_log_potentials,
-                 int max_iter=10):
-        cdef vector[double] posteriors
-        cdef vector[double] additional_posteriors
-
-        self.thisptr.SolveQP(variable_log_potentials,
-                             additional_log_potentials,
-                             &posteriors,
-                             &additional_posteriors)
-
-        return posteriors, additional_posteriors, None
-
 
 cdef class PGenericFactor(PFactor):
     """Factor which uses the active set algorithm to solve its QP."""
 
-    cdef cast_configuration(self, Configuration cfg):
+    cdef _cast_configuration(self, Configuration cfg):
+        """Cast a configuration to a python object.
+
+        By default, we assume configurations are vectors of int.
+        This can be overridden in custom factors."""
+
         return (<vector[int]*> cfg)[0]
-
-    def solve_qp(self, vector[double] variable_log_potentials,
-                 vector[double] additional_log_potentials,
-                 int max_iter=10, bool return_array=True):
-
-        cdef:
-            GenericFactor* gf
-            vector[Configuration] active_set_c
-            vector[double] posteriors, additional_posteriors
-
-            # below will be converted to cython arrays
-            vector[double] distribution
-            vector[double] inverse_A
-            vector[double] M, Madd
-
-
-        gf = <GenericFactor*?> self.thisptr
-
-        gf.SetQPMaxIter(max_iter)
-
-        (posteriors, additional_posteriors, _) = \
-            super(PGenericFactor, self).solve_qp(
-            variable_log_potentials, additional_log_potentials)
-
-        active_set_c = gf.GetQPActiveSet()
-        distribution = gf.GetQPDistribution()
-        inverse_A = gf.GetQPInvA()
-        gf.GetCorrespondence(&M, &Madd)
-
-        active_set_py = [self.cast_configuration(x) for x in active_set_c]
-
-        solver_data = {
-            'active_set': active_set_py,
-            'distribution': distribution,
-            'inverse_A': inverse_A,
-            'M': M,
-            'Madd': Madd
-        }
-
-        return posteriors, additional_posteriors, solver_data
-

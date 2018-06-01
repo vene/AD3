@@ -15,4 +15,4 @@ simple_grid.o: simple_grid.cpp FactorSequence.h
 	$(CC) $(CFLAGS) simple_grid.cpp
 
 clean:
-	rm -f *.o *~ simple_grid test_distance
+	rm -f *.o *~ simple_grid

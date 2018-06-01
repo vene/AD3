@@ -407,7 +407,7 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
         // We have found the solution;
         // the distribution, active set, and inv(A) are cached for the next round.
         if (verbosity_ > 2) {
-            cout << "We found the solution, max value is tiny" << endl;
+            cout << "Converged." << endl;
         }
         DeleteConfiguration(configuration);
         return;
@@ -554,10 +554,7 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
       bool exist_blocking = false;
       double alpha = 1.0;
       for (int i = 0; i < active_set_.size(); ++i) {
-        //assert(distribution_[i] >= -1e-12);
-        if (distribution_[i] < -1e-12)
-            cout << "WARNING distribution_[" << i <<"]=" << distribution_[i] << endl;
-        //if (z[i] >= distribution_[i] - 1e-12) continue;
+        assert(distribution_[i] >= -1e-12);  // Incorrect factors can make this fail.
         if (z[i] >= distribution_[i]) continue;
         if (z[i] < 0) exist_blocking = true;
         double tmp = distribution_[i] / (distribution_[i] - z[i]);
@@ -615,8 +612,9 @@ void GenericFactor::SolveQP(const vector<double> &variable_log_potentials,
   }
 
   if (verbosity_ > 2) {
-      cout << "max iter reached" << endl;
+      cout << "Maximum number of iterations reached." << endl;
   }
+
   // Maximum number of iterations reached.
   // Return the best existing solution by computing the variable marginals
   // from the full distribution stored in z.
