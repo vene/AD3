@@ -3,9 +3,6 @@ from setuptools import setup
 from setuptools.command.bdist_egg import bdist_egg
 from setuptools.extension import Extension
 
-from Cython.Build import cythonize
-
-
 
 AD3_COMPILE_ARGS = [
     '-std=c++11',
@@ -66,20 +63,20 @@ setup(name='ad3',
       libraries=[libad3],
       cmdclass=cmdclass,
       include_package_data=True,
-      ext_modules=cythonize([
+      ext_modules=[
           Extension("ad3.factor_graph",
-                    ["python/ad3/factor_graph.pyx"],
+                    ["python/ad3/factor_graph.cpp"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.base",
-                    ["python/ad3/base.pyx"],
+                    ["python/ad3/base.cpp"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.extensions",
-                    ["python/ad3/extensions.pyx"],
+                    ["python/ad3/extensions.cpp"],
                     include_dirs=[".", "ad3"],
                     language="c++",
                     extra_compile_args=AD3_COMPILE_ARGS),
-          ]))
+          ])

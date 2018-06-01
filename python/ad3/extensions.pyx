@@ -218,7 +218,7 @@ cdef class PFactorTree(PGenericFactor):
         if self.allocate:
             del self.thisptr
 
-    def initialize(self, int length, list arcs):
+    def initialize(self, int length, list arcs, bool validate=True):
         cdef vector[Arc *] arcs_v
         cdef int head, modifier
 
@@ -227,18 +227,20 @@ cdef class PFactorTree(PGenericFactor):
             head = arc[0]
             modifier = arc[1]
 
-            if not 0 <= head < length:
-                raise ValueError("Invalid arc: head must be in [0, length)")
-            if not 1 <= modifier < length:
-                raise ValueError("Invalid arc: modifier must be in [1, length)")
-            if not head != modifier:
-                raise ValueError("Invalid arc: head cannot be the same as the "
-                                 " modifier")
+            if validate:
+                if not 0 <= head < length:
+                    raise ValueError("Invalid arc: head must be in [0, length)")
+                if not 1 <= modifier < length:
+                    raise ValueError("Invalid arc: modifier must be in ",
+                                     "[1, length)")
+                if not head != modifier:
+                    raise ValueError("Invalid arc: head cannot be the same as "
+                                     "the modifier")
             arcs_v.push_back(new Arc(head, modifier))
 
-        # if arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
-        #    raise ValueError("Number of arcs differs from number of bound "
-        #                     "variables.")
+        if validate and arcs_v.size() != <Py_ssize_t> self.thisptr.Degree():
+            raise ValueError("Number of arcs differs from number of bound "
+                             "variables.")
         (<FactorTree*>self.thisptr).Initialize(length, arcs_v)
 
         for arcp in arcs_v:
@@ -255,8 +257,8 @@ cdef class PFactorHeadAutomaton(PGenericFactor):
         if self.allocate:
             del self.thisptr
 
-    def initialize(self, int length, list siblings):
-        # length = max(s - h) for (h, m, s) in siblings I think
+    def initialize(self, int length, list siblings, bool validate=True):
+        # length = max(s - h) for (h, m, s) in siblings
 
         cdef vector[Sibling *] siblings_v
 
@@ -266,11 +268,12 @@ cdef class PFactorHeadAutomaton(PGenericFactor):
                                              sibling[1],
                                              sibling[2]))
 
-        if siblings_v.size() != length * (1 + length) / 2:
-            raise ValueError("wrong length?")
+        if validate:
+            if siblings_v.size() != length * (1 + length) / 2:
+                raise ValueError("Inconsistent length passed.")
 
-        if length != self.thisptr.Degree() + 1:
-            raise ValueError("Number of variables doesn't match")
+            if length != self.thisptr.Degree() + 1:
+                raise ValueError("Number of variables doesn't match.")
 
         (<FactorHeadAutomaton*>self.thisptr).Initialize(length, siblings_v)
 
