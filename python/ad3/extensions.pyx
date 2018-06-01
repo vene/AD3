@@ -17,12 +17,6 @@ cdef extern from "../examples/cpp/dense/FactorSequence.h" namespace "AD3":
         void Initialize(vector[int] num_states)
 
 
-cdef extern from "../examples/cpp/dense/FactorSequenceDistance.h" namespace "AD3":
-    cdef cppclass FactorSequenceDistance(Factor):
-        FactorSequenceDistance()
-        void Initialize(int n_nodes, int n_states, int bandwidth)
-
-
 cdef extern from "../examples/cpp/summarization/FactorSequenceCompressor.h" namespace "AD3":
     cdef cppclass FactorSequenceCompressor(Factor):
         FactorSequenceCompressor()
@@ -85,24 +79,6 @@ cdef extern from "../examples/cpp/parsing/FactorHeadAutomaton.h" namespace "AD3"
         void Initialize(int, vector[Sibling *])
 
 
-cdef extern from "../examples/cpp/semimarkov/FactorBinarySegmentation.h" namespace "AD3":
-    cdef struct Segment:
-        int start
-        int end
-        bool tag
-
-    cdef cppclass FactorBinarySegmentation(Factor):
-        FactorBinarySegmentation()
-        void Initialize(int)
-
-
-cdef extern from "../examples/cpp/matching/FactorMatching.h" namespace "AD3":
-    cdef cppclass FactorMatching(Factor):
-        FactorMatching()
-        void Initialize(int, int)
-
-
-
 cdef class PFactorSequence(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
@@ -115,22 +91,6 @@ cdef class PFactorSequence(PGenericFactor):
 
     def initialize(self, vector[int] num_states):
         (<FactorSequence*>self.thisptr).Initialize(num_states)
-
-
-cdef class PFactorSequenceDistance(PGenericFactor):
-    def __cinit__(self, allocate=True):
-        self.allocate = allocate
-        if allocate:
-           self.thisptr = new FactorSequenceDistance()
-
-    def __dealloc__(self):
-        if self.allocate:
-            del self.thisptr
-
-    def initialize(self, int n_nodes, int n_states, int bandwidth):
-        (<FactorSequenceDistance*>self.thisptr).Initialize(n_nodes,
-                                                           n_states,
-                                                           bandwidth)
 
 
 cdef class PFactorSequenceCompressor(PGenericFactor):
@@ -285,42 +245,6 @@ cdef class PFactorTree(PGenericFactor):
             del arcp
 
 
-cdef class PFactorBinarySegmentation(PGenericFactor):
-    def __cinit__(self, allocate=True):
-        self.allocate = allocate
-        if allocate:
-           self.thisptr = new FactorBinarySegmentation()
-
-    def __dealloc__(self):
-        if self.allocate:
-            del self.thisptr
-
-    def initialize(self, int length):
-        (<FactorBinarySegmentation*>self.thisptr).Initialize(length)
-
-    cdef cast_configuration(self, Configuration cfg):
-        # cdef Segment segment
-        cdef vector[Segment] segments = (<vector[Segment]*> cfg)[0]
-        res = [(segment.start, segment.end, segment.tag)
-               for segment in segments]
-
-        return res
-
-
-cdef class PFactorMatching(PGenericFactor):
-    def __cinit__(self, allocate=True):
-        self.allocate = allocate
-        if allocate:
-            self.thisptr = new FactorMatching()
-
-    def __dealloc(self):
-        if self.allocate:
-            del self.thisptr
-
-    def initialize(self, int rows, int cols):
-        (<FactorMatching*>self.thisptr).Initialize(rows, cols)
-
-
 cdef class PFactorHeadAutomaton(PGenericFactor):
     def __cinit__(self, allocate=True):
         self.allocate = allocate
@@ -352,4 +276,3 @@ cdef class PFactorHeadAutomaton(PGenericFactor):
 
         for sibp in siblings_v:
             del sibp
-

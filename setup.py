@@ -22,13 +22,12 @@ libad3 = ('ad3', {
                 'ad3/GenericFactor.cpp',
                 'ad3/Factor.cpp',
                 'ad3/Utils.cpp',
-                'examples/cpp/parsing/FactorTree.cpp',
-                'examples/cpp/matching/lapjv.cpp'],
+                'examples/cpp/parsing/FactorTree.cpp'
+                ],
     'include_dirs': ['.',
                      './ad3',
                      './Eigen',
-                     './examples/cpp/parsing',
-                     './examples/cpp/matching'
+                     './examples/cpp/parsing'
                      ],
     'extra_compile_args': AD3_COMPILE_ARGS
 })
