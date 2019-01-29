@@ -1,17 +1,89 @@
 import sys
 from setuptools import setup
-from setuptools.command.bdist_egg import bdist_egg
 from setuptools.extension import Extension
+from setuptools.command.build_ext import build_ext
+from setuptools.command.build_clib import build_clib
+from setuptools.command.bdist_egg import bdist_egg
 
 
-AD3_COMPILE_ARGS = [
+AD3_FLAGS_UNIX = [
     '-O3',
     '-Wall',
     '-Wno-sign-compare',
     '-c',
     '-fmessage-length=0',
-    '-fPIC'
+    '-fPIC',
+    '-ffast-math',
+    '-march=native'
 ]
+
+
+AD3_FLAGS_MSVC = [
+    '/Ox',
+    '/fp:fast',
+    '/favor:INTEL64',
+    '/Og'
+]
+
+
+AD3_CFLAGS =  {
+    'cygwin' : AD3_FLAGS_UNIX,
+    'mingw32' : AD3_FLAGS_UNIX,
+    'unix' : AD3_FLAGS_UNIX,
+    'msvc' : AD3_FLAGS_MSVC
+}
+
+
+# support compiler-specific cflags in extensions and libs
+class our_build_ext(build_ext):
+    def build_extensions(self):
+
+        # bug in distutils: flag not valid for c++
+        self.compiler.compiler_so.remove('-Wstrict-prototypes')
+
+        compiler_type = self.compiler.compiler_type
+        compile_args = AD3_CFLAGS.get(compiler_type, [])
+
+        for e in self.extensions:
+            e.extra_compile_args.extend(compile_args)
+
+        build_ext.build_extensions(self)
+
+
+class our_build_clib(build_clib):
+    def build_libraries(self, libraries):
+
+        # bug in distutils: flag not valid for c++
+        self.compiler.compiler_so.remove('-Wstrict-prototypes')
+
+        compiler_type = self.compiler.compiler_type
+        compile_args = AD3_CFLAGS.get(compiler_type, [])
+
+        for (lib_name, build_info) in libraries:
+            build_info['cflags'] = compile_args
+
+        build_clib.build_libraries(self, libraries)
+
+
+# this is a backport of a workaround for a problem in distutils.
+# install_lib doesn't call build_clib
+class our_bdist_egg(bdist_egg):
+    def run(self):
+        self.call_command('build_clib')
+        bdist_egg.run(self)
+
+
+cmdclass = {
+    'build_ext': our_build_ext,
+    'build_clib': our_build_clib,
+    'bdist_egg': our_bdist_egg}
+
+
+WHEELHOUSE_UPLOADER_COMMANDS = set(['fetch_artifacts', 'upload_all'])
+if WHEELHOUSE_UPLOADER_COMMANDS.intersection(sys.argv):
+    import wheelhouse_uploader.cmd
+    cmdclass.update(vars(wheelhouse_uploader.cmd))
+
 
 libad3 = ('ad3', {
     'language': "c++",
@@ -26,27 +98,7 @@ libad3 = ('ad3', {
                      './Eigen',
                      './examples/cpp/parsing'
                      ],
-    'cflags': AD3_COMPILE_ARGS
 })
-
-# this is a backport of a workaround for a problem in distutils.
-# install_lib doesn't call build_clib
-
-
-class bdist_egg_fix(bdist_egg):
-    def run(self):
-        self.call_command('build_clib')
-        bdist_egg.run(self)
-
-
-WHEELHOUSE_UPLOADER_COMMANDS = set(['fetch_artifacts', 'upload_all'])
-
-cmdclass = {'bdist_egg': bdist_egg_fix}
-
-if WHEELHOUSE_UPLOADER_COMMANDS.intersection(sys.argv):
-
-    import wheelhouse_uploader.cmd
-    cmdclass.update(vars(wheelhouse_uploader.cmd))
 
 
 setup(name='ad3',
@@ -67,16 +119,13 @@ setup(name='ad3',
           Extension("ad3.factor_graph",
                     ["python/ad3/factor_graph.cpp"],
                     include_dirs=[".", "ad3"],
-                    language="c++",
-                    extra_compile_args=AD3_COMPILE_ARGS),
+                    language="c++"),
           Extension("ad3.base",
                     ["python/ad3/base.cpp"],
                     include_dirs=[".", "ad3"],
-                    language="c++",
-                    extra_compile_args=AD3_COMPILE_ARGS),
+                    language="c++"),
           Extension("ad3.extensions",
                     ["python/ad3/extensions.cpp"],
                     include_dirs=[".", "ad3"],
-                    language="c++",
-                    extra_compile_args=AD3_COMPILE_ARGS),
+                    language="c++")
           ])
