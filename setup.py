@@ -10,6 +10,7 @@ AD3_FLAGS_UNIX = [
     '-O3',
     '-Wall',
     '-Wno-sign-compare',
+    '-Wno-overloaded-virtual',
     '-c',
     '-fmessage-length=0',
     '-fPIC',
