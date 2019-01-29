@@ -19,10 +19,10 @@ AD3_FLAGS_UNIX = [
 
 
 AD3_FLAGS_MSVC = [
-    '/Ox',
+    '/O2',
     '/fp:fast',
     '/favor:INTEL64',
-    '/Og'
+    '/wd4267'  # suppress sign-compare--like warning
 ]
 
 
