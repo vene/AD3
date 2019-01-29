@@ -5,13 +5,16 @@ from setuptools.extension import Extension
 
 
 AD3_COMPILE_ARGS = [
-    '-fPIC',
     '-O3',
+    '-Wall',
+    '-Wno-sign-compare',
     '-c',
-    '-fmessage-length=0'
+    '-fmessage-length=0',
+    '-fPIC'
 ]
 
 libad3 = ('ad3', {
+    'language': "c++",
     'sources': ['ad3/FactorGraph.cpp',
                 'ad3/GenericFactor.cpp',
                 'ad3/Factor.cpp',
@@ -23,7 +26,7 @@ libad3 = ('ad3', {
                      './Eigen',
                      './examples/cpp/parsing'
                      ],
-    'extra_compile_args': AD3_COMPILE_ARGS
+    'cflags': AD3_COMPILE_ARGS
 })
 
 # this is a backport of a workaround for a problem in distutils.
@@ -64,11 +67,13 @@ setup(name='ad3',
           Extension("ad3.factor_graph",
                     ["python/ad3/factor_graph.cpp"],
                     include_dirs=[".", "ad3"],
-                    language="c++"),
+                    language="c++",
+                    extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.base",
                     ["python/ad3/base.cpp"],
                     include_dirs=[".", "ad3"],
-                    language="c++"),
+                    language="c++",
+                    extra_compile_args=AD3_COMPILE_ARGS),
           Extension("ad3.extensions",
                     ["python/ad3/extensions.cpp"],
                     include_dirs=[".", "ad3"],
