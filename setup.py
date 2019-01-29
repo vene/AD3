@@ -39,7 +39,9 @@ class our_build_ext(build_ext):
     def build_extensions(self):
 
         # bug in distutils: flag not valid for c++
-        self.compiler.compiler_so.remove('-Wstrict-prototypes')
+        if (hasattr(self.compiler, 'compiler_so')
+                and if '-Wstrict-prototypes' in self.compiler.compiler_so):
+            self.compiler.compiler_so.remove('-Wstrict-prototypes')
 
         compiler_type = self.compiler.compiler_type
         compile_args = AD3_CFLAGS.get(compiler_type, [])
@@ -54,7 +56,9 @@ class our_build_clib(build_clib):
     def build_libraries(self, libraries):
 
         # bug in distutils: flag not valid for c++
-        self.compiler.compiler_so.remove('-Wstrict-prototypes')
+        if (hasattr(self.compiler, 'compiler_so')
+                and if '-Wstrict-prototypes' in self.compiler.compiler_so):
+            self.compiler.compiler_so.remove('-Wstrict-prototypes')
 
         compiler_type = self.compiler.compiler_type
         compile_args = AD3_CFLAGS.get(compiler_type, [])
